@@ -3,5 +3,12 @@
 // 主題色變數
 @import "./scss/variables";
 @import "./scss/modules";
+// CDNs
+@import "./scss/cdn";
 // 自訂常用 class 樣式
 @import "./scss/class";
+
+// 頁面：首頁
+@import "./dashboard/dashboard";
+
+// 頁面：XXX頁

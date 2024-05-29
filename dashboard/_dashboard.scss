@@ -1,0 +1,42 @@
+.db_aside {
+	min-width: 252px;
+	min-height: 100vh;
+	background-color: $body-color;
+	color: $color-white;
+}
+.db_aside .logo {
+    display: block;
+    padding-block: 1rem;
+    color: $primary;
+}
+.db_aside ul {
+	@include ff-noto(32px);
+	font-weight: 600;
+	text-align: center;
+
+	li {
+		line-height: 2;
+        border-radius: 1rem;
+	}
+    li.active {
+        background-color: $primary;
+    }
+}
+.db_header {
+    min-height: 116px;
+    background-color: $muted-color;
+    color: $heading-color;
+}
+
+.db_header h1 {
+    line-height: 116px;
+}
+
+.db_header .link-box a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $color-white;
+    border: 3px solid $color-p1;
+    color: $color-p1;
+}

@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root,
 [data-bs-theme=light] {
@@ -11983,4 +11984,50 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.db_aside {
+  min-width: 252px;
+  min-height: 100vh;
+  background-color: #6c757d;
+  color: #fffefb;
+}
+
+.db_aside .logo {
+  display: block;
+  padding-block: 1rem;
+  color: #71c4ef;
+}
+
+.db_aside ul {
+  font-family: "Noto Sans TC", sans;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+.db_aside ul li {
+  line-height: 2;
+  border-radius: 1rem;
+}
+.db_aside ul li.active {
+  background-color: #71c4ef;
+}
+
+.db_header {
+  min-height: 116px;
+  background-color: #ced4da;
+  color: #343a40;
+}
+
+.db_header h1, .db_header .h1 {
+  line-height: 116px;
+}
+
+.db_header .link-box a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fffefb;
+  border: 3px solid #b9a399;
+  color: #b9a399;
 }
