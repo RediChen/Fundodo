@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// 字型大小設定
+//設定字型、字重、大小
+/* 大小設定語法如下：
+至少要輸入 1 個參數 -> 第一個參數為字重： 100, 200, 300, ..., 900
+輸入 2 個參數 -> font-size 為 $fz
+輸入 3 個參數 -> font-size 為 $fz，lg 以上為 $fz-sm
+輸入 4 個參數 -> font-size 為 $fz，sm 以上為 $fz-sm，lg 以上為 $fz-lg
+*/
+@mixin font-size($size1: 0, $size2: 0, $size3: 0) {
+	@if ($size1 !=0) {
+		font-size: $size1;
+
+		@if ($size2 != 0) {
+			
+            @if ($size3 == 0) {
+				@include rwd-above("lg") {
+					font-size: $size2;
+				}
+			} @else {
+				@include rwd-above("sm") {
+					font-size: $size2;
+				}
+				@include rwd-above("lg") {
+					font-size: $size3;
+				}
+			}
+		}
+	}
+}
+
+@mixin ff-roboto($fw, $fz: 0, $fz-sm: 0, $fz-lg: 0) {
+	font-family: "Roboto", sans;
+	font-weight: $fw;
+	@include font-size($fz, $fz-sm, $fz-lg);
+}
+
+@mixin ff-noto($fw, $fz: 0, $fz-sm: 0, $fz-lg: 0) {
+	font-family: "Noto Sans TC", sans;
+	font-weight: $fw;
+	@include font-size($fz, $fz-sm, $fz-lg);
+}
