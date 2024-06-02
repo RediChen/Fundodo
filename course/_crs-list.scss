@@ -1,0 +1,85 @@
+.crs-list_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.crs-list_table {
+	th,
+	td {
+		padding: 0.5rem;
+	}
+	thead {
+		background-color: $heading-color;
+		color: $color-white;
+	}
+	tbody {
+		color: $heading-color;
+		tr:nth-child(odd) {
+			background-color: $color-p2;
+		}
+		tr:nth-child(even) {
+			background-color: $color-white;
+		}
+	}
+}
+
+//狀態欄的說明訊息
+.crs-list_table .col-status {
+	position: relative;
+    &:hover {
+		&::before, &::after {
+			opacity: 1;
+		}
+	}
+    &::before, &::after {
+        position: absolute;
+		opacity: 0;
+		// transition: opacity 0.4s;
+        font-weight: 400;
+    }
+    &::before {
+        content: '';
+        display: block;
+        border: 1rem solid transparent;
+        border-top-color: $color-p2;
+        top: -1rem;
+    }
+	&::after {
+		content: "「尚未上架」、「在架上」、「已下架」";
+		background-color: $color-p2;
+		color: $heading-color;
+		line-height: 1.5;
+		top: -2rem;
+		right: 0;
+	}
+}
+
+.crs-list_table td:not([colspan]) {
+	transition: background-color 0.4s;
+	&:not(:last-child):hover {
+		background-color: $skyblue;
+	}
+}
+
+.crs-list_thumbnail {
+	max-height: 90px;
+}
+
+.crs-list_edit-btn {
+	width: 40px;
+	height: 40px;
+}
+
+.crs-list_tags {
+	padding-inline: 0.5rem;
+	line-height: 1.5;
+	background-color: $color-p2;
+	color: $heading-color;
+	border: 1px solid $body-color;
+	border-radius: 99rem;
+	transition: background-color 0.4s;
+
+	&:hover {
+		background-color: $color-white;
+	}
+}
