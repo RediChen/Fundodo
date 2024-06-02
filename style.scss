@@ -1,14 +1,19 @@
 // Bootstrap
 @import "./scss/bootstrap/bootstrap.scss";
-// 主題色變數
-@import "./scss/variables";
-@import "./scss/modules";
 // CDNs
 @import "./scss/cdn";
+// 全域設定
+@import "./scss/variables";
+@import "./scss/modules";
+@import "./scss/mixins";
+@import "./scss/base";
 // 自訂常用 class 樣式
 @import "./scss/class";
 
 // 頁面：首頁
 @import "./dashboard/dashboard";
+
+// 頁面：課程
+@import "./course/_crs-list";
 
 // 頁面：XXX頁

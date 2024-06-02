@@ -11970,17 +11970,53 @@ textarea.form-control-lg {
 /* primary colors */
 /* text color */
 /* functional color */
+.btn-o {
+  padding: 0.5rem;
+  background-color: #71c4ef;
+  color: #fffefb;
+  border-radius: 0.5rem;
+  transition: background-color 0.4s;
+}
+.btn-o:hover {
+  background-color: hsl(200, 71%, 60%);
+}
+.btn-o:active {
+  background-color: hsl(200, 71%, 55%);
+}
+
+.btn-x {
+  padding: 0.5rem;
+  background-color: hsl(4, 80%, 69%);
+  color: #fffefb;
+  border-radius: 0.5rem;
+  transition: background-color 0.4s;
+}
+.btn-x:hover {
+  background-color: hsl(4, 80%, 60%);
+}
+.btn-x:active {
+  background-color: hsl(4, 80%, 55%);
+}
+
 /* 大小設定語法如下：
 至少要輸入 1 個參數 -> 第一個參數為字重： 100, 200, 300, ..., 900
 輸入 2 個參數 -> font-size 為 $fz
 輸入 3 個參數 -> font-size 為 $fz，lg 以上為 $fz-sm
 輸入 4 個參數 -> font-size 為 $fz，sm 以上為 $fz-sm，lg 以上為 $fz-lg
 */
+a:link, a:visited {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Noto Sans TC", sans;
+}
+
 .object-fit-cover {
   width: 100%;
 }
 
-.fx-center {
+.fx-center, .btn-o, .btn-x {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12030,4 +12066,83 @@ textarea.form-control-lg {
   background-color: #fffefb;
   border: 3px solid #b9a399;
   color: #b9a399;
+}
+
+.crs-list_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crs-list_table th,
+.crs-list_table td {
+  padding: 0.5rem;
+}
+.crs-list_table thead {
+  background-color: #343a40;
+  color: #fffefb;
+}
+.crs-list_table tbody {
+  color: #343a40;
+}
+.crs-list_table tbody tr:nth-child(odd) {
+  background-color: #e7e1db;
+}
+.crs-list_table tbody tr:nth-child(even) {
+  background-color: #fffefb;
+}
+
+.crs-list_table .col-status {
+  position: relative;
+}
+.crs-list_table .col-status:hover::before, .crs-list_table .col-status:hover::after {
+  opacity: 1;
+}
+.crs-list_table .col-status::before, .crs-list_table .col-status::after {
+  position: absolute;
+  opacity: 0;
+  font-weight: 400;
+}
+.crs-list_table .col-status::before {
+  content: "";
+  display: block;
+  border: 1rem solid transparent;
+  border-top-color: #e7e1db;
+  top: -1rem;
+}
+.crs-list_table .col-status::after {
+  content: "「尚未上架」、「在架上」、「已下架」";
+  background-color: #e7e1db;
+  color: #343a40;
+  line-height: 1.5;
+  top: -2rem;
+  right: 0;
+}
+
+.crs-list_table td:not([colspan]) {
+  transition: background-color 0.4s;
+}
+.crs-list_table td:not([colspan]):not(:last-child):hover {
+  background-color: #eef6fa;
+}
+
+.crs-list_thumbnail {
+  max-height: 90px;
+}
+
+.crs-list_edit-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.crs-list_tags {
+  padding-inline: 0.5rem;
+  line-height: 1.5;
+  background-color: #e7e1db;
+  color: #343a40;
+  border: 1px solid #6c757d;
+  border-radius: 99rem;
+  transition: background-color 0.4s;
+}
+.crs-list_tags:hover {
+  background-color: #fffefb;
 }
