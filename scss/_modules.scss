@@ -1,39 +1,33 @@
-// 字型大小設定
-//設定字型、字重、大小
-/* 大小設定語法如下：
-至少要輸入 1 個參數 -> 第一個參數為字重： 100, 200, 300, ..., 900
-輸入 2 個參數 -> font-size 為 $fz
-輸入 3 個參數 -> font-size 為 $fz，lg 以上為 $fz-sm
-輸入 4 個參數 -> font-size 為 $fz，sm 以上為 $fz-sm，lg 以上為 $fz-lg
-*/
-@mixin font-size($size1: 0, $size2: 0, $size3: 0) {
-	@if ($size1 !=0) {
-		font-size: $size1;
+$ppp: hsl(200, 80%, 69%);
+$danger: hsl(4, 80%, 69%);
+.btn-o {
+	padding: 0.5rem;
+	@extend .fx-center;
+	background-color: $primary;
+	color: $color-white;
+	border-radius: 0.5rem;
+	transition: background-color .4s;
 
-		@if ($size2 != 0) {
-			
-            @if ($size3 == 0) {
-				@include rwd-above("lg") {
-					font-size: $size2;
-				}
-			} @else {
-				@include rwd-above("sm") {
-					font-size: $size2;
-				}
-				@include rwd-above("lg") {
-					font-size: $size3;
-				}
-			}
-		}
+	&:hover {
+		background-color: hsl(200, 71%, 60%);
+	}
+	&:active {
+		background-color: hsl(200, 71%, 55%);
 	}
 }
 
-@mixin ff-roboto($fz: 0, $fz-sm: 0, $fz-lg: 0) {
-	font-family: "Roboto", sans;
-	@include font-size($fz, $fz-sm, $fz-lg);
-}
+.btn-x {
+	padding: 0.5rem;
+	@extend .fx-center;
+	background-color: $danger;
+	color: $color-white;
+	border-radius: 0.5rem;
+	transition: background-color .4s;
 
-@mixin ff-noto($fz: 0, $fz-sm: 0, $fz-lg: 0) {
-	font-family: "Noto Sans TC", sans;
-	@include font-size($fz, $fz-sm, $fz-lg);
+	&:hover {
+		background-color: hsl(4, 80%, 60%);
+	}
+	&:active {
+		background-color: hsl(4, 80%, 55%);
+	}
 }
