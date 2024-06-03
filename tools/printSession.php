@@ -32,7 +32,7 @@ session_start();
     </div>
 </body>
 <?php
-if (isset($_GET['clear']) && $_GET['clear']) :
+if (isset($_GET['clear']) && $_GET['clear'] == 'true') :
     session_destroy();
     leadTo("./printSession.php");
 endif;
