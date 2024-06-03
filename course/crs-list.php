@@ -1,59 +1,36 @@
 <?php
-$to_tools = "/xampp/htdocs/tools/";
-require_once($to_tools . "connectDB_fdd.php");
-//todo 本地測試用
-include($to_tools . "console-lib.php");
-
-/** 本頁連結 */
-$linkHere = "crs-list.php";
-$pageTitle = "課程列表";
-
-//* tag 篩選模式
-if (isset($_GET['tag_id'])) :
-    $tag_id = $_GET['tag_id'];
-    $sql_get_name = "SELECT category FROM crs_categories WHERE id = $tag_id";
-    $tag_name = $conn->query($sql_get_name)->fetch_assoc()['category'];
-    $pageTitle = "含有 <span class='crs-list_tags'>#$tag_name</span> 的課程列表";
-
-    $sql_search = "SELECT course_id FROM course_category WHERE course_category.category_id = " . $tag_id;
-    $rows = $conn->query($sql_search)->fetch_all(MYSQLI_ASSOC);
-
-    $target_strArr = [];
-    foreach ($rows as $row) :
-        array_push($target_strArr, "id = " . $row['course_id']);
-    endforeach;
-    $sql_SELECT = "SELECT * FROM courses WHERE " . implode(' OR ', $target_strArr);
-//* 一般模式
-else :
-    $sql_SELECT = "SELECT * FROM courses";
-endif;
-
-$sql_ORDER = "ORDER by id";
-$sql = $sql_SELECT . ' ' . $sql_ORDER;
-$crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+include("./crs-list_header.php");
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-tw">
 
 <head>
     <title>課程管理 | Fundodo</title>
-    <?php include($to_tools . "common-head.php"); ?>
+    <?php include($to_fdd . "tools/common-head.php"); ?>
 </head>
 
-<body class="text-bg-dark">
+<body>
     <div class="container">
         <h1 class="text-center my-3"><?= $pageTitle ?></h1>
         <div class="crs-list_info p-3">
-            <div></div>
             <div>
-                <a href="<?= $linkHere ?>" class="btn-x crs-list_edit-btn" title="取消篩選">
-                    <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
-                </a>
+                <p><?= "總共 $crsCount 筆，共 $NUM_PAGES 頁。此為第 " . $_GET['page'] . " 頁" ?></p>
+            </div>
+            <div>
+                <!-- 分頁切換列 -->
+                <?php include("./crs_pagination.php") ?>
+            </div>
+            <div>
+                <?php if (isset($_GET['tag_id'])) : ?>
+                    <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET['order'] ?>" class="btn-x btn-sq" title="取消篩選">
+                        <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
         <table class="crs-list_table">
             <thead>
-                <tr class="text-nowrap">
+                <tr class="text-nowrap text-center">
                     <th scope="col">課程 ID</th>
                     <th scope="col">課程標題</th>
                     <th scope="col">課程摘要</th>
@@ -66,8 +43,9 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
             </thead>
             <tbody>
                 <?php foreach ($crsArr as $course) : ?>
+                    <?php $crs_id = isset($_GET['tag_id']) ? $course['course_id'] : $course['id'] ?>
                     <tr class="align-middle">
-                        <th rowspan='2' class="text-center"><?= $course['id'] ?></th>
+                        <th rowspan='2' class="text-center"><?= $crs_id ?></th>
                         <td><?= $course['title'] ?></td>
                         <td><?= $course['abstract'] ?></td>
                         <td>
@@ -75,10 +53,14 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
                         </td>
                         <td class="text-end">NT$<?= number_format($course['price']) ?></td>
                         <td>（施工中）</td>
-                        <?php $isOn = !empty($course['deleted_at']); ?>
-                        <td class="<?= $isOn ? '' : 'text-nowrap' ?>"><?= $isOn ? $course['deleted_at'] : '在架上' ?></td>
+                        <?php
+                        $isOn = empty($course['deleted_at']);
+                        $statusClass = $isOn ? 'text-nowrap' : '';
+                        $statusInfo = $isOn ? '在架上' : "已於 " . $course['deleted_at'] . "下架";
+                        ?>
+                        <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
                         <td class="text-center">
-                            <a href="#" class="btn-o crs-list_edit-btn" title="完整數據">
+                            <a href="crs-detail.php?id=<?= $course['id'] ?>" class="btn-o btn-sq" title="完整數據">
                                 <i class="fa-solid fa-info"></i>
                             </a>
                         </td>
@@ -86,7 +68,7 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
                     <tr class="align-middle">
                         <?php
                         //* 查詢所有的 tags 名
-                        $sql = "SELECT crs_categories.* FROM course_category JOIN crs_categories ON course_category.category_id = crs_categories.id WHERE course_category.course_id = " . $course['id'];
+                        $sql = "SELECT crs_categories.* FROM course_category JOIN crs_categories ON course_category.category_id = crs_categories.id WHERE course_category.course_id = $crs_id";
                         $rows = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 
                         //* 重新打包
@@ -98,7 +80,7 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
                         <td colspan="6">
                             <div class="hstack gap-3">
                                 <?php foreach ($tagArr as $id => $category) : ?>
-                                    <a href="?tag_id=<?= $id ?>" class="crs-list_tags">
+                                    <a href="?tag_id=<?= $id ?>&page=1&order=<?= $_GET['order'] ?>" class="crs-list_tags">
                                         #<?= $category ?>
                                     </a>
                                 <?php endforeach; ?>
@@ -106,7 +88,7 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
                         </td>
                         <td class="text-center">
                             <!-- <div> -->
-                            <a href="#" class="btn-o crs-list_edit-btn" title="編輯標籤">
+                            <a href="#" class="btn-o btn-sq" title="編輯標籤">
                                 <i class="fa-solid fa-hashtag"></i>
                             </a>
                             <!-- </div> -->
@@ -115,7 +97,31 @@ $crsArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <!-- 分頁切換列 -->
+        <?php include("./crs_pagination.php") ?>
     </div>
+    <!-- Modal : 下架課程成功訊息 -->
+    <?php if (isset($_GET['dComplete']) && $_GET['dComplete'] == 1) : ?>
+        <style>
+            body {
+                overflow-y: hidden;
+            }
+        </style>
+        <div class="popout-notice" id="popout-notice">
+            <div class="window animate__animated animate__bounceIn">
+                <h2>已下架課程</h2>
+                <a href="<?= $LINK_HERE ?>" class="btn-o-text mt-3 px-3" id="pop-n-btn">好的</a>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <script>
+        const popout_n = document.getElementById("popout-notice");
+        const btn_close_n = document.getElementById("pop-n-btn");
+        btn_close_n.addEventListener("click", () => {
+            popout_n.style.display = "none";
+        });
+    </script>
 </body>
 
 </html>
