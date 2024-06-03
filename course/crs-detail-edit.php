@@ -7,6 +7,7 @@ include($to_tools . "/console-lib.php");
 
 /** 本頁連結 */
 $linkHere = "crs-detail.php";
+$pageTitle = "課程詳細資料";
 
 if (!isset($_GET['id'])) :
     echo "請循正常管道進入本頁";
@@ -19,22 +20,22 @@ endif;
 $crs_id = $_GET['id'];
 $sql = "SELECT * FROM courses WHERE id = $crs_id";
 $crs = $conn->query($sql)->fetch_assoc();
-$pageTitle = empty($crs) ? "查無課程" : "課程完整資料";
-$LINK_HERE = "crs-detail.php?id=$crs_id";
+if (empty($crs)) :
+    leadTo('crs-detail.php?id=' . $crs_id);
+endif;
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-tw">
 
 <head>
-    <title><?= $pageTitle ?> | Fundodo</title>
+    <title>課程管理 | Fundodo</title>
     <?php include($to_tools . "common-head.php"); ?>
 </head>
 
 <body>
     <div class="container">
-        <div class="my-3 d-flex justify-content-between">
-            <div></div>
-            <h1><?= empty($crs) ? "" : "課程詳細資料" ?></h1>
+        <div class="d-flex justify-content-end">
             <a href="crs-list.php" class="btn-o">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <span class="MS-3">返回課程列表</span>
@@ -42,81 +43,90 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
         </div>
         <div class="fx-center">
             <div class="row justify-content-center">
-                <?php if ($crs != null) : ?>
-                    <div class="col-lg-6 col-9">
+                <div class="col-auto">
+                    <form action="./doUpdateCrs.php?id=<?=$crs_id?>&edit=true" method="post">
                         <table class="crs-detail_table">
                             <tr>
+                                <td style="width: 364px;"></td>
                                 <th>ID</th>
                                 <td><?= $crs['id'] ?></td>
+                                <input type="hidden" name="id" value="<?= $crs['id'] ?>">
+                                <!-- 不允許更改 ID，但是 -->
                             </tr>
                             <tr>
+                                <td class="text-nowrap"><?= $crs['title'] ?></td>
                                 <th>課程名稱</th>
-                                <td><?= $crs['title'] ?></td>
+                                <td>
+                                    <input type="text" name="title" class="text-center" placeholder='<?= $crs['title'] ?>' value='<?= $crs['title'] ?>'>
+                                </td>
                             </tr>
                             <tr>
+                                <td>
+                                    <p style="text-align: justify;">
+                                        <?= $crs['abstract'] ?>
+                                    </p>
+                                </td>
                                 <th>課程摘要</th>
-                                <td><?= $crs['abstract'] ?></td>
+                                <td>
+                                    <textarea name="abstract" rows='6' value='<?= $crs['abstract'] ?>' placeholder='<?= $crs['abstract'] ?>'>
+                                    </textarea>
+                                </td>
                             </tr>
                             <tr>
+                                <td>（施工中）</td>
                                 <th>課程縮圖</th>
                                 <td>（施工中）</td>
                             </tr>
                             <tr>
-                                <th>課程價格</th>
                                 <td><?= $crs['price'] ?></td>
-                            </tr>
-                            <tr>
-                                <th>觀看人次</th>
-                                <td>（施工中）</td>
-                            </tr>
-                            <tr>
-                                <th>上架狀態</th>
+                                <th>課程價格</th>
                                 <td>
-                                    <?= $crs['deleted_at'] ? '已於' . $crs['deleted_at'] . '下架' : '在架上' ?>
+                                    <input type="number" name="price" class="text-center" placeholder='<?= $crs['price'] ?>' value='<?= $crs['price'] ?>'>
                                 </td>
                             </tr>
                             <tr>
-                                <th>編輯課程</th>
-                                <td class="hstack gap-2 justify-content-center">
-                                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn-o btn-sq" title="編輯課程">
-                                        <i class="fa-regular fa-pen-to-square"></i>
+                                <td>（施工中）</td>
+                                <th>觀看人次</th>
+                                <td>（施工中）</td>
+                                <input type="hidden" name="view" value="0">
+                            </tr>
+                            <tr>
+                                <td>
+                                    <?= $crs['deleted_at'] ? '已於' . $crs['deleted_at'] . '下架' : '在架上' ?>
+                                </td>
+                                <th>上架狀態</th>
+                                <td>
+                                    <?php if ($crs['deleted_at']) : ?>
+                                        <button class="btn-o mx-auto" id="pop-c-act" title="下架課程">
+                                            重新上架
+                                        </button>
+                                    <?php else : ?>
+                                        <button class="btn-x mx-auto" id="pop-c-act" title="下架課程">
+                                            下架課程
+                                        </button>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="./crs-detail.php?id=<?=$crs_id?>" class="btn-o btn-circle mx-auto" title="取消變更">
+                                        <i class="fa-solid fa-check"></i>
                                     </a>
-                                    <button class="btn-x btn-sq" id="pop-c-act" title="下架課程">
-                                        <i class="fa-regular fa-eye-slash"></i>
+                                </td>
+                                <th>結束編輯</th>
+                                <td>
+                                    <button type="submit" class="btn-x btn-circle mx-auto" title="確定更新">
+                                        <i class="fa-solid fa-check"></i>
                                     </button>
                                 </td>
                             </tr>
                         </table>
-                    </div>
-                <?php else : ?>
-                    <div class="col-9">
-                        <table class="crs-detail_table">
-                            <tr>
-                                <th>
-                                    <h1>查無 ID 為 <?= $crs_id ?> 之課程</h1>
-                                </th>
-                            </tr>
-                        </table>
-
-                    </div>
-                <?php endif; ?>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     <!-- Modal 1: 編輯課程完成 -->
-    <?php if (isset($_GET['eComplete']) && $_GET['eComplete'] == 1) : ?>
-        <style>
-            body {
-                overflow-y: hidden;
-            }
-        </style>
-        <div class="popout-notice" id="popout-notice">
-            <div class="window animate__animated animate__bounceIn">
-                <h2>已更新課程資料</h2>
-                <a href="<?= $LINK_HERE ?>" class="btn-o-text mt-3 px-3" id="pop-n-btn">好的</a>
-            </div>
-        </div>
-    <?php endif; ?>
     <!-- Modal 2: 刪除課程確認 -->
     <div class="popout-confirm" id="popout-confirm">
         <div class="window animate__animated animate__bounceIn">
@@ -129,13 +139,6 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
     </div>
 
     <script>
-        //* Modal 1: 編輯課程完成
-        const popout_n = document.getElementById("popout-notice");
-        const btn_nlose_c = document.getElementById("pop-n-btn");
-        btn_nlose_c.addEventListener("click", () => {
-            popout_n.style.display = "none";
-        });
-        //* Modal 2: 刪除課程確認
         const popout_c = document.getElementById("popout-confirm");
         const btn_act_c = document.getElementById("pop-c-act");
         const btn_close_c = document.getElementById("pop-c-btn");
