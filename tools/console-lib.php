@@ -17,24 +17,9 @@ function printArray($array)
     print_r($array);
     echo '</pre></p>';
 }
-
-function printSess()
-{
-    if (isset($_SESSION['user'])) :
-        printArray($_SESSION);
-    else :
-        echo '<br>沒有 session<br>';
-    endif;
-}
-
 function br($times = 1)
 {
     for ($i = 0; $i < $times; $i++) {
         echo '<br>';
     }
-}
-
-function leadTo($path)
-{
-    header("Location: $path");
 }
