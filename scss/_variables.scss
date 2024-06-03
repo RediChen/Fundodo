@@ -1,12 +1,16 @@
 /* primary colors */
 $color-p1: #b9a399;
 $color-p2: #e7e1db;
-$color-white: #fffefb;
+$white: #fffefb;
 /* text color */
-$heading-color: $gray-800;
-$body-color: $gray-600;
-$muted-color: $gray-400;
+
+$black: hsl(23, 11%, 15%);
+$color-heading: $gray-800; // hsl(210, 10%, 23%);
+$color-body: $gray-600;
+$color-muted: $gray-400;
 /* functional color */
-$primary: #71c4ef;
-$danger: #ef7971;
+$primary: #71c4ef; // hsl(200, 80%, 69%);
+$primary-text: hsl(200, 25%, 23%);
+$danger: #ef7971; // hsl(4, 80%, 69%)
+$danger-text: hsl(4, 25%, 23%);
 $skyblue: #eef6fa;
