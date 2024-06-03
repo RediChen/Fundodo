@@ -11970,32 +11970,78 @@ textarea.form-control-lg {
 /* primary colors */
 /* text color */
 /* functional color */
-.btn-o {
+.btn-sq {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-prototype, .btn-x, .btn-x-text, .btn-o, .btn-o-text {
   padding: 0.5rem;
-  background-color: #71c4ef;
-  color: #fffefb;
+  font-weight: 500;
+  border: none;
   border-radius: 0.5rem;
   transition: background-color 0.4s;
 }
-.btn-o:hover {
+
+.btn-o, .btn-o-text {
+  background-color: #71c4ef;
+  color: #fffefb;
+}
+.btn-o:hover, .btn-o-text:hover {
   background-color: hsl(200, 71%, 60%);
 }
-.btn-o:active {
+.btn-o:active, .btn-o-text:active {
   background-color: hsl(200, 71%, 55%);
 }
 
-.btn-x {
-  padding: 0.5rem;
-  background-color: hsl(4, 80%, 69%);
-  color: #fffefb;
-  border-radius: 0.5rem;
-  transition: background-color 0.4s;
+.btn-o-text {
+  color: hsl(200, 25%, 23%);
 }
-.btn-x:hover {
+
+.btn-x, .btn-x-text {
+  background-color: #ef7971;
+  color: #fffefb;
+}
+.btn-x:hover, .btn-x-text:hover {
   background-color: hsl(4, 80%, 60%);
 }
-.btn-x:active {
+.btn-x:active, .btn-x-text:active {
   background-color: hsl(4, 80%, 55%);
+}
+
+.btn-x-text {
+  color: hsl(4, 25%, 23%);
+}
+
+.popout-prototype, .popout-confirm, .popout-notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(52, 58, 64, 0.8);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.popout-prototype .window, .popout-confirm .window, .popout-notice .window {
+  width: 300px;
+  height: 200px;
+  background-color: #fffefb;
+  color: #111;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popout-notice {
+  display: flex;
+}
+
+.popout-confirm {
+  display: none;
 }
 
 /* 大小設定語法如下：
@@ -12016,7 +12062,7 @@ body {
   width: 100%;
 }
 
-.fx-center, .btn-o, .btn-x {
+.fx-center, .btn-prototype, .btn-o, .btn-o-text, .btn-x, .btn-x-text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12084,8 +12130,11 @@ body {
 .crs-list_table tbody {
   color: #343a40;
 }
-.crs-list_table tbody tr:nth-child(odd) {
+.crs-list_table tbody tr:nth-child(4n+1) {
   background-color: #e7e1db;
+}
+.crs-list_table tbody tr:nth-child(4n+3) {
+  background-color: #ced4da;
 }
 .crs-list_table tbody tr:nth-child(even) {
   background-color: #fffefb;
@@ -12129,11 +12178,6 @@ body {
   max-height: 90px;
 }
 
-.crs-list_edit-btn {
-  width: 40px;
-  height: 40px;
-}
-
 .crs-list_tags {
   padding-inline: 0.5rem;
   line-height: 1.5;
@@ -12145,4 +12189,25 @@ body {
 }
 .crs-list_tags:hover {
   background-color: #fffefb;
+}
+
+.crs-detail_table th,
+.crs-detail_table td {
+  padding: 0.5rem;
+}
+.crs-detail_table th {
+  background-color: #343a40;
+  color: #fffefb;
+  white-space: nowrap;
+  text-align: center;
+}
+.crs-detail_table tr:nth-child(odd) td {
+  background-color: #e7e1db;
+}
+.crs-detail_table tr:nth-child(even) td {
+  background-color: #ced4da;
+}
+.crs-detail_table tr td {
+  color: #343a40;
+  text-align: center;
 }
