@@ -11975,6 +11975,12 @@ textarea.form-control-lg {
   height: 40px;
 }
 
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+}
+
 .btn-prototype, .btn-x, .btn-x-text, .btn-o, .btn-o-text {
   padding: 0.5rem;
   font-weight: 500;
