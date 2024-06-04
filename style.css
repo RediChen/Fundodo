@@ -12020,19 +12020,20 @@ textarea.form-control-lg {
 }
 
 .popout-prototype, .popout-confirm, .popout-notice {
-  position: absolute;
+  position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
   background-color: rgba(52, 58, 64, 0.8);
   z-index: 9999;
   justify-content: center;
   align-items: center;
 }
 .popout-prototype .window, .popout-confirm .window, .popout-notice .window {
-  width: 300px;
-  height: 200px;
+  padding-inline: 3rem;
+  min-width: 300px;
+  min-height: 200px;
   background-color: #fffefb;
   color: #111;
   border-radius: 1rem;
