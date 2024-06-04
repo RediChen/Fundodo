@@ -64,11 +64,13 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                             </tr>
                             <tr>
                                 <th>課程縮圖</th>
-                                <td><img src="../images/<?=$crs_img_name?>" alt="" class="object-fit-cover"></td>
+                                <td><img src="../images/<?= $crs_img_name ?>" alt="" class="object-fit-cover"></td>
                             </tr>
                             <tr>
                                 <th>課程價格</th>
-                                <td><?= $crs['price'] ?></td>
+                                <td>
+                                    NT$<?= number_format($crs['price']) ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th>觀看人次</th>
@@ -121,6 +123,14 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                 <a href="<?= $LINK_HERE ?>" class="btn-o-text mt-3 px-3" id="pop-n-btn">好的</a>
             </div>
         </div>
+        <script>
+            //* Modal 1: 編輯課程完成
+            const popout_n = document.getElementById("popout-notice");
+            const btn_close_n = document.getElementById("pop-n-btn");
+            btn_close_n.addEventListener("click", () => {
+                popout_n.style.display = "none";
+            });
+        </script>
     <?php endif; ?>
     <!-- Modal 2: 刪除課程確認 -->
     <div class="popout-confirm" id="popout-confirm">
@@ -134,17 +144,12 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
     </div>
 
     <script>
-        //* Modal 1: 編輯課程完成
-        const popout_n = document.getElementById("popout-notice");
-        const btn_nlose_c = document.getElementById("pop-n-btn");
-        btn_nlose_c.addEventListener("click", () => {
-            popout_n.style.display = "none";
-        });
         //* Modal 2: 刪除課程確認
         const popout_c = document.getElementById("popout-confirm");
         const btn_act_c = document.getElementById("pop-c-act");
         const btn_close_c = document.getElementById("pop-c-btn");
         btn_act_c.addEventListener("click", () => {
+            console.log('點')
             popout_c.style.display = "flex";
         });
         btn_close_c.addEventListener("click", () => {
