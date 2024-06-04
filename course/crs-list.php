@@ -11,7 +11,11 @@ include("./crs-list_header.php");
 
 <body>
     <div class="container">
-        <h1 class="text-center my-3"><?= $pageTitle ?></h1>
+        <div class="d-flex justify-content-between my-3">
+            <div></div>
+            <h1 class="text-center"><?= $pageTitle ?></h1>
+            <a href="crs-detail-create.php" class="btn-o">新增課程</a>
+        </div>
         <div class="crs-list_info p-3">
             <div>
                 <p><?= "總共 $crsCount 筆，共 $NUM_PAGES 頁。此為第 " . $_GET['page'] . " 頁" ?></p>
@@ -49,7 +53,7 @@ include("./crs-list_header.php");
                         <td><?= $course['title'] ?></td>
                         <td><?= $course['abstract'] ?></td>
                         <td>
-                            <img src="../images/<?=$course['file_name']?>" alt="" class="crs-list_thumbnail">
+                            <img src="../images/<?= $course['file_name'] ?>" alt="" class="crs-list_thumbnail">
                         </td>
                         <td class="text-end">NT$<?= number_format($course['price']) ?></td>
                         <td>（施工中）</td>
