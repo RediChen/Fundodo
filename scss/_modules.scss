@@ -53,19 +53,20 @@
 
 //* Modal
 .popout-prototype {
-	position: absolute;
+	position: fixed;
 	top: 0;
+	bottom: 0;
 	left: 0;
-	width: 100vw;
-	height: 100vh;
+	right: 0;
 	background-color: rgba($color-heading, 0.8);
 	z-index: 9999;
 	justify-content: center;
 	align-items: center;
 
 	.window {
-		width: 300px;
-		height: 200px;
+		padding-inline: 3rem;
+		min-width: 300px;
+		min-height: 200px;
 		background-color: $white;
 		color: #111;
 		border-radius: 1rem;
@@ -79,10 +80,8 @@
 .popout-notice {
 	@extend .popout-prototype;
 	display: flex;
-
 }
 .popout-confirm {
 	@extend .popout-prototype;
 	display: none;
-
 }
