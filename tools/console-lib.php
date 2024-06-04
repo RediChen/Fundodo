@@ -8,6 +8,8 @@
         border-radius: 1rem;
         font-family: "IBM Plex Mono", "Helvetica Neue";
         text-align: left;
+        overflow-wrap: break-word;
+        white-space: wrap;
     }
 </style>
 <?php
