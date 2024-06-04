@@ -5,10 +5,6 @@ include($to_tools . "tool-lib.php");
 //todo 本地測試用
 include($to_tools . "/console-lib.php");
 
-/** 本頁連結 */
-$linkHere = "crs-detail.php";
-$pageTitle = "課程詳細資料";
-
 if (!isset($_GET['id'])) :
     echo "請循正常管道進入本頁";
     // todo: 做 modal，點擊後待 3 秒導引至 crs-list
@@ -35,7 +31,9 @@ endif;
 
 <body>
     <div class="container">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between">
+            <div></div>
+        <h1>編輯課程資料</h1>
             <a href="crs-list.php" class="btn-o">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <span class="MS-3">返回課程列表</span>
@@ -44,14 +42,14 @@ endif;
         <div class="fx-center">
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <form action="./doUpdateCrs.php?id=<?=$crs_id?>&edit=true" method="post">
+                    <form action="./doUpdateCrs.php?id=<?= $crs_id ?>&edit=true" method="post">
                         <table class="crs-detail_table">
                             <tr>
-                                <td style="width: 364px;"></td>
+                                <td style="width: 364px;"><?= $crs['id'] ?></td>
                                 <th>ID</th>
                                 <td><?= $crs['id'] ?></td>
                                 <input type="hidden" name="id" value="<?= $crs['id'] ?>">
-                                <!-- 不允許更改 ID，但是 -->
+                                <!-- 不允許更改 ID，但是因為接手的頁面還是需要 ID -->
                             </tr>
                             <tr>
                                 <td class="text-nowrap"><?= $crs['title'] ?></td>
@@ -68,8 +66,7 @@ endif;
                                 </td>
                                 <th>課程摘要</th>
                                 <td>
-                                    <textarea name="abstract" rows='6' value='<?= $crs['abstract'] ?>' placeholder='<?= $crs['abstract'] ?>'>
-                                    </textarea>
+                                    <textarea name="abstract" rows='6' value='<?= $crs['abstract'] ?>'><?= $crs['abstract'] ?></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -78,7 +75,9 @@ endif;
                                 <td>（施工中）</td>
                             </tr>
                             <tr>
-                                <td><?= $crs['price'] ?></td>
+                                <td>
+                                    NT$<?= number_format($crs['price']) ?>
+                                </td>
                                 <th>課程價格</th>
                                 <td>
                                     <input type="number" name="price" class="text-center" placeholder='<?= $crs['price'] ?>' value='<?= $crs['price'] ?>'>
@@ -109,7 +108,7 @@ endif;
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="./crs-detail.php?id=<?=$crs_id?>" class="btn-o btn-circle mx-auto" title="取消變更">
+                                    <a href="./crs-detail.php?id=<?= $crs_id ?>" class="btn-o btn-circle mx-auto" title="取消變更">
                                         <i class="fa-solid fa-check"></i>
                                     </a>
                                 </td>
