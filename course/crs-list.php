@@ -49,7 +49,7 @@ include("./crs-list_header.php");
                         <td><?= $course['title'] ?></td>
                         <td><?= $course['abstract'] ?></td>
                         <td>
-                            <img src="https://fakeimg.pl/160x90/?retina=1&text=課程縮圖&font=noto" class="crs-list_thumbnail">
+                            <img src="../images/<?=$course['file_name']?>" alt="" class="crs-list_thumbnail">
                         </td>
                         <td class="text-end">NT$<?= number_format($course['price']) ?></td>
                         <td>（施工中）</td>
@@ -60,7 +60,7 @@ include("./crs-list_header.php");
                         ?>
                         <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
                         <td class="text-center">
-                            <a href="crs-detail.php?id=<?= $course['id'] ?>" class="btn-o btn-sq" title="完整數據">
+                            <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn-o btn-sq" title="完整數據">
                                 <i class="fa-solid fa-info"></i>
                             </a>
                         </td>

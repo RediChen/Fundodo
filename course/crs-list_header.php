@@ -17,16 +17,17 @@ $pageTitle = "課程列表";
 
 //抓取是否只要上架
 $onlyValid = isset($_GET['onlyValid']) && ($_GET['onlyValid'] == 1);
+//todo 此篩選功能尚未
 
-//====================== sql 初始 3 值 ==========================
-$sql_SELECT = "SELECT * FROM courses";
-$sql_JOIN = '';
+//====================== sql 初始 3 值 for 一般模式 ==========================
+$sql_SELECT = "SELECT courses.*, images_stored.file_name FROM courses";
+$sql_JOIN = 'JOIN images_stored ON courses.id = images_stored.item_id AND images_stored.item_sub_id = 1';
 $sql_WHERE = $onlyValid ? " WHERE deleted_at is NULL" : "";
 
 //====================== 模式分流 ==========================
 // 缺少必要的分頁或排序參數時
 if (!isset($_GET['page']) || !isset($_GET['order'])) :
-    leadTo($URL . "?page=1&order=0");
+    leadTo("$LINK_HERE?page=1&order=0");
 endif;
 //分頁與排序的處理在後面
 
@@ -42,21 +43,11 @@ if (isset($_GET['tag_id'])) :
     $tag_name = $conn->query($sql_get_name)->fetch_assoc()['category'];
     $pageTitle = "含有 <span class='crs-list_tags'>#$tag_name</span> 的課程列表";
 
-    //====（原）搜尋 tag 名稱
-    // $sql_search = "SELECT course_id FROM course_category WHERE course_category.category_id = " . $tag_id;
-    // $rows = $conn->query($sql_search)->fetch_all(MYSQLI_ASSOC);
-
-    //====
-    $sql_SELECT = "SELECT *, course_category.course_id, course_category.category_id FROM courses";
-    $sql_JOIN = "JOIN course_category ON courses.id = course_category.course_id";
+    //====將課程的 id 與指定類別名稱併入 courses 資料表
+    $sql_SELECT = "SELECT *, course_category.course_id, course_category.category_id, images_stored.file_name FROM courses";
+    $sql_JOIN = "JOIN course_category ON courses.id = course_category.course_id"
+    ." JOIN images_stored ON course_category.course_id = images_stored.item_id AND images_stored.item_sub_id = 1";
     $sql_WHERE .= ($onlyValid ? "AND" : "WHERE") . " category_id = $tag_id";
-//====
-
-// $target_strArr = [];
-// foreach ($rows as $row) :
-//     array_push($target_strArr, "id = " . $row['course_id']);
-// endforeach;
-// $sql_SELECT = "SELECT * FROM courses WHERE " . implode(' OR ', $target_strArr);
 endif;
 
 //*====================== 排序
@@ -105,6 +96,8 @@ $sql = implode(' ', $sqlArr);
 //*生成總頁數
 $crsCount = $conn->query($sql)->num_rows;
 $NUM_PAGES = ceil($crsCount / $PAGE_LIMIT);
+
+
 
 //*當頁內容
 $sql .= ' ' . $sql_LIMIT;

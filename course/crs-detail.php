@@ -17,8 +17,13 @@ if (!isset($_GET['id'])) :
 endif;
 
 $crs_id = $_GET['id'];
+//*===============資料表: courses
 $sql = "SELECT * FROM courses WHERE id = $crs_id";
 $crs = $conn->query($sql)->fetch_assoc();
+//*===============資料表: images_stored
+$sql = "SELECT file_name FROM images_stored WHERE genre = 'CR' AND item_id = $crs_id AND item_sub_id = 1";
+$crs_img_name = $conn->query($sql)->fetch_assoc()['file_name'];
+
 $pageTitle = empty($crs) ? "查無課程" : "課程完整資料";
 $LINK_HERE = "crs-detail.php?id=$crs_id";
 ?>
@@ -59,7 +64,7 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                             </tr>
                             <tr>
                                 <th>課程縮圖</th>
-                                <td>（施工中）</td>
+                                <td><img src="../images/<?=$crs_img_name?>" alt="" class="object-fit-cover"></td>
                             </tr>
                             <tr>
                                 <th>課程價格</th>
