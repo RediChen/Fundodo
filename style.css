@@ -12211,6 +12211,17 @@ body {
   text-align: center;
 }
 
+.fixed-height-table {
+  height: 765px;
+  overflow: hidden;
+}
+
+.arti-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cart-icon {
   font-size: 28px;
   text-decoration: none;

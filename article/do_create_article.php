@@ -1,5 +1,6 @@
 <?php
 require_once("../db_connect.php");
+session_start();
 
 function filename($article_id,$index,$extension){
     return "arti_img_". $article_id."_" . $index . "." . $extension;
@@ -10,11 +11,12 @@ $content = $_POST["content"];
 $sort = $_POST["sort"];
 $now = date('Y-m-d H:i:s');
 $article_del = "0";
+$userid=$_SESSION["user"]["id"];
 // $img_path = "";
 $img_path = [];
 
-$sql = "INSERT INTO article (title,content,sort,create_at,article_delete)
-VALUES('$title','$content','$sort','$now',$article_del)";
+$sql = "INSERT INTO article (title,content,sort,create_at,article_delete,userid)
+VALUES('$title','$content','$sort','$now',$article_del,$userid)";
 
 if(!isset($title)){
     echo "文章標題不可為空白";

@@ -3,29 +3,6 @@
     justify-content: space-between;
 }
 
-.crs-list_table {
-	th,
-	td {
-		padding: 0.5rem;
-	}
-	thead {
-		background-color: $color-heading;
-		color: $white;
-	}
-	tbody {
-		color: $color-heading;
-		tr:nth-child(4n+1) {
-			background-color: $color-p2;
-		}
-		tr:nth-child(4n+3) {
-			background-color: $color-muted;
-		}
-		tr:nth-child(even) {
-			background-color: $white;
-		}
-	}
-}
-
 //狀態欄的說明訊息
 .crs-list_table .col-status {
 	position: relative;
@@ -78,6 +55,6 @@
 	transition: background-color 0.4s;
 
 	&:hover {
-		background-color: $white;
+		background-color: $color-white;
 	}
 }

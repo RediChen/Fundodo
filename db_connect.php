@@ -3,6 +3,7 @@
 $server_name="localhost";
 $user_name="admin";
 $db_name = "fundodo";
+$db_name = "fundodo";
 
 //* 泓宣
 $password="12345";
