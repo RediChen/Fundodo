@@ -1,7 +1,7 @@
 <?php
 $to_tools = "/xampp/htdocs/Fundodo/tools/";
-require_once("/xampp/htdocs/connectDB_fdd.php");
-include($to_tools . "tool-lib.php");
+require_once("/db_connect.php");
+include("tools/tool-lib.php");
 //todo 本地測試用
 include($to_tools . "/console-lib.php");
 

@@ -85,10 +85,10 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                             <tr>
                                 <th>編輯課程</th>
                                 <td class="hstack gap-2 justify-content-center">
-                                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn-o btn-sq" title="編輯課程">
+                                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq fx-center" title="編輯課程">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </a>
-                                    <button class="btn-x btn-sq" id="pop-c-act" title="下架課程">
+                                    <button class="btn btn-danger btn-sq fx-center" id="pop-c-act" title="下架課程">
                                         <i class="fa-regular fa-eye-slash"></i>
                                     </button>
                                 </td>

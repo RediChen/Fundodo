@@ -298,13 +298,16 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
+// $primary:       $blue !default;
+$primary:       #71c4ef !default;
+//自定義
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
+$danger:        #ef7971 !default;
+//自定義
+$light:         #fffefb !default;
 $dark:          $gray-900 !default;
 // scss-docs-end theme-color-variables
 

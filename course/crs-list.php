@@ -9,12 +9,12 @@ include("./crs-list_header.php");
     <?php include($to_fdd . "tools/common-head.php"); ?>
 </head>
 
-<body>
+<body class="bg-light">
     <div class="container">
         <div class="d-flex justify-content-between my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn-o">新增課程</a>
+            <a href="crs-detail-create.php" class="btn btn-primary fx-center text-light">新增課程</a>
         </div>
         <div class="crs-list_info p-3">
             <div>
@@ -32,6 +32,7 @@ include("./crs-list_header.php");
                 <?php endif; ?>
             </div>
         </div>
+        <!-- <table class="crs-list_table"> -->
         <table class="crs-list_table">
             <thead>
                 <tr class="text-nowrap text-center">
