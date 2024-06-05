@@ -1,5 +1,6 @@
 <?php
 include('./console-lib.php');
+include('./tool-lib.php');
 session_start();
 ?>
 
