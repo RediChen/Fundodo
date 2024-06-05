@@ -43,6 +43,18 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
         case 4:
             $orderClause = "ORDER BY price DESC";
             break;
+        case 5:
+            $orderClause = "ORDER BY on_shelves_time ASC";
+            break;
+        case 6:
+            $orderClause = "ORDER BY on_shelves_time DESC";
+            break;
+        case 7:
+            $orderClause = "ORDER BY stock ASC";
+            break;
+        case 8:
+            $orderClause = "ORDER BY stock DESC";
+            break;
     }
 
     $sql = "SELECT products.*, category.name AS category_name, MIN(productimages.ImageName) AS ImageName
@@ -54,9 +66,16 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     $orderClause
     LIMIT $firstItem, $perPage";
     $pageTitle = "商品列表";
-} elseif (isset($_GET["search"]) && isset($_GET["order"])) {
+} elseif (isset($_GET["search"]) && isset($_GET["order"]) && isset($_GET["page"])) {
     $search = $_GET["search"];
     $order = $_GET["order"];
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $sqlSearchCount = "SELECT * FROM products WHERE ProductName LIKE '%$search%' AND valid=0";
+    $resultSearch = $conn->query($sqlSearchCount);
+    $allProductCount = $resultSearch->num_rows;
+    $perPage = 15;
+    $firstItem = ($page - 1) * $perPage;
+    $pageCount = ceil($allProductCount / $perPage);
 
     switch ($order) {
         case 1:
@@ -71,6 +90,18 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
         case 4:
             $orderClause = "ORDER BY price DESC";
             break;
+        case 5:
+            $orderClause = "ORDER BY on_shelves_time ASC";
+            break;
+        case 6:
+            $orderClause = "ORDER BY on_shelves_time DESC";
+            break;
+        case 7:
+            $orderClause = "ORDER BY stock ASC";
+            break;
+        case 8:
+            $orderClause = "ORDER BY stock DESC";
+            break;
     }
 
     $sql = "SELECT products.*, category.name AS category_name, MIN(productimages.ImageName) AS ImageName
@@ -81,7 +112,9 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     LIKE '%$search%'
     AND valid=0
     GROUP BY products.ProductID, category.name
-    $orderClause";
+    $orderClause
+    LIMIT $firstItem, $perPage";
+
     $pageTitle = "$search 的搜尋結果";
 } elseif (isset($_GET["max"]) && isset($_GET["min"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     $min = $_GET["min"];
@@ -108,6 +141,18 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
             break;
         case 4:
             $orderClause = "ORDER BY price DESC";
+            break;
+        case 5:
+            $orderClause = "ORDER BY on_shelves_time ASC";
+            break;
+        case 6:
+            $orderClause = "ORDER BY on_shelves_time DESC";
+            break;
+        case 7:
+            $orderClause = "ORDER BY stock ASC";
+            break;
+        case 8:
+            $orderClause = "ORDER BY stock DESC";
             break;
     }
 
@@ -170,6 +215,7 @@ if (isset($_GET["page"])) {
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="請搜尋商品名稱" name="search">
                     <input type="hidden" value="1" name="order">
+                    <input type="hidden" value="1" name="page">
                     <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
@@ -238,14 +284,14 @@ if (isset($_GET["page"])) {
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=2"><i class="fa-solid fa-sort-up"></i></a>
                             <?php elseif (($order != 1) && isset($_GET["category"])) : ?>
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=1"><i class="fa-solid fa-sort-down"></i></a>
-                            <?php elseif ((isset($_GET["min"]) && $order != 1)) : ?>
+                            <?php elseif (($order != 1) && isset($_GET["min"])) : ?>
                                 <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=1"><i class="fa-solid fa-sort-up"></i></a>
-                            <?php elseif ((isset($_GET["min"]) && $order != 2)) : ?>
+                            <?php elseif (($order != 2) && isset($_GET["min"])) : ?>
                                 <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=2"><i class="fa-solid fa-sort-down"></i></a>
                             <?php elseif (($order != 2) && isset($_GET["search"])) : ?>
-                                <a href="?search=<?= $search ?>&order=2"><i class="fa-solid fa-sort-up"></i></a>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=2"><i class="fa-solid fa-sort-up"></i></a>
                             <?php elseif (($order != 1) && isset($_GET["search"])) : ?>
-                                <a href="?search=<?= $search ?>&order=1"><i class="fa-solid fa-sort-down"></i></a>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=1"><i class="fa-solid fa-sort-down"></i></a>
                             <?php endif ?>
                         </th>
                         <th>商品名稱</th>
@@ -257,19 +303,46 @@ if (isset($_GET["page"])) {
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=4"><i class="fa-solid fa-sort-up"></i></a>
                             <?php elseif (($order != 3) && isset($_GET["category"])) : ?>
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=3"><i class="fa-solid fa-sort-down"></i></a>
-                            <?php elseif ((isset($_GET["min"]) && $order != 3)) : ?>
+                            <?php elseif (($order != 3) && isset($_GET["min"])) : ?>
                                 <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=3"><i class="fa-solid fa-sort-up"></i></a>
-                            <?php elseif ((isset($_GET["min"]) && $order != 4)) : ?>
+                            <?php elseif (($order != 4) && isset($_GET["min"])) : ?>
                                 <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=4"><i class="fa-solid fa-sort-down"></i></a>
                             <?php elseif (($order != 3) && isset($_GET["search"])) : ?>
-                                <a href="?search=<?= $search ?>&order=3"><i class="fa-solid fa-sort-up"></i></a>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=3"><i class="fa-solid fa-sort-up"></i></a>
                             <?php elseif (($order != 4) && isset($_GET["search"])) : ?>
-                                <a href="?search=<?= $search ?>&order=4"><i class="fa-solid fa-sort-down"></i></a>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=4"><i class="fa-solid fa-sort-down"></i></a>
                             <?php endif ?>
                         </th>
-                        <th>上架時間</th>
-                        <th>庫存量</th>
-                        <th></th>
+                        <th>上架時間
+                            <?php if (($order != 5) && isset($_GET["category"])) : ?>
+                                <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=5"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 6) && isset($_GET["category"])) : ?>
+                                <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=6"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php elseif (($order != 5) && isset($_GET["search"])) : ?>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=5"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 6) && isset($_GET["search"])) : ?>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=6"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php elseif (($order != 5) && isset($_GET["min"])) : ?>
+                                <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=5"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 6) && isset($_GET["min"])) : ?>
+                                <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=6"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php endif ?>
+                        </th>
+                        <th>庫存量 
+                        <?php if (($order != 7) && isset($_GET["category"])) : ?>
+                                <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=7"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 8) && isset($_GET["category"])) : ?>
+                                <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=8"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php elseif (($order != 7) && isset($_GET["search"])) : ?>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=7"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 8) && isset($_GET["search"])) : ?>
+                                <a href="?search=<?= $search ?>&page=<?= $page ?>&order=8"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php elseif (($order != 7) && isset($_GET["min"])) : ?>
+                                <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=7"><i class="fa-solid fa-sort-up"></i></a>
+                            <?php elseif (($order != 8) && isset($_GET["min"])) : ?>
+                                <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=8"><i class="fa-solid fa-sort-down"></i></a>
+                            <?php endif ?>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -298,13 +371,19 @@ if (isset($_GET["page"])) {
                         <?php if (isset($_GET["category"]) && isset($_GET["page"])) : ?>
                             <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                 <li class="page-item <?php if ($i == $page) echo "active"; ?>">
-                                    <a class="page-link" href="?category=<?= $cate_id ?>&page=<?= $i ?>&order=<?=$order?>"><?= $i ?></a>
+                                    <a class="page-link" href="?category=<?= $cate_id ?>&page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
                                 </li>
                             <?php endfor ?>
                         <?php elseif (isset($_GET["min"]) && isset($_GET["max"]) && isset($_GET["page"]) && isset($_GET["order"])) : ?>
                             <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                 <li class="page-item <?php if ($i == $page) echo "active"; ?>">
                                     <a class="page-link" href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
+                                </li>
+                            <?php endfor ?>
+                        <?php elseif (isset($_GET["search"]) && isset($_GET["page"]) && isset($_GET["order"])) : ?>
+                            <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
+                                <li class="page-item <?php if ($i == $page) echo "active"; ?>">
+                                    <a class="page-link" href="?search=<?= $search ?>&page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
                                 </li>
                             <?php endfor ?>
                         <?php endif ?>
