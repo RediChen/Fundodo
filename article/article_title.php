@@ -34,6 +34,12 @@ if (isset($_GET["sort"])) {
 } elseif (isset($_GET["search"])) {
     $search = $_GET["search"];
     $sql_where = "WHERE article.title Like'%$search%' AND article_delete=0";
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $per_page = 17;
+    $fir_item = ($page - 1) * $per_page;
+    $page_count = ceil($all_article / $per_page);
+
+    $sql_limit = " LIMIT $fir_item,$per_page ";
 } else {
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $per_page = 17;
@@ -59,6 +65,7 @@ $rows = $re->fetch_all(MYSQLI_ASSOC);
 $page_title = "文章列表";
 
 
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -69,7 +76,7 @@ $page_title = "文章列表";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <?php include("../css.php") ?>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
 <body>

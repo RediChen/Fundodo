@@ -35,7 +35,7 @@ if ($re->num_rows > 0) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <?php include("../css.php") ?>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 </head>
 

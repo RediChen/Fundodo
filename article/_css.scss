@@ -1,0 +1,10 @@
+.fixed-height-table {
+    height: calc(17 * 45px);
+    overflow: hidden;
+}
+
+.arti-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
