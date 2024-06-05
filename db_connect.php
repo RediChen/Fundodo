@@ -16,3 +16,9 @@ $connect=new mysqli($server_name,$user_name,$password,$db_name);
 if ($connect->connect_error) {
     die("連線失敗: " . $connect->connect_error);
 }
+
+//*李柔
+$servername = "localhost";
+$username = "admin";
+$password = "12345";
+$dbname = "pet_hotel_db";
