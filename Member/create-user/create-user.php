@@ -15,8 +15,8 @@
         <div class="py-2">
             <h2>會員註冊</h2>
             <div class="d-flex justify-content-center">
-                <a href="login.php" class="btn bnt-primary">
-                    <img src="/midterm/images/logo.jpg" alt="">
+                <a href="../user-CMS/login.php" class="btn bnt-primary" title="前往登入頁">
+                    <img src="../images/logo.jpg" alt="">
                 </a>
             </div>
         </div>
