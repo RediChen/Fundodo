@@ -53,7 +53,7 @@ foreach ($_FILES["imageArr"]["error"] as $key => $code) :
 
     $fileName = fileName($new_id, $counter, $extension);
     $filePath = $target_path . $fileName;
-    if (move_uploaded_file($tmp_name, $fileName)) :
+    if (move_uploaded_file($tmp_name, $filePath)) :
         $value = "('$GENRE', '$new_id', '$counter', '$fileName')";
         array_push($valArr, $value);
     endif;
