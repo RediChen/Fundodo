@@ -9,9 +9,11 @@ $arti_id = $_GET["Aid"];
 
 $sql = "SELECT * FROM article WHERE id=$arti_id AND article_delete=0";
 $sql_img="SELECT * FROM article_img WHERE article_id='$arti_id'";
+$sql_sort="SELECT * FROM article_sort";
 
 $re = $connect->query($sql);
 $re_img=$connect->query($sql_img);
+$re_sort=$connect->query($sql_sort);
 $row = $re->fetch_assoc();
 
 
@@ -46,10 +48,9 @@ if ($re->num_rows > 0) {
                     <div class="mb-2">
                         <label for="sort" class="form-label">文章類別</label>
                         <select class="form-control" id="sort" name="sort">
-                            <option value="1" <?= $row["sort"] == 1 ? "selected" : "" ?>>領養專區</option>
-                            <option value="2" <?= $row["sort"] == 2 ? "selected" : "" ?>>毛孩照片</option>
-                            <option value="3" <?= $row["sort"] == 3 ? "selected" : "" ?>>飼養心得</option>
-                            <option value="4" <?= $row["sort"] == 4 ? "selected" : "" ?>>疑難雜症</option>
+                        <?php while ($row_sort = $re_sort->fetch_assoc()): ?>
+                            <option value="<?= $row_sort["id"] ?>" <?= $row["sort"] == $row_sort["id"] ? "selected" : "" ?>><?= $row_sort["sort"] ?></option>
+                            <?php endwhile; ?>
                         </select>
                     </div>
                     <div class="mb-2">
@@ -74,7 +75,10 @@ if ($re->num_rows > 0) {
                         }
                         ?>
                     </div>
-                    <button class="btn btn-primary" type="submit">修改</button>
+                    <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit">編輯</button>
+                    <a href="article_content.php?Aid=<?= $arti_id ?>" class="btn btn-primary">取消編輯</a>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <?php
 require_once("../db_connect.php");
+session_start();
+
 $sql_sort = "SELECT * FROM article_sort";
 $re_sort = $connect->query($sql_sort);
 $sort_rows = $re_sort->fetch_all(MYSQLI_ASSOC);
@@ -11,20 +13,37 @@ $all_article = $re_article->num_rows;
 
 $sql_where = "WHERE article_delete=0";
 
+if (!isset($_GET["sort"]) && !isset($_GET["search"]) && !isset($_GET["page"])) {
+    header("location:article_title.php?page=1");
+}
+
 if (isset($_GET["sort"])) {
     $sort = $_GET["sort"];
     $sql_where = "WHERE article.sort='$sort' AND article_delete=0";
+
+    $sql_article = "SELECT * FROM article WHERE sort=$sort";
+    $re_article = $connect->query($sql_article);
+    $all_article = $re_article->num_rows;
+
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $per_page = 17;
+    $fir_item = ($page - 1) * $per_page;
+    $page_count = ceil($all_article / $per_page);
+
+    $sql_limit = " LIMIT $fir_item,$per_page ";
 } elseif (isset($_GET["search"])) {
     $search = $_GET["search"];
     $sql_where = "WHERE article.title Like'%$search%' AND article_delete=0";
+} else {
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $per_page = 17;
+    $fir_item = ($page - 1) * $per_page;
+    $page_count = ceil($all_article / $per_page);
+
+    $sql_limit = " LIMIT $fir_item,$per_page ";
 }
 
-$page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$per_page = 17;
-$fir_item = ($page - 1) * $per_page;
-$page_count = ceil($all_article / $per_page);
 
-$sql_limit = " LIMIT $fir_item,$per_page ";
 
 
 
@@ -55,7 +74,17 @@ $page_title = "文章列表";
 
 <body>
     <div class="container">
-
+        <div class="d-flex justify-content-between mb-2">
+            <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+            <div>
+                <?php if (empty($_SESSION)) : ?>
+                    <a href="../Member/user-CMS/login.php" class="btn btn-primary">登入</a>
+                <?php else : ?>
+                    Hi,<?= $_SESSION["user"]["nickname"] ?>
+                    <a href="arti_session-destory.php" class="btn btn-primary">登出</a>
+                <?php endif ?>
+            </div>
+        </div>
 
         <ul class="nav nav-tabs mb-2">
             <li class="nav-item">
@@ -64,7 +93,7 @@ $page_title = "文章列表";
 
             <?php foreach ($sort_rows as $title_sort) : ?>
                 <li class="nav-tiem">
-                    <a class="nav-link <?php if (isset($_GET["sort"]) && $sort == $title_sort["id"]) echo "active"; ?>" href="article_title.php?sort=<?= $title_sort["id"] ?>"><?= $title_sort["sort"] ?></a>
+                    <a class="nav-link <?php if (isset($_GET["sort"]) && $sort == $title_sort["id"]) echo "active"; ?>" href="article_title.php?sort=<?= $title_sort["id"] ?>&page=1"><?= $title_sort["sort"] ?></a>
                 </li>
             <?php endforeach; ?>
 
@@ -95,9 +124,10 @@ $page_title = "文章列表";
                 <tbody>
                     <?php foreach ($rows as $article) : ?>
                         <tr class="text-nowrap">
-                            <td><a href="article_title.php?sort=<?= $article["sort"] ?>"><?= $article["arti_sort"] ?></a></td>
+                            <td><a href="article_title.php?sort=<?= $article["sort"] ?>&page=1"><?= $article["arti_sort"] ?></a></td>
                             <td>
-                                <div class="arti-title"><a href="article_content.php?Aid=<?= $article["id"] ?>"><?= $article["title"] ?></a></div></td>
+                                <div class="arti-title"><a href="article_content.php?Aid=<?= $article["id"] ?>"><?= $article["title"] ?></a></div>
+                            </td>
                             <td><?= $article["create_at"] ?></td>
                             <td><?= $article["nickname"] ?></td>
                         </tr>
@@ -108,11 +138,20 @@ $page_title = "文章列表";
         <?php if (isset($_GET["page"])) : ?>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <?php for ($i = 1; $i <= $page_count; $i++) : ?>
-                        <li class="page-item"><a class="page-link
+                    <?php if (isset($_GET["page"]) && isset($_GET["sort"])) : ?>
+                        <?php for ($i = 1; $i <= $page_count; $i++) : ?>
+                            <li class="page-item"><a class="page-link
+                            <?php if ($i == $page) echo "active" ?>
+                            " href="?sort=<?= $sort ?>&page=<?= $i ?>"><?= $i ?></a></li>
+                        <?php endfor; ?>
+                    <?php elseif (isset($_GET["page"])) : ?>
+                        <?php for ($i = 1; $i <= $page_count; $i++) : ?>
+                            <li class="page-item"><a class="page-link
                             <?php if ($i == $page) echo "active" ?>
                             " href="?page=<?= $i ?>"><?= $i ?></a></li>
-                    <?php endfor; ?>
+                        <?php endfor; ?>
+                    <?php endif ?>
+
                 </ul>
             </nav>
         <?php endif; ?>

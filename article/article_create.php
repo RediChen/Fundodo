@@ -1,9 +1,12 @@
 <?php
 require_once("../db_connect.php");
+session_start();
 
 $sql = "SELECT * FROM article";
+$sql_sort="SELECT * FROM article_sort";
 
 $re = $connect->query($sql);
+$re_sort=$connect->query($sql_sort);
 $row = $re->fetch_assoc();
 ?>
 
@@ -32,10 +35,9 @@ $row = $re->fetch_assoc();
                             文章類別
                         </label>
                         <select class="form-control" id="sort" name="sort">
-                            <option value="1" <?= $row["id"] == 1 ? "selected" : "" ?>>領養專區</option>
-                            <option value="2" <?= $row["id"] == 2 ? "selected" : "" ?>>毛孩照片</option>
-                            <option value="3" <?= $row["id"] == 3 ? "selected" : "" ?>>飼養心得</option>
-                            <option value="4" <?= $row["id"] == 4 ? "selected" : "" ?>>疑難雜症</option>
+                        <?php while ($row_sort = $re_sort->fetch_assoc()): ?>
+                            <option value="<?= $row_sort["id"] ?>" <?= $row["sort"] == $row_sort["id"] ? "selected" : "" ?>><?= $row_sort["sort"] ?></option>
+                            <?php endwhile; ?>
                         </select>
                     </div>
                     <div class="mb-2">
