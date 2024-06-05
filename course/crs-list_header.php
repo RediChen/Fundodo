@@ -53,35 +53,35 @@ endif;
 //*====================== 排序
 $order_code = $_GET['order'];
 $order_mode_code = floor($_GET['order'] / 10);
-$isDESC = $order_code % 10;
+$isASC = $order_code % 10;
 
 switch ($order_code):
     case 0:
-        $sql_ORDER = "ORDER BY courses.id ASC";
-        break;
-    case 1:
         $sql_ORDER = "ORDER BY courses.id DESC";
         break;
-    case 10:
-        $sql_ORDER = "ORDER BY courses.price ASC";
+    case 1:
+        $sql_ORDER = "ORDER BY courses.id ASC";
         break;
-    case 11:
+    case 10:
         $sql_ORDER = "ORDER BY courses.price DESC";
         break;
-    case 20:
-        $sql_ORDER = "ORDER BY courses.created_at ASC";
+    case 11:
+        $sql_ORDER = "ORDER BY courses.price ASC";
         break;
-    case 21:
+    case 20:
         $sql_ORDER = "ORDER BY courses.created_at DESC";
         break;
-    case 30:
-        $sql_ORDER = "ORDER BY courses.deleted_at ASC";
+    case 21:
+        $sql_ORDER = "ORDER BY courses.created_at ASC";
         break;
-    case 31:
+    case 30:
         $sql_ORDER = "ORDER BY courses.deleted_at DESC";
         break;
+    case 31:
+        $sql_ORDER = "ORDER BY courses.deleted_at ASC";
+        break;
     default:
-        $sql_ORDER = "ORDER BY courses.id ASC";
+        $sql_ORDER = "ORDER BY courses.id DESC";
     endswitch;
 
 //*====================== 分頁

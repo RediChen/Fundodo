@@ -75,7 +75,7 @@ function printErrorMsg($item)
                             <tr>
                                 <th>課程價格</th>
                                 <td>
-                                    <input type="number" name="price" class="form-control text-center" placeholder='1000'>
+                                    <input type="number" name="price" class="form-control text-center">
                                     <p class="text-danger">
                                         <?php printErrorMsg("price"); ?>
                                     </p>
