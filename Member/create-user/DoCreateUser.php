@@ -40,10 +40,12 @@ if($password!=$repassword){
 
 //echo "$name, $nickname, $gender, $email, $account, $password, $repassword, $dob,  $tel, $address";
 
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
+
 $now=date('Y-m-d H:i:s');
 
 $sql="INSERT INTO users (name, nickname, gender, email, account, password_hash, dob, tel, address, created_at)
-VALUES ('$name', '$nickname', '$gender', '$email', '$account', '$password', '$dob', '$tel', '$address', '$now')";
+VALUES ('$name', '$nickname', '$gender', '$email', '$account', '$password_hash', '$dob', '$tel', '$address', '$now')";
 //echo $sql;
 //exit;
 
@@ -56,4 +58,4 @@ else {
 }
 
 $conn->close();
-//header("location: users.php");
+header("location: ../user-CMS/login.php");
