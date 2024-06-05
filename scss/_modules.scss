@@ -88,3 +88,52 @@
 	@extend .popout-prototype;
 	display: none;
 }
+
+//* 表格
+.table-1d {
+	th,
+	td {
+		padding: 0.5rem;
+	}
+	th {
+		background-color: $color-heading;
+		color: $color-white;
+		white-space: nowrap;
+		text-align: center;
+	}
+	tr {
+		&:nth-child(odd) td {
+			background-color: $color-p2;
+		}
+		&:nth-child(even) td {
+			background-color: $color-muted;
+		}
+		td {
+			color: $color-heading;
+			text-align: center;
+		}
+	}
+}
+
+.table-2d {
+	th,
+	td {
+		padding: 0.5rem;
+	}
+	thead {
+		background-color: $color-heading;
+		color: $color-white;
+	}
+	tbody {
+		color: $color-heading;
+		tr:nth-child(4n+1) {
+			background-color: $color-p2;
+		}
+		tr:nth-child(4n+3) {
+			background-color: $color-muted;
+		}
+		tr:nth-child(even) {
+			background-color: $color-white;
+		}
+	}
+}

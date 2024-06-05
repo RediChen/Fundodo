@@ -4,6 +4,7 @@ require_once("/xampp/htdocs/connectDB_fdd.php");
 include($to_fdd . "tools/tool-lib.php");
 //todo 本地測試用
 include($to_fdd . "tools/console-lib.php");
+session_start();
 
 //todo 防呆待升級
 if (!isset($_POST['title'])) :
@@ -19,8 +20,32 @@ endif;
 
 $title = $_POST['title'];
 $abstract = $_POST['abstract'];
-$file = $_FILES['imageArr'];
+$files = $_FILES['imageArr'];
 $price = $_POST['price'];
+$noFileUploaded = ($files['error'] == 4);
+
+if (empty($title) || empty($abstract) || $noFileUploaded || empty($price)) :
+    $tempArr =
+        [
+                "title" => $title,
+                "abstract" => $abstract,
+                "file" => $file,
+                "price" => $price
+        ];
+        $errMsg = [
+            "title" =>"尚未輸入課程名稱",
+            "abstract" =>"尚未輸入課程摘要",
+            "file" => "尚未上傳課程用圖",
+            "price" =>"尚未輸入課程價格"
+        ];
+    foreach (array_keys($tempArr) as $key) :
+        $_SESSION["error_msg"][$key] = empty($tempArr[$key]) ? $errMsg[$key] : null;
+    endforeach;
+    leadTo("crs-detail-create.php");
+endif;
+
+//================================================
+
 $now = date('Y-m-d H:i:s');
 
 $sql = "INSERT INTO `courses` (`title`, `abstract`, `price`, 'created_at') VALUES ('$title', '$abstract', '$price', '$now')";
@@ -53,7 +78,7 @@ foreach ($_FILES["imageArr"]["error"] as $key => $code) :
 
     $fileName = fileName($new_id, $counter, $extension);
     $filePath = $target_path . $fileName;
-    if (move_uploaded_file($tmp_name, $fileName)) :
+    if (move_uploaded_file($tmp_name, $filePath)) :
         $value = "('$GENRE', '$new_id', '$counter', '$fileName')";
         array_push($valArr, $value);
     endif;

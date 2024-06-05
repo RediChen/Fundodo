@@ -24,7 +24,50 @@ include("./crs-list_header.php");
                 <!-- 分頁切換列 -->
                 <?php include("./crs_pagination.php") ?>
             </div>
-            <div>
+            <div class="hstack gap-3">
+                //todo
+                <a href="" class="btn btn-primary"></a>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php
+                        //order_mode_code from _header
+                        switch ($order_mode_code):
+                            case 0:
+                                echo "按 ID 排序";
+                                break;
+                            case 1:
+                                echo "按價格排序";
+                                break;
+                            case 2:
+                                echo "按上架時間排序";
+                                break;
+                            case 3:
+                                echo "按下架時間排序";
+                                break;
+                            default:
+                                echo "按 ID 排序";
+                        endswitch;
+                        ?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <?php
+                        function dropdownLink($code)
+                        {
+                            global $LINK_HERE;
+                            global $page;
+                            global $isASC;
+                            $tagStr = isset($_GET['tag'])
+                                ? 'tag=' . $_GET['tag'] . '&' : "";
+                            $order_code = 10 * $code + $isASC;
+                            return "$LINK_HERE?$tagStr" . "page=$page&order=$order_code";
+                        }
+                        ?>
+                        <li><a class="dropdown-item" href="<?= dropdownLink(0) ?>">按 ID 排序</a></li>
+                        <li><a class="dropdown-item" href="<?= dropdownLink(1) ?>">按價格排序</a></li>
+                        <li><a class="dropdown-item" href="<?= dropdownLink(2) ?>">按上架時間排序</a></li>
+                        <li><a class="dropdown-item" href="<?= dropdownLink(3) ?>">按下架時間排序</a></li>
+                    </ul>
+                </div>
                 <?php if (isset($_GET['tag_id'])) : ?>
                     <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET['order'] ?>" class="btn-x btn-sq" title="取消篩選">
                         <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
@@ -33,7 +76,7 @@ include("./crs-list_header.php");
             </div>
         </div>
         <!-- <table class="crs-list_table"> -->
-        <table class="crs-list_table">
+        <table class="table table-2d">
             <thead>
                 <tr class="text-nowrap text-center">
                     <th scope="col">課程 ID</th>
@@ -120,6 +163,7 @@ include("./crs-list_header.php");
         </div>
     <?php endif; ?>
 
+    <?php include($to_fdd . "tools/common-script.php"); ?>
     <script>
         const popout_n = document.getElementById("popout-notice");
         const btn_close_n = document.getElementById("pop-n-btn");

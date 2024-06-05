@@ -1,9 +1,10 @@
 <?php
-$to_tools = "/xampp/htdocs/Fundodo/tools/";
-require_once("/db_connect.php");
-include("tools/tool-lib.php");
+$to_fdd = "/xampp/htdocs/Fundodo/";
+require_once($to_fdd . "/db_connect.php");
+include($to_fdd . "tools/tool-lib.php");
 //todo 本地測試用
-include($to_tools . "/console-lib.php");
+include($to_fdd . "tools/console-lib.php");
+session_start();
 
 // $crs_id = $_GET['id'];
 // $sql = "SELECT * FROM courses WHERE id = $crs_id";
@@ -13,13 +14,21 @@ include($to_tools . "/console-lib.php");
 // endif;
 $BACK_LINK = "crs-list.php";
 
+function printErrorMsg($item)
+{
+    if (isset($_SESSION["error_msg"][$item])) :
+        echo $_SESSION["error_msg"][$item];
+        unset($_SESSION["error_msg"][$item]);
+    endif;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-tw">
 
 <head>
     <title>新增課程 | Fundodo</title>
-    <?php include($to_tools . "common-head.php"); ?>
+    <?php include($to_fdd . "tools/common-head.php"); ?>
 </head>
 
 <body>
@@ -34,18 +43,27 @@ $BACK_LINK = "crs-list.php";
                                 <th>課程名稱</th>
                                 <td>
                                     <input type="text" name="title" class="form-control text-center">
+                                    <p class="text-danger">
+                                        <?php printErrorMsg("title"); ?>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th>課程摘要</th>
                                 <td>
                                     <textarea name="abstract" rows='6'></textarea>
+                                    <p class="text-danger">
+                                        <?php printErrorMsg("abstract"); ?>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th>課程用圖</th>
                                 <td>
                                     <input type="file" name="imageArr[]" class="form-control text-center" multiple>
+                                    <p class="text-danger">
+                                        <?php printErrorMsg("file"); ?>
+                                    </p>
                                 </td>
                                 </td>
                             </tr>
@@ -57,7 +75,10 @@ $BACK_LINK = "crs-list.php";
                             <tr>
                                 <th>課程價格</th>
                                 <td>
-                                    <input type="number" name="price" class="form-control text-center" placeholder='1000'>
+                                    <input type="number" name="price" class="form-control text-center">
+                                    <p class="text-danger">
+                                        <?php printErrorMsg("price"); ?>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
