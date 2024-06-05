@@ -11968,47 +11968,9 @@ textarea.form-control-lg {
 /* primary colors */
 /* text color */
 /* functional color */
-.btn-sq, .btn-circle {
+.btn-sq {
   width: 40px;
   height: 40px;
-}
-
-.btn-prototype, .btn-x, .btn-x-text, .btn-o, .btn-o-text {
-  padding: 0.5rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.4s;
-}
-
-.btn-o, .btn-o-text {
-  background-color: #71c4ef;
-  color: #fff;
-}
-.btn-o:hover, .btn-o-text:hover {
-  background-color: hsl(200, 71%, 60%);
-}
-.btn-o:active, .btn-o-text:active {
-  background-color: hsl(200, 71%, 55%);
-}
-
-.btn-o-text {
-  color: hsl(200, 25%, 23%);
-}
-
-.btn-x, .btn-x-text {
-  background-color: #ef7971;
-  color: #fff;
-}
-.btn-x:hover, .btn-x-text:hover {
-  background-color: hsl(4, 80%, 60%);
-}
-.btn-x:active, .btn-x-text:active {
-  background-color: hsl(4, 80%, 55%);
-}
-
-.btn-x-text {
-  color: hsl(4, 25%, 23%);
 }
 
 .popout-prototype, .popout-confirm, .popout-notice {
@@ -12103,7 +12065,7 @@ body {
   width: 100%;
 }
 
-.fx-center, .btn-prototype, .btn-o, .btn-o-text, .btn-x, .btn-x-text {
+.fx-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12166,10 +12128,6 @@ body {
 .crs-list_info .dropdown-menu .dropdown-item:hover {
   background-color: #71c4ef;
   color: hsl(200, 25%, 23%);
-}
-
-.crs-list_table .tag-name-cell {
-  text-align: center;
 }
 
 .crs-list_table td:not([colspan]) {
