@@ -12210,3 +12210,14 @@ body {
   color: #343a40;
   text-align: center;
 }
+
+.fixed-height-table {
+  height: 765px;
+  overflow: hidden;
+}
+
+.arti-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
