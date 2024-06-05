@@ -25,12 +25,17 @@ include("./crs-list_header.php");
                 <?php include("./crs_pagination.php") ?>
             </div>
             <div class="hstack gap-3">
-                //todo
-                <a href="" class="btn btn-primary"></a>
+                <?php
+                $fa_class = $isASC ? 'wide-short' : 'short-wide';
+                $order_link = 10 * $order_mode_code + ($isASC ? 0 : 1);
+                ?>
+                <a href="?page=<?= $page ?>&order=<?= $order_link ?>" class="btn btn-primary text-light">
+                    <i class="fa-solid fa-arrow-down-<?= $fa_class ?>"></i>
+                </a>
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-primary dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?php
-                        //order_mode_code from _header
+                        //$order_mode_code from _header
                         switch ($order_mode_code):
                             case 0:
                                 echo "按 ID 排序";
@@ -75,8 +80,7 @@ include("./crs-list_header.php");
                 <?php endif; ?>
             </div>
         </div>
-        <!-- <table class="crs-list_table"> -->
-        <table class="table table-2d">
+        <table class="table-2d crs-list_table">
             <thead>
                 <tr class="text-nowrap text-center">
                     <th scope="col">課程 ID</th>
@@ -93,7 +97,8 @@ include("./crs-list_header.php");
                 <?php foreach ($crsArr as $course) : ?>
                     <?php $crs_id = isset($_GET['tag_id']) ? $course['course_id'] : $course['id'] ?>
                     <tr class="align-middle">
-                        <th rowspan='2' class="text-center"><?= $crs_id ?></th>
+                        <!-- rowspan='2'  -->
+                        <th class="text-center"><?= $crs_id ?></th>
                         <td><?= $course['title'] ?></td>
                         <td><?= $course['abstract'] ?></td>
                         <td>
@@ -114,6 +119,7 @@ include("./crs-list_header.php");
                         </td>
                     </tr>
                     <tr class="align-middle">
+                        <td class="tag-name-cell">標籤</td>
                         <?php
                         //* 查詢所有的 tags 名
                         $sql = "SELECT crs_categories.* FROM course_category JOIN crs_categories ON course_category.category_id = crs_categories.id WHERE course_category.course_id = $crs_id";
@@ -124,7 +130,9 @@ include("./crs-list_header.php");
                         foreach ($rows as $row) :
                             $tagArr[$row['id']] = $row['category'];
                         endforeach;
+                        //todo 將標籤色與欄 bgc 同步
                         ?>
+
                         <td colspan="6">
                             <div class="hstack gap-3">
                                 <?php foreach ($tagArr as $id => $category) : ?>

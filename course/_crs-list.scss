@@ -2,37 +2,54 @@
     display: flex;
     justify-content: space-between;
 }
+.crs-list_info .dropdown-menu {
+	background-color: $skyblue;
 
-//狀態欄的說明訊息
-.crs-list_table .col-status {
-	position: relative;
-    &:hover {
-		&::before, &::after {
-			opacity: 1;
+	.dropdown-item {
+		&:hover {
+			background-color: $primary;
+			color: $primary-text;
 		}
 	}
-    &::before, &::after {
-        position: absolute;
-		opacity: 0;
-		// transition: opacity 0.4s;
-        font-weight: 400;
-    }
-    &::before {
-        content: '';
-        display: block;
-        border: 1rem solid transparent;
-        border-top-color: $color-p2;
-        top: -1rem;
-    }
-	&::after {
-		content: "「尚未上架」、「在架上」、「已下架」";
-		background-color: $color-p2;
-		color: $color-heading;
-		line-height: 1.5;
-		top: -2rem;
-		right: 0;
+}
+
+.crs-list_table {
+	.tag-name-cell {
+		// background-color: $color-p2;
+		text-align: center;
 	}
 }
+
+//狀態欄的說明訊息
+// .crs-list_table .col-status {
+// 	position: relative;
+//     &:hover {
+// 		&::before, &::after {
+// 			opacity: 1;
+// 		}
+// 	}
+//     &::before, &::after {
+//         position: absolute;
+// 		opacity: 0;
+// 		// transition: opacity 0.4s;
+//         font-weight: 400;
+//     }
+//     &::before {
+//         content: '';
+//         display: block;
+//         border: 1rem solid transparent;
+//         border-top-color: $color-p2;
+//         top: -1rem;
+//     }
+// 	&::after {
+// 		content: "「尚未上架」、「在架上」、「已下架」";
+// 		background-color: $color-p2;
+// 		color: $color-heading;
+// 		line-height: 1.5;
+// 		top: -2rem;
+// 		right: 0;
+// 	}
+// }
 
 .crs-list_table td:not([colspan]) {
 	transition: background-color 0.4s;

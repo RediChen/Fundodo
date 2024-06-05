@@ -12043,6 +12043,48 @@ textarea.form-control-lg {
   display: none;
 }
 
+.table-1d th,
+.table-1d td {
+  padding: 0.5rem;
+}
+.table-1d th {
+  background-color: #343a40;
+  color: #fffefb;
+  white-space: nowrap;
+  text-align: center;
+}
+.table-1d tr:nth-child(odd) td {
+  background-color: #e7e1db;
+}
+.table-1d tr:nth-child(even) td {
+  background-color: #ced4da;
+}
+.table-1d tr td {
+  color: #343a40;
+  text-align: center;
+}
+
+.table-2d th,
+.table-2d td {
+  padding: 0.5rem;
+}
+.table-2d thead {
+  background-color: #343a40;
+  color: #fffefb;
+}
+.table-2d tbody {
+  color: #343a40;
+}
+.table-2d tbody tr:nth-child(4n+1) {
+  background-color: #e7e1db;
+}
+.table-2d tbody tr:nth-child(4n+3) {
+  background-color: #ced4da;
+}
+.table-2d tbody tr:nth-child(even) {
+  background-color: #fffefb;
+}
+
 /* 大小設定語法如下：
 至少要輸入 1 個參數 -> 第一個參數為字重： 100, 200, 300, ..., 900
 輸入 2 個參數 -> font-size 為 $fz
@@ -12118,52 +12160,16 @@ body {
   justify-content: space-between;
 }
 
-.crs-list_table th,
-.crs-list_table td {
-  padding: 0.5rem;
+.crs-list_info .dropdown-menu {
+  background-color: #eef6fa;
 }
-.crs-list_table thead {
-  background-color: #343a40;
-  color: #fff;
-}
-.crs-list_table tbody {
-  color: #343a40;
-}
-.crs-list_table tbody tr:nth-child(4n+1) {
-  background-color: #e7e1db;
-}
-.crs-list_table tbody tr:nth-child(4n+3) {
-  background-color: #ced4da;
-}
-.crs-list_table tbody tr:nth-child(even) {
-  background-color: #fff;
+.crs-list_info .dropdown-menu .dropdown-item:hover {
+  background-color: #71c4ef;
+  color: hsl(200, 25%, 23%);
 }
 
-.crs-list_table .col-status {
-  position: relative;
-}
-.crs-list_table .col-status:hover::before, .crs-list_table .col-status:hover::after {
-  opacity: 1;
-}
-.crs-list_table .col-status::before, .crs-list_table .col-status::after {
-  position: absolute;
-  opacity: 0;
-  font-weight: 400;
-}
-.crs-list_table .col-status::before {
-  content: "";
-  display: block;
-  border: 1rem solid transparent;
-  border-top-color: #e7e1db;
-  top: -1rem;
-}
-.crs-list_table .col-status::after {
-  content: "「尚未上架」、「在架上」、「已下架」";
-  background-color: #e7e1db;
-  color: #343a40;
-  line-height: 1.5;
-  top: -2rem;
-  right: 0;
+.crs-list_table .tag-name-cell {
+  text-align: center;
 }
 
 .crs-list_table td:not([colspan]) {
@@ -12187,28 +12193,7 @@ body {
   transition: background-color 0.4s;
 }
 .crs-list_tags:hover {
-  background-color: #fff;
-}
-
-.crs-detail_table th,
-.crs-detail_table td {
-  padding: 0.5rem;
-}
-.crs-detail_table th {
-  background-color: #343a40;
-  color: #fff;
-  white-space: nowrap;
-  text-align: center;
-}
-.crs-detail_table tr:nth-child(odd) td {
-  background-color: #e7e1db;
-}
-.crs-detail_table tr:nth-child(even) td {
-  background-color: #ced4da;
-}
-.crs-detail_table tr td {
-  color: #343a40;
-  text-align: center;
+  background-color: #fffefb;
 }
 
 .fixed-height-table {
