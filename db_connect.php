@@ -9,7 +9,7 @@ $password="12345";
 $db_name="db_test";
 
 //*陳致
-$password = ".glWcQbgMsmuL2rB";
+// $password = ".glWcQbgMsmuL2rB";
 
 $connect=new mysqli($server_name,$user_name,$password,$db_name);
 
