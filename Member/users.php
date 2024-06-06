@@ -168,7 +168,7 @@ if (isset($_GET["page"])) {
                         <th class="text-center table-danger">頭像路徑</th> -->
                                     <!-- <th class="text-center table-danger">郵箱</th> -->
                                     <!-- <th class="text-center table-danger">創建時間</th> -->
-                                    <th class="text-center table-danger" colspan="2">操作</th>
+                                    <th class="text-center table-danger" colspan="3">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -190,6 +190,7 @@ if (isset($_GET["page"])) {
                                         <!-- <td><?= $user["created_at"] ?></td> -->
                                         <td><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
                                         <td><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                        <td><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -221,6 +222,25 @@ if (isset($_GET["page"])) {
             </div>
         </div>
     </div>
+                    <!-- modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-5" id="deleteModalLabel">確認刪除</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                刪除使用者
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <a href="user-delete.php?id=<?= $user["id"] ?>" type="button" class="btn btn-danger">確認</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-script.php"); ?>
 </body>
 
 </html>
