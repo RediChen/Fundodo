@@ -9,7 +9,12 @@ include "./crs-list_header.php"; ?>
 </head>
 
 <body class="bg-light">
-    <div class="container">
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <div class="container">
         <div class="d-flex justify-content-between my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
@@ -186,6 +191,10 @@ include "./crs-list_header.php"; ?>
         <!-- 分頁切換列 -->
         <?php include "./crs_pagination.php"; ?>
     </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Modal : 下架課程成功訊息 -->
     <?php if (isset($_GET["dComplete"]) && $_GET["dComplete"] == 1) : ?>
         <style>
