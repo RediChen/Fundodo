@@ -59,6 +59,4 @@ if(isset($user_id)){
 } else {
     header("location: Member-center.php");
 }
-
 exit;
-?>
