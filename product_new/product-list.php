@@ -62,6 +62,7 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     JOIN category ON products.category_id = category.id
     JOIN productimages ON products.ProductID=productimages.ProductID
     WHERE products.category_id=$cate_id 
+    AND valid=0
     GROUP BY products.ProductID, category.name
     $orderClause
     LIMIT $firstItem, $perPage";
@@ -161,6 +162,7 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     JOIN category ON products.category_id = category.id
     JOIN productimages ON products.ProductID = productimages.ProductID
     WHERE price >= $min AND price <= $max
+    AND valid=0
     GROUP BY products.ProductID, category.name
     $orderClause
     LIMIT $firstItem, $perPage";
@@ -170,7 +172,6 @@ $result = $conn->query($sql);
 $productCount = $result->num_rows;
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$resultCount = $result->num_rows;
 if (isset($_GET["page"])) {
     $productCount = $allProductCount;
 }
@@ -210,7 +211,8 @@ if (isset($_GET["page"])) {
     </div>
     <div class="container">
         <div class="d-flex g-3">
-            <h1 class="mt-3 flex-fill"><?= $pageTitle ?></h1>
+            
+            <h1 class="mt-3 flex-fill"><a class="btn btn-primary" href="../dashboard/dashboard.html"><i class="fa-solid fa-house-chimney"></i></a> <?= $pageTitle ?></h1>
             <form class="align-self-center" action="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="請搜尋商品名稱" name="search">
@@ -265,8 +267,7 @@ if (isset($_GET["page"])) {
             </form>
         </div>
         <div class="py-2">
-            <?php if (isset($_GET["category"])) : ?>
-                <div class="my-3">
+                <div class="my-3 d-flex">
                     <ul class="nav nav-tabs flex-fill">
                         <?php foreach ($cateRows as $category) : ?>
                             <li class="nav-item">
@@ -274,8 +275,8 @@ if (isset($_GET["page"])) {
                             </li>
                         <?php endforeach ?>
                     </ul>
+                    <div>共 <?=$productCount?> 樣商品</div>
                 </div>
-            <?php endif ?>
             <table class="table table-hover">
                 <thead>
                     <tr class="text-nowrap text-center">

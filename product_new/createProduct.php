@@ -39,81 +39,44 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
                 </div>
                 <div class="mb-2">
                     <label for="form-label" class="form-label">商品圖片</label>
+                    <div></div>
                     <input type="file" class="form-control" name="images[]" multiple required>
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label">種類</label>
                     <select name="category" class="form-control">
                         <option selected>請選擇商品種類</option>
-                        <option value="1">飼料</option>
-                        <option value="2">零食</option>
-                        <option value="3">罐頭</option>
-                        <option value="4">玩具</option>
-                        <option value="5">保健</option>
-                        <option value="6">外出</option>
+                        <?php $sqlCategory = "SELECT * FROM category";
+                        $resultCategory = $conn->query($sqlCategory);
+                        $rowCategory = $resultCategory->fetch_all(MYSQLI_ASSOC); ?>
+                        <?php foreach ($rowCategory as $cate) : ?>
+                            <option value=<?= $cate["id"] ?>><?= $cate["name"] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label">品牌</label>
                     <select class="form-select" name="brand">
-                        <option selected>請選擇商品品牌</option>
-                        <option value="1">Farmina 法米納</option>
-                        <option value="2">go!</option>
-                        <option value="3">Hyperr 超躍</option>
-                        <option value="4">HALO 嘿囉</option>
-                        <option value="5">Nurture PRO 天然密碼</option>
-                        <option value="6">now</option>
-                        <option value="7">Orijen 歐睿健</option>
-                        <option value="8">ZiwiPeak 巔峰</option>
-                        <option value="9">優格</option>
-                        <option value="10">本牧</option>
-                        <option value="11">尊爵</option>
-                        <option value="12">莫比</option>
-                        <option value="13">紐頓</option>
-                        <option value="14">洛特夫</option>
-                        <option value="15">紐崔斯</option>
-                        <option value="16">柏萊富</option>
-                        <option value="17">K9 Natural</option>
-                        <option value="18">ACANA愛肯拿</option>
-                        <option value="19">第一饗宴</option>
-                        <option value="20">法國皇家</option>
-                        <option value="21">自然邏輯</option>
-                        <option value="22">小犬威利</option>
-                        <option value="23">陪心寵糧</option>
-                        <option value="24">汪喵星球</option>
-                        <option value="25">沙發馬鈴薯</option>
+                        <option selected>請選擇品牌</option>
+                        <?php $sqlBrand = "SELECT * FROM brands";
+                        $resultBrand = $conn->query($sqlBrand);
+                        $rows = $resultBrand->fetch_all(MYSQLI_ASSOC); ?>
+                        <?php foreach ($rows as $item) : ?>
+                            <option value="<?= $item["BrandID"] ?>"><?= $item["BrandName"] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="mb-2">
                     <label class="form-label">商品口味</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor1" value="1" name="flavors[]">
-                        <label class="form-check-label" for="flavor1">魚</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor2" value="2" name="flavors[]">
-                        <label class="form-check-label" for="flavor2">海鮮</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="3" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">鴨肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="4" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">雞肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="5" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">羊肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="6" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">豬肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="7" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">牛肉</label>
-                    </div>
+                    <?php $sqlFlavor = "SELECT * FROM tags";
+                    $resultFlavor = $conn->query($sqlFlavor);
+                    $rowFlavor = $resultFlavor->fetch_all(MYSQLI_ASSOC); ?>
+                    <?php foreach ($rowFlavor as $flavor) : ?>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="flavor<?= $flavor["TagID"] ?>" value=<?= $flavor["TagID"] ?> name="flavors[]">
+                            <label class="form-check-label" for="flavor<?= $flavor["TagID"] ?>"><?= $flavor["TagName"] ?></label>
+                        </div>
+                    <?php endforeach ?>
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label">價格</label>

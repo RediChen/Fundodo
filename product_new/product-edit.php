@@ -44,6 +44,7 @@ if ($result->num_rows > 0) {
         }
     </style>
 </head>
+
 <body>
     <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -65,8 +66,8 @@ if ($result->num_rows > 0) {
     <div class="container">
         <h1>修改商品資料</h1>
         <div class="text-end d-flex justify-content-between">
-            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash" ></i> 刪除此商品</button>
             <a href="product-list.php" class="btn btn-primary text-end"><i class="fa-solid fa-arrow-left"></i> 回商品列表</a>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i> 刪除此商品</button>
         </div>
         <hr>
         <form action="doUpdateProduct.php" method="post" enctype="multipart/form-data">
@@ -84,19 +85,19 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="mb-2">
                     <label for="form-label" class="form-label">商品圖片</label>
-                    <img class="box" src="/PHP-MYSQL/product_all/product_images/<?= $row["ImageName"] ?>" alt="">
+                    <div class="box"><img class="img-fluid object-fit-cover" src="../product_new/product_images/<?= $row["ImageName"] ?>"></div>
                     <input type="file" class="form-control" name="images[]" value="<?= $row["ImageName"] ?> " multiple required>
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label">種類</label>
                     <select name="category" class="form-control">
                         <option selected><?= $row["category_name"] ?></option>
-                        <option value="1">飼料</option>
-                        <option value="2">零食</option>
-                        <option value="3">罐頭</option>
-                        <option value="4">玩具</option>
-                        <option value="5">保健</option>
-                        <option value="6">外出</option>
+                        <?php $sqlCategory = "SELECT * FROM category";
+                        $resultCategory = $conn->query($sqlCategory);
+                        $rowCategory = $resultCategory->fetch_all(MYSQLI_ASSOC); ?>
+                        <?php foreach ($rowCategory as $cate) : ?>
+                            <option value=<?= $cate["id"] ?>><?= $cate["name"] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
                 <div class="mb-2">
@@ -113,34 +114,15 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="mb-2">
                     <label class="form-label">商品口味</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor1" value="1" name="flavors[]">
-                        <label class="form-check-label" for="flavor1">魚</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor2" value="2" name="flavors[]">
-                        <label class="form-check-label" for="flavor2">海鮮</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor3" value="3" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">鴨肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor4" value="4" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">雞肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor5" value="5" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">羊肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor6" value="6" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">豬肉</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="flavor7" value="7" name="flavors[]">
-                        <label class="form-check-label" for="flavor3">牛肉</label>
-                    </div>
+                    <?php $sqlFlavor = "SELECT * FROM tags";
+                    $resultFlavor = $conn->query($sqlFlavor);
+                    $rowFlavor = $resultFlavor->fetch_all(MYSQLI_ASSOC); ?>
+                    <?php foreach ($rowFlavor as $flavor) : ?>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="flavor<?= $flavor["TagID"] ?>" value=<?= $flavor["TagID"] ?> name="flavors[]">
+                            <label class="form-check-label" for="flavor<?= $flavor["TagID"] ?>"><?= $flavor["TagName"] ?></label>
+                        </div>
+                    <?php endforeach ?>
                 </div>
                 <div class="mb-2">
                     <label for="" class="form-label">價格</label>
