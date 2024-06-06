@@ -14,6 +14,10 @@ $sql_images = "SELECT * FROM users WHERE id = $id  AND valid = 1";
 $result_images = $conn->query($sql_images);
 $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
 
+$sql_images = "SELECT * FROM users WHERE id = $id  AND valid = 1";
+$result_images = $conn->query($sql_images);
+$rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
+
 if ($result->num_rows > 0) {
     $userExit = true;
     $title = $row["name"];

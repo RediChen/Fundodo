@@ -88,32 +88,28 @@ if (isset($_GET["page"])) {
 </head>
 
 <body>
-    <div class="d-flex">
-        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
-        <div class="w-100">
-            <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-            <div class="db_content">
-                <div class="container">
-                    <h1><?= $pageTitle ?></h1>
-                    <div class="py-2">
-                        <div class="d-flex justify-content-start gap-3">
-                            <div>
-                                <?php if (isset($_GET["search"])) : ?>
-                                    <a class="btn btn-primary" href="users.php"><i class="fa-solid fa-arrow-left"></i></a>
-                                <?php endif; ?>
-                            </div>
-                            <div class="d-flex gap-3">
-                                <form action="">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="搜尋相關會員" name="search">
-                                        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
-                                        </button>
-                                        <a href="create-user.php" class="btn btn-primary">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
+ <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+    <div class="container">
+        <h1><?= $pageTitle ?></h1>
+        <div class="py-2">
+            <div class="d-flex justify-content-start gap-3">
+                <div>
+                    <?php if (isset($_GET["search"])) : ?>
+                        <a class="btn btn-primary" href="users.php"><i class="fa-solid fa-arrow-left"></i></a>
+                    <?php endif; ?>
+                </div>
+                <div class="d-flex gap-3">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="搜尋相關會員" name="search">
+                            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <a href="create-user.php" class="btn btn-primary">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
 
                         </div>
 
@@ -144,83 +140,83 @@ if (isset($_GET["page"])) {
                                 <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                     <li class="page-item <?php if ($i == $page) echo "active" ?>">
 
-                                        <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
-                                    </li>
-                                <?php endfor; ?>
-                            </ul>
-                        </nav>
-                    <?php endif; ?>
-                    <?php if ($result->num_rows > 0) : ?>
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="text-center table-danger">id</th>
-                                    <th class="text-center table-danger">會員姓名</th>
-                                    <th class="text-center table-danger">暱稱</th>
-                                    <th class="text-center table-danger">帳號</th>
-                                    <!-- <th class="text-center table-danger">密碼</th> -->
-                                    <!-- <th class="text-center table-danger">性別</th> -->
-                                    <!-- <th class="text-center table-danger">權限</th> -->
-                                    <th class="text-center table-danger">會員等級</th>
-                                    <th class="text-center table-danger">生日</th>
-                                    <th class="text-center table-danger">電話</th>
-                                    <!-- <th class="text-center table-danger">頭像</th>
+                            <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
+        <?php endif; ?>
+        <?php if ($result->num_rows > 0) : ?>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center table-danger">id</th>
+                        <th class="text-center table-danger">會員姓名</th>
+                        <th class="text-center table-danger">暱稱</th>
+                        <th class="text-center table-danger">帳號</th>
+                        <!-- <th class="text-center table-danger">密碼</th> -->
+                        <!-- <th class="text-center table-danger">性別</th> -->
+                        <!-- <th class="text-center table-danger">權限</th> -->
+                        <th class="text-center table-danger">會員等級</th>
+                        <th class="text-center table-danger">生日</th>
+                        <th class="text-center table-danger">電話</th>
+                        <!-- <th class="text-center table-danger">頭像</th>
                         <th class="text-center table-danger">頭像路徑</th> -->
-                                    <!-- <th class="text-center table-danger">郵箱</th> -->
-                                    <!-- <th class="text-center table-danger">創建時間</th> -->
-                                    <th class="text-center table-danger" colspan="3">操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($rows as $user) : ?>
-                                    <tr>
-                                        <td><?= $user["id"] ?></td>
-                                        <td><?= $user["name"] ?></td>
-                                        <td><?= $user["nickname"] ?></td>
-                                        <td><?= $user["account"] ?></td>
-                                        <!-- <td><?= $user["password_hash"] ?></td> -->
-                                        <!-- <td><?= ($user["gender"] == 1) ? "男" : (($user["gender"] == 2) ? "女" : "未知") ?></td> -->
-                                        <td><?= ($user["user_level"] == 20) ? "管理者" : (($user["user_level"] == 3) ? "版主" : "會員") ?></td>
-                                        <!-- <td><?= ($user["valid"] == 3) ? "高級會員" : (($user["valid"] == 0) ? "封禁帳號" : "會員") ?></td> -->
-                                        <td><?= $user["dob"] ?></td>
-                                        <td><?= $user["tel"] ?></td>
-                                        <!-- <td><?= $user["avatar"] ?></td> -->
-                                        <!-- <td><?= $user["avatar_file"] ?></td> -->
-                                        <!-- <td><?= $user["email"] ?></td> -->
-                                        <!-- <td><?= $user["created_at"] ?></td> -->
-                                        <td><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
-                                        <td><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        <td><a href="user-delete.php?id=<?= $user["id"] ?>"><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></a></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                        <div class="text-center">
-                            <?php if (!isset($_GET["search"])) : ?>
-                                第 <?= $page ?> 頁 ,共 <?= $pageCount ?> 頁 , 共 <?= $userCount ?> 筆
-                            <?php endif; ?>
-                            <?php if (isset($_GET["search"])) : ?>
-                                共 <?= $userCount ?> 筆
-                            <?php endif; ?>
-                        </div>
-                        <?php if (isset($_GET["page"])) : ?>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
-                                        <li class="page-item <?php if ($i == $page) echo "active" ?>">
-
-                                            <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
-                                        </li>
-                                    <?php endfor; ?>
-                                </ul>
-                            </nav>
-                        <?php endif; ?>
-                    <?php else : ?>
-                        沒有使用者
-                    <?php endif; ?>
-                </div>
+                        <!-- <th class="text-center table-danger">郵箱</th> -->
+                        <!-- <th class="text-center table-danger">創建時間</th> -->
+                        <th class="text-center table-danger" colspan="3">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($rows as $user) : ?>
+                        <tr>
+                            <td><?= $user["id"] ?></td>
+                            <td><?= $user["name"] ?></td>
+                            <td><?= $user["nickname"] ?></td>
+                            <td><?= $user["account"] ?></td>
+                            <!-- <td><?= $user["password_hash"] ?></td> -->
+                            <!-- <td><?= ($user["gender"] == 1) ? "男" : (($user["gender"] == 2) ? "女" : "未知") ?></td> -->
+                            <td><?= ($user["user_level"] == 20) ? "管理者" : (($user["user_level"] == 3) ? "版主" : "會員") ?></td>
+                            <!-- <td><?= ($user["valid"] == 3) ? "高級會員" : (($user["valid"] == 0) ? "封禁帳號" : "會員") ?></td> -->
+                            <td><?= $user["dob"] ?></td>
+                            <td><?= $user["tel"] ?></td>
+                            <!-- <td><?= $user["avatar"] ?></td> -->
+                            <!-- <td><?= $user["avatar_file"] ?></td> -->
+                            <!-- <td><?= $user["email"] ?></td> -->
+                            <!-- <td><?= $user["created_at"] ?></td> -->
+                            <td><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
+                            <td><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="user-delete.php?id=<?= $user["id"] ?>"><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <?php if (!isset($_GET["search"])) : ?>
+                    第 <?= $page ?> 頁 ,共 <?= $pageCount ?> 頁 , 共 <?= $userCount ?> 筆
+                <?php endif; ?>
+                <?php if (isset($_GET["search"])) : ?>
+                    共 <?= $userCount ?> 筆
+                <?php endif; ?>
             </div>
+            <?php if (isset($_GET["page"])) : ?>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
+                            <li class="page-item <?php if ($i == $page) echo "active" ?>">
+
+                                <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                    </ul>
+                </nav>
+            <?php endif; ?>
+        <?php else : ?>
+            沒有使用者
+        <?php endif; ?>
+    </div>
         </div>
+      </div>
     </div>
 </body>
 
