@@ -70,7 +70,7 @@ $user_userid=!empty($_SESSION)?$_SESSION["user"]["id"] :"";
     <div class="container">
 
         <div class="d-flex justify-content-between mb-2">
-            <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+            <a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
             <div>
                 <?php if (empty($_SESSION)) : ?>
                     <a href="../Member/user-CMS/login.php" class="btn btn-primary">登入</a>

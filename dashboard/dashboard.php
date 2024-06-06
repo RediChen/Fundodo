@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css" />
+  <title>儀表板 | 後台儀表板</title>
+  <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
-<body>
+<body class="db_body">
   <div class="d-flex">
-    <div class="sidebar d-flex flex-column">
-      <img class="logo" src="fundodo logo.png" alt="">
+    <div class="db_sidebar d-flex flex-column">
+      <img class="fundodo-logo" src="fundodo-logo.png" alt="翻肚肚 LOGO">
       <a href="#"><i class="fa-solid fa-user"></i> &nbsp;會員管理</a>
       <a href="#"><i class="fa-solid fa-cart-shopping"></i> &nbsp;商品管理</a>
       <a href="#"><i class="fa-solid fa-dog"></i> &nbsp;旅館管理</a>
@@ -22,18 +18,18 @@
       <a href="#"><i class="fa-solid fa-ticket"></i> &nbsp;優惠券管理</a>
     </div>
     <div class="w-100">
-      <div class="header d-flex justify-content-between align-items-center">
+      <div class="db_header d-flex justify-content-between align-items-center">
         <span class="title">fundodo</span>
         <span class="user">Hi, user</span>
       </div>
-      <div class="content">
+      <div class="db_content">
         <h3>會員資料</h3>
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <span>共 180 人</span>
+          <span>共 (施工中) 人</span>
 
         </div>
         <div class="table-responsive">
-          <table class="table table-bordered table-hover">
+          <table class="table db_table table-hover">
             <thead class="table-container">
               <tr>
                 <th>ID</th>
@@ -50,10 +46,16 @@
                 <td>09234568892</td>
                 <td>台北市中正區羅斯福路3號4樓</td>
                 <td>
-                  <div class=" d-flex">
-                    <button class="btn btn-primary btn-sm mr-2"><i class="fa-solid fa-eye"></i></button>
-                    <button class="btn btn-dark btn-sm mr-2"><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                  <div class=" d-flex gap-3">
+                    <button class="btn btn-primary btn-sm mr-2">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn btn-dark btn-sm mr-2">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -65,13 +67,7 @@
     </div>
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <?php include("/xampp/htdocs/Fundodo/tools/common-script.php"); ?>
 </body>
 
 </html>
