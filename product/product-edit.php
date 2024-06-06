@@ -30,19 +30,10 @@ if ($result->num_rows > 0) {
 <html lang="en">
 
 <head>
-    <title>product edit</title>
+    <title>修改商品</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <?php include("css.php") ?>
-    <style>
-        .container {
-            max-width: 600px;
-        }
-    </style>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
+    
 </head>
 
 <body>
@@ -63,7 +54,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container c-600">
         <h1>修改商品資料</h1>
         <div class="text-end d-flex justify-content-between">
             <a href="product-list.php" class="btn btn-primary text-end"><i class="fa-solid fa-arrow-left"></i> 回商品列表</a>
@@ -85,7 +76,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="mb-2">
                     <label for="form-label" class="form-label">商品圖片</label>
-                    <div class="box"><img class="img-fluid object-fit-cover" src="../product_new/product_images/<?= $row["ImageName"] ?>"></div>
+                    <div class="product_box"><img class="img-fluid object-fit-cover" src="./product_images/<?= $row["ImageName"] ?>"></div>
                     <input type="file" class="form-control" name="images[]" value="<?= $row["ImageName"] ?> " multiple required>
                 </div>
                 <div class="mb-2">

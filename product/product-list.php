@@ -181,14 +181,8 @@ if (isset($_GET["page"])) {
 <html lang="en">
 
 <head>
-    <title>product list</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-
-    <?php include("css.php") ?>
+    <title>商品列表</title>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
 <body>
@@ -211,8 +205,8 @@ if (isset($_GET["page"])) {
     </div>
     <div class="container">
         <div class="d-flex g-3">
-            
-            <h1 class="mt-3 flex-fill"><a class="btn btn-primary" href="../dashboard/dashboard.html"><i class="fa-solid fa-house-chimney"></i></a> <?= $pageTitle ?></h1>
+
+            <h1 class="mt-3 flex-fill"><a class="btn btn-primary" href="../dashboard/dashboard.php"><i class="fa-solid fa-house-chimney"></i></a> <?= $pageTitle ?></h1>
             <form class="align-self-center" action="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="請搜尋商品名稱" name="search">
@@ -267,16 +261,16 @@ if (isset($_GET["page"])) {
             </form>
         </div>
         <div class="py-2">
-                <div class="my-3 d-flex">
-                    <ul class="nav nav-tabs flex-fill">
-                        <?php foreach ($cateRows as $category) : ?>
-                            <li class="nav-item">
-                                <a class="nav-link <?php if (isset($_GET["category"]) && $_GET["category"] == $category["id"]) echo "active"; ?>" href="?category=<?= $category["id"] ?>&page=1&order=1"><?= $category["name"] ?></a>
-                            </li>
-                        <?php endforeach ?>
-                    </ul>
-                    <div>共 <?=$productCount?> 樣商品</div>
-                </div>
+            <div class="my-3 d-flex">
+                <ul class="nav nav-tabs flex-fill">
+                    <?php foreach ($cateRows as $category) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if (isset($_GET["category"]) && $_GET["category"] == $category["id"]) echo "active"; ?>" href="?category=<?= $category["id"] ?>&page=1&order=1"><?= $category["name"] ?></a>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+                <div>共 <?= $productCount ?> 樣商品</div>
+            </div>
             <table class="table table-hover">
                 <thead>
                     <tr class="text-nowrap text-center">
@@ -329,8 +323,8 @@ if (isset($_GET["page"])) {
                                 <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=6"><i class="fa-solid fa-sort-down"></i></a>
                             <?php endif ?>
                         </th>
-                        <th>庫存量 
-                        <?php if (($order != 7) && isset($_GET["category"])) : ?>
+                        <th>庫存量
+                            <?php if (($order != 7) && isset($_GET["category"])) : ?>
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=7"><i class="fa-solid fa-sort-up"></i></a>
                             <?php elseif (($order != 8) && isset($_GET["category"])) : ?>
                                 <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=8"><i class="fa-solid fa-sort-down"></i></a>
@@ -351,8 +345,10 @@ if (isset($_GET["page"])) {
                         <tr>
                             <td class="align-middle text-center"><?= $prod["ProductID"] ?></td>
                             <td class="align-middle"><?= $prod["ProductName"] ?></td>
-                            <td class="box align-middle">
-                                <img class="object-fit-cover img-fluid" src="../product_new/product_images/<?= $prod["ImageName"] ?>" alt="">
+                            <td class="align-middle">
+                                <div class="product_box">
+                                    <img class="object-fit-cover img-fluid" src="./product_images/<?= $prod["ImageName"] ?>" alt="">
+                                </div>
                             </td>
                             <td class="fixed-width align-middle">
                                 <p><?= $prod["description"] ?></p>

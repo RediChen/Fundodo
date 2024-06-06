@@ -9,20 +9,12 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
 <html lang="en">
 
 <head>
-    <title>addProduct</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <?php include("css.php") ?>
-    <style>
-        .container {
-            max-width: 600px;
-        }
-    </style>
+    <title>新增商品</title>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container c-600">
         <div class="mx-auto ">
             <h1 class="mb-3">新增商品</h1>
             <div class="text-end">
