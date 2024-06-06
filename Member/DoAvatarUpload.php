@@ -55,9 +55,9 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 if(isset($user_id)){
     $encoded_user_id = urlencode($user_id);
-    header("location: Member-center.php?id=$encoded_user_id");
+    header("location: member-center.php?id=$encoded_user_id");
 } else {
-    header("location: Member-center.php");
+    header("location: member-center.php");
 }
 
 exit;

@@ -64,7 +64,7 @@ if (password_verify($password, $stored_password_hash)) {
     exit();
   } else {
     // 用户等级不为 20，重定向到其他页面或执行其他操作
-    header("location: Member-center.php");
+    header("location: member-center.php");
     exit();
   }
 }

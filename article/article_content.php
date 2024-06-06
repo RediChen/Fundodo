@@ -73,7 +73,7 @@ $user_userid=!empty($_SESSION)?$_SESSION["user"]["id"] :"";
             <a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
             <div>
                 <?php if (empty($_SESSION)) : ?>
-                    <a href="../Member/user-CMS/login.php" class="btn btn-primary">登入</a>
+                    <a href="../member/user-CMS/login.php" class="btn btn-primary">登入</a>
                 <?php else : ?>
                     Hi,<?= $user_nickname ?>
                     <a href="arti_session-destory.php" class="btn btn-primary">登出</a>

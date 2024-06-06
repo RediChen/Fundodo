@@ -86,7 +86,7 @@ $page_title = "文章列表";
             <a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
             <div>
                 <?php if (empty($_SESSION)) : ?>
-                    <a href="../Member/login.php" class="btn btn-primary">登入</a>
+                    <a href="../member/login.php" class="btn btn-primary">登入</a>
                 <?php else : ?>
                     Hi,<?= $_SESSION["user"]["nickname"] ?>
                     <a href="arti_session-destory.php" class="btn btn-primary">登出</a>
