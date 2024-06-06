@@ -1,0 +1,60 @@
+
+    body {
+      font-family:  sans-serif;
+      background-color: #E3E3E3;
+    }
+
+    .logo {
+      width: 180px;
+      padding-left: 30px;
+      padding-bottom: 10px;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #757575;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding-top: 20px;
+  }
+
+    .sidebar a {
+      color: #E3E3E3;
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #71C4EF;
+      color: #757575;
+    }
+
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #CCCBC8;
+      padding: 10px 20px;
+    }
+
+    .header .user {
+      float: right;
+    }
+
+    .table-container {
+      background-color: #757575;
+      color:#E3E3E3 ;
+      
+    }
+    .table th{
+      font-weight: 300;
+    }
+    .table td {
+      color: $gray-800;
+    }
