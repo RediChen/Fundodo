@@ -114,7 +114,7 @@ include "./crs-list_header.php";
                 <th scope="col">課程摘要</th>
                 <th scope="col">課程縮圖</th>
                 <th scope="col">課程價格</th>
-                <th scope="col">觀看人次</th>
+                <!-- <th scope="col">觀看人次</th> -->
                 <th scope="col" class="col-status">狀態</th>
                 <th scope="col">功能鈕</th>
               </tr>
@@ -135,7 +135,7 @@ include "./crs-list_header.php";
                   <td class="text-end">
                     NT$<?= number_format($course["price"]) ?>
                   </td>
-                  <td>（施工中）</td>
+                  <!-- <td>（施工中）</td> -->
                   <?php
                   $isOn = empty($course["deleted_at"]);
                   $statusClass = $isOn ? "text-nowrap" : "";
@@ -178,9 +178,9 @@ include "./crs-list_header.php";
                   </td>
                   <td>
                     <!-- <div> -->
-                    <a href="#" class="btn btn-primary btn-sq text-light fx-center mx-auto" title="編輯標籤">
+                    <!-- <a href="#" class="btn btn-primary btn-sq text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
-                    </a>
+                    </a> -->
                     <!-- </div> -->
                   </td>
                 </tr>

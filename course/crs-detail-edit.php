@@ -33,111 +33,123 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
 </head>
 
 <body>
-  <div class="container">
-    <div class="my-3 d-flex justify-content-between align-items-center">
-      <div style="width: 158px;"></div>
-      <h1>編輯課程資料</h1>
-      <a href="crs-list.php" class="btn btn-primary text-light fx-center">
-        <i class="fa-solid fa-right-to-bracket"></i>
-        <span class="ms-3">返回課程列表</span>
-      </a>
-    </div>
-    <div class="fx-center">
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <form action="./doUpdateCrs.php?id=<?= $crs_id ?>&edit=true" method="post">
-            <table class="table-1d">
-              <tr>
-                <td style="width: 364px;"><?= $crs["id"] ?></td>
-                <th>ID</th>
-                <td><?= $crs["id"] ?></td>
-                <input type="hidden" name="id" value="<?= $crs["id"] ?>">
-                <!-- 不允許更改 ID，但是因為接手的頁面還是需要 ID -->
-              </tr>
-              <tr>
-                <td class="text-nowrap"><?= $crs["title"] ?></td>
-                <th>課程名稱</th>
-                <td>
-                  <input type="text" name="title" class="text-center" placeholder='<?= $crs["title"] ?>' value='<?= $crs["title"] ?>'>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p style="text-align: justify;">
-                    <?= $crs["abstract"] ?>
-                  </p>
-                </td>
-                <th>課程摘要</th>
-                <td>
-                  <textarea name="abstract" rows='6' value='<?= $crs["abstract"] ?>'><?= $crs["abstract"] ?></textarea>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="../images/<?= $crs_img_name ?>" alt="" class="object-fit-cover">
-                </td>
-                <th>課程縮圖</th>
-                <td>
-                  <input type="file" name="imageArr" class="form-control text-center" id="toUpload">
-                  <div id="thumbnail-box">
-                    <img src="" alt="" class="thumbnails object-fit-cover" style="display: none; max-width: 500px" id="img-showcase">
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  NT$<?= number_format($crs["price"]) ?>
-                </td>
-                <th>課程價格</th>
-                <td>
-                  <input type="number" name="price" class="text-center" placeholder='<?= $crs["price"] ?>' value='<?= $crs["price"] ?>'>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <?= $crs["deleted_at"]
-                    ? "已於" . $crs["deleted_at"] . "下架"
-                    : "在架上" ?>
-                </td>
-                <th>上架狀態</th>
-                <td>
-                  <?php if ($crs["deleted_at"]) : ?>
-                    <button class="btn btn-primary mx-auto" id="pop-c-act" title="下架課程">
-                      重新上架
-                    </button>
-                  <?php else : ?>
-                    <button class="btn btn-danger mx-auto" id="pop-c-act" title="下架課程">
-                      下架課程
-                    </button>
-                  <?php endif; ?>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="./crs-detail.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq rounded-circle fx-center mx-auto" title="取消變更">
-                    <i class="fa-solid fa-check"></i>
-                  </a>
-                </td>
-                <th>結束編輯</th>
-                <td>
-                  <button type="submit" class="btn btn-danger btn-sq rounded-circle fx-center mx-auto" title="確定更新">
-                    <i class="fa-solid fa-check"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="3">
-                  <?php if(isset($_SESSION['error_msg']['crs-update'])) : ?>
-                    <h2 class="text-danger"><?=$_SESSION['error_msg']['crs-update']?></h2>
+  <div class="d-flex">
+    <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+    <div class="w-100">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+      <div class="db_content">
+        <div class="container">
+          <div class="my-3 d-flex justify-content-between align-items-center">
+            <div style="width: 158px;"></div>
+            <h1>編輯課程資料</h1>
+            <a href="crs-list.php" class="btn btn-primary text-light fx-center">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <span class="ms-3">返回課程列表</span>
+            </a>
+          </div>
+          <div class="fx-center">
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <form action="./doUpdateCrs.php?id=<?= $crs_id ?>&edit=true" method="post">
+                  <table class="table-1d">
+                    <?php if (isset($_SESSION['error_msg']['crs-update'])) : ?>
+                      <tr>
+                        <td colspan="3">
+                          <h2 class="text-danger">
+                            <?= $_SESSION['error_msg']['crs-update'] ?>
+                          </h2>
+                          <?php unset($_SESSION['error_msg']['crs-update']); ?>
+                        </td>
+                      </tr>
                     <?php endif; ?>
-                </td>
-              </tr>
-            </table>
-          </form>
+                    <tr>
+                      <td style="width: 364px;"><?= $crs["id"] ?></td>
+                      <th>ID</th>
+                      <td><?= $crs["id"] ?></td>
+                      <input type="hidden" name="id" value="<?= $crs["id"] ?>">
+                      <!-- 不允許更改 ID，但是因為接手的頁面還是需要 ID -->
+                    </tr>
+                    <tr>
+                      <td class="text-nowrap"><?= $crs["title"] ?></td>
+                      <th>課程名稱</th>
+                      <td>
+                        <input type="text" name="title" class="text-center" placeholder='<?= $crs["title"] ?>' value='<?= $crs["title"] ?>'>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p style="text-align: justify;">
+                          <?= $crs["abstract"] ?>
+                        </p>
+                      </td>
+                      <th>課程摘要</th>
+                      <td>
+                        <textarea name="abstract" rows='6' value='<?= $crs["abstract"] ?>'><?= $crs["abstract"] ?></textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img src="../images/<?= $crs_img_name ?>" alt="" class="object-fit-cover">
+                      </td>
+                      <th>課程縮圖</th>
+                      <td>
+                        <input type="file" name="imageArr" class="form-control text-center" id="toUpload">
+                        <div id="thumbnail-box">
+                          <img src="" alt="" class="thumbnails object-fit-cover" style="display: none; max-width: 500px" id="img-showcase">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        NT$<?= number_format($crs["price"]) ?>
+                      </td>
+                      <th>課程價格</th>
+                      <td>
+                        <input type="number" name="price" class="text-center" placeholder='<?= $crs["price"] ?>' value='<?= $crs["price"] ?>'>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <?= $crs["deleted_at"]
+                          ? "已於" . $crs["deleted_at"] . "下架"
+                          : "在架上" ?>
+                      </td>
+                      <th>上架狀態</th>
+                      <td>
+                        <?php if ($crs["deleted_at"]) : ?>
+                          <button class="btn btn-primary mx-auto" id="pop-c-act" title="下架課程">
+                            重新上架
+                          </button>
+                        <?php else : ?>
+                          <button class="btn btn-danger mx-auto" id="pop-c-act" title="下架課程">
+                            下架課程
+                          </button>
+                        <?php endif; ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="./crs-detail.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq rounded-circle fx-center mx-auto" title="取消變更">
+                          <i class="fa-solid fa-check"></i>
+                        </a>
+                      </td>
+                      <th>結束編輯</th>
+                      <td>
+                        <button type="submit" class="btn btn-danger btn-sq rounded-circle fx-center mx-auto" title="確定更新">
+                          <i class="fa-solid fa-check"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- Modal 1: 編輯課程完成 -->
   <!-- Modal 2: 刪除課程確認 -->
   <div class="popout-confirm" id="popout-confirm">

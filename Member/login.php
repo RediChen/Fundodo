@@ -19,65 +19,72 @@ endif;
 
   <style>
     body {
-      background: linear-gradient(to right, #71C4EF 25%, #EEF6FA);
+      background: no-repeat linear-gradient(10deg, #71C4EF 25%, #EEF6FA);
+      overflow: hidden;
     }
 
-    .login-panel {
-      width: 840px;
-      height: 800px;
-      background: #EEF6FA;
+    .logo {
+      padding: 2rem;
+      border-radius: 50%;
     }
   </style>
 </head>
 
 <body>
-  <div class="border vh-100 d-flex justify-content-center align-items-center">
-    <div class="login-panel">
-      <div class="text-center">
-        <h1 class="h2 mt-2">Fundodo</h1>
-        <div class="text-center">
-          <img src="../dashboard/fundodo-logo.png" alt="" style="width: 500px; height: auto;">
+  <div class="vh-100 container fx-center">
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 col-md-6 row">
+        <div class="logo col-6 bg-primary bg-opacity-50">
+          <img src="../dashboard/fundodo-logo.png" alt="" class="object-fit-cover">
         </div>
-        <hr>
       </div>
 
-      <form action="DoLogin.php" method="post">
-        <div class="mt-5 mb-3 text-center">
-          <label for="">帳號</label>
-          <input type="text" name="account">
-          <?php if (isset($_SESSION["errorMsg"]['account'])) : ?>
-            <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['account'] ?></p>
-            <?php unset($_SESSION["errorMsg"]['account']); ?>
-          <?php endif; ?>
+      <div class="col-12 col-md-6 col-lg-5 mt-3">
+        <div class="vstack justify-content-center h-100">
+          <form action="DoLogin.php" method="post" class="w-100 py-5 col-lg-4 px-5 bg-light rounded-3">
+            <div class="text-center">
+              <label for="">帳號</label>
+              <input type="text" name="account" class="form-control mt-1">
+              <?php if (isset($_SESSION["errorMsg"]['account'])) : ?>
+                <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['account'] ?></p>
+                <?php unset($_SESSION["errorMsg"]['account']); ?>
+              <?php endif; ?>
+            </div>
+            <div class="mb-1 mt-3 text-center">
+              <label for="">密碼</label>
+              <input type="password" name="password" class="form-control mt-1">
+              <?php if (isset($_SESSION["errorMsg"]['password'])) : ?>
+                <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['password'] ?></p>
+                <?php unset($_SESSION["errorMsg"]['password']); ?>
+              <?php endif; ?>
+            </div>
+            <div class="hstack justify-content-center gap-5 mt-5">
+              <a href="create-user.php" class="btn btn-success">
+                註冊帳號
+              </a>
+              <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+                <div class="text-center">
+                  <button class="btn btn-secondary" type="submit" disabled>
+                    送出
+                  </button>
+                </div>
+              <?php else : ?>
+                <div class="text-center">
+                  <button class="btn btn-primary" type="submit">
+                    送出
+                  </button>
+                </div>
+              <?php endif; ?>
+            </div>
+            <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+              <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
+            <?php elseif (isset($_GET["logout"]) && $_GET["logout"] == 1) : ?>
+              <p class="text-primary-emphasis text-center h5 my-3">帳號或密碼錯誤</p>
+              <?php unset($_GET["logout"]); ?>
+            <?php endif; ?>
+          </form>
         </div>
-        <div class="mb-1 mt-3 text-center">
-          <label for="">密碼</label>
-          <input type="password" name="password">
-          <?php if (isset($_SESSION["errorMsg"]['password'])) : ?>
-            <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['password'] ?></p>
-            <?php unset($_SESSION["errorMsg"]['password']); ?>
-          <?php endif; ?>
-        </div>
-        <div class="mb-2 mt-3 text-center">
-          <a href="create-user.php" class="">
-            <label for="">建立帳號</label>
-          </a>
-        </div>
-        <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
-        <?php else : ?>
-          <div class="text-center">
-            <button class="btn btn-primary" type="submit">
-              送出
-            </button>
-          </div>
-        <?php endif; ?>
-        <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
-          <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
-        <?php elseif (isset($_SESSION["errorMsg"])) : ?>
-          <p class="text-danger text-center h5 my-3">帳號或密碼錯誤</p>
-          <?php unset($_SESSION["errorMsg"]); ?>
-        <?php endif; ?>
-      </form>
+      </div>
     </div>
   </div>
   <?php include("../member/js.php") ?>
