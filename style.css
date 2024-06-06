@@ -12230,3 +12230,16 @@ body {
   max-height: 150px;
   padding: 5px;
 }
+
+.product_box {
+  max-width: 108px;
+  height: auto;
+}
+
+.fixed-width {
+  max-width: 200px;
+}
+
+.container.c-600 {
+  max-width: 600px;
+}
