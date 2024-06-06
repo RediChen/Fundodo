@@ -12122,8 +12122,10 @@ body {
   justify-content: space-between;
 }
 
+
 .crs-list_info .dropdown-menu {
   background-color: #eef6fa;
+
 }
 .crs-list_info .dropdown-menu .dropdown-item:hover {
   background-color: #71c4ef;
@@ -12152,15 +12154,35 @@ body {
 }
 .crs-list_tags:hover {
   background-color: #fffefb;
+
 }
 
-.fixed-height-table {
-  height: 765px;
-  overflow: hidden;
+.favorite-icon {
+  background: #eee;
+  font-size: 1.4rem;
+  right: 10px;
+  bottom: 10px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: lightskyblue;
+}
+.favorite-icon.active {
+  color: lightcoral;
 }
 
-.arti-title {
+.ellipsis {
+  max-width: 350px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.hotel-image {
+  max-width: 250px;
+  max-height: 150px;
+  padding: 5px;
 }
