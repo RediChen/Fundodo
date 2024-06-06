@@ -4,55 +4,6 @@
 	width: $leng;
 	height: $leng;
 }
-.btn-circle {
-	@extend .btn-sq;
-	$radius: 50%;
-	// border-radius: 50% !important;
-	//為了覆蓋 .btn-prototype
-}
-.btn-prototype {
-	$radius: .5rem;
-	padding: 0.5rem;
-	@extend .fx-center;
-	font-weight: 500;
-	border: none;
-	border-radius: $radius;
-	transition: background-color 0.4s;
-}
-
-.btn-o {
-	@extend .btn-prototype;
-	background-color: $primary;
-	color: $white;
-
-	&:hover {
-		background-color: hsl(200, 71%, 60%);
-	}
-	&:active {
-		background-color: hsl(200, 71%, 55%);
-	}
-}
-.btn-o-text {
-	@extend .btn-o;
-	color: $primary-text;
-}
-
-.btn-x {
-	@extend .btn-prototype;
-	background-color: $danger;
-	color: $white;
-
-	&:hover {
-		background-color: hsl(4, 80%, 60%);
-	}
-	&:active {
-		background-color: hsl(4, 80%, 55%);
-	}
-}
-.btn-x-text {
-	@extend .btn-x;
-	color: $danger-text;
-}
 
 //* Modal
 .popout-prototype {
