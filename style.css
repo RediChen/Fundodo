@@ -12071,50 +12071,63 @@ body {
   align-items: center;
 }
 
-.db_aside {
-  min-width: 252px;
-  min-height: 100vh;
-  background-color: #6c757d;
+.db_body {
+  background-color: #E3E3E3;
+}
+
+.fundodo-logo {
+  width: 180px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+.db_sidebar {
+  width: 200px;
+  background-color: #757575;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   color: #fff;
+  padding-top: 20px;
 }
 
-.db_aside .logo {
+.db_sidebar a {
+  color: #E3E3E3;
   display: block;
-  padding-block: 1rem;
-  color: #71c4ef;
-}
-
-.db_aside ul {
-  font-family: "Noto Sans TC", sans;
-  font-size: 32px;
-  font-weight: 600;
+  padding: 10px 20px;
+  text-decoration: none;
   text-align: center;
 }
-.db_aside ul li {
-  line-height: 2;
-  border-radius: 1rem;
+
+.db_sidebar a:hover {
+  background-color: #71C4EF;
+  color: #757575;
 }
-.db_aside ul li.active {
-  background-color: #71c4ef;
+
+.db_content {
+  margin-left: 200px;
+  padding: 20px;
 }
 
 .db_header {
-  min-height: 116px;
-  background-color: #ced4da;
+  background-color: #CCCBC8;
+  padding: 10px 20px;
+}
+
+.db_header .user {
+  float: right;
+}
+
+.db_table {
+  background-color: #757575;
+  color: #E3E3E3;
+}
+.db_table th {
+  font-weight: 300;
+}
+.db_table td {
   color: #343a40;
-}
-
-.db_header h1, .db_header .h1 {
-  line-height: 116px;
-}
-
-.db_header .link-box a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 3px solid #b9a399;
-  color: #b9a399;
 }
 
 .crs-list_info {
