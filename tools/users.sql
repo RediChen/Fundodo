@@ -17,11 +17,6 @@ SET time_zone = "+08:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- 資料庫： `fundodo`
---
-
--- --------------------------------------------------------
 
 --
 -- 資料表結構 `citys`
