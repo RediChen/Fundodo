@@ -1,6 +1,6 @@
 <?php
 
-require_once("../connect_tools/midterm_connect.php");
+require_once("../Member/midterm_connect.php");
 
 session_start();
 

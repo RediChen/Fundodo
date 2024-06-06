@@ -1,0 +1,40 @@
+.login-logo {
+  height: 128px;
+}
+.cart-icon {
+  /*  */
+  top: 30px;
+  /*  */
+  font-size: 36px;
+  text-decoration: none;
+  color: #000;
+  span {
+    top: -4px;
+    right: -8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+  }
+}
+
+.favorite-icon {
+  background: #fff;
+  font-size: 1.4rem;
+  right: 10px;
+  bottom: 10px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #ccc;
+  &.active {
+    color: palevioletred;
+  }
+}

@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>會員註冊</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link>
-    <?php include("../connect_tools/css.php") ?>
+    <?php include("../member/css.php") ?>
 </head>
 
 <body>
@@ -15,8 +15,8 @@
         <div class="py-2">
             <h2>會員註冊</h2>
             <div class="d-flex justify-content-center">
-                <a href="../user-CMS/login.php" class="btn bnt-primary" title="前往登入頁">
-                    <img src="../images/logo.jpg" alt="">
+                <a href="../member/login.php" class="btn bnt-primary" title="前往登入頁">
+                    <img src="../member/images/logo.jpg" alt="">
                 </a>
             </div>
         </div>
@@ -84,7 +84,6 @@
 
 
 
-    <?php include("../connect_tools/js.php") ?>
 </body>
 
 </html>
