@@ -1,16 +1,7 @@
 <?php
 include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 
-include "/xampp/htdocs/Fundodo/tools/tool-lib.php";
-session_start();
-
-$fundodo = "localhost/fundodo/";
-if (!isset($_SESSION["user"]) || ($_SESSION["user"]["user_level"] != 20)) :
-  leadTo('/Fundodo/member/login.php');
-endif;
-
-
-require_once("db_connect.php");
+require_once("../db_connect.php");
 
 if (!isset($_GET["category"]) && !isset($_GET["search"]) && !isset($_GET["max"]) && !isset($_GET["min"])) {
     header("location:product-list.php?category=1&&page=1&&order=1");
@@ -286,9 +277,9 @@ if (isset($_GET["page"])) {
                             </ul>
                             <div>共 <?= $productCount ?> 樣商品</div>
                         </div>
-                        <table class="table table-hover">
+                        <table class="table table-hover table-1d">
                             <thead>
-                                <tr class="text-nowrap text-center">
+                                <tr class="text-nowrap text-center position-sticky top-0">
                                     <th>編號
                                         <?php if (($order != 2) && isset($_GET["category"])) : ?>
                                             <a href="?category=<?= $cate_id ?>&page=<?= $page ?>&order=2"><i class="fa-solid fa-sort-up"></i></a>
@@ -353,6 +344,7 @@ if (isset($_GET["page"])) {
                                             <a href="?min=<?= $min ?>&max=<?= $max ?>&page=<?= $page ?>&order=8"><i class="fa-solid fa-sort-down"></i></a>
                                         <?php endif ?>
                                     </th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -369,7 +361,7 @@ if (isset($_GET["page"])) {
                                             <p><?= $prod["description"] ?></p>
                                         </td>
                                         <td class="align-middle text-center"><?= $prod["category_name"] ?></td>
-                                        <td class="align-middle text-center">NT$<?= $prod["price"] ?></td>
+                                        <td class="align-middle text-center">NT$<?= number_format($prod["price"]) ?></td>
                                         <td class="align-middle text-center"><?= $prod["on_shelves_time"] ?></td>
                                         <td class="align-middle text-center"><?= $prod["stock"] ?></td>
                                         <td class="align-middle text-center"><a class="btn btn-primary" href="product-edit.php?id=<?= $prod["ProductID"] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>

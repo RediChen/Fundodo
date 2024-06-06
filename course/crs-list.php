@@ -1,5 +1,4 @@
 <?php
-include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 include "./crs-list_header.php";
 ?>
 <!DOCTYPE html>
@@ -101,7 +100,7 @@ include "./crs-list_header.php";
                 </ul>
               </div>
               <?php if (isset($_GET["tag_id"])) : ?>
-                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn-x btn-sq" title="取消篩選">
+                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn btn-danger btn-sq fx-center text-light" title="取消篩選">
                   <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
                 </a>
               <?php endif; ?>
