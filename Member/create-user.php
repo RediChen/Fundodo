@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link>
     <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
+    <style>
+        body {
+            background: linear-gradient(to right, #71C4EF 25%, #EEF6FA);
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +21,7 @@
             <h2>會員註冊</h2>
             <div class="d-flex justify-content-center">
                 <a href="../member/login.php" class="btn bnt-primary" title="前往登入頁">
-                    <img src="../member/images/logo.jpg" alt="">
+                    <img src="../dashboard/fundodo-logo.png" alt="">
                 </a>
             </div>
         </div>
@@ -73,7 +78,7 @@
                     <label for="" class="form-label">地址: </label>
                     <input type="text" class="form-control" name="address">
                 </div>
-                <button class="btn btn-primary justify-content-end" type="submit">送出</button>
+                <button class="btn btn-danger justify-content-end" type="submit">送出</button>
             </form>
         </div>
 
