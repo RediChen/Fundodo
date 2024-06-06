@@ -88,6 +88,7 @@ if (isset($_GET["page"])) {
 </head>
 
 <body>
+ <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
     <div class="container">
         <h1><?= $pageTitle ?></h1>
         <div class="py-2">
@@ -149,21 +150,21 @@ if (isset($_GET["page"])) {
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">id</th>
-                        <th class="text-center">會員姓名</th>
-                        <th class="text-center">暱稱</th>
-                        <th class="text-center">帳號</th>
-                        <!-- <th class="text-center">密碼</th> -->
-                        <!-- <th class="text-center">性別</th> -->
-                        <!-- <th class="text-center">權限</th> -->
-                        <th class="text-center">會員等級</th>
-                        <th class="text-center">生日</th>
-                        <th class="text-center">電話</th>
-                        <!-- <th class="text-center">頭像</th>
-                        <th class="text-center">頭像路徑</th> -->
-                        <!-- <th class="text-center">郵箱</th> -->
-                        <!-- <th class="text-center">創建時間</th> -->
-                        <th class="text-center" colspan="3">操作</th>
+                        <th class="text-center table-danger">id</th>
+                        <th class="text-center table-danger">會員姓名</th>
+                        <th class="text-center table-danger">暱稱</th>
+                        <th class="text-center table-danger">帳號</th>
+                        <!-- <th class="text-center table-danger">密碼</th> -->
+                        <!-- <th class="text-center table-danger">性別</th> -->
+                        <!-- <th class="text-center table-danger">權限</th> -->
+                        <th class="text-center table-danger">會員等級</th>
+                        <th class="text-center table-danger">生日</th>
+                        <th class="text-center table-danger">電話</th>
+                        <!-- <th class="text-center table-danger">頭像</th>
+                        <th class="text-center table-danger">頭像路徑</th> -->
+                        <!-- <th class="text-center table-danger">郵箱</th> -->
+                        <!-- <th class="text-center table-danger">創建時間</th> -->
+                        <th class="text-center table-danger" colspan="3">操作</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -204,23 +205,19 @@ if (isset($_GET["page"])) {
                         <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                             <li class="page-item <?php if ($i == $page) echo "active" ?>">
 
-                                            <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
-                                        </li>
-                                    <?php endfor; ?>
-                                </ul>
-                            </nav>
-                        <?php endif; ?>
-                    <?php else : ?>
-                        沒有使用者
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
+                                <a class="page-link" href="?page=<?= $i ?>&order=<?= $order ?>"><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                    </ul>
+                </nav>
+            <?php endif; ?>
+        <?php else : ?>
+            沒有使用者
+        <?php endif; ?>
     </div>
         </div>
       </div>
     </div>
-
 </body>
 
 </html>
