@@ -1,42 +1,59 @@
-.db_aside {
-	min-width: 252px;
-	min-height: 100vh;
-	background-color: $color-body;
-	color: $white;
-}
-.db_aside .logo {
-    display: block;
-    padding-block: 1rem;
-    color: $primary;
-}
-.db_aside ul {
-	@include ff-noto(32px);
-	font-weight: 600;
-	text-align: center;
 
-	li {
-		line-height: 2;
-        border-radius: 1rem;
-	}
-    li.active {
-        background-color: $primary;
+    .db_body {
+      background-color: $color-ivory;
     }
-}
-.db_header {
-    min-height: 116px;
-    background-color: $color-muted;
-    color: $color-heading;
-}
 
-.db_header h1 {
-    line-height: 116px;
-}
+    .fundodo-logo {
+      width: 180px;
+      padding-left: 30px;
+      padding-bottom: 10px;
+    }
+    .db_sidebar {
+      width: 200px;
+      background-color: #757575;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding-top: 20px;
+  }
 
-.db_header .link-box a {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: $white;
-    border: 3px solid $color-p1;
-    color: $color-p1;
-}
+    .db_sidebar a {
+      color: #E3E3E3;
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .db_sidebar a:hover {
+      background-color: #71C4EF;
+      color: #757575;
+    }
+
+    .db_content {
+      margin-left: 200px;
+      padding: 20px;
+    }
+
+    .db_header {
+      background-color: #CCCBC8;
+      padding: 10px 20px;
+    }
+
+    .db_header .user {
+      float: right;
+    }
+
+    .db_table {
+      background-color: #757575;
+      color:#E3E3E3 ;
+      
+    th{
+      font-weight: 300;
+    }
+    td {
+      color: $gray-800;
+    }
+  }
