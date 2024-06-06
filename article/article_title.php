@@ -107,8 +107,14 @@ $page_title = "文章列表";
 
         </ul>
 
-        <div class="d-flex justify-content-between mb-2">
-            <a class="btn btn-primary" href="article_create.php">發表文章</a>
+        <div class="d-flex mb-2 <?php if(!empty($_SESSION)){
+            echo "justify-content-between";
+        }else{
+            echo "justify-content-end";
+        } ?>">
+        <?php if(!empty($_SESSION)): ?>
+                <a class="btn btn-primary" href="article_create.php">發表文章</a>
+        <?php endif ?>
             <form action="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="搜尋文章" name="search">

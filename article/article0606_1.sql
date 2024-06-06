@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-06-06 11:41:11
+-- 產生時間： 2024-06-06 15:49:27
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -71,7 +71,10 @@ INSERT INTO `article` (`id`, `title`, `content`, `sort`, `create_at`, `userid`, 
 (28, '家裡新來的妹妹', '', 2, '2024-06-06 11:04:04', 3, 0),
 (29, '零食要怎麼挑比較好，有推薦的天然的狗狗零食嗎？', '我的狗狗體質比較敏感一點\r\n之前有吃到會讓牠拉肚子的零食\r\n醫生建議說盡量買純天然的零食會比較好\r\n這次挑選想要更謹慎一點\r\n想請教大家有挑選零食的要點嗎\r\n或是有不錯的天然寵物零食可以推薦給我嗎', 3, '2024-06-06 11:08:59', 4, 0),
 (30, '賀 三個月大白熊', '我家狗兒子Haru滿三個月啦\r\n可喜可賀\r\n', 2, '2024-06-06 11:09:31', 4, 0),
-(31, '想訓練狗咬飛盤.球請教前輩', '寵物種類：狗\r\n\r\n求助類型：訓練咬東西\r\n\r\n寵物資料：3歲臺灣犬\r\n\r\n諮詢期限：\r\n\r\n其他備註：\r\n\r\n我家的狗不太會去咬食物以外的東西，益智餌食玩具也沒什麼在玩，想說訓練下讓牠好好運動。結果我發現我好難讓牠咬東西，他只有撒嬌跟吃東西會開口\r\n', 4, '2024-06-06 11:19:19', 4, 0);
+(31, '想訓練狗咬飛盤.球請教前輩', '寵物種類：狗\r\n\r\n求助類型：訓練咬東西\r\n\r\n寵物資料：3歲臺灣犬\r\n\r\n諮詢期限：\r\n\r\n其他備註：\r\n\r\n我家的狗不太會去咬食物以外的東西，益智餌食玩具也沒什麼在玩，想說訓練下讓牠好好運動。結果我發現我好難讓牠咬東西，他只有撒嬌跟吃東西會開口\r\n', 4, '2024-06-06 11:19:19', 4, 0),
+(32, '這裡有狗', '看看狗\r\n\r\n', 1, '2024-06-06 13:47:01', 1, 1),
+(33, '有狗', '狗', 1, '2024-06-06 14:48:44', 1, 0),
+(34, '測試一下', '測試一下', 1, '2024-06-06 15:38:53', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,9 @@ INSERT INTO `article_img` (`id`, `img_path`, `article_id`) VALUES
 (20, 'arti_img_28_2.jfif', 28),
 (21, 'arti_img_28_3.jfif', 28),
 (22, 'arti_img_30_1.jfif', 30),
-(23, 'arti_img_31_1.jfif', 31);
+(23, 'arti_img_31_1.jfif', 31),
+(25, 'arti_img_ud_32_1.jfif', 32),
+(26, 'arti_img_34_1.jfif', 34);
 
 -- --------------------------------------------------------
 
@@ -202,7 +207,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nickname`, `account`, `password_hash`, `gender`, `user_level`, `valid`, `dob`, `tel`, `email`, `avatar`, `avatar_file`, `address`, `adr_city`, `adr_district`, `created_at`, `deleted_at`) VALUES
-(1, '管理者', 'admin', 'deer258', '$2y$10$CLAnVfXFtSmn1ns3aQ/qLeEP7tC9Fx3n6uaC46bX.pDyU5Y7vjjhq', '1', 20, 1, '1990-01-19', '0900000000', 'admin@outlook.com', '龜龜', '1_7.png', '聖德學院', 6, 312, '2023-04-10 12:00:00', NULL),
+(1, '管理者', 'admin', 'admin', '$2y$10$Z9WAKSn5UFDrwzFmT3uM5OZtXf.kILWJ3C9r5evAgi2qZ.MvDEH5G', '1', 20, 1, '1990-01-19', '0900000000', 'admin@outlook.com', '龜龜', '1_7.png', '聖德學院', 6, 312, '2023-04-10 12:00:00', NULL),
 (2, '邱越靈', 'Betty', 'Betty119', '$2y$10$QcBq0S71eBVvXxhXTM3o0uIxSggZwe1R4i3YCP.PFEi66RTDcgTnW', '2', 0, 3, '1997-09-20', '0960008329', 'mallette7168@outlook.com', '', '0', '新光路16號6樓', 8, 412, '2023-04-10 22:02:02', NULL),
 (3, '余林瑄', 'otter', 'otter740', '$2y$10$QcBq0S71eBVvXxhXTM3o0uIxSggZwe1R4i3YCP.PFEi66RTDcgTnW', '2', 3, 1, '2008-05-16', '0919491929', 'belinda3377@yahoo.com', '', '0', '重慶路36號', 8, 407, '2023-04-11 08:24:08', NULL),
 (4, '詹庭樂', 'Sarah', 'Sarah38', '$2y$10$QcBq0S71eBVvXxhXTM3o0uIxSggZwe1R4i3YCP.PFEi66RTDcgTnW', '2', 0, 1, '1962-11-21', '0930290396', 'cullen7136@outlook.com', '', '0', '朝富一街56號', 8, 407, '2023-04-11 13:39:19', NULL),
@@ -544,13 +549,13 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `article_img`
 --
 ALTER TABLE `article_img`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `article_sort`
