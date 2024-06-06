@@ -23,11 +23,6 @@ session_start();
       height: 800px;
       background: #EEF6FA;
     }
-
-    .sub {
-      align-self: flex-start;
-      margin-left: 55%;
-    }
   </style>
 </head>
 
@@ -37,7 +32,7 @@ session_start();
       <div class="text-center">
         <h1 class="h2 mt-2">Fundodo</h1>
         <div class="text-center">
-          <img src="../dashboard/fundodo-logo.png" alt="">
+          <img src="../dashboard/fundodo-logo.png" alt="" style="width: 500px; height: auto;">
         </div>
         <hr>
       </div>
@@ -64,19 +59,23 @@ session_start();
             <label for="">建立帳號</label>
           </a>
         </div>
-        <button class="btn btn-primary sub" type="submit">
-          送出
-        </button>
+        <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+        <?php else : ?>
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit">
+              送出
+            </button>
+          </div>
+        <?php endif; ?>
         <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
           <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
+        <?php elseif (isset($_SESSION["errorMsg"])) : ?>
+          <p class="text-danger text-center h5 my-3">帳號或密碼錯誤</p>
+          <?php unset($_SESSION["errorMsg"]); ?>
         <?php endif; ?>
       </form>
-
     </div>
-
   </div>
-
-
   <?php include("../member/js.php") ?>
 </body>
 
