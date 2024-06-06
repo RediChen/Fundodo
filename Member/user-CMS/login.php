@@ -42,8 +42,8 @@ session_start();
         <div class="login-panel">
             <div class="text-center">
                 <h1 class="h2 mt-2">Fundodo</h1>
-                <a href="create-user.php" class="btn bnt-primary">
-                    <img src="/midterm/images/logo.jpg" alt="">
+                <a href="../create-user/create-user.php" class="btn bnt-primary" title="前往創建會員頁">
+                    <img src="../images/logo.jpg" alt="">
                 </a>
                 <hr>
             </div>

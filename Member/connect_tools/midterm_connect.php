@@ -2,8 +2,7 @@
 $servername = "localhost";
 $username = "admin";
 $password = "12345";
-$dbname = "midterm";
-// $dbname = "db_test";
+$dbname = "fundodo";
     
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
