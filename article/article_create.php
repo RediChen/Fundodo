@@ -5,8 +5,8 @@ session_start();
 $sql = "SELECT * FROM article";
 $sql_sort="SELECT * FROM article_sort";
 
-$re = $connect->query($sql);
-$re_sort=$connect->query($sql_sort);
+$re = $conn->query($sql);
+$re_sort=$conn->query($sql_sort);
 $row = $re->fetch_assoc();
 ?>
 
