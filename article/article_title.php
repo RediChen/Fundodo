@@ -82,10 +82,10 @@ $page_title = "文章列表";
 <body>
     <div class="container">
         <div class="d-flex justify-content-between mb-2">
-            <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+            <a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
             <div>
                 <?php if (empty($_SESSION)) : ?>
-                    <a href="../Member/user-CMS/login.php" class="btn btn-primary">登入</a>
+                    <a href="../Member/login.php" class="btn btn-primary">登入</a>
                 <?php else : ?>
                     Hi,<?= $_SESSION["user"]["nickname"] ?>
                     <a href="arti_session-destory.php" class="btn btn-primary">登出</a>
@@ -117,7 +117,6 @@ $page_title = "文章列表";
             </form>
         </div>
         <div class="fixed-height-table">
-
 
             <table class="table table-bordered">
                 <thead>

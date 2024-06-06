@@ -12168,7 +12168,11 @@ body {
 }
 
 .fixed-height-table {
+<<<<<<< HEAD
+  min-height: 765px;
+=======
   height: 765px;
+>>>>>>> 45cb8f44524efeac2538cc1bba6ac43b0500ae26
   overflow: hidden;
 }
 
