@@ -119,10 +119,6 @@ if ($row === null) {
                             <td><?= $row["account"] ?></td>
                         </tr>
                         <tr>
-                            <th>密碼</th>
-                            <td><?= $row["password_hash"] ?></td>
-                        </tr>
-                        <tr>
                             <th>性別</th>
                             <td><?= ($row["gender"] == 1) ? "男" : (($row["gender"] == 2) ? "女" : "未知") ?></td>
                         </tr>
@@ -132,7 +128,7 @@ if ($row === null) {
                         </tr>
                         <tr>
                             <th>會員等級</th>
-                            <td><?= ($row["valid"] == 3) ? "高級會員" : (($row["valid"] == 0) ? "封禁帳號" : "會員") ?></td>
+                            <td><?= ($row["valid"] == 3) ? "高級會員" : (($row["valid"] == 0) ? "封禁帳號" : "一般會員") ?></td>
                         </tr>
                         <tr>
                             <th>生日</th>
@@ -141,10 +137,6 @@ if ($row === null) {
                         <tr>
                             <th>電話</th>
                             <td><?= $row["tel"] ?></td>
-                        </tr>
-                        <tr>
-                            <th>頭像</th>
-                            <td><?= $row["avatar"] ?></td>
                         </tr>
                         <tr>
                             <th>頭像路徑</th>
