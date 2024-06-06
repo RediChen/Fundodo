@@ -1,5 +1,5 @@
 <?php
-require_once("../db_connect.php");
+include("/xampp/htdocs/Fundodo/db_connect.php");
 
 // 把照片從資料庫撈出來
 
