@@ -33,30 +33,22 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>會員中心</title>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
 <body>
-    <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
-    <h1>會員中心</h1>
-    <h2>個人信息</h2>
-    <p>用戶名：<?= $row['name'] ?></p>
-    <p>郵箱：<?= $row['email'] ?></p>
-    <p>聯絡方式：<?= $row['tel'] ?></p>
-
-    <h2>修改密码</h2>
-    <form action="change_password.php" method="post">
-        <label for="old_password">舊密码：</label>
-        <input type="password" id="old_password" name="old_password" required><br>
-        <label for="new_password">新密码：</label>
-        <input type="password" id="new_password" name="new_password" required><br>
-        <input type="submit" value="修改密码">
-    </form>
+<a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+    <h1 class="text-center">會員中心</h1>
+    <h2 class="text-center">個人信息</h2>
+    <p class="text-center">用戶名：<?= $row['name'] ?></p>
+    <p class="text-center">郵箱：<?= $row['email'] ?></p>
+    <p class="text-center">聯絡方式：<?= $row['tel'] ?></p>
 
     <!-- 其他功能 -->
-    <h2>上傳頭像</h2>
+    <h2 class="text-center">上傳頭像</h2>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-2">
                         <label for="" class="form-label">名稱</label>

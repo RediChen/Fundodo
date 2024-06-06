@@ -39,7 +39,7 @@ $resultOldImages = $conn->query($sqlOldImages);
 $oldImages = $resultOldImages->fetch_all(MYSQLI_ASSOC);
 
 foreach ($oldImages as $oldImage) {
-    $oldImagePath = "../product_new/product_images/" . $oldImage['ImageName']; // 旧图片文件路径
+    $oldImagePath = "./product_images/" . $oldImage['ImageName']; // 旧图片文件路径
     unlink($oldImagePath); // 删除旧图片文件
 }
 
@@ -56,7 +56,7 @@ foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
 
     if (in_array(strtolower($fileExtension), $allowed_extensions)) { // 轉小寫
         $newFileName = "product_id" . $id . $image_counter . "." . $fileExtension;
-        $targetFilePath = "../product_new/product_images/" . $newFileName;
+        $targetFilePath = "./product_images/" . $newFileName;
 
         if (move_uploaded_file($tmp_name, $targetFilePath)) {
             // 插入圖片數據，只存儲文件名
