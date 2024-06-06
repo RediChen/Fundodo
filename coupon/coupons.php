@@ -54,7 +54,7 @@ $categoryClause = "";
 
 if ($category != "all") {
     if ($category == "active") {
-        $categoryClause = "AND status = 1 ";
+        $categoryClause = "AND status = 1 AND start_date <= NOW() AND end_date >= NOW()";
     } elseif ($category == "expired") {
         $categoryClause = "AND end_date < NOW() ";
     } elseif ($category == "inactive") {
@@ -128,174 +128,210 @@ function getOrderLink($column, $current_order_by, $current_order)
 </head>
 
 <body>
-    <div class="container-fluid px-5 my-4">
-        <h2 class="text-start">優惠券列表</h2>
-        <form action="">
-            <div class="row my-3 justify-content-end">
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="請輸入優惠券名稱或代碼" name="search" value="<?= $search ?>">
-                        <button class="btn btn-primary btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </div>
-            </div>
-            <!-- 日期篩選 -->
-            <div class="row justify-content-end">
-                <div class="col-md-2">
-                    <input type="date" class="form-control" name="start_date">
-                </div>
-                ~
-                <div class="col-md-2">
-                    <input type="date" class="form-control" name="end_date">
-                </div>
-                <div class="col-md-auto">
-                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <div class="mb-3">
-                    <a class="btn btn-warning" href="create-coupon.php">新增優惠券 <i class="fa-solid fa-plus"></i></a>
-                </div>
-                <!-- 優惠券篩選分類 -->
-                <div class="d-flex justify-content-center my-3">
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=all">全部</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=1">商品</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=2">寵物旅館</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=3">線上課程</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=active">進行中</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=expired">已截止</a>
-                    <a class="btn btn-warning mx-1" href="coupons.php?category=inactive">已停用</a>
-                    <?php if (isset($_GET["search"])) : ?>
-                        <div class="mx-1">
-                            <a class="btn btn-secondary" href="coupons.php"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="d-flex">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+        <div class="w-100">
+            <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+            <div class="db_content">
+                <div class="container-fluid ">
+                    <h2 class="text-start">優惠券列表</h2>
+                    <form action="">
+                        <div class="row my-3 justify-content-end">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="請輸入優惠券名稱或代碼" name="search" value="<?= $search ?>">
+                                    <button class="btn btn-primary btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </form>
+                        <!-- 日期篩選 -->
+                        <div class="row justify-content-end">
+                            <div class="col-md-2">
+                                <input type="date" class="form-control" name="start_date" value="<?= $start_date ?>">
+                            </div>
+                            ~
+                            <div class="col-md-2">
+                                <input type="date" class="form-control" name="end_date" value="<?= $end_date ?>">
+                            </div>
+                            <div class="col-md-auto">
+                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
 
-        <div class="pb-2">
-            <?php if (isset($_GET["search"])) : ?>您搜尋的是"<?= $search ?>"，<?php endif; ?>共 <?= $couponCount ?> 筆資料
-        </div>
-        <div class="couponList">
-        <?php if ($result->num_rows > 0) : ?>
-            <table class="table table-1d table-hover">
-                <thead>
-                    <tr class="table-warning">
-                        <th><a href="<?= getOrderLink("id", $order_by, $order) ?>">ID <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("name", $order_by, $order) ?>">優惠券名稱 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("code", $order_by, $order) ?>">代碼 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("category_name", $order_by, $order) ?>">適用範圍 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("coupontype", $order_by, $order) ?>">折扣單位 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("value", $order_by, $order) ?>">折扣面額 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("min_limit", $order_by, $order) ?>">低消金額 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("start_date", $order_by, $order) ?>">開始日期 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("end_date", $order_by, $order) ?>">截止日期 <i class="fa-solid fa-sort"></i></a></th>
-                        <th><a href="<?= getOrderLink("created_at", $order_by, $order) ?>">更新時間 <i class="fa-solid fa-sort"></i></a></th>
-                        <th class="text-center text-primary">優惠券狀態</th>
-                        <th class="text-center text-primary">操作</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($rows as $coupon) : ?>
-    <tr>
-        <td><?= $coupon["id"] ?></td>
-        <td><?= $coupon["name"] ?></td>
-        <td><?= $coupon["code"] ?></td>
-        <td><?= isset($coupon["category_name"]) ? $coupon["category_name"] : 'N/A' ?></td>
-        <td><?= $coupon["coupontype"] == 1 ? "%數折扣" : "金額折扣" ?></td>
-        <td><?= $coupon["coupontype"] == 1 ? $coupon["value"] . " %" : $coupon["value"] . " 元" ?></td>
-        <td><?= $coupon["min_limit"] ?></td>
-        <td><?= $coupon["start_date"] ?></td>
-        <td><?= $coupon["end_date"] ?></td>
-        <td><?= $coupon["created_at"] ?></td>
-        <td><?= $coupon["status"] == 1 ? "可使用" : "已停用" ?></td>
-        <td>
-    <a class="btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看</a>
-    <?php if ($coupon["status"] == 1) : ?>
-        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">停用</button>
-    <?php else : ?>
-        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">啟用</button>
-    <?php endif; ?>
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3">
+                                <a class="btn btn-warning" href="create-coupon.php"><i class="fa-solid fa-paw"></i> 新增優惠券 <i class="fa-solid fa-paw"></i></a>
+                            </div>
+                            <!-- 優惠券篩選分類 -->
+                            <div class="d-flex justify-content-center my-3">
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=all">全部</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=1">商品</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=2">寵物旅館</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=3">線上課程</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=active">進行中</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=expired">已截止</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=inactive">已停用</a>
+                                <?php if (isset($_GET["search"])) : ?>
+                                    <div class="mx-1">
+                                        <a class="btn btn-secondary" href="coupons.php"><i class="fa-solid fa-arrow-left"></i></a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </form>
 
-    <!-- 停用確認模態框 -->
-    <div class="modal fade" id="deleteModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="deleteModalLabel<?= $coupon["id"] ?>">確認停用?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    是否確認停用: <?= $coupon["name"] ?>?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=deactivate">確認</a>
+                    <div class="pb-2">
+    <?php
+    $searchMessage = "";
+    if (isset($_GET["search"]) && !empty($search)) {
+        $searchMessage = "您搜尋的是 <strong style=>$search</strong> <br>";
+    }
+    if (!empty($start_date) && !empty($end_date)) {
+        $searchMessage .= "從 <strong style=>$start_date</strong> 到 <strong style=>$end_date</strong><br>";
+    } elseif (!empty($start_date)) {
+        $searchMessage .= "從 <strong style=>$start_date</strong> 起，";
+    } elseif (!empty($end_date)) {
+        $searchMessage .= "到 <strong style=>$end_date</strong> 止，";
+    }
+    if (!empty($searchMessage)) {
+        echo $searchMessage . "共 <strong>$couponCount</strong> 筆資料";
+    } else {
+        echo "共 <strong>$couponCount</strong> 筆資料";
+    }
+    ?>
+</div>
+
+
+                    <div class="couponList">
+                        <?php if ($result->num_rows > 0) : ?>
+                            <table class="table table-1d table-hover">
+                                <thead>
+                                    <tr class="table-warning">
+                                        <th><a href="<?= getOrderLink("id", $order_by, $order) ?>">ID <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("name", $order_by, $order) ?>">優惠券名稱 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("code", $order_by, $order) ?>">代碼 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("category_name", $order_by, $order) ?>">適用範圍 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("coupontype", $order_by, $order) ?>">折扣類別 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("value", $order_by, $order) ?>">折扣面額 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("min_limit", $order_by, $order) ?>">低消金額 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("start_date", $order_by, $order) ?>">開始日期 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("end_date", $order_by, $order) ?>">截止日期 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th><a href="<?= getOrderLink("created_at", $order_by, $order) ?>">更新時間 <i class="fa-solid fa-sort"></i></a></th>
+                                        <th class="text-center text-primary">優惠券狀態</th>
+                                        <th class="text-center text-primary">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($rows as $coupon) : ?>
+                                        <tr>
+                                            <td><?= $coupon["id"] ?></td>
+                                            <td><?= $coupon["name"] ?></td>
+                                            <td><?= $coupon["code"] ?></td>
+                                            <!-- 適用範圍 -->
+                                            <td><?= isset($coupon["category_name"]) ? $coupon["category_name"] : 'N/A' ?></td>
+                                            <!-- 折扣類型 -->
+                                            <td>
+                                                <?= $coupon["coupontype"] == "%折扣" ? "折數" : "金額" ?>
+                                            </td>
+                                            <!-- 折扣面額 -->
+                                            <td>
+                                                <?= $coupon["coupontype"] == "%折扣" ? $coupon["value"] . " %" : $coupon["value"] . " 元" ?>
+                                            </td>
+                                            <td><?= $coupon["min_limit"] ?> 元</td>
+                                            <td><?= $coupon["start_date"] ?></td>
+                                            <td><?= $coupon["end_date"] ?></td>
+                                            <td><?= $coupon["created_at"] ?></td>
+                                            <td>
+                                                <?php
+                                                $currentDate = date('Y-m-d');
+                                                if ($coupon["end_date"] < $currentDate) {
+                                                    echo "已停用";
+                                                } else {
+                                                    echo $coupon["status"] == 1 ? "可使用" : "已停用";
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <a class=" btn1 btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看詳情 <i class="fa-solid fa-circle-info"></i></a>
+                                                <?php if ($coupon["status"] == 1 && $coupon["end_date"] >= $currentDate) : ?>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">我要停用 <i class="fa-solid fa-circle-xmark"></i></button>
+                                                <?php elseif ($coupon["status"] == 0 || $coupon["end_date"] < $currentDate) : ?>
+                                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">我要啟用 <i class="fa-solid fa-circle-check"></i></button>
+                                                <?php endif; ?>
+
+                                                <!-- 停用確認模態框 -->
+                                                <div class="modal fade" id="deleteModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="deleteModalLabel<?= $coupon["id"] ?>">確認停用?</h1>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                是否確認停用: <?= $coupon["name"] ?>?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                                                <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=deactivate">確認</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 啟用確認模態框 -->
+                                                <div class="modal fade" id="activateModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="activateModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="activateModalLabel<?= $coupon["id"] ?>">確認啟用?</h1>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                是否確認啟用: <?= $coupon["name"] ?>?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                                                <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=activate">確認</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                    </div>
+                    <!-- 分頁 -->
+                    <?php if ($pageCount > 1) : ?>
+                        <div class="d-flex justify-content-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <!-- 最前頁按鈕 -->
+                                    <li class="page-item <?php if ($page == 1) echo 'disabled'; ?>">
+                                        <a class="page-link" href="?page=1<?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>">最前頁</a>
+                                    </li>
+
+                                    <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
+                                        <li class="page-item <?php if ($i == $page) echo "active" ?>">
+                                            <a class="page-link" href="?page=<?= $i ?><?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>"><?= $i ?></a>
+                                        </li>
+                                    <?php endfor; ?>
+
+                                    <!-- 最後一頁按鈕 -->
+                                    <li class="page-item <?php if ($page == $pageCount) echo 'disabled'; ?>">
+                                        <a class="page-link" href="?page=<?= $pageCount ?><?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>">最後一頁</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    <?php endif ?>
+                <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 啟用確認模態框 -->
-    <div class="modal fade" id="activateModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="activateModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="activateModalLabel<?= $coupon["id"] ?>">確認啟用?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    是否確認啟用: <?= $coupon["name"] ?>?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=activate">確認</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</td>
-
-    </tr>
-<?php endforeach; ?>
-
-                </tbody>
-            </table>
-
-            </div>
-            
-            <!-- 分頁 -->
-            <?php if ($pageCount > 1) : ?>
-                <div class="d-flex justify-content-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <!-- 最前頁按鈕 -->
-                            <li class="page-item <?php if ($page == 1) echo 'disabled'; ?>">
-                                <a class="page-link" href="?page=1<?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>">最前頁</a>
-                            </li>
-
-                            <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
-                                <li class="page-item <?php if ($i == $page) echo "active" ?>">
-                                    <a class="page-link" href="?page=<?= $i ?><?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>"><?= $i ?></a>
-                                </li>
-                            <?php endfor; ?>
-
-                            <!-- 最後一頁按鈕 -->
-                            <li class="page-item <?php if ($page == $pageCount) echo 'disabled'; ?>">
-                                <a class="page-link" href="?page=<?= $pageCount ?><?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>">最後一頁</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            <?php endif ?>
-
-
-        <?php endif; ?>
-
-
-    </div>
 
     <?php include("./js-fundodo.php") ?>
 

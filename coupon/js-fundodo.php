@@ -21,7 +21,6 @@
             } else {
                 valueUnit.textContent = '元';
                 valueInput.placeholder = '請輸入金額';
-
             }
         });
     });

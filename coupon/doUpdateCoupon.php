@@ -2,45 +2,13 @@
 require_once("./db_connect.php");
 session_start();
 
-if (!isset($_POST["id"]) && !isset($_GET["id"])) {
-    echo "無效的請求";
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST["id"])) {
+        echo "無效的請求";
+        exit;
+    }
 
-$id = isset($_POST["id"]) ? intval($_POST["id"]) : intval($_GET["id"]);
-$action = isset($_GET["action"]) ? $_GET["action"] : '';
-
-if ($action === 'activate') {
-    $sql = "UPDATE coupons SET status = 1 WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        echo "SQL準備錯誤: " . $conn->error;
-        exit;
-    }
-    $stmt->bind_param("i", $id);
-    if ($stmt->execute()) {
-        echo "優惠券已啟用";
-        header("Location: coupons.php");
-        exit;
-    } else {
-        echo "啟用失敗: " . $stmt->error;
-    }
-} elseif ($action === 'deactivate') {
-    $sql = "UPDATE coupons SET status = 0 WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        echo "SQL準備錯誤: " . $conn->error;
-        exit;
-    }
-    $stmt->bind_param("i", $id);
-    if ($stmt->execute()) {
-        echo "優惠券已停用";
-        header("Location: coupons.php");
-        exit;
-    } else {
-        echo "停用失敗: " . $stmt->error;
-    }
-} else {
+    $id = intval($_POST["id"]);
     $name = $_POST["name"];
     $code = $_POST["code"];
     $category = $_POST["category"];
@@ -117,7 +85,35 @@ if ($action === 'activate') {
     }
 
     $stmt->close();
-}
+    $conn->close();
 
-$conn->close();
-?>
+} elseif (isset($_GET["id"]) && isset($_GET["action"])) {
+    $id = intval($_GET["id"]);
+    $action = $_GET["action"];
+
+    $status = ($action === 'activate') ? 1 : 0;
+
+    $sql = "UPDATE coupons SET status = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt === false) {
+        echo "SQL準備錯誤: " . $conn->error;
+        exit;
+    }
+
+    $stmt->bind_param("ii", $status, $id);
+
+    if ($stmt->execute()) {
+        echo "優惠券狀態更新成功";
+        header("Location: coupons.php");
+        exit;
+    } else {
+        echo "狀態更新失敗: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "無效的請求";
+    exit;
+}

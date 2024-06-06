@@ -27,7 +27,12 @@ $_SESSION['preserve_form_data'] = true;
 </head>
 
 <body>
-    <div class="container-fluid px-5 my-4">
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <div class="container-fluid px-5 my-4">
         <h2 class="text-center">新增優惠券</h2>
         <div class="my-3">
             <a class="btn btn-primary btn-sm" href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 優惠券列表</a>
@@ -37,20 +42,20 @@ $_SESSION['preserve_form_data'] = true;
                 <div class="col-md-6">
                     <div class="mb-2">
                         <label for="name" class="form-label">優惠券名稱</label>
-                        <input type="text" class="form-control" name="name" value="<?= isset($_SESSION['formData']['name']) ? $_SESSION['formData']['name'] : '' ?>">
+                        <input type="text" class="form-control" maxlength="15" name="name" value="<?= isset($_SESSION['formData']['name']) ? $_SESSION['formData']['name'] : '' ?>">
 
                         <?php if (isset($_SESSION["errorMsg"]["name"])) : ?>
                             <div class=" text-danger mt-1 errorMsg">
                                 <?= $_SESSION["errorMsg"]["name"] ?>
                             </div>
-                            <?php unset($_SESSION["errorMsg"]["name"]); ?>
+                            <!-- <?php unset($_SESSION["errorMsg"]["name"]); ?> -->
                         <?php endif; ?>
                     </div>
                     <div class="mb-2">
                         <label for="code" class="form-label">優惠券代碼</label>
                         <div class="input-group">
                             <input type="text" id="code" class="form-control" name="code" value="<?= isset($_SESSION['formData']['code']) ? $_SESSION['formData']['code'] : '' ?>">
-                            <button type="button" class="btn btn-success" onclick="generateCode()">自動生成代碼</button>
+                            <button type="button" class="btn btn-warning" onclick="generateCode()">自動生成代碼</button>
                         </div>
                         <?php if (isset($_SESSION["errorMsg"]["code"])) : ?>
                             <div class=" text-danger mt-1 errorMsg">
@@ -63,26 +68,27 @@ $_SESSION['preserve_form_data'] = true;
                     <div class="mb-2">
                         <label for="category" class="form-label">優惠券使用範圍</label>
                         <select class="form-select" name="category">
-                            <option value="" disabled>選擇使用範圍</option>
+                            <option value="" disabled <?= !isset($_SESSION['formData']['category']) ? 'selected' : '' ?>>選擇使用範圍</option>
                             <option value="1" <?= isset($_SESSION['formData']['category']) && $_SESSION['formData']['category'] == '1' ? 'selected' : '' ?>>商品</option>
                             <option value="2" <?= isset($_SESSION['formData']['category']) && $_SESSION['formData']['category'] == '2' ? 'selected' : '' ?>>寵物旅館</option>
                             <option value="3" <?= isset($_SESSION['formData']['category']) && $_SESSION['formData']['category'] == '3' ? 'selected' : '' ?>>線上課程</option>
                         </select>
                         <?php if (isset($_SESSION["errorMsg"]["category"])) : ?>
-                            <div class=" text-danger mt-2 errorMsg">
+                            <div class="text-danger mt-2 errorMsg">
                                 <?= $_SESSION["errorMsg"]["category"] ?>
                             </div>
                             <?php unset($_SESSION["errorMsg"]["category"]); ?>
                         <?php endif; ?>
                     </div>
+
                     <div class="my-3">
                         <p>優惠券折扣單位</p>
                         <div class="form-check form-check-inline">
-                            <input checked class="form-check-input" type="radio" name="coupontype" id="inlineRadio1" value="1" <?= isset($_SESSION['formData']['coupontype']) && $_SESSION['formData']['coupontype'] == '1' ? 'checked' : '' ?>>
+                            <input checked class="form-check-input" type="radio" name="coupontype" id="inlineRadio1" value="%折扣" <?= isset($_SESSION['formData']['coupontype']) && $_SESSION['formData']['coupontype'] == '%折扣' ? 'checked' : '' ?>>
                             <label class="form-check-label" for="inlineRadio1">%數折扣</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="coupontype" id="inlineRadio2" value="2" <?= isset($_SESSION['formData']['coupontype']) && $_SESSION['formData']['coupontype'] == '2' ? 'checked' : '' ?>>
+                            <input class="form-check-input" type="radio" name="coupontype" id="inlineRadio2" value="固定金額" <?= isset($_SESSION['formData']['coupontype']) && $_SESSION['formData']['coupontype'] == '固定金額' ? 'checked' : '' ?>>
                             <label class="form-check-label" for="inlineRadio2">金額折扣</label>
                         </div>
                         <?php if (isset($_SESSION["errorMsg"]["coupontype"])) : ?>
@@ -150,14 +156,18 @@ $_SESSION['preserve_form_data'] = true;
                         <?php endif; ?>
                     </div>
                     <div class="d-flex justify-content-center w-100">
-                        <button class="btn btn-primary mt-3 mb-5 w-80 me-2" type="submit"><i class="fa-regular fa-circle-check"></i> 提交送出</button>
-                        <a class="btn btn-success mt-3 mb-5 w-80 ms-2" href="coupons.php"> <i class="fa-regular fa-circle-xmark"></i> 取消新增</a>
+                        <button class="btn btn-success mt-3 mb-5 w-80 me-2" type="submit"><i class="fa-regular fa-circle-check"></i> 提交送出</button>
+                        <a class="btn btn-secondary mt-3 mb-5 w-80 ms-2" href="coupons.php"> <i class="fa-regular fa-circle-xmark"></i> 取消新增</a>
                     </div>
 
                 </div>
             </div>
         </form>
     </div>
+        </div>
+      </div>
+    </div>
+    
 
     <?php include("./js-fundodo.php") ?>
 </body>

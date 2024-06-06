@@ -33,10 +33,16 @@ $row = $result->fetch_assoc();
 
 
 <body>
-    <div class="container px-5 my-4">
+
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <div class="container px-5 my-4">
         <h2 class="text-center">優惠券詳情</h2>
         <div class="my-3">
-            <a class="btn btn-primary btn-sm" href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 回優惠券列表</a>
+            <a class="btn btn-primary " href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 回優惠券列表</a>
         </div>
 
         <div class="row justify-content-center">
@@ -61,16 +67,16 @@ $row = $result->fetch_assoc();
 
                         <tr>
                             <th class=" table-danger">折扣單位</th>
-                            <td><?= $row["coupontype"] == 1 ? "%數折扣" : "金額折扣" ?></td>
+                            <td><?= $row["coupontype"] == "%折扣" ? "%數折扣" : "金額折扣" ?></td>
                         </tr>
                         <tr>
                             <th class=" table-danger">折扣面額</th>
-                            <td><?= $row["value"] ?></td>
+                            <td><?= $row["value"] . ($row["coupontype"] == "%折扣" ? " %" : " 元") ?></td>
                         </tr>
 
                         <tr>
                             <th class=" table-danger">低消金額</th>
-                            <td><?= $row["min_limit"] ?></td>
+                            <td><?= $row["min_limit"] ?> 元</td>
                         </tr>
                         <tr>
                             <th class=" table-danger">優惠說明</th>
@@ -128,6 +134,10 @@ $row = $result->fetch_assoc();
         </div>
 
     </div>
+        </div>
+      </div>
+    </div>
+   
     </div>
 
 
