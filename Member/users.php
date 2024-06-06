@@ -88,8 +88,12 @@ if (isset($_GET["page"])) {
 </head>
 
 <body>
- <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
-    <div class="container">
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <div class="container">
         <h1><?= $pageTitle ?></h1>
         <div class="py-2">
             <div class="d-flex justify-content-start gap-3">
