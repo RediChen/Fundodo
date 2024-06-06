@@ -59,7 +59,4 @@ if(isset($user_id)){
 } else {
     header("location: member-center.php");
 }
-
 exit;
-?>
-<img src="../avatar_catch/" alt="">
