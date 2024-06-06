@@ -12,6 +12,10 @@ $password="12345";
 // $password = ".glWcQbgMsmuL2rB";
 // $password = "44444";
 
+
+//* 晨宇
+$db_name="db-products";
+
 $conn=new mysqli($server_name,$user_name,$password,$db_name);
 
 if ($conn->connect_error) {

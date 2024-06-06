@@ -77,7 +77,12 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
                   <img src="../images/<?= $crs_img_name ?>" alt="" class="object-fit-cover">
                 </td>
                 <th>課程縮圖</th>
-                <td>（施工中）</td>
+                <td>
+                  <input type="file" name="imageArr" class="form-control text-center" id="toUpload">
+                  <div id="thumbnail-box">
+                    <img src="" alt="" class="thumbnails object-fit-cover" style="display: none; max-width: 500px" id="img-showcase">
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -137,18 +142,6 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
       </div>
     </div>
   </div>
-
-  <script>
-    const popout_c = document.getElementById("popout-confirm");
-    const btn_act_c = document.getElementById("pop-c-act");
-    const btn_close_c = document.getElementById("pop-c-btn");
-    btn_act_c.addEventListener("click", () => {
-      popout_c.style.display = "flex";
-    });
-    btn_close_c.addEventListener("click", () => {
-      popout_c.style.display = "none";
-    });
-  </script>
 </body>
 
 </html>
