@@ -7,16 +7,15 @@ $db_name = "fundodo";
 
 //* 泓宣 宏榮
 $password="12345";
-$db_name="db_test";
+// $db_name="db_test";
 
 //* 李柔
 $password = "12345";
-$db_name = "pet_hotel_db";
+// $db_name = "pet_hotel_db";
 
 //*陳致
 // $password = ".glWcQbgMsmuL2rB";
 // $password = "44444";
-
 
 //* 晨宇
 // $db_name="db-products";

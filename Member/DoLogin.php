@@ -65,7 +65,7 @@ $_SESSION["user"]=[
 ];
 if ($row["user_level"] == 20) {
     // 用户等级为 20，重定向到 users.php
-    header("Location: /fundodo//dashboard/dashboard.html");
+    header("Location: /fundodo//dashboard/dashboard.php");
     exit();
 } else {
     // 用户等级不为 20，重定向到其他页面或执行其他操作
