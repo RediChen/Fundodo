@@ -4,7 +4,7 @@ if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit();
 }
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 if (isset($_GET["id"])) {
     $user_id = $_GET['id'];
     $sql = "SELECT * FROM users WHERE id = $user_id";

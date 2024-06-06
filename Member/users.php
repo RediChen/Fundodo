@@ -12,7 +12,7 @@ if(isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20) ) {
     exit();
 }
 
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
 $sqlALL = "SELECT * FROM users WHERE valid = 1";
 $resultAll = $conn->query($sqlALL);
@@ -84,8 +84,7 @@ if (isset($_GET["page"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <?php include("../connect_tools/css.php") ?>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
 <body>
@@ -104,7 +103,7 @@ if (isset($_GET["page"])) {
                             <input type="text" class="form-control" placeholder="搜尋相關會員" name="search">
                             <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <a href="../create-user/create-user.php" class="btn btn-primary">
+                            <a href="create-user.php" class="btn btn-primary">
                                 <i class="fa-solid fa-plus"></i>
                             </a>
                         </div>
