@@ -44,9 +44,7 @@ session_start();
             <div class="text-center">
                 <h1 class="h2 mt-2">Fundodo</h1>
                 <div class="text-center">
-                    <a href="../member/create-user.php" class="btn bnt-primary" title="前往創建會員頁">
                         <img src="../dashboard/fundodo-logo.png" alt="">
-                    </a>
                 </div>
                 <hr>
             </div>

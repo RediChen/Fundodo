@@ -1,7 +1,9 @@
 <?php
+session_start();
 $to_htdocs = "/xampp/htdocs/";
 require_once($to_htdocs . "connectDB_fdd.php");
 include($to_htdocs . "Fundodo/tools/tool-lib.php");
+include($to_htdocs . "Fundodo/tools/console-lib.php");
 
 if (!isset($_GET['id']) || !isset($_GET['edit']) || $_GET['edit'] != true) :
     echo "請循正常管道進入本頁";
@@ -18,19 +20,21 @@ if (empty($crs)) :
     leadTo('crs-detail.php?id=' . $crs_id);
 endif;
 
-$sameTitle = empty($_POST['title']) || ($_POST['title'] != $crs['title']);
-$sameAbstract = empty($_POST['abstract']) || ($_POST['abstract'] != $crs['abstract']);
-$samePrice = empty($_POST['price']) || ($_POST['price'] != $crs['price']);
+$sameTitle = empty($_POST['title']) || ($_POST['title'] == $crs['title']);
+$sameAbstract = empty($_POST['abstract']) || ($_POST['abstract'] == $crs['abstract']);
+$samePrice = empty($_POST['price']) || ($_POST['price'] == $crs['price']);
 
-if ($sameTitle || $sameAbstract || $samePrice) :
-    $valArr = [];
-    if ($sameTitle) :
+if ($sameTitle && $sameAbstract && $samePrice) :
+  $_SESSION["error_msg"]['crs-update'] = "請輸入與原本不同的內容。";
+else :
+  $valArr = [];
+    if (!$sameTitle) :
         array_push($valArr, "title = '" . $_POST['title']. "'");
     endif;
-    if ($sameAbstract) :
+    if (!$sameAbstract) :
         array_push($valArr, "abstract = '" . $_POST['abstract']. "'");
     endif;
-    if ($samePrice) :
+    if (!$samePrice) :
         array_push($valArr, "price = " . $_POST['price']);
     endif;
 
@@ -42,6 +46,4 @@ if ($sameTitle || $sameAbstract || $samePrice) :
     }
 
     leadTo("crs-detail.php?id=$crs_id&eComplete=1");
-else :
-
 endif;
