@@ -52,7 +52,12 @@ if ($row === null) {
 </head>
 
 <body>
-    <!-- modal -->
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+             <!-- modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -114,10 +119,6 @@ if ($row === null) {
                             <td><?= $row["account"] ?></td>
                         </tr>
                         <tr>
-                            <th>密碼</th>
-                            <td><?= $row["password_hash"] ?></td>
-                        </tr>
-                        <tr>
                             <th>性別</th>
                             <td><?= ($row["gender"] == 1) ? "男" : (($row["gender"] == 2) ? "女" : "未知") ?></td>
                         </tr>
@@ -127,7 +128,7 @@ if ($row === null) {
                         </tr>
                         <tr>
                             <th>會員等級</th>
-                            <td><?= ($row["valid"] == 3) ? "高級會員" : (($row["valid"] == 0) ? "封禁帳號" : "會員") ?></td>
+                            <td><?= ($row["valid"] == 3) ? "高級會員" : (($row["valid"] == 0) ? "封禁帳號" : "一般會員") ?></td>
                         </tr>
                         <tr>
                             <th>生日</th>
@@ -136,10 +137,6 @@ if ($row === null) {
                         <tr>
                             <th>電話</th>
                             <td><?= $row["tel"] ?></td>
-                        </tr>
-                        <tr>
-                            <th>頭像</th>
-                            <td><?= $row["avatar"] ?></td>
                         </tr>
                         <tr>
                             <th>頭像路徑</th>
@@ -192,6 +189,10 @@ if ($row === null) {
 
     </div>
 
+        </div>
+      </div>
+    </div>
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

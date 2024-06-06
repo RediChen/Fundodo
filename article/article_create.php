@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Taipei');
 require_once("../db_connect.php");
 session_start();
 

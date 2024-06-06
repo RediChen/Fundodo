@@ -12168,7 +12168,7 @@ body {
 }
 
 .fixed-height-table {
-  height: 765px;
+  min-height: 765px;
   overflow: hidden;
 }
 
@@ -12227,6 +12227,7 @@ body {
   padding: 5px;
 }
 
+
 .couponList th {
   font-size: 16px;
   text-align: center;
@@ -12261,4 +12262,17 @@ body {
 
 .btn1 {
   background-color: #8c68cd;
+
+.product_box {
+  max-width: 108px;
+  height: auto;
+}
+
+.fixed-width {
+  max-width: 200px;
+}
+
+.container.c-600 {
+  max-width: 600px;
+
 }

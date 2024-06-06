@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Taipei');
 require_once("../db_connect.php");
 session_start();
 
@@ -82,10 +83,10 @@ $page_title = "文章列表";
 <body>
     <div class="container">
         <div class="d-flex justify-content-between mb-2">
-            <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+            <a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
             <div>
                 <?php if (empty($_SESSION)) : ?>
-                    <a href="../Member/user-CMS/login.php" class="btn btn-primary">登入</a>
+                    <a href="../Member/login.php" class="btn btn-primary">登入</a>
                 <?php else : ?>
                     Hi,<?= $_SESSION["user"]["nickname"] ?>
                     <a href="arti_session-destory.php" class="btn btn-primary">登出</a>
@@ -107,8 +108,14 @@ $page_title = "文章列表";
 
         </ul>
 
-        <div class="d-flex justify-content-between mb-2">
-            <a class="btn btn-primary" href="article_create.php">發表文章</a>
+        <div class="d-flex mb-2 <?php if(!empty($_SESSION)){
+            echo "justify-content-between";
+        }else{
+            echo "justify-content-end";
+        } ?>">
+        <?php if(!empty($_SESSION)): ?>
+                <a class="btn btn-primary" href="article_create.php">發表文章</a>
+        <?php endif ?>
             <form action="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="搜尋文章" name="search">
@@ -117,7 +124,6 @@ $page_title = "文章列表";
             </form>
         </div>
         <div class="fixed-height-table">
-
 
             <table class="table table-bordered">
                 <thead>
