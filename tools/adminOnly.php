@@ -1,8 +1,10 @@
 <?php
 session_start();
-include("/xampp/htdocs/Fundodo/tools/tool-lib.php");
 
 if (!isset($_SESSION["user"]) || ($_SESSION["user"]["user_level"] != 20)) :
+  session_abort();
   header('Location: /Fundodo/member/login.php');
+  exit();
+else :
+  session_abort();
 endif;
-?>

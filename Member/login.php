@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) :
+  header('Location: /Fundodo/dashboard/dashboard.php');
+  exit();
+endif;
 ?>
 
 <!doctype html>
