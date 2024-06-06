@@ -17,8 +17,6 @@ if (isset($_GET["id"])) {
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-
-    print_r($row);
 } else {
     echo "未找到用户信息";
 }
@@ -38,6 +36,7 @@ $conn->close();
 </head>
 
 <body>
+    <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
     <h1>會員中心</h1>
     <h2>個人信息</h2>
     <p>用戶名：<?= $row['name'] ?></p>
