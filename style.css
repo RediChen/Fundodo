@@ -12130,6 +12130,48 @@ body {
   color: #343a40;
 }
 
+.login-logo {
+  height: 128px;
+}
+
+.cart-icon {
+  /*  */
+  top: 30px;
+  /*  */
+  font-size: 36px;
+  text-decoration: none;
+  color: #000;
+}
+.cart-icon span {
+  top: -4px;
+  right: -8px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+.favorite-icon {
+  background: #fff;
+  font-size: 1.4rem;
+  right: 10px;
+  bottom: 10px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #ccc;
+}
+.favorite-icon.active {
+  color: palevioletred;
+}
+
 .crs-list_info {
   display: flex;
   justify-content: space-between;
@@ -12154,10 +12196,17 @@ body {
   max-height: 90px;
 }
 
+.table-2d tr:nth-child(4n+2) .crs-list_tags {
+  background-color: #e7e1db;
+}
+
+.table-2d tr:nth-child(4n+4) .crs-list_tags {
+  background-color: #ced4da;
+}
+
 .crs-list_tags {
   padding-inline: 0.5rem;
   line-height: 1.5;
-  background-color: #e7e1db;
   color: #343a40;
   border: 1px solid #6c757d;
   border-radius: 99rem;
@@ -12227,7 +12276,6 @@ body {
   padding: 5px;
 }
 
-
 .couponList th {
   font-size: 16px;
   text-align: center;
@@ -12262,6 +12310,7 @@ body {
 
 .btn1 {
   background-color: #8c68cd;
+}
 
 .product_box {
   max-width: 108px;
@@ -12274,5 +12323,4 @@ body {
 
 .container.c-600 {
   max-width: 600px;
-
 }
