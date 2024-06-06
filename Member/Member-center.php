@@ -37,7 +37,7 @@ $conn->close();
 </head>
 
 <body>
-<a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+<a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
     <h1 class="text-center">會員中心</h1>
     <h2 class="text-center">個人信息</h2>
     <p class="text-center">用戶名：<?= $row['name'] ?></p>
