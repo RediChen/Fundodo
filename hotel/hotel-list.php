@@ -184,7 +184,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
 
          
         <!-- 新增 -->
-        <a class="btn btn-success" href="add-hotel.php">新增旅館</a>
+        <a class="btn btn-secondary" href="add-hotel.php">新增旅館</a>
 
       </div>
 
@@ -197,12 +197,10 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
             <a href="?page=<?= $page ?>&order=2" class="btn btn-outline-primary <?php if ($order == 2) echo 'active'; ?>">ID<i class="fa-solid fa-arrow-down-9-1"></i></a>
           </div>
         </div>
+        <div class="d-flex justify-content-end px-1">
         共 <?= $hotelCount ?> 間
       </div>
-
-      <!-- id ASC DESC -->
-
-
+      </div>
 
 
       <div class="py-2 mb-3">
