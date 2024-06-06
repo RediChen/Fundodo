@@ -124,7 +124,14 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
 }
 </style>
 
-<body>
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <body>
+
+        <h3 class="px-2">旅館管理</h3>
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -190,7 +197,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
         </ul>
 
 
-
+         
         <!-- 新增 -->
         <a class="btn btn-success" href="add-hotel.php">新增旅館</a>
 
@@ -199,10 +206,10 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
 
 
       <div class="pb-2">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-start pb-3">
           <div class="btn-group">
-            <a href="?page=<?= $page ?>&order=1" class="btn btn-outline-primary <?php if ($order == 1) echo 'active'; ?>">ID 升序</a>
-            <a href="?page=<?= $page ?>&order=2" class="btn btn-outline-primary <?php if ($order == 2) echo 'active'; ?>">ID 降序</a>
+            <a href="?page=<?= $page ?>&order=1" class="btn btn-outline-primary <?php if ($order == 1) echo 'active'; ?>">ID <i class="fa-solid fa-arrow-down-1-9"></i></a>
+            <a href="?page=<?= $page ?>&order=2" class="btn btn-outline-primary <?php if ($order == 2) echo 'active'; ?>">ID<i class="fa-solid fa-arrow-down-9-1"></i></a>
           </div>
         </div>
         共 <?= $hotelCount ?> 間
@@ -215,7 +222,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
 
       <div class="py-2 mb-3">
         <?php if ($hotelCount > 0) : ?>
-          <table class="table table-bordered">
+          <table class="table db_table table-hover">
             <thead>
               <tr class="text-nowrap">
                 <th>
@@ -237,7 +244,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
                 <tr>
                   <td><?= $hotel_list["id"] ?></td>
                   <td><?= $hotel_list["name"] ?></td>
-                  <td class="<?= isset($_GET["search"]) ? '' : 'ellipsis' ?>"><?= $hotel_list["description"] ?></td>
+                  <td class="ellipsis"><?= $hotel_list["description"] ?></td>
                   <td>
                     <?php if (!empty($hotel_list["path"])) : ?>
                       <img src="../hotels_img/<?= $hotel_list["path"] ?>" class="hotel-image" alt="<?= $hotel_list["name"] ?>">
@@ -300,5 +307,10 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+        </div>
+      </div>
+    </div>
+
+
 
 </html>

@@ -73,84 +73,94 @@ $conn->close();
 
 </head>
 
-<body>
+<div class="d-flex">
+      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+      <div class="w-100">
+        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+        <div class="db_content">
+        <body>
 
 
-  <div class="container">
-    <div class="py-2">
-      <a class="btn btn-primary" href="hotel-list.php?"><i class="fa-solid fa-arrow-left"></i> 回狗狗旅館列表</a>
-    </div>
-    <form action="doUpdateHotel.php" method="post">
-      <table class="table table-bordered">
-        <tr>
-          <input type="hidden" name="id" value="<?= $row["id"] ?>">
-          <th>ID</th>
-          <td><?= $row["id"] ?></td>
-        </tr>
-        <tr>
-          <th>地區</th>
-          <td>
-            <select class="form-select" id="location" name="location" aria-label="市/區">
-              <?php foreach ($locations as $location) : ?>
-                <option value="<?= $location['id'] ?>" <?= $location['id'] == $row['location_id'] ? 'selected' : '' ?>>
-                  <?= $location['location'] ?>
-                </option>
-              <?php endforeach; ?>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <th>旅館名稱</th>
-          <td>
-            <input type="text" class="form-control" name="name" value="<?= $row["name"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </td>
-        </tr>
-        <tr>
-          <th>介紹</th>
-          <td>
-            <textarea class="form-control" name="description" rows="5"><?= $row["description"] ?></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th>圖片</th>
-          <td>
-            <?php foreach ($images as $image) : ?>
-              <img src="../hotels_img/<?= $image["path"] ?>" class="hotel-image" alt="<?= $row["name"] ?>">
+<div class="container">
+<h3 class="px-2">旅館編輯</h3>
+  <div class="py-2">
+    <a class="btn btn-primary" href="hotel-list.php?"><i class="fa-solid fa-arrow-left"></i> 回狗狗旅館列表</a>
+  </div>
+  <form action="doUpdateHotel.php" method="post">
+    <table class="table table-bordered">
+      <tr>
+        <input type="hidden" name="id" value="<?= $row["id"] ?>">
+        <th>ID</th>
+        <td><?= $row["id"] ?></td>
+      </tr>
+      <tr>
+        <th>地區</th>
+        <td>
+          <select class="form-select" id="location" name="location" aria-label="市/區">
+            <?php foreach ($locations as $location) : ?>
+              <option value="<?= $location['id'] ?>" <?= $location['id'] == $row['location_id'] ? 'selected' : '' ?>>
+                <?= $location['location'] ?>
+              </option>
             <?php endforeach; ?>
-          </td>
-        </tr>
-        <tr>
-          <th>房間類型</th>
-          <td>
-            <select class="form-select" id="room_type" name="room_type" aria-label="房間類型">
-              <?php foreach ($room_types as $room_type) : ?>
-                <option value="<?= $room_type['id'] ?>" <?= $room_type['id'] == $row['room_type_id'] ? 'selected' : '' ?>>
-                  <?= $room_type['room_type'] ?>
-                </option>
-              <?php endforeach; ?>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <th>詳細地址</th>
-          <td>
-            <input type="text" class="form-control" name="address" value="<?= $row["address"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </td>
-        </tr>
-        <tr>
-          <th>聯絡電話</th>
-          <td>
-            <input type="text" class="form-control" name="phone" value="<?= $row["phone"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </td>
-        </tr>
-      </table>
-      <div class="form-group  d-flex justify-content-end">
-        <button class="btn btn-dark" type="submit">送出</button>
-      </div>
-    </form>
-  </div>
-  </div>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>旅館名稱</th>
+        <td>
+          <input type="text" class="form-control" name="name" value="<?= $row["name"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </td>
+      </tr>
+      <tr>
+        <th>介紹</th>
+        <td>
+          <textarea class="form-control" name="description" rows="5"><?= $row["description"] ?></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>圖片</th>
+        <td>
+          <?php foreach ($images as $image) : ?>
+            <img src="../hotels_img/<?= $image["path"] ?>" class="hotel-image" alt="<?= $row["name"] ?>">
+          <?php endforeach; ?>
+        </td>
+      </tr>
+      <tr>
+        <th>房間類型</th>
+        <td>
+          <select class="form-select" id="room_type" name="room_type" aria-label="房間類型">
+            <?php foreach ($room_types as $room_type) : ?>
+              <option value="<?= $room_type['id'] ?>" <?= $room_type['id'] == $row['room_type_id'] ? 'selected' : '' ?>>
+                <?= $room_type['room_type'] ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>詳細地址</th>
+        <td>
+          <input type="text" class="form-control" name="address" value="<?= $row["address"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </td>
+      </tr>
+      <tr>
+        <th>聯絡電話</th>
+        <td>
+          <input type="text" class="form-control" name="phone" value="<?= $row["phone"] ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </td>
+      </tr>
+    </table>
+    <div class="form-group  d-flex justify-content-end">
+      <button class="btn btn-dark" type="submit">送出</button>
+    </div>
+  </form>
+</div>
+</div>
 
 </body>
+        </div>
+      </div>
+    </div>
+
 
 </html>
