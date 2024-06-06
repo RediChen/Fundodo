@@ -1,8 +1,8 @@
 <?php
 require_once("../db_connect.php");
 
-function filename($article_id,$index,$extension){
-    return "arti_img_ud_". $article_id."_" . $index . "." . $extension;
+function filename($article_id, $index, $extension){
+    return "arti_img_ud_" . $article_id . "_" . $index . "." . $extension;
 }
 
 $sort = $_POST["sort"];
@@ -10,29 +10,25 @@ $title = $_POST["title"];
 $content = $_POST["content"];
 $id = intval($_POST["id"]);
 
-
-$sql="UPDATE article SET sort='$sort', title='$title',content='$content' WHERE id='$id'";
-
-
-
+$sql = "UPDATE article SET sort='$sort', title='$title', content='$content' WHERE id='$id'";
 
 if ($conn->query($sql) === true) {
     $article_id = $id;
-    $count =1;
+    $count = 1;
 
     foreach ($_FILES["files"]["error"] as $key => $error) {
         if ($error == 0) {
             $tmp_name = $_FILES["files"]["tmp_name"][$key];
             $extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
-            $name = filename($article_id,$count,$extension);
+            $unique_name = uniqid("arti_img_ud_" . $article_id . "_", true) . "." . $extension; // 生成唯一的檔名
 
-            if (move_uploaded_file($tmp_name, "../upload_img/" .$name)) {
-                $img_paths[] ="../upload_img/". $name;
-                $sql_img = "INSERT INTO article_img (article_id,img_path) VALUE ('$article_id','$name')";
-                if($conn->query($sql_img)==true){
+            if (move_uploaded_file($tmp_name, "../upload_img/" . $unique_name)) {
+                $img_paths[] = "../upload_img/" . $unique_name;
+                $sql_img = "INSERT INTO article_img (article_id, img_path) VALUES ('$article_id', '$unique_name')";
+                if($conn->query($sql_img) === true){
                     echo "success";
                 }
-                $count ++;
+                $count++;
             }
         }
     }
@@ -66,5 +62,4 @@ if ($conn->query($sql) === true) {
 } else {
     echo "文章編輯失敗: " . $conn->error;
 }
-
 ?>
