@@ -4,6 +4,6 @@ session_start();
 
 session_destroy();
 
-header("fundodo/Member/login.php");
+header("Location: ../Member/login.php");
 
 ?>

@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
