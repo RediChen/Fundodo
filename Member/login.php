@@ -18,7 +18,8 @@ session_start();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- <link href="/Fundodo-main/style.scss"> -->
-    <?php include("../connect_tools/css.php") ?>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
+    
     <style>
         body {
             background: linear-gradient(to right, #71C4EF 25%, #EEF6FA);
@@ -42,8 +43,8 @@ session_start();
         <div class="login-panel">
             <div class="text-center">
                 <h1 class="h2 mt-2">Fundodo</h1>
-                <a href="../create-user/create-user.php" class="btn bnt-primary" title="前往創建會員頁">
-                    <img src="../images/logo.jpg" alt="">
+                <a href="../member/create-user.php" class="btn bnt-primary" title="前往創建會員頁">
+                    <img src="../member/images/logo.jpg" alt="">
                 </a>
                 <hr>
             </div>
@@ -78,7 +79,7 @@ session_start();
     </div>
 
 
-    <?php include("../connect_tools/js.php") ?>
+    <?php include("../member/js.php") ?>
 </body>
 
 </html>

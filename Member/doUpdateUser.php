@@ -1,5 +1,5 @@
 <?php
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
 // // 检查是否有 GET 参数
 // if (!isset($_GET["id"])) {

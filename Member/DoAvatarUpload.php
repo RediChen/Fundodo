@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
 if (!isset($_POST["avatar"])) {
     echo "請循正常管道進入";
@@ -27,7 +27,8 @@ foreach ($old_avatar_files as $old_avatar_file) {
 
 if ($_FILES["avatar_file"]["error"] == 0) {
     $target_dir = "../avatar_catch/"; // 指定目標文件夾
-    $avatar_file = $user_id . '_' . basename($_FILES["avatar_file"]["name"]); // 新的文件名稱，包含用戶ID
+    $file_extension = pathinfo($_FILES["avatar_file"]["name"], PATHINFO_EXTENSION);
+    $avatar_file = $user_id . "." . $file_extension; // 新的文件名稱，包含用戶ID
     if (move_uploaded_file($_FILES["avatar_file"]["tmp_name"], $target_dir . $avatar_file)) {
         echo "上傳成功";
         // 檔案上傳成功後，將檔案移動到 avatar 文件夾中
@@ -61,3 +62,4 @@ if(isset($user_id)){
 
 exit;
 ?>
+<img src="../avatar_catch/" alt="">
