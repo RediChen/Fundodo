@@ -1,5 +1,5 @@
 .fixed-height-table {
-    height: calc(17 * 45px);
+    min-height: calc(17 * 45px);
     overflow: hidden;
 }
 

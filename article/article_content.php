@@ -125,7 +125,7 @@ $user_userid=!empty($_SESSION)?$_SESSION["user"]["id"] :"";
             if ($re_img->num_rows > 0) {
                 while ($img_row = $re_img->fetch_assoc()) {
                     echo '<div class="ratio ratio-1x1">';
-                    echo '<img src="' . "../upload_img/" . $img_row['img_path'] . '" alt="Article Image"><br>';
+                    echo '<img src="' . "../upload_img/" . $img_row['img_path'] . '" alt="Article Image" class="object-fit-contain"><br>';
                     echo '</div>';
                 }
             }
