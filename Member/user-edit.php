@@ -14,6 +14,10 @@ $sql_images = "SELECT * FROM users WHERE id = $id  AND valid = 1";
 $result_images = $conn->query($sql_images);
 $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
 
+$sql_images = "SELECT * FROM users WHERE id = $id  AND valid = 1";
+$result_images = $conn->query($sql_images);
+$rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
+
 if ($result->num_rows > 0) {
     $userExit = true;
     $title = $row["name"];
@@ -122,7 +126,7 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
                             <tr>
                                 <th>權限</th>
                                 <td>
-                                    <input type="text" class="form-control" name="user_level" value="<?= $row["user_level"] ?>">
+                                <input type="text" class="form-control" name="user_level" value="<?= $row["user_level"] ?>">
                                 </td>
                             </tr>
                             <tr>
@@ -167,54 +171,22 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
                                     <input type="text" class="form-control" name="address" value="<?= $row["address"] ?>">
                                 </td>
                             </tr>
-
+                            <tr>
+                                <th>說明</th>
+                                <td>
+                                    <p>
+                                        性別: 1 = 男性 、 2 = 女性 <br>
+                                        權限:  3 = 版主 、 20 = 管理者<br>
+                                        會員等級: 0 = 封禁會員 、 1 = 一般會員
+                                    </p>
+                                </td>
+                            </tr>
                         </table>
 
 
                         <button type="submit" class="btn btn-primary">送出</button>
-
-
                     </form>
-
-
             </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row g-3 justify-content-start">
-                            <?php foreach ($rows_images as $image) : ?>
-                                <div class="col">
-                                    <div class="ratio ratio-1x1">
-                                        <img src="../avatar/<?= $image["avatar_file"] ?>" alt="" class="object-fit-cover">
-                                        <h2 class="h4"><?= $image["avatar"] ?></h2>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col text-center">
-                                <a class="text-decoration-none btn btn-secondary" href="Member-center.php?id=<?= $row["id"] ?>" title="前往會員中心更換頭像">會員中心</a>
-                                <button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <table class="table table-bordered">
-                    <tr>
-                        <th>說明</th>
-                        <td>
-                            <p>
-                                性別: 1 = 男性 、 2 = 女性 <br>
-                                權限: 3 = 版主 、 20 = 管理者<br>
-                                會員等級: <br>
-                                0 = 封禁會員 <br>
-                                1 = 一般會員
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
         <?php else : ?>
             <h1>使用者不存在</h1>
         <?php endif; ?>
