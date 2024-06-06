@@ -67,13 +67,13 @@ $sql = "INSERT INTO coupons (name, code, category, coupontype, value, min_limit,
 VALUES ('$name', '$code', '$category', '$coupontype', '$value', '$min_limit', '$description', '$start_date', '$end_date', '$now')";
 
 if ($conn->query($sql) === TRUE) {
+    // 清除表單數據
+    unset($_SESSION["formData"]);
     echo "優惠券建立成功";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// 清除表單數據
-unset($_SESSION["formData"]);
 
 $conn->close();
 header("Location: coupons.php");

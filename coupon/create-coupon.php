@@ -5,6 +5,9 @@ session_start();
 if (!isset($_SESSION['preserve_form_data'])) {
     unset($_SESSION['formData']);
     unset($_SESSION['errorMsg']);
+} else {
+    // 重置標誌以便下一次進入新增頁面時不保留數據
+    unset($_SESSION['preserve_form_data']);
 }
 
 // 設置標誌來保留會話數據

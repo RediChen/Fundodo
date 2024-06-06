@@ -13,7 +13,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $status, $id);
 
 if ($stmt->execute()) {
-    header("Location: coupon.php?id=$id");
+    header("Location: coupons.php");
     exit;
 } else {
     echo "更新失敗: " . $stmt->error;

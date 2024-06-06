@@ -159,13 +159,13 @@ function getOrderLink($column, $current_order_by, $current_order)
                 </div>
                 <!-- 優惠券篩選分類 -->
                 <div class="d-flex justify-content-center my-3">
-                    <a class="btn btn-success mx-1" href="coupons.php?category=all">全部</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=1">商品</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=2">寵物旅館</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=3">線上課程</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=active">進行中</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=expired">已截止</a>
-                    <a class="btn btn-success mx-1" href="coupons.php?category=inactive">已停用</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=all">全部</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=1">商品</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=2">寵物旅館</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=3">線上課程</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=active">進行中</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=expired">已截止</a>
+                    <a class="btn btn-warning mx-1" href="coupons.php?category=inactive">已停用</a>
                     <?php if (isset($_GET["search"])) : ?>
                         <div class="mx-1">
                             <a class="btn btn-secondary" href="coupons.php"><i class="fa-solid fa-arrow-left"></i></a>
@@ -198,48 +198,69 @@ function getOrderLink($column, $current_order_by, $current_order)
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($rows as $coupon) : ?>
-                        <tr>
-                            <td><?= $coupon["id"] ?></td>
-                            <td><?= $coupon["name"] ?></td>
-                            <td><?= $coupon["code"] ?></td>
-                            <td><?= isset($coupon["category_name"]) ? $coupon["category_name"] : 'N/A' ?></td>
-                            <td><?= $coupon["coupontype"] == 1 ? "%數折扣" : "金額折扣" ?></td>
-                            <td><?= $coupon["coupontype"] == 1 ? $coupon["value"] . " %" : $coupon["value"] . " 元" ?></td>
-                            <td><?= $coupon["min_limit"] ?></td>
-                            <td><?= $coupon["start_date"] ?></td>
-                            <td><?= $coupon["end_date"] ?></td>
-                            <td><?= $coupon["created_at"] ?></td>
-                            <td><?= $coupon["status"] == 1 ? "可使用" : "已停用" ?></td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看</a>
-                                <?php if ($coupon["status"] == 1) : ?>
-                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">停用</button>
-                                <?php else : ?>
-                                    <button type="button" class="btn btn-secondary btn-sm" disabled>停用</button>
-                                <?php endif; ?>
+                <?php foreach ($rows as $coupon) : ?>
+    <tr>
+        <td><?= $coupon["id"] ?></td>
+        <td><?= $coupon["name"] ?></td>
+        <td><?= $coupon["code"] ?></td>
+        <td><?= isset($coupon["category_name"]) ? $coupon["category_name"] : 'N/A' ?></td>
+        <td><?= $coupon["coupontype"] == 1 ? "%數折扣" : "金額折扣" ?></td>
+        <td><?= $coupon["coupontype"] == 1 ? $coupon["value"] . " %" : $coupon["value"] . " 元" ?></td>
+        <td><?= $coupon["min_limit"] ?></td>
+        <td><?= $coupon["start_date"] ?></td>
+        <td><?= $coupon["end_date"] ?></td>
+        <td><?= $coupon["created_at"] ?></td>
+        <td><?= $coupon["status"] == 1 ? "可使用" : "已停用" ?></td>
+        <td>
+    <a class="btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看</a>
+    <?php if ($coupon["status"] == 1) : ?>
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">停用</button>
+    <?php else : ?>
+        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">啟用</button>
+    <?php endif; ?>
 
+    <!-- 停用確認模態框 -->
+    <div class="modal fade" id="deleteModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deleteModalLabel<?= $coupon["id"] ?>">確認停用?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    是否確認停用: <?= $coupon["name"] ?>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=deactivate">確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                <div class="modal fade" id="deleteModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="deleteModalLabel<?= $coupon["id"] ?>">確認停用?</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                是否確認停用: <?= $coupon["name"] ?>?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                                <a class="btn btn-primary" href="doDeleteCoupon.php?id=<?= $coupon["id"] ?>">確認</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
+    <!-- 啟用確認模態框 -->
+    <div class="modal fade" id="activateModal<?= $coupon["id"] ?>" tabindex="-1" aria-labelledby="activateModalLabel<?= $coupon["id"] ?>" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="activateModalLabel<?= $coupon["id"] ?>">確認啟用?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    是否確認啟用: <?= $coupon["name"] ?>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=activate">確認</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
+
+    </tr>
+<?php endforeach; ?>
+
                 </tbody>
             </table>
 
