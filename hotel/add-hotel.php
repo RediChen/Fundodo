@@ -1,5 +1,5 @@
 <?php
-require_once("../db_connect.php");
+include("/xampp/htdocs/Fundodo/db_connect.php");
 
 // 房型下拉選單
 $sql = "SELECT id, room_type FROM room_category";
@@ -30,10 +30,9 @@ $conn->close();
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> 新增旅館</title>
 
+  <title> 新增旅館</title>
+  <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
   <style>
     .container {
       max-width: 800px;
@@ -74,7 +73,6 @@ $conn->close();
     }
   </style>
 
-  <?php include("../css.php") ?>
 </head>
 
 <body>

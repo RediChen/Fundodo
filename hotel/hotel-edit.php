@@ -6,7 +6,7 @@ if (!isset($_GET["id"])) {
   $id = $_GET["id"];
 }
 
-require_once("../db_connect.php");
+include("/xampp/htdocs/Fundodo/db_connect.php");
 
 $sql = "SELECT hotel_list.*, room_category.room_type, area_category.location FROM hotel_list 
         JOIN room_category ON hotel_list.room_type_id = room_category.id
@@ -31,10 +31,9 @@ $images = $resultImg->fetch_all(MYSQLI_ASSOC);
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
   <title><?= $row["name"] ?></title>
-  <?php include("../css.php") ?>
+ 
 
   <style>
     .container {
