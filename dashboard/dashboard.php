@@ -8,20 +8,10 @@
 
 <body class="db_body">
   <div class="d-flex">
-    <div class="db_sidebar d-flex flex-column">
-      <img class="fundodo-logo" src="fundodo-logo.png" alt="翻肚肚 LOGO">
-      <a href="#"><i class="fa-solid fa-user"></i> &nbsp;會員管理</a>
-      <a href="#"><i class="fa-solid fa-cart-shopping"></i> &nbsp;商品管理</a>
-      <a href="../hotel/hotel-list.php"><i class="fa-solid fa-dog"></i> &nbsp;旅館管理</a>
-      <a href="#"><i class="fa-solid fa-newspaper"></i> &nbsp;文章管理</a>
-      <a href="#"><i class="fa-solid fa-book"></i> &nbsp;課程管理</a>
-      <a href="#"><i class="fa-solid fa-ticket"></i> &nbsp;優惠券管理</a>
-    </div>
+    <?php include("./dashboard-aside.php"); ?>
     <div class="w-100">
-      <div class="db_header d-flex justify-content-between align-items-center">
-        <span class="title">fundodo</span>
-        <span class="user">Hi, user</span>
-      </div>
+      <?php include("./dashboard-header.php"); ?>
+
       <div class="db_content">
         <h3>會員資料</h3>
         <div class="d-flex justify-content-between align-items-center mb-3">
