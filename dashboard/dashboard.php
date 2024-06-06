@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <title>儀表板 | 後台儀表板</title>
+  <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
+</head>
+
+<body class="db_body">
+  <div class="d-flex">
+    <div class="db_sidebar d-flex flex-column">
+      <img class="fundodo-logo" src="fundodo-logo.png" alt="翻肚肚 LOGO">
+      <a href="#"><i class="fa-solid fa-user"></i> &nbsp;會員管理</a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i> &nbsp;商品管理</a>
+      <a href="#"><i class="fa-solid fa-dog"></i> &nbsp;旅館管理</a>
+      <a href="#"><i class="fa-solid fa-newspaper"></i> &nbsp;文章管理</a>
+      <a href="#"><i class="fa-solid fa-book"></i> &nbsp;課程管理</a>
+      <a href="#"><i class="fa-solid fa-ticket"></i> &nbsp;優惠券管理</a>
+    </div>
+    <div class="w-100">
+      <div class="db_header d-flex justify-content-between align-items-center">
+        <span class="title">fundodo</span>
+        <span class="user">Hi, user</span>
+      </div>
+      <div class="db_content">
+        <h3>會員資料</h3>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span>共 (施工中) 人</span>
+
+        </div>
+        <div class="table-responsive">
+          <table class="table db_table table-hover">
+            <thead class="table-container">
+              <tr>
+                <th>ID</th>
+                <th>會員名字</th>
+                <th>電話</th>
+                <th>地址</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>汪狗狗</td>
+                <td>09234568892</td>
+                <td>台北市中正區羅斯福路3號4樓</td>
+                <td>
+                  <div class=" d-flex gap-3">
+                    <button class="btn btn-primary btn-sm mr-2">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn btn-dark btn-sm mr-2">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Repeat this <tr> block for each row of data -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <?php include("/xampp/htdocs/Fundodo/tools/common-script.php"); ?>
+</body>
+
+</html>

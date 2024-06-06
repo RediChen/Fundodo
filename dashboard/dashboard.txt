@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>儀表板 | 後台儀表板</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<div class="d-flex">
+			<div>
+				<aside class="db_aside">
+					<a href="" class="logo text-center">
+						<i class="fa-solid fa-house fs-1"></i>
+					</a>
+					<ul class="list-unstyled px-3">
+						<li><a href="../article/article_title.php"><i class="fa-solid fa-house me-3"></i>文章</a></li>
+						<li>
+							<a href="../member/users.php"><i class="fa-solid fa-house me-3"></i>會員</a>
+						</li>
+						<li><i class="fa-solid fa-house me-3"></i>LINK3</li>
+						<li><i class="fa-solid fa-house me-3"></i>LINK4</li>
+						<li><i class="fa-solid fa-house me-3"></i>LINK5</li>
+					</ul>
+				</aside>
+			</div>
+			<div class="flex-grow-1">
+				<header class="db_header px-3 hstack justify-content-between">
+					<nav>
+						<h1>Setting</h1>
+					</nav>
+					<div class="link-box d-flex gap-3">
+						<a href="#" class="fx-center"><i class="fa-solid fa-bell"></i></a>
+						<a href="#" class="fx-center"><i class="fa-solid fa-user"></i></a>
+					</div>
+				</header>
+				<main>
+					<h2>這裡會先暫時擺放通往大家負責頁面的連結</h2>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>

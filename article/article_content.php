@@ -3,7 +3,7 @@ require_once("../db_connect.php");
 session_start();
 
 $sql_sort = "SELECT * FROM article_sort";
-$re_sort = $connect->query($sql_sort);
+$re_sort = $conn->query($sql_sort);
 $sort_rows = $re_sort->fetch_all(MYSQLI_ASSOC);
 
 
@@ -20,8 +20,8 @@ if (isset($_GET["Aid"])) {
     header("location: article_title.php");
 }
 
-$re = $connect->query($sql);
-$re_img = $connect->query($sql_img);
+$re = $conn->query($sql);
+$re_img = $conn->query($sql_img);
 $row = $re->fetch_assoc();
 $title = $row["title"];
 
