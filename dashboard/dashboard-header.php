@@ -1,4 +1,4 @@
 <div class="db_header d-flex justify-content-between align-items-center">
   <span class="title">fundodo</span>
-  <span class="user">Hi, （施工中）</span>
+  <span class="user">Hi,<?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php" class="btn btn-primary">登出</a></span>
 </div>
