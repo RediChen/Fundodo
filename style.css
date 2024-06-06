@@ -11968,47 +11968,9 @@ textarea.form-control-lg {
 /* primary colors */
 /* text color */
 /* functional color */
-.btn-sq, .btn-circle {
+.btn-sq {
   width: 40px;
   height: 40px;
-}
-
-.btn-prototype, .btn-x, .btn-x-text, .btn-o, .btn-o-text {
-  padding: 0.5rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.4s;
-}
-
-.btn-o, .btn-o-text {
-  background-color: #71c4ef;
-  color: #fff;
-}
-.btn-o:hover, .btn-o-text:hover {
-  background-color: hsl(200, 71%, 60%);
-}
-.btn-o:active, .btn-o-text:active {
-  background-color: hsl(200, 71%, 55%);
-}
-
-.btn-o-text {
-  color: hsl(200, 25%, 23%);
-}
-
-.btn-x, .btn-x-text {
-  background-color: #ef7971;
-  color: #fff;
-}
-.btn-x:hover, .btn-x-text:hover {
-  background-color: hsl(4, 80%, 60%);
-}
-.btn-x:active, .btn-x-text:active {
-  background-color: hsl(4, 80%, 55%);
-}
-
-.btn-x-text {
-  color: hsl(4, 25%, 23%);
 }
 
 .popout-prototype, .popout-confirm, .popout-notice {
@@ -12103,7 +12065,7 @@ body {
   width: 100%;
 }
 
-.fx-center, .btn-prototype, .btn-o, .btn-o-text, .btn-x, .btn-x-text {
+.fx-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12160,31 +12122,14 @@ body {
   justify-content: space-between;
 }
 
-.crs-list_table .col-status {
-  position: relative;
+
+.crs-list_info .dropdown-menu {
+  background-color: #eef6fa;
+
 }
-.crs-list_table .col-status:hover::before, .crs-list_table .col-status:hover::after {
-  opacity: 1;
-}
-.crs-list_table .col-status::before, .crs-list_table .col-status::after {
-  position: absolute;
-  opacity: 0;
-  font-weight: 400;
-}
-.crs-list_table .col-status::before {
-  content: "";
-  display: block;
-  border: 1rem solid transparent;
-  border-top-color: #e7e1db;
-  top: -1rem;
-}
-.crs-list_table .col-status::after {
-  content: "「尚未上架」、「在架上」、「已下架」";
-  background-color: #e7e1db;
-  color: #343a40;
-  line-height: 1.5;
-  top: -2rem;
-  right: 0;
+.crs-list_info .dropdown-menu .dropdown-item:hover {
+  background-color: #71c4ef;
+  color: hsl(200, 25%, 23%);
 }
 
 .crs-list_table td:not([colspan]) {
@@ -12209,36 +12154,7 @@ body {
 }
 .crs-list_tags:hover {
   background-color: #fffefb;
-}
 
-.fixed-height-table {
-  height: 765px;
-  overflow: hidden;
-}
-
-.arti-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.cart-icon {
-  font-size: 28px;
-  text-decoration: none;
-  color: darkgray;
-}
-.cart-icon span {
-  top: -6px;
-  right: -8px;
-  font-size: 14px;
-  display: flex;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: red;
-  align-items: center;
-  justify-content: center;
 }
 
 .favorite-icon {
