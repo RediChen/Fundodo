@@ -1,9 +1,9 @@
 <?php
-$to_tools = "/xampp/htdocs/Fundodo/tools/";
-require_once "/xampp/htdocs/connectDB_fdd.php";
-include $to_tools . "tool-lib.php";
+$to_fdd = "/xampp/htdocs/Fundodo/";
+require_once($to_fdd . "db_connect.php");
 //todo 本地測試用
-include $to_tools . "/console-lib.php";
+include($to_fdd . "tools/console-lib.php");
+include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 
 if (!isset($_GET["id"])) :
   echo "請循正常管道進入本頁";
@@ -29,7 +29,7 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
 
 <head>
   <title>課程管理 | Fundodo</title>
-  <?php include $to_tools . "common-head.php"; ?>
+  <?php include $to_fdd . "tools/common-head.php"; ?>
 </head>
 
 <body>
@@ -125,6 +125,13 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
                   </button>
                 </td>
               </tr>
+              <tr>
+                <td rowspan="3">
+                  <?php if(isset($_SESSION['error_msg']['crs-update'])) : ?>
+                    <h2 class="text-danger"><?=$_SESSION['error_msg']['crs-update']?></h2>
+                    <?php endif; ?>
+                </td>
+              </tr>
             </table>
           </form>
         </div>
@@ -137,8 +144,8 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
     <div class="window animate__animated animate__bounceIn">
       <h2>確定下架課程嗎？</h2>
       <div class="mt-3 hstack gap-3 justify-content-center">
-        <a href="doDeleteCrs.php?delete=true&id=<?= $crs_id ?>" class="btn btn-danger-text px-3">下架</a>
-        <button class="btn btn-primary-text px-3" id="pop-c-btn">算了</button>
+        <a href="doDeleteCrs.php?delete=true&id=<?= $crs_id ?>" class="btn btn-danger px-3">下架</a>
+        <button class="btn btn-primary px-3" id="pop-c-btn">算了</button>
       </div>
     </div>
   </div>

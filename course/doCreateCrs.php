@@ -48,7 +48,7 @@ endif;
 
 $now = date('Y-m-d H:i:s');
 
-$sql = "INSERT INTO `courses` (`title`, `abstract`, `price`, 'created_at') VALUES ('$title', '$abstract', '$price', '$now')";
+$sql = "INSERT INTO `courses` (title, abstract, price, created_at) VALUES ('$title', '$abstract', $price, '$now')";
 
 if ($conn->query($sql) == false) :
     echo "新增進資料表 courses 失敗。";
@@ -92,6 +92,6 @@ $sql = "INSERT INTO images_stored (genre, item_id, item_sub_id, file_name) VALUE
 
 if ($conn->query($sql) == false) :
     echo "新增進資料表 images_stored 失敗。";
-else :
-    echo "新增進資料表 images_stored 成功。";
 endif;
+
+leadTo("crs-detail.php?id=$new_id");
