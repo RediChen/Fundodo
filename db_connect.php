@@ -6,7 +6,7 @@ $db_name = "fundodo";
 
 //* 泓宣 宏榮
 $password="12345";
-$db_name="db_test";
+// $db_name="db_test";
 
 //* 李柔
 $password = "12345";
@@ -14,7 +14,7 @@ $password = "12345";
 
 //*陳致
 // $password = ".glWcQbgMsmuL2rB";
-$password = "44444";
+// $password = "44444";
 
 //* 晨宇
 // $db_name="db-products";
