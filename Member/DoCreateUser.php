@@ -1,5 +1,5 @@
 <?php
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 if(!isset($_POST["name"])) {
     echo "請循正常管道進入此頁";
     exit;
@@ -58,4 +58,4 @@ else {
 }
 
 $conn->close();
-header("location: ../user-CMS/login.php");
+header("location: login.php");

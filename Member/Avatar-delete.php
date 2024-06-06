@@ -1,5 +1,5 @@
 <?php
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 if(!isset($_GET["id"])){
     echo "請循正常管道進入此頁";
     exit;

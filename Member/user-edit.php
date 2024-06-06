@@ -5,8 +5,7 @@ if (!isset($_GET["id"])) {
     $id = $_GET["id"];
 }
 
-
-require_once("../connect_tools/midterm_connect.php");
+require_once("/xampp/htdocs/Fundodo/db_connect.php");
 $sql = "SELECT * FROM users WHERE id = $id AND valid = 1";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -53,7 +52,7 @@ $row = $result->fetch_assoc();
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <?php include("../connect_tools/css.php") ?>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 
 
 </head>

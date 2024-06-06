@@ -5,7 +5,7 @@ $user_name="admin";
 $db_name = "fundodo";
 $db_name = "fundodo";
 
-//* 泓宣
+//* 泓宣 宏榮
 $password="12345";
 $db_name="db_test";
 
@@ -16,6 +16,7 @@ $db_name = "pet_hotel_db";
 //*陳致
 // $password = ".glWcQbgMsmuL2rB";
 // $password = "44444";
+
 
   //*李柔
 $servername = "localhost";
