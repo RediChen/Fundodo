@@ -23,8 +23,8 @@ if(!isset($title)){
     exit;
 }
 
-if ($connect->query($sql) === true) {
-    $article_id = $connect->insert_id;
+if ($conn->query($sql) === true) {
+    $article_id = $conn->insert_id;
     $count =1;
 
     foreach ($_FILES["files"]["error"] as $key => $error) {
@@ -36,7 +36,7 @@ if ($connect->query($sql) === true) {
             if (move_uploaded_file($tmp_name, "../upload_img/" .$name)) {
                 $img_paths[] ="../upload_img/". $name;
                 $sql_img = "INSERT INTO article_img (article_id,img_path) VALUE ('$article_id','$name')";
-                if($connect->query($sql_img)==true){
+                if($conn->query($sql_img)==true){
                     echo "success";
                 }
                 $count ++;
@@ -46,7 +46,7 @@ if ($connect->query($sql) === true) {
 
     header("location:article_title.php");
 } else {
-    echo "文章發表錯誤" . $connect->error;
+    echo "文章發表錯誤" . $conn->error;
 }
 
 

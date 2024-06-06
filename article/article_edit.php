@@ -11,9 +11,9 @@ $sql = "SELECT * FROM article WHERE id=$arti_id AND article_delete=0";
 $sql_img="SELECT * FROM article_img WHERE article_id='$arti_id'";
 $sql_sort="SELECT * FROM article_sort";
 
-$re = $connect->query($sql);
-$re_img=$connect->query($sql_img);
-$re_sort=$connect->query($sql_sort);
+$re = $conn->query($sql);
+$re_img=$conn->query($sql_img);
+$re_sort=$conn->query($sql_sort);
 $row = $re->fetch_assoc();
 
 
