@@ -3,11 +3,11 @@ require_once("../db_connect.php");
 session_start();
 
 $sql_sort = "SELECT * FROM article_sort";
-$re_sort = $connect->query($sql_sort);
+$re_sort = $conn->query($sql_sort);
 $sort_rows = $re_sort->fetch_all(MYSQLI_ASSOC);
 
 $sql_article = "SELECT * FROM article";
-$re_article = $connect->query($sql_article);
+$re_article = $conn->query($sql_article);
 $all_article = $re_article->num_rows;
 
 
@@ -22,7 +22,7 @@ if (isset($_GET["sort"])) {
     $sql_where = "WHERE article.sort='$sort' AND article_delete=0";
 
     $sql_article = "SELECT * FROM article WHERE sort=$sort";
-    $re_article = $connect->query($sql_article);
+    $re_article = $conn->query($sql_article);
     $all_article = $re_article->num_rows;
 
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
@@ -60,7 +60,7 @@ $sql_where
 ORDER BY article.create_at DESC $sql_limit
 ";
 
-$re = $connect->query($sql);
+$re = $conn->query($sql);
 $rows = $re->fetch_all(MYSQLI_ASSOC);
 $page_title = "文章列表";
 

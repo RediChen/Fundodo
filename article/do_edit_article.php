@@ -16,7 +16,7 @@ $sql="UPDATE article SET sort='$sort', title='$title',content='$content' WHERE i
 
 
 
-if ($connect->query($sql) === true) {
+if ($conn->query($sql) === true) {
     $article_id = $id;
     $count =1;
 
@@ -29,7 +29,7 @@ if ($connect->query($sql) === true) {
             if (move_uploaded_file($tmp_name, "../upload_img/" .$name)) {
                 $img_paths[] ="../upload_img/". $name;
                 $sql_img = "INSERT INTO article_img (article_id,img_path) VALUE ('$article_id','$name')";
-                if($connect->query($sql_img)==true){
+                if($conn->query($sql_img)==true){
                     echo "success";
                 }
                 $count ++;
@@ -43,7 +43,7 @@ if ($connect->query($sql) === true) {
 
             // 獲取圖片路徑
             $sql_img = "SELECT img_path FROM article_img WHERE id='$img_id'";
-            $result_img = $connect->query($sql_img);
+            $result_img = $conn->query($sql_img);
             if ($result_img->num_rows > 0) {
                 $row_img = $result_img->fetch_assoc();
                 $img_path = "../upload_img/" . $row_img['img_path'];
@@ -52,8 +52,8 @@ if ($connect->query($sql) === true) {
                 if (file_exists($img_path) && unlink($img_path)) {
                     // 從數據庫中刪除圖片記錄
                     $sql_delete_img = "DELETE FROM article_img WHERE id='$img_id'";
-                    if ($connect->query($sql_delete_img) !== true) {
-                        echo "圖片刪除失敗: " . $connect->error;
+                    if ($conn->query($sql_delete_img) !== true) {
+                        echo "圖片刪除失敗: " . $conn->error;
                     }
                 } else {
                     echo "圖片文件不存在或刪除失敗。";
@@ -64,7 +64,7 @@ if ($connect->query($sql) === true) {
     header("Location: article_title.php");
     exit;
 } else {
-    echo "文章編輯失敗: " . $connect->error;
+    echo "文章編輯失敗: " . $conn->error;
 }
 
 ?>

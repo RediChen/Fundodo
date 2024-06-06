@@ -9,11 +9,11 @@ $password="12345";
 // $db_name="db_test";
 
 //*陳致
-$password = ".glWcQbgMsmuL2rB";
+// $password = ".glWcQbgMsmuL2rB";
 // $password = "44444";
 
-$connect=new mysqli($server_name,$user_name,$password,$db_name);
+$conn=new mysqli($server_name,$user_name,$password,$db_name);
 
-if ($connect->connect_error) {
-    die("連線失敗: " . $connect->connect_error);
+if ($conn->connect_error) {
+    die("連線失敗: " . $conn->connect_error);
 }
