@@ -62,4 +62,3 @@ if(isset($user_id)){
 
 exit;
 ?>
-<img src="../avatar_catch/" alt="">
