@@ -27,7 +27,7 @@ session_start();
 
         .login-panel {
             width: 840px;
-            height: 760px;
+            height: 800px;
             background: #EEF6FA;
         }
 
@@ -58,20 +58,20 @@ session_start();
                     <label for="">密碼</label>
                     <input type="password" name="password">
                 </div>
+                <?php if (isset($_SESSION["errorMsg"])) : ?>
+                    <div class="text-danger text-center my-3">帳號或密碼錯誤</div>                    
+                <?php endif; ?>
                 <div class="mb-2 mt-3 text-center">
                     <a href="create-user.php" class="">
                         <label for="">建立帳號</label>
                     </a>
                 </div>
-                <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
-                    <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
-                <?php else : ?>
-
-                <?php endif; ?>
                 <button class="btn btn-primary sub" type="submit">
                     送出
                 </button>
-
+                <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+                    <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>                    
+                <?php endif; ?>
             </form>
 
         </div>
