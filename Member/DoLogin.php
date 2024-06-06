@@ -73,4 +73,7 @@ if ($row["user_level"] == 20) {
     exit();
 }
 }
+
+$conn->close();
+header("location: login.php");
 ?>
