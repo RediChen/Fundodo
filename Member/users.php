@@ -23,7 +23,7 @@ $allUserCount = $resultAll->num_rows;
 
 if (isset($_GET["search"])) {
     $search = $_GET["search"];
-    $sql = "SELECT id, name, nickname, account, password_hash, email, gender, user_level, valid, 	dob, tel, email , created_at, deleted_at FROM users WHERE (account LIKE '%$search%' OR nickname LIKE '%$search%'OR name LIKE '%$search%'OR email LIKE '%$search%') AND valid = 1";
+    $sql = "SELECT id, name, nickname, account, password_hash, email, gender, user_level, valid, 	dob, tel, email , created_at, deleted_at FROM users WHERE (id LIKE '%$search%' OR account LIKE '%$search%' OR nickname LIKE '%$search%'OR name LIKE '%$search%'OR tel LIKE '%$search%') AND valid = 1";
     $pageTitle = "$search 的搜尋結果";
 } else if (isset($_GET["page"]) && isset($_GET["order"])) {
     $page = $_GET["page"];
@@ -88,12 +88,8 @@ if (isset($_GET["page"])) {
 </head>
 
 <body>
-<div class="d-flex">
-      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
-      <div class="w-100">
-        <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-        <div class="db_content">
-        <div class="container">
+ <a href="../dashboard/dashboard.html" class="btn btn-primary">首頁</a>
+    <div class="container">
         <h1><?= $pageTitle ?></h1>
         <div class="py-2">
             <div class="d-flex justify-content-start gap-3">
@@ -154,21 +150,21 @@ if (isset($_GET["page"])) {
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">id</th>
-                        <th class="text-center">會員姓名</th>
-                        <th class="text-center">暱稱</th>
-                        <th class="text-center">帳號</th>
-                        <!-- <th class="text-center">密碼</th> -->
-                        <!-- <th class="text-center">性別</th> -->
-                        <!-- <th class="text-center">權限</th> -->
-                        <th class="text-center">會員等級</th>
-                        <th class="text-center">生日</th>
-                        <th class="text-center">電話</th>
-                        <!-- <th class="text-center">頭像</th>
-                        <th class="text-center">頭像路徑</th> -->
-                        <!-- <th class="text-center">郵箱</th> -->
-                        <!-- <th class="text-center">創建時間</th> -->
-                        <th class="text-center" colspan="3">操作</th>
+                        <th class="text-center table-danger">id</th>
+                        <th class="text-center table-danger">會員姓名</th>
+                        <th class="text-center table-danger">暱稱</th>
+                        <th class="text-center table-danger">帳號</th>
+                        <!-- <th class="text-center table-danger">密碼</th> -->
+                        <!-- <th class="text-center table-danger">性別</th> -->
+                        <!-- <th class="text-center table-danger">權限</th> -->
+                        <th class="text-center table-danger">會員等級</th>
+                        <th class="text-center table-danger">生日</th>
+                        <th class="text-center table-danger">電話</th>
+                        <!-- <th class="text-center table-danger">頭像</th>
+                        <th class="text-center table-danger">頭像路徑</th> -->
+                        <!-- <th class="text-center table-danger">郵箱</th> -->
+                        <!-- <th class="text-center table-danger">創建時間</th> -->
+                        <th class="text-center table-danger" colspan="3">操作</th>
                     </tr>
                 </thead>
                 <tbody>
