@@ -1,85 +1,89 @@
 <?php
 session_start();
-
-//var_dump($_SESSION);
-// if(isset($_SESSION["user"])){
-//     header("location: dashboard.php");
-//     exit;
-// }
-
+if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) :
+  header('Location: /Fundodo/dashboard/dashboard.php');
+  exit();
+endif;
+if (isset($_SESSION["user"])) :
+  header('Location: /Fundodo/member/Member-center.php');
+  exit();
+endif;
 ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Fundodo login</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- <link href="/Fundodo-main/style.scss"> -->
-    <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
-
-    <style>
-        body {
-            background: linear-gradient(to right, #71C4EF 25%, #EEF6FA);
-        }
-
-        .login-panel {
-            width: 840px;
-            height: 760px;
-            background: #EEF6FA;
-        }
-
-        .sub {
-            align-self: flex-start;
-            margin-left: 55%;
-        }
-    </style>
+  <title>Fundodo login</title>
+  <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
 </head>
 
-<body>
-    <div class="border vh-100 d-flex justify-content-center align-items-center">
-        <div class="login-panel">
+<body class="login-body">
+  <div class="container fx-center">
+    <div class="vh-100 row">
+      <div class="col-12 col-md-6 col-lg-5 mt-3">
+        <div class="vstack justify-content-center h-100">
+          <form action="DoLogin.php" method="post" class="login-form w-100 py-5 col-lg-4 px-5 bg-light bg-opacity-75 rounded-3 shadow">
             <div class="text-center">
-                <h1 class="h2 mt-2">Fundodo</h1>
-                <div class="text-center">
-                        <img src="../dashboard/fundodo-logo.png" alt="">
-                </div>
-                <hr>
-            </div>
-
-            <form action="DoLogin.php" method="post">
-                <div class="mt-5 mb-3 text-center">
-                    <label for="">帳號</label>
-                    <input type="text" name="account">
-                </div>
-                <div class="mb-1 mt-3 text-center">
-                    <label for="">密碼</label>
-                    <input type="password" name="password">
-                </div>
-                <div class="mb-2 mt-3 text-center">
-                    <a href="create-user.php" class="">
-                        <label for="">建立帳號</label>
-                    </a>
-                </div>
-                <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
-                    <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
+              <label for="">帳號</label>
+              <input type="text" name="account" class="form-control mt-1">
+              <p class="text-danger text-center mb-3">
+                <?php if (isset($_SESSION["errorMsg"]['account'])) : ?>
+                  <?= $_SESSION["errorMsg"]['account'] ?>
+                  <?php unset($_SESSION["errorMsg"]['account']); ?>
                 <?php else : ?>
-
+                  &emsp;
                 <?php endif; ?>
-                <button class="btn btn-primary sub" type="submit">
+              </p>
+            </div>
+            <div class="mb-1 mt-3 text-center">
+              <label for="">密碼</label>
+              <input type="password" name="password" class="form-control mt-1">
+              <p class="text-danger text-center mb-3">
+                <?php if (isset($_SESSION["errorMsg"]['password'])) : ?>
+                  <?= $_SESSION["errorMsg"]['password'] ?>
+                  <?php unset($_SESSION["errorMsg"]['password']); ?>
+                <?php else : ?>
+                  &emsp;
+                <?php endif; ?>
+              </p>
+            </div>
+            <div class="hstack justify-content-center gap-5 mt-5">
+              <a href="create-user.php" class="btn btn-success">
+                註冊帳號
+              </a>
+              <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+                <div class="text-center">
+                  <button class="btn btn-secondary" type="submit" disabled>
                     送出
-                </button>
-
-            </form>
-
+                  </button>
+                </div>
+              <?php else : ?>
+                <div class="text-center">
+                  <button class="btn btn-primary" type="submit">
+                    送出
+                  </button>
+                </div>
+              <?php endif; ?>
+            </div>
+            <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
+              <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
+            <?php elseif (isset($_GET["logout"]) && $_GET["logout"] == 1) : ?>
+              <p class="text-primary-emphasis text-center h5 my-3">帳號或密碼錯誤</p>
+              <?php unset($_GET["logout"]); ?>
+            <?php endif; ?>
+          </form>
         </div>
-
+      </div>
+      <div class="col-12 col-md-5 row pt-5 vstack justify-content-center">
+        <div class="login-logo col-6 rounded-5 py-3">
+          <img src="../dashboard/fundodo-logo.png" alt="" class="object-fit-cover">
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
     </div>
-
-
-    <?php include("../member/js.php") ?>
+  </div>
+  <?php include("../member/js.php") ?>
 </body>
 
 </html>

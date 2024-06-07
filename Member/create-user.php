@@ -3,14 +3,10 @@
 
 <head>
     <title>會員註冊</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link>
     <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
     <style>
         body {
-            background: linear-gradient(to right, #71C4EF 25%, #EEF6FA);
+            background: linear-gradient(165deg, #71C4EF 25%, #EEF6FA);
         }
     </style>
 </head>
@@ -18,16 +14,16 @@
 <body>
     <div class="container">
         <div class="py-2">
-            <h2>會員註冊</h2>
-            <div class="d-flex justify-content-center">
-                <a href="../member/login.php" class="btn bnt-primary" title="前往登入頁">
-                    <img src="../dashboard/fundodo-logo.png" alt="">
-                </a>
-            </div>
+          <div class="d-flex justify-content-center">
+            <div class="w-25">
+              <img src="../dashboard/fundodo-logo.png" alt="" class="object-fit-cover">
+              </div>
+              </div>
+            <h2 class="text-center text-light mt-3">會員註冊</h2>
         </div>
         <hr>
-        <div class="py-2">
-            <form action="DoCreateUser.php" method="post">
+        <div class="py-2 row justify-content-center">
+            <form action="DoCreateUser.php" method="post" class="col-auto col-lg-6">
                 <div class="mb-2 justify-content-center">
                     <div class="row mb-2">
                         <div class="col-6 justify-content-start">
@@ -78,7 +74,9 @@
                     <label for="" class="form-label">地址: </label>
                     <input type="text" class="form-control" name="address">
                 </div>
-                <button class="btn btn-danger justify-content-end" type="submit">送出</button>
+                <div class="fx-center mt-3">
+                <button class="btn btn-primary justify-content-end" type="submit">送出</button>
+                </div>
             </form>
         </div>
 

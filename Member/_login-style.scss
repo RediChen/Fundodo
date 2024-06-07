@@ -1,5 +1,14 @@
+.login-body {
+  background: no-repeat center/cover url("member/images/bg_with_dog.jpg");
+  //
+  overflow: hidden;
+}
+
 .login-logo {
-  height: 128px;
+  background-color: $primary-text;
+  height: fit-content;
+  position: relative;
+  left: 4rem;
 }
 .cart-icon {
   /*  */
@@ -37,4 +46,29 @@
   &.active {
     color: palevioletred;
   }
+}
+
+.login-form {
+  input {
+    border: 1px solid $color-p1;
+  }
+}
+
+.member-center-panel {
+  min-height: 60vh;
+  background-color: $color-p2;
+  border-radius: 1rem 0 0 1rem;
+
+  h2 {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    width: fit-content;
+    background-color: $color-p1;
+    border-radius: 99rem;
+  }
+}
+.member-center-avatar {
+  min-height: 100%;
+  border: 10px solid $color-p2;
+  border-radius: 0 1rem 1rem 0;
 }

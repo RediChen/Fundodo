@@ -178,7 +178,7 @@ if ($row === null) {
                         </div>
                         <div class="row justify-content-center">
                             <div class="col text-center">
-                                <a class="text-decoration-none btn btn-secondary" href="Member-center.php?id=<?= $row["id"] ?>" title="前往會員中心更換頭像">會員中心</a>
+                                <a class="text-decoration-none btn btn-secondary" href="member-center.php?id=<?= $row["id"] ?>" title="前往會員中心更換頭像">會員中心</a>
                                 <button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </div>

@@ -2,5 +2,6 @@
 function leadTo($path)
 {
     header("Location: $path");
+    exit;
 }
 ?>

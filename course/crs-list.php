@@ -114,7 +114,7 @@ include "./crs-list_header.php";
                 <th scope="col">課程摘要</th>
                 <th scope="col">課程縮圖</th>
                 <th scope="col">課程價格</th>
-                <th scope="col">觀看人次</th>
+                <!-- <th scope="col">觀看人次</th> -->
                 <th scope="col" class="col-status">狀態</th>
                 <th scope="col">功能鈕</th>
               </tr>
@@ -135,7 +135,7 @@ include "./crs-list_header.php";
                   <td class="text-end">
                     NT$<?= number_format($course["price"]) ?>
                   </td>
-                  <td>（施工中）</td>
+                  <!-- <td>（施工中）</td> -->
                   <?php
                   $isOn = empty($course["deleted_at"]);
                   $statusClass = $isOn ? "text-nowrap" : "";
@@ -165,8 +165,6 @@ include "./crs-list_header.php";
                   foreach ($rows as $row) :
                     $tagArr[$row["id"]] = $row["category"];
                   endforeach;
-
-                  //todo 將標籤色與欄 bgc 同步
                   ?>
 
                   <td colspan="6">
@@ -178,11 +176,11 @@ include "./crs-list_header.php";
                       <?php endforeach; ?>
                     </div>
                   </td>
-                  <td class="text-center">
+                  <td>
                     <!-- <div> -->
-                    <a href="#" class="btn btn-primary btn-sq text-light" title="編輯標籤">
+                    <!-- <a href="#" class="btn btn-primary btn-sq text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
-                    </a>
+                    </a> -->
                     <!-- </div> -->
                   </td>
                 </tr>
@@ -206,19 +204,20 @@ include "./crs-list_header.php";
     <div class="popout-notice" id="popout-notice">
       <div class="window animate__animated animate__bounceIn">
         <h2>已下架課程</h2>
-        <a href="<?= $LINK_HERE ?>" class="btn btn-primary mt-3 px-3" id="pop-n-btn">好的</a>
+        <a rolo="button" href="<?= $LINK_HERE ?>" class="btn btn-primary mt-3 px-3" id="pop-n-btn">好的</a>
       </div>
     </div>
+    <script>
+      const popout_n = document.querySelector("#popout-notice");
+      const btn_close_n = document.querySelector("#pop-n-btn");
+      btn_close_n.addEventListener("click", () => {
+        popout_n.style.display = "none";
+      });
+    </script>
   <?php endif; ?>
 
   <?php include $to_fdd . "tools/common-script.php"; ?>
-  <script>
-    const popout_n = document.getElementById("popout-notice");
-    const btn_close_n = document.getElementById("pop-n-btn");
-    btn_close_n.addEventListener("click", () => {
-      popout_n.style.display = "none";
-    });
-  </script>
+
 </body>
 
 </html>

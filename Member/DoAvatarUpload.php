@@ -2,7 +2,7 @@
 session_start();
 require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
-if (!isset($_POST["avatar"])) {
+if (empty($_FILES["avatar"])) {
     echo "請循正常管道進入";
     exit;
 }
@@ -25,11 +25,11 @@ foreach ($old_avatar_files as $old_avatar_file) {
     unlink($old_avatar_file);
 }
 
-if ($_FILES["avatar_file"]["error"] == 0) {
+if ($_FILES["avatar"]["error"] == 0) {
     $target_dir = "../avatar_catch/"; // 指定目標文件夾
-    $file_extension = pathinfo($_FILES["avatar_file"]["name"], PATHINFO_EXTENSION);
+    $file_extension = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
     $avatar_file = $user_id . "." . $file_extension; // 新的文件名稱，包含用戶ID
-    if (move_uploaded_file($_FILES["avatar_file"]["tmp_name"], $target_dir . $avatar_file)) {
+    if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_dir . $avatar_file)) {
         echo "上傳成功";
         // 檔案上傳成功後，將檔案移動到 avatar 文件夾中
         $source_file = $target_dir . $avatar_file;
@@ -55,11 +55,8 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 if(isset($user_id)){
     $encoded_user_id = urlencode($user_id);
-    header("location: Member-center.php?id=$encoded_user_id");
+    header("location: member-center.php?id=$encoded_user_id");
 } else {
-    header("location: Member-center.php");
+    header("location: member-center.php");
 }
-
 exit;
-?>
-<img src="../avatar_catch/" alt="">

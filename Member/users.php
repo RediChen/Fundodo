@@ -1,16 +1,17 @@
 <?php
-session_start();
+// session_start();
+include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 
 // 检查是否已设置 $_SESSION["user"]
-if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) {
+// if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) {
     //echo "歡迎登入";
     //print_r($_SESSION);
-} else {
-    echo "不符合資格";
-    header("Location: login.php");
-    //print_r($_SESSION);
-    exit();
-}
+// } else {
+//     echo "不符合資格";
+//     header("Location: login.php");
+//     //print_r($_SESSION);
+//     exit();
+// }
 
 require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
