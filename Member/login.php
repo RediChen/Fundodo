@@ -4,6 +4,10 @@ if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) :
   header('Location: /Fundodo/dashboard/dashboard.php');
   exit();
 endif;
+if (isset($_SESSION["user"])) :
+  header('Location: /Fundodo/member/Member-center.php');
+  exit();
+endif;
 ?>
 
 <!doctype html>
@@ -41,22 +45,30 @@ endif;
 
       <div class="col-12 col-md-6 col-lg-5 mt-3">
         <div class="vstack justify-content-center h-100">
-          <form action="DoLogin.php" method="post" class="w-100 py-5 col-lg-4 px-5 bg-light rounded-3">
+          <form action="DoLogin.php" method="post" class="login-form w-100 py-5 col-lg-4 px-5 bg-light bg-opacity-75 rounded-3 shadow">
             <div class="text-center">
               <label for="">帳號</label>
               <input type="text" name="account" class="form-control mt-1">
-              <?php if (isset($_SESSION["errorMsg"]['account'])) : ?>
-                <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['account'] ?></p>
-                <?php unset($_SESSION["errorMsg"]['account']); ?>
-              <?php endif; ?>
+              <p class="text-danger text-center mb-3">
+                <?php if (isset($_SESSION["errorMsg"]['account'])) : ?>
+                  <?= $_SESSION["errorMsg"]['account'] ?>
+                  <?php unset($_SESSION["errorMsg"]['account']); ?>
+                <?php else : ?>
+                  &emsp;
+                <?php endif; ?>
+              </p>
             </div>
             <div class="mb-1 mt-3 text-center">
               <label for="">密碼</label>
               <input type="password" name="password" class="form-control mt-1">
-              <?php if (isset($_SESSION["errorMsg"]['password'])) : ?>
-                <p class="text-danger text-center mb-3"><?= $_SESSION["errorMsg"]['password'] ?></p>
-                <?php unset($_SESSION["errorMsg"]['password']); ?>
-              <?php endif; ?>
+              <p class="text-danger text-center mb-3">
+                <?php if (isset($_SESSION["errorMsg"]['password'])) : ?>
+                  <?= $_SESSION["errorMsg"]['password'] ?>
+                  <?php unset($_SESSION["errorMsg"]['password']); ?>
+                <?php else : ?>
+                  &emsp;
+                <?php endif; ?>
+              </p>
             </div>
             <div class="hstack justify-content-center gap-5 mt-5">
               <a href="create-user.php" class="btn btn-success">

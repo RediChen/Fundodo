@@ -80,8 +80,7 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
             <a href="users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>
             <a href="user.php?id=<?= $row["id"] ?>" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回上一頁</a>
           </div>
-          <div class="row justify-cont
-           ent-center">
+          <div class="row justify-content-center">
             <div class="col-lg-4">
               <?php if ($userExit) : ?>
                 <form action="doUpdateUser.php" method="post">

@@ -12172,6 +12172,30 @@ body {
   color: palevioletred;
 }
 
+.login-form input {
+  border: 1px solid #b9a399;
+}
+
+.member-center-panel {
+  min-height: 60vh;
+  background-color: #e7e1db;
+  border-radius: 1rem 0 0 1rem;
+}
+.member-center-panel h2, .member-center-panel .h2 {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #b9a399;
+  border-radius: 99rem;
+}
+
+.member-center-avatar {
+  min-height: 100%;
+  border: 10px solid #e7e1db;
+  border-radius: 0 1rem 1rem 0;
+}
+
 .crs-list_info {
   display: flex;
   justify-content: space-between;

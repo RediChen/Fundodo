@@ -7,6 +7,7 @@ btn_act_c.addEventListener("click", () => {
 btn_close_c.addEventListener("click", () => {
   popout_c.style.display = "none";
 });
+//============================
 const upload = document.querySelector("#toUpload");
 const img = document.querySelector("#img-showcase");
 let counter = 0;
