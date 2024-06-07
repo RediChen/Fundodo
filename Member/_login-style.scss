@@ -1,5 +1,14 @@
+.login-body {
+  background: no-repeat center/cover url("member/images/bg_with_dog.jpg");
+  //
+  overflow: hidden;
+}
+
 .login-logo {
-  height: 128px;
+  background-color: $primary-text;
+  height: fit-content;
+  position: relative;
+  left: 4rem;
 }
 .cart-icon {
   /*  */

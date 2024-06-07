@@ -15,34 +15,12 @@ endif;
 
 <head>
   <title>Fundodo login</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- <link href="/Fundodo-main/style.scss"> -->
   <?php include("/xampp/htdocs/Fundodo/tools/common-head.php"); ?>
-
-  <style>
-    body {
-      background: no-repeat linear-gradient(10deg, #71C4EF 25%, #EEF6FA);
-      overflow: hidden;
-    }
-
-    .logo {
-      padding: 2rem;
-      border-radius: 50%;
-    }
-  </style>
 </head>
 
-<body>
-  <div class="vh-100 container fx-center">
-    <div class="row justify-content-center mt-5">
-      <div class="col-12 col-md-6 row">
-        <div class="logo col-6 bg-primary bg-opacity-50">
-          <img src="../dashboard/fundodo-logo.png" alt="" class="object-fit-cover">
-        </div>
-      </div>
-
+<body class="login-body">
+  <div class="container fx-center">
+    <div class="vh-100 row">
       <div class="col-12 col-md-6 col-lg-5 mt-3">
         <div class="vstack justify-content-center h-100">
           <form action="DoLogin.php" method="post" class="login-form w-100 py-5 col-lg-4 px-5 bg-light bg-opacity-75 rounded-3 shadow">
@@ -97,6 +75,12 @@ endif;
           </form>
         </div>
       </div>
+      <div class="col-12 col-md-5 row pt-5 vstack justify-content-center">
+        <div class="login-logo col-6 rounded-5 py-3">
+          <img src="../dashboard/fundodo-logo.png" alt="" class="object-fit-cover">
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
     </div>
   </div>
   <?php include("../member/js.php") ?>

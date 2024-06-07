@@ -12130,8 +12130,17 @@ body {
   color: #343a40;
 }
 
+.login-body {
+  background: no-repeat center/cover url("member/images/bg_with_dog.jpg");
+  overflow: hidden;
+}
+
 .login-logo {
-  height: 128px;
+  background-color: hsl(200, 25%, 23%);
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  left: 4rem;
 }
 
 .cart-icon {
