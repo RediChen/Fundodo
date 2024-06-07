@@ -1,10 +1,9 @@
 <?php
 $to_fdd = "/xampp/htdocs/Fundodo/";
-require_once $to_fdd . "/db_connect.php";
-include $to_fdd . "tools/tool-lib.php";
+require_once($to_fdd . "db_connect.php");
 //todo 本地測試用
-include $to_fdd . "tools/console-lib.php";
-session_start();
+include($to_fdd . "tools/console-lib.php");
+include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 
 $BACK_LINK = "crs-list.php";
 

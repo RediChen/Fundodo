@@ -10,6 +10,8 @@
 
 // 頁面：首頁
 @import "./dashboard/dashboard";
+// 頁面：首頁
+@import "./member/login-style";
 
 // 頁面：課程
 @import "./course/crs-list";
@@ -20,6 +22,9 @@
 
 // 頁面：旅館
 @import "./hotel/style2";
+
+// 頁面：優惠券
+@import "./coupon/style";
 
 // 頁面：商品
 @import "./product/style";

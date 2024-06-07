@@ -1,16 +1,17 @@
 <?php
-session_start();
+// session_start();
+include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
 
 // 检查是否已设置 $_SESSION["user"]
-if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) {
+// if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) {
     //echo "歡迎登入";
     //print_r($_SESSION);
-} else {
-    echo "不符合資格";
-    header("Location: login.php");
-    //print_r($_SESSION);
-    exit();
-}
+// } else {
+//     echo "不符合資格";
+//     header("Location: login.php");
+//     //print_r($_SESSION);
+//     exit();
+// }
 
 require_once("/xampp/htdocs/Fundodo/db_connect.php");
 
@@ -190,7 +191,7 @@ if (isset($_GET["page"])) {
                                         <!-- <td><?= $user["created_at"] ?></td> -->
                                         <td><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
                                         <td><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        <td><a href="user-delete.php?id=<?= $user["id"] ?>"><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></a></td>
+                                        <td><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -222,6 +223,25 @@ if (isset($_GET["page"])) {
             </div>
         </div>
     </div>
+                    <!-- modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-5" id="deleteModalLabel">確認刪除</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                刪除使用者
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <a href="user-delete.php?id=<?= $user["id"] ?>" type="button" class="btn btn-danger">確認</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <?php include("/xampp/htdocs/Fundodo/tools/common-script.php"); ?>
 </body>
 
 </html>

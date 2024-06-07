@@ -1,7 +1,8 @@
 <?php
 //====================== imports ==========================
 $to_fdd = "/xampp/htdocs/Fundodo/";
-require_once("/xampp/htdocs/connectDB_fdd.php");
+include($to_fdd . "tools/adminOnly.php");
+require_once($to_fdd . "db_connect.php");
 include($to_fdd . "tools/tool-lib.php");
 //todo 本地測試用
 include($to_fdd . "tools/console-lib.php");
@@ -96,8 +97,6 @@ $sql = implode(' ', $sqlArr);
 //*生成總頁數
 $crsCount = $conn->query($sql)->num_rows;
 $NUM_PAGES = ceil($crsCount / $PAGE_LIMIT);
-
-
 
 //*當頁內容
 $sql .= ' ' . $sql_LIMIT;

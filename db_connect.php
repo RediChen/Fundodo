@@ -1,8 +1,8 @@
 <?php
+date_default_timezone_set('Asia/Taipei');
 // 共用
 $server_name="localhost";
 $user_name="admin";
-$db_name = "fundodo";
 $db_name = "fundodo";
 
 //* 泓宣 宏榮
@@ -15,7 +15,7 @@ $password = "12345";
 
 //*陳致
 // $password = ".glWcQbgMsmuL2rB";
-// $password = "44444";
+$password = "44444";
 
   //*李柔
 // $servername = "localhost";

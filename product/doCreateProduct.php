@@ -1,5 +1,5 @@
 <?php
-require_once("db-conn.php");
+require_once("../db_connect.php");
 
 $name = $_POST["name"];
 $description = $_POST["description"];
