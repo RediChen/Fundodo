@@ -13,9 +13,13 @@ $password="12345";
 $password = "12345";
 // $db_name = "pet_hotel_db";
 
+// 之恩
+$password = "dgyy";
+
+
 //*陳致
 // $password = ".glWcQbgMsmuL2rB";
-$password = "44444";
+// $password = "44444";
 
 //* 晨宇
 // $db_name="db-products";

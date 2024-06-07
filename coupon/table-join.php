@@ -1,5 +1,5 @@
 <?php
-require_once("./db_connect.php");
+require_once("../db_connect.php");
 
 // 使用 category_id 進行關聯
 $sql = "SELECT coupons.*, coupons_category.name AS category_name 
