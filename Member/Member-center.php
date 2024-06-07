@@ -37,12 +37,12 @@ $conn->close();
 </head>
 
 <body>
-<a href="../dashboard/dashboard.php" class="btn btn-primary">首頁</a>
+<a href="../article/article_title.php" class="btn btn-primary">文章首頁</a>
     <h1 class="text-center">會員中心</h1>
-    <h2 class="text-center">個人信息</h2>
-    <p class="text-center">用戶名：<?= $row['name'] ?></p>
-    <p class="text-center">郵箱：<?= $row['email'] ?></p>
-    <p class="text-center">聯絡方式：<?= $row['tel'] ?></p>
+    <h2 class="text-center">會員資料</h2>
+    <p class="text-center">會員暱稱：<?= $row['nickname'] ?></p>
+    <p class="text-center">電子信箱：<?= $row['email'] ?></p>
+    <p class="text-center">行動電話：<?= $row['tel'] ?></p>
 
     <!-- 其他功能 -->
     <h2 class="text-center">上傳頭像</h2>

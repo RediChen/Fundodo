@@ -12227,6 +12227,16 @@ body {
   text-overflow: ellipsis;
 }
 
+.hover {
+  transition: color 0.4s;
+}
+.hover:hover {
+  color: #44768f !important;
+}
+.hover.active {
+  color: #5a9dbf !important;
+}
+
 .cart-icon {
   font-size: 28px;
   text-decoration: none;
