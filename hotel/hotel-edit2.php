@@ -84,7 +84,7 @@ $conn->close();
 <div class="container">
 <h3 class="px-2">旅館編輯</h3>
   <div class="py-2">
-    <a class="btn btn-primary" href="hotel-list.php?"><i class="fa-solid fa-arrow-left"></i> 回狗狗旅館列表</a>
+    <a class="btn btn-secondary" href="hotel-list.php?"><i class="fa-solid fa-arrow-left"></i> 回狗狗旅館列表</a>
   </div>
   <form action="doUpdateHotel.php" method="post">
     <table class="table table-bordered">
