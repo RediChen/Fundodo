@@ -181,17 +181,17 @@ if (isset($_GET["page"])) {
                                         <td><?= $user["account"] ?></td>
                                         <!-- <td><?= $user["password_hash"] ?></td> -->
                                         <!-- <td><?= ($user["gender"] == 1) ? "男" : (($user["gender"] == 2) ? "女" : "未知") ?></td> -->
-                                        <td><?= ($user["user_level"] == 20) ? "管理者" : (($user["user_level"] == 3) ? "版主" : "會員") ?></td>
+                                        <td class="text-center"><?= ($user["user_level"] == 20) ? "管理者" : (($user["user_level"] == 3) ? "版主" : "會員") ?></td>
                                         <!-- <td><?= ($user["valid"] == 3) ? "高級會員" : (($user["valid"] == 0) ? "封禁帳號" : "會員") ?></td> -->
-                                        <td><?= $user["dob"] ?></td>
-                                        <td><?= $user["tel"] ?></td>
+                                        <td class="text-center"><?= $user["dob"] ?></td>
+                                        <td class="text-center"><?= $user["tel"] ?></td>
                                         <!-- <td><?= $user["avatar"] ?></td> -->
                                         <!-- <td><?= $user["avatar_file"] ?></td> -->
                                         <!-- <td><?= $user["email"] ?></td> -->
                                         <!-- <td><?= $user["created_at"] ?></td> -->
-                                        <td><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
-                                        <td><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        <td><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
+                                        <td class="text-center"><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
+                                        <td class="text-center"><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                        <td class="text-center"><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

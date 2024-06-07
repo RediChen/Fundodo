@@ -72,7 +72,6 @@ $images = $resultImg->fetch_all(MYSQLI_ASSOC);
   <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
     <div class="alert alert-success alert-dismissble fade show" role="alert">
       旅館資訊更新完成!
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  
     </div>
     <?php elseif (isset($_GET['status']) && $_GET['status'] == 'error'): ?>
     <div class="alert alert-danger alert-dismissble fade show" role="alert">

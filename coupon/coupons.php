@@ -245,7 +245,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                                                 <?php
                                                 $currentDate = date('Y-m-d');
                                                 if ($coupon["end_date"] < $currentDate) {
-                                                    echo "已停用";
+                                                    echo "已截止";
                                                 } else {
                                                     echo $coupon["status"] == 1 ? "可使用" : "已停用";
                                                 }
