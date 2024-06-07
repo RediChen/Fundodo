@@ -1,5 +1,5 @@
 <?php
-require_once("./db_connect.php");
+require_once("../db_connect.php");
 
 if (!isset($_GET["id"])) {
     die("無效的請求");

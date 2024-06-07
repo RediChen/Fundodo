@@ -1,5 +1,5 @@
 <?php
-require_once("./db_connect.php");
+require_once("../db_connect.php");
 $conn->set_charset("utf8mb4");
 
 // 預設排序
@@ -254,9 +254,9 @@ function getOrderLink($column, $current_order_by, $current_order)
                                             <td>
                                                 <a class=" btn1 btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看詳情 <i class="fa-solid fa-circle-info"></i></a>
                                                 <?php if ($coupon["status"] == 1 && $coupon["end_date"] >= $currentDate) : ?>
-                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">我要停用 <i class="fa-solid fa-circle-xmark"></i></button>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">點擊停用 <i class="fa-solid fa-circle-xmark"></i></button>
                                                 <?php elseif ($coupon["status"] == 0 || $coupon["end_date"] < $currentDate) : ?>
-                                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">我要啟用 <i class="fa-solid fa-circle-check"></i></button>
+                                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">點擊啟用 <i class="fa-solid fa-circle-check"></i></button>
                                                 <?php endif; ?>
 
                                                 <!-- 停用確認模態框 -->
