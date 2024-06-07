@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
 if ($row["status"] == 0) {
     $_SESSION['formData']['status'] = 1;
 }
+session_abort();
 ?>
 
 <!doctype html>

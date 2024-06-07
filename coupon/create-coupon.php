@@ -12,6 +12,7 @@ if (!isset($_SESSION['preserve_form_data'])) {
 
 // 設置標誌來保留會話數據
 $_SESSION['preserve_form_data'] = true;
+session_abort();
 ?>
 
 
