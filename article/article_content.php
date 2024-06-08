@@ -86,59 +86,60 @@ $user_userid = !empty($_SESSION) ? $_SESSION["user"]["id"] : "";
       </div>
     </div>
 
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link <?php if (!isset($_GET["sort"])) echo "active" ?>" href="article_title.php?page=1">所有文章</a>
-      </li>
-
-      <?php foreach ($sort_rows as $title_sort) : ?>
-        <li class="nav-tiem">
-          <a class="nav-link <?php if (isset($_GET["sort"]) && $sort == $title_sort["id"]) echo "active"; ?>" href="article_title.php?sort=<?= $title_sort["id"] ?>&page=1"><?= $title_sort["sort"] ?></a>
+    <div class="container" style="max-width: 1080px;">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link <?php if (!isset($_GET["sort"])) echo "active" ?>" href="article_title.php?page=1">所有文章</a>
         </li>
-      <?php endforeach; ?>
+
+        <?php foreach ($sort_rows as $title_sort) : ?>
+          <li class="nav-tiem">
+            <a class="nav-link <?php if (isset($_GET["sort"]) && $sort == $title_sort["id"]) echo "active"; ?>" href="article_title.php?sort=<?= $title_sort["id"] ?>&page=1"><?= $title_sort["sort"] ?></a>
+          </li>
+        <?php endforeach; ?>
 
 
-    </ul>
-    <div class="post_header">
-      <div class="post_title">
-        <h1><?= $row["title"] ?></h1>
-      </div>
-      <div class="sort">
-        <a href="article_title.php?sort=<?= $row["sort"] ?>&page=1"><?= $row["arti_sort"] ?></a>
-      </div>
-
-      <div class="d-flex justify-content-between">
-        <div class="user mt-3">
-          <a href=""><?= $row["nickname"] ?></a>
+      </ul>
+      <div class="post_header">
+        <div class="post_title">
+          <h1><?= $row["title"] ?></h1>
         </div>
-        <?php if ($user_lv == 20 || $user_userid == $row["userid"]) : ?>
-          <div class="btn-area">
-            <a href="article_edit.php?Aid=<?= $row["id"] ?>" class="btn btn-primary">
-              編輯
-            </a>
-            <button class="btn btn-primary" title="刪除文章" data-bs-toggle="modal" data-bs-target="#del_arti_modal">刪除</button>
-          </div>
-      </div>
-    <?php endif ?>
+        <div class="sort">
+          <a href="article_title.php?sort=<?= $row["sort"] ?>&page=1"><?= $row["arti_sort"] ?></a>
+        </div>
 
-    </div>
-    <hr>
-    <div class="post_content">
-      <p>
-        <?= nl2br($row["content"]) ?>
-        <?php
-        if ($re_img->num_rows > 0) {
-          while ($img_row = $re_img->fetch_assoc()) {
-            echo '<div class="ratio ratio-1x1">';
-            echo '<img src="' . "../upload_img/" . $img_row['img_path'] . '" alt="Article Image" class="object-fit-contain"><br>';
-            echo '</div>';
+        <div class="d-flex justify-content-between">
+          <div class="user mt-3">
+            <a href=""><?= $row["nickname"] ?></a>
+          </div>
+          <?php if ($user_lv == 20 || $user_userid == $row["userid"]) : ?>
+            <div class="btn-area">
+              <a href="article_edit.php?Aid=<?= $row["id"] ?>" class="btn btn-primary">
+                編輯
+              </a>
+              <button class="btn btn-primary" title="刪除文章" data-bs-toggle="modal" data-bs-target="#del_arti_modal">刪除</button>
+            </div>
+        </div>
+      <?php endif ?>
+
+      </div>
+      <hr>
+      <div class="post_content">
+        <p>
+          <?= nl2br($row["content"]) ?>
+          <?php
+          if ($re_img->num_rows > 0) {
+            while ($img_row = $re_img->fetch_assoc()) {
+              echo '<div class="ratio ratio-1x1">';
+              echo '<img src="' . "../upload_img/" . $img_row['img_path'] . '" alt="Article Image" class="object-fit-contain"><br>';
+              echo '</div>';
+            }
           }
-        }
-        ?>
-      </p>
+          ?>
+        </p>
+      </div>
     </div>
   </div>
-
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
