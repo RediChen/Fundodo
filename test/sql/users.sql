@@ -388,10 +388,7 @@ INSERT INTO `users` (`id`, `name`, `nickname`, `account`, `password_hash`, `gend
 (298, '袁濤祐', 'haskell7983', 'haskell7983429', '$2y$10$ogO8hlV7McJ2xtpuOD5RCOMBrH8wEmOXet1.4fPP2zgFjOsgVKc.i', '1', 0, 1, '1966-06-12', '0936393164', 'haskell7983@gmail.com', '', '0', '林森北路82號8樓', 1, 104, '2023-08-04 02:11:09', NULL),
 (299, '袁勝博', 'Devin', 'Devin318', '$2y$10$iqiuHwpv5sL0kp1BhxK9x.aEK2acwrDrn/jGozlrQrFGbFyhP9Ms.', '1', 0, 1, '2020-12-19', '0915868818', 'devin5867@hotmail.com', '', '0', '黎明七路65號之20', 12, 614, '2023-08-04 16:12:19', NULL),
 (300, '郭玉鈺', 'hawkins6007', 'hawkins6007585', '$2y$10$6mIqvcSTorRVo4fZc98mxuyEuvKaNnSHbHeMXeZahPLgjAqlLWdFe', '2', 0, 1, '1983-03-01', '0970016242', 'hawkins6007@gmail.com', '', '0', '三民西路49號之16', 8, 403, '2023-08-04 17:32:31', NULL),
-(301, '黃梓津', 'kathryn9679', 'kathryn9679665', '$2y$10$17egUKtwR8F6Xbsdy3uU1ON7vwhpb0khy/bHGrBa0eRbngdLOAJFG', '2', 0, 1, '1985-08-14', '0938498201', 'kathryn9679@outlook.com', '', '0', '僑信街54號', 9, 510, '2023-08-05 05:56:33', NULL),
-(302, '陳沉沉', 'ssssss', 'aaaaaa', '12345', '1', 0, 0, '0000-00-00', '090000000', 'sa@gmail.com', '龜龜', '302_7.png', '', 0, 0, '2024-06-03 03:35:48', NULL),
-(303, '吳無無', '', 'sssss', '12345', '1', 0, 0, '0000-00-00', '090000000', 'sa@gmail.com', '', '', '', 0, 0, '2024-06-04 09:50:40', NULL),
-(304, '小火龍', 'echo', 'Jack', '$2y$10$UdSH2V/SyTMtSUlHCEQmsel0CsxYaprA.ZQQDQWM8Uh55eYWGSlYa', '1', 0, 1, '0000-00-00', '090000000', 'sa@gmail.com', '龜龜', '304.png', '', 0, 0, '2024-06-06 03:54:11', NULL);
+(301, '黃梓津', 'kathryn9679', 'kathryn9679665', '$2y$10$17egUKtwR8F6Xbsdy3uU1ON7vwhpb0khy/bHGrBa0eRbngdLOAJFG', '2', 0, 1, '1985-08-14', '0938498201', 'kathryn9679@outlook.com', '', '0', '僑信街54號', 9, 510, '2023-08-05 05:56:33', NULL);
 
 --
 -- 已傾印資料表的索引
@@ -411,7 +408,7 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=302;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

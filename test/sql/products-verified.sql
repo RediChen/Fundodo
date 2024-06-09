@@ -20,61 +20,61 @@ SET time_zone = "+08:00";
 
 
 --
--- 資料表結構 `brands`
+-- 資料表結構 `prod_brands`
 --
 
-CREATE TABLE `brands` (
-  `BrandID` int(11) NOT NULL,
-  `BrandName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `prod_brands` (
+  `id` int(7) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `brands`
+-- 傾印資料表的資料 `prod_brands`
 --
 
-INSERT INTO `brands` (`BrandID`, `BrandName`) VALUES
-(18, 'ACANA愛肯拿'),
+INSERT INTO `prod_brands` (`id`, `name`) VALUES
 (1, 'Farmina 法米納'),
 (2, 'go!'),
-(4, 'HALO 嘿囉'),
 (3, 'Hyperr 超躍'),
-(17, 'K9 Natural'),
-(6, 'now'),
+(4, 'HALO 嘿囉'),
 (5, 'Nurture PRO 天然密碼'),
+(6, 'now'),
 (7, 'Orijen 歐睿健'),
 (8, 'ZiwiPeak 巔峰'),
 (9, '優格'),
-(11, '尊爵'),
-(22, '小犬威利'),
 (10, '本牧'),
-(16, '柏萊富'),
-(24, '汪喵星球'),
-(25, '沙發馬鈴薯'),
-(20, '法國皇家'),
-(14, '洛特夫'),
-(19, '第一饗宴'),
-(15, '紐崔斯'),
-(13, '紐頓'),
-(21, '自然邏輯'),
+(11, '尊爵'),
 (12, '莫比'),
-(23, '陪心寵糧');
+(13, '紐頓'),
+(14, '洛特夫'),
+(15, '紐崔斯'),
+(16, '柏萊富'),
+(17, 'K9 Natural'),
+(18, 'ACANA愛肯拿'),
+(19, '第一饗宴'),
+(20, '法國皇家'),
+(21, '自然邏輯'),
+(22, '小犬威利'),
+(23, '陪心寵糧'),
+(24, '汪喵星球'),
+(25, '沙發馬鈴薯');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `category`
+-- 資料表結構 `prod_categories`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE `prod_categories` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `category`
+-- 傾印資料表的資料 `prod_categories`
 --
 
-INSERT INTO `category` (`id`, `name`) VALUES
+INSERT INTO `prod_categories` (`id`, `name`) VALUES
 (1, '飼料'),
 (2, '零食'),
 (3, '罐頭'),
@@ -85,20 +85,20 @@ INSERT INTO `category` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `productimages`
+-- 資料表結構 `prod_images`
 --
 
-CREATE TABLE `productimages` (
-  `ImageID` int(11) NOT NULL,
-  `ProductID` int(11) DEFAULT NULL,
-  `ImageName` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `prod_images` (
+  `id` bigint(11) NOT NULL,
+  `prod_id` bigint(12) DEFAULT NULL,
+  `image_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `productimages`
+-- 傾印資料表的資料 `prod_images`
 --
 
-INSERT INTO `productimages` (`ImageID`, `ProductID`, `ImageName`) VALUES
+INSERT INTO `prod_images` (`id`, `prod_id`, `image_name`) VALUES
 (1, 1, 'product_id1.jpg'),
 (2, 2, 'product_id2.jpg'),
 (3, 3, 'product_id3.jpg'),
@@ -454,22 +454,22 @@ INSERT INTO `productimages` (`ImageID`, `ProductID`, `ImageName`) VALUES
 --
 
 CREATE TABLE `products` (
-  `ProductID` int(11) NOT NULL,
-  `ProductName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `brand_id` int(11) DEFAULT NULL,
-  `price` int(30) NOT NULL,
+  `id` bigint(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `category_id` int(6) NOT NULL,
+  `brand_id` int(7) DEFAULT NULL,
+  `price` int(7) NOT NULL,
   `on_shelves_time` datetime NOT NULL,
-  `stock` int(11) NOT NULL,
-  `valid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `stock` int(6) NOT NULL,
+  `valid` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `products`
 --
 
-INSERT INTO `products` (`ProductID`, `ProductName`, `description`, `category_id`, `brand_id`, `price`, `on_shelves_time`, `stock`, `valid`) VALUES
+INSERT INTO `products` (`prod_id`, `name`, `description`, `category_id`, `brand_id`, `price`, `on_shelves_time`, `stock`, `valid`) VALUES
 (1, 'Farmina 法米納VD-4 Vet Life 犬用腸胃道配方', '針對腸胃問題設計，幫助舒緩犬隻消化不良、腹瀉等腸胃不適。', 1, 1, 1190, '2024-03-02 00:00:00', 44, 0),
 (2, 'Farmina 法米納VD-5 Vet Life 犬用肝臟配方', '特別針對肝臟疾病的犬隻設計，促進肝功能健康。', 1, 1, 1190, '2024-03-22 00:00:00', 74, 0),
 (3, 'Farmina 法米納VD-6 Vet Life 犬用泌尿道磷酸銨鎂結石配方', '預防和管理磷酸銨鎂結石，維持泌尿系統健康。', 1, 1, 1190, '2024-02-19 00:00:00', 76, 0),
@@ -787,7 +787,7 @@ INSERT INTO `products` (`ProductID`, `ProductName`, `description`, `category_id`
 (315, 'FikaGO寵物推車專用配件 - 杯架', ' 適用FREE TO GO、AGILE、FLYTTA系列車款 使用本商品不影響收車功能', 6, 0, 880, '2024-05-25 00:00:00', 18, 0),
 (316, 'FikaGO寵物推車專用配件 - 手把保護套', ' 防污耐髒易清潔 避免細菌附著 保持衛生 魔鬼粘設計佳 安裝方便 潛水衣布材質 具有彈性 延長推車使用年限', 6, 0, 680, '2024-05-23 00:00:00', 3, 0),
 (317, 'FikaGO寵物推車專用配件 - FLYTTA 汽車座椅保護墊', 'ISOFIX兼容，將後向安全扣連接到車輛ISOFIX系統，前向安全扣連結到座艙扣環，再搭配推車附件揹帶環繞汽車座椅頭枕可加強固定力道', 6, 0, 1280, '2024-05-23 00:00:00', 22, 0),
-(318, 'FikaGOLet\'s Fika 野餐墊 - 北歐風', '底部防水底膜防潮隔熱絲棉表布觸感舒適柔軟滌淪精細包邊平穩牢固大尺寸設計出遊不擁擠收納提手設計方便攜帶輕', 6, 0, 799, '2024-05-07 00:00:00', 57, 0),
+(318, "FikaGOLet's Fika 野餐墊 - 北歐風", '底部防水底膜防潮隔熱絲棉表布觸感舒適柔軟滌淪精細包邊平穩牢固大尺寸設計出遊不擁擠收納提手設計方便攜帶輕', 6, 0, 799, '2024-05-07 00:00:00', 57, 0),
 (319, '未卡花花胸背帶牽引繩套裝 - 粉綠', ' 柔軟潛水布內襯 舒適包裹愜意心情 貼心日字釦 胸圍自由調整 快套式胸背 三步驟輕鬆上身', 6, 0, 590, '2024-05-11 00:00:00', 33, 0),
 (320, '未卡X 皮克斯 胸背帶牽引繩套裝 - 熊抱哥', ' 穿上熊抱哥胸背 一起環遊世界 甜酷出行 點亮好心情 針對狗狗身形設計 有效防掙脫', 6, 0, 790, '2024-05-17 00:00:00', 95, 0),
 (321, '未卡Chroma胸背帶牽引繩套裝 ', ' 受力均勻 不勒脖子 柔軟潛水布內襯 親和舒適 輕盈包裹 自在出街 快套式胸背 三步驟輕鬆上身', 6, 0, 590, '2024-05-14 00:00:00', 61, 0),
@@ -810,191 +810,179 @@ INSERT INTO `products` (`ProductID`, `ProductName`, `description`, `category_id`
 (338, 'APOMAN北美荊芥系列 - 人體防蚊液', ' 這是一瓶貓家庭專用的防蚊液！不再擔心使用時會影響到貓咪～ 選用貓薄荷精油防蚊成分，無添加DEET、Picaridin、PMD 、除蟲菊精、類除蟲菊精', 6, 0, 760, '2024-05-17 00:00:00', 40, 0),
 (339, '未卡花花車載包', ' 頂部超大開口設計 方便寵物進出 內置可收緊防跑網兜，與金屬卡扣可調節安全繩，雙重保護 可調節扣環設計，適用於大多數汽車座椅與類型', 6, 0, 1950, '2024-05-29 00:00:00', 79, 0),
 (340, '未卡草莓拾便器套裝', ' 綠色環保 便捷使用 可與任何牽引繩搭配 環保材質 可分解 無污染 任性加厚 不破不漏', 6, 0, 290, '2024-05-13 00:00:00', 55, 0),
-(341, '未卡Chroma拾便器', ' 綠色環保 便捷使用 拾便袋100%可降解 可與任何牽引繩搭配 環保材質 可分解 無污染 任性加厚 不破不漏', 6, 0, 350, '2024-05-05 00:00:00', 68, 0),
-(342, '妙蛙種子', '妙蛙種子', 1, 1, 123, '2024-06-03 02:49:02', 123, 0),
-(343, '妙蛙種子', '妙蛙種子', 1, 2, 123, '2024-06-03 03:03:03', 123, 0),
-(344, '妙蛙種子', '妙蛙種子', 1, 1, 123, '2024-06-03 03:08:00', 123, 0),
-(345, '小火龍', '噴火龍', 3, 2, 5000, '2024-06-03 05:30:28', 123, 0),
-(346, '小火龍', '噴火龍', 2, 1, 5000, '2024-06-03 05:33:10', 123, 0),
-(347, '小火龍', '噴火龍', 3, 7, 5000, '2024-06-03 05:33:32', 123, 0),
-(348, '妙蛙花', '妙蛙種子', 6, 1, 8000, '2024-06-03 06:12:33', 5000, 0),
-(349, '妙蛙種子', '妙蛙種子', 6, 2, 6500, '2024-06-03 08:13:01', 5000, 0),
-(350, '噴火龍', '噴火龍', 2, 2, 5000, '2024-06-03 08:55:44', 123, 0),
-(351, '噴火龍果', '火龍果', 3, 17, 1000, '2024-06-03 09:15:11', 1000, 1),
-(352, '妙蛙種子', '妙蛙花', 3, 16, 200, '2024-06-04 12:15:06', 900, 1),
-(353, '小火龍', '噴火龍', 3, 19, 0, '2024-06-05 09:56:22', 9000, 1),
-(354, '妙蛙花', '妙蛙種子', 2, 16, 900, '2024-06-05 09:59:17', 50, 0);
+(341, '未卡Chroma拾便器', ' 綠色環保 便捷使用 拾便袋100%可降解 可與任何牽引繩搭配 環保材質 可分解 無污染 任性加厚 不破不漏', 6, 0, 350, '2024-05-05 00:00:00', 68, 0);
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `producttags`
+-- 資料表結構 `products_tags`
 --
 
-CREATE TABLE `producttags` (
-  `ProductID` int(11) NOT NULL,
-  `TagID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- 傾印資料表的資料 `producttags`
---
-
-INSERT INTO `producttags` (`ProductID`, `TagID`) VALUES
-(10, 1),
-(12, 7),
-(13, 7),
-(14, 5),
-(15, 1),
-(15, 5),
-(17, 5),
-(18, 4),
-(19, 5),
-(20, 4),
-(21, 5),
-(22, 5),
-(23, 1),
-(24, 1),
-(25, 4),
-(27, 5),
-(28, 1),
-(29, 1),
-(29, 5),
-(45, 4),
-(46, 1),
-(48, 1),
-(48, 4),
-(49, 1),
-(49, 4),
-(50, 1),
-(51, 1),
-(51, 4),
-(52, 1),
-(52, 4),
-(53, 1),
-(54, 4),
-(55, 4),
-(56, 4),
-(57, 6),
-(57, 7),
-(58, 4),
-(59, 4),
-(60, 4),
-(70, 4),
-(71, 4),
-(72, 4),
-(75, 4),
-(76, 4),
-(77, 1),
-(78, 7),
-(79, 7),
-(80, 4),
-(81, 4),
-(82, 4),
-(83, 4),
-(83, 5),
-(84, 5),
-(85, 1),
-(86, 1),
-(87, 4),
-(88, 1),
-(89, 1),
-(89, 4),
-(90, 1),
-(91, 4),
-(98, 4),
-(99, 1),
-(100, 1),
-(101, 1),
-(102, 1),
-(103, 1),
-(104, 1),
-(104, 3),
-(104, 4),
-(104, 5),
-(105, 1),
-(105, 4),
-(106, 4),
-(109, 1),
-(109, 4),
-(109, 5),
-(110, 1),
-(110, 4),
-(110, 5),
-(113, 4),
-(116, 4),
-(116, 5),
-(117, 4),
-(120, 4),
-(121, 4),
-(122, 3),
-(126, 1),
-(127, 1),
-(127, 5),
-(128, 4),
-(129, 1),
-(130, 4),
-(131, 4),
-(132, 5),
-(133, 1),
-(134, 4),
-(135, 4),
-(138, 5),
-(138, 7),
-(139, 1),
-(139, 3),
-(139, 5),
-(146, 5),
-(148, 4),
-(149, 4),
-(150, 4),
-(151, 5),
-(154, 2),
-(154, 7),
-(162, 2),
-(163, 2),
-(164, 2),
-(344, 1),
-(344, 3),
-(344, 4),
-(345, 3),
-(345, 4),
-(345, 5),
-(346, 1),
-(346, 3),
-(346, 4),
-(348, 2),
-(348, 3),
-(348, 4),
-(349, 2),
-(349, 3),
-(349, 3),
-(350, 1),
-(350, 4),
-(350, 7),
-(354, 1),
-(354, 3),
-(354, 4),
-(347, 1),
-(347, 3),
-(347, 4);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `tags`
---
-
-CREATE TABLE `tags` (
-  `TagID` int(11) NOT NULL,
-  `TagName` varchar(255) NOT NULL
+CREATE TABLE `products_tags` (
+  `id` int(13) NOT NULL,
+  `prod_id` bigint(11) NOT NULL,
+  `tag_id` smallint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `tags`
+-- 傾印資料表的資料 `products_tags`
 --
 
-INSERT INTO `tags` (`TagID`, `TagName`) VALUES
+INSERT INTO `products_tags` (`id`, `prod_id`, `tag_id`) VALUES
+(1, 10, 1),
+(2, 12, 7),
+(3, 13, 7),
+(4, 14, 5),
+(5, 15, 1),
+(6, 15, 5),
+(7, 17, 5),
+(8, 18, 4),
+(9, 19, 5),
+(10, 20, 4),
+(11, 21, 5),
+(12, 22, 5),
+(13, 23, 1),
+(14, 24, 1),
+(15, 25, 4),
+(16, 27, 5),
+(17, 28, 1),
+(18, 29, 1),
+(19, 29, 5),
+(20, 45, 4),
+(21, 46, 1),
+(22, 48, 1),
+(23, 48, 4),
+(24, 49, 1),
+(25, 49, 4),
+(26, 50, 1),
+(27, 51, 1),
+(28, 51, 4),
+(29, 52, 1),
+(30, 52, 4),
+(31, 53, 1),
+(32, 54, 4),
+(33, 55, 4),
+(34, 56, 4),
+(35, 57, 6),
+(36, 57, 7),
+(37, 58, 4),
+(38, 59, 4),
+(39, 60, 4),
+(40, 70, 4),
+(41, 71, 4),
+(42, 72, 4),
+(43, 75, 4),
+(44, 76, 4),
+(45, 77, 1),
+(46, 78, 7),
+(47, 79, 7),
+(48, 80, 4),
+(49, 81, 4),
+(50, 82, 4),
+(51, 83, 4),
+(52, 83, 5),
+(53, 84, 5),
+(54, 85, 1),
+(55, 86, 1),
+(56, 87, 4),
+(57, 88, 1),
+(58, 89, 1),
+(59, 89, 4),
+(60, 90, 1),
+(61, 91, 4),
+(62, 98, 4),
+(63, 99, 1),
+(64, 100, 1),
+(65, 101, 1),
+(66, 102, 1),
+(67, 103, 1),
+(68, 104, 1),
+(69, 104, 3),
+(70, 104, 4),
+(71, 104, 5),
+(72, 105, 1),
+(73, 105, 4),
+(74, 106, 4),
+(75, 109, 1),
+(76, 109, 4),
+(77, 109, 5),
+(78, 110, 1),
+(79, 110, 4),
+(80, 110, 5),
+(81, 113, 4),
+(82, 116, 4),
+(83, 116, 5),
+(84, 117, 4),
+(85, 120, 4),
+(86, 121, 4),
+(87, 122, 3),
+(88, 126, 1),
+(89, 127, 1),
+(90, 127, 5),
+(91, 128, 4),
+(92, 129, 1),
+(93, 130, 4),
+(94, 131, 4),
+(95, 132, 5),
+(96, 133, 1),
+(97, 134, 4),
+(98, 135, 4),
+(99, 138, 5),
+(100, 138, 7),
+(101, 139, 1),
+(102, 139, 3),
+(103, 139, 5),
+(104, 146, 5),
+(105, 148, 4),
+(106, 149, 4),
+(107, 150, 4),
+(108, 151, 5),
+(109, 154, 2),
+(110, 154, 7),
+(111, 162, 2),
+(112, 163, 2),
+(113, 164, 2),
+(114, 344, 1),
+(115, 344, 3),
+(116, 344, 4),
+(117, 345, 3),
+(118, 345, 4),
+(119, 345, 5),
+(120, 346, 1),
+(121, 346, 3),
+(122, 346, 4),
+(123, 348, 2),
+(124, 348, 3),
+(125, 348, 4),
+(126, 349, 2),
+(127, 349, 3),
+(128, 349, 3),
+(129, 350, 1),
+(130, 350, 4),
+(131, 350, 7),
+(132, 354, 1),
+(133, 354, 3),
+(134, 354, 4),
+(135, 347, 1),
+(136, 347, 3),
+(137, 347, 4);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `prod_tags`
+--
+
+CREATE TABLE `prod_tags` (
+  `id` smallint(4) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `prod_tags`
+--
+
+INSERT INTO `prod_tags` (`id`, `name`) VALUES
 (1, '魚'),
 (2, '海鮮'),
 (3, '鴨肉'),
@@ -1008,909 +996,91 @@ INSERT INTO `tags` (`TagID`, `TagName`) VALUES
 --
 
 --
--- 資料表索引 `brands`
+-- 資料表索引 `prod_brands`
 --
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`BrandID`),
-  ADD UNIQUE KEY `BrandName` (`BrandName`);
-
---
--- 資料表索引 `category`
---
-ALTER TABLE `category`
+ALTER TABLE `prod_brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `productimages`
+-- 資料表索引 `prod_categories`
 --
-ALTER TABLE `productimages`
-  ADD PRIMARY KEY (`ImageID`),
-  ADD KEY `ProductID` (`ProductID`);
+ALTER TABLE `prod_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `prod_images`
+--
+ALTER TABLE `prod_images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `prod_id` (`prod_id`);
 
 --
 -- 資料表索引 `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`ProductID`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `tags`
+-- 資料表索引 `prod_tags`
 --
-ALTER TABLE `tags`
-  ADD PRIMARY KEY (`TagID`);
+ALTER TABLE `prod_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `products_tags`
+--
+ALTER TABLE `products_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `products_tags`
+--
+ALTER TABLE `products_tags`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `prod_id` (`prod_id`);
 
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `brands`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `prod_brands`
 --
-ALTER TABLE `brands`
-  MODIFY `BrandID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+ALTER TABLE `prod_brands`
+  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `category`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `prod_categories`
 --
-ALTER TABLE `category`
+ALTER TABLE `prod_categories`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `productimages`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `prod_images`
 --
-ALTER TABLE `productimages`
-  MODIFY `ImageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
+ALTER TABLE `prod_images`
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
+  MODIFY `prod_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `tags`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `prod_tags`
 --
-ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `prod_tags`
+  MODIFY `id` smallint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
+  --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `products_tags`
 --
--- 已傾印資料表的限制式
---
-
---
--- 資料表的限制式 `productimages`
---
-ALTER TABLE `productimages`
-  ADD CONSTRAINT `productimages_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE;
-
---
--- 資料表的限制式 `producttags`
---
-ALTER TABLE `producttags`
-  ADD CONSTRAINT `producttags_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`),
-  ADD CONSTRAINT `producttags_ibfk_2` FOREIGN KEY (`TagID`) REFERENCES `tags` (`TagID`);
-
---
--- 資料表的限制式 `tags`
---
-ALTER TABLE `tags`
-  ADD CONSTRAINT `tags_ibfk_1` FOREIGN KEY (`TagID`) REFERENCES `producttags` (`TagID`);
---
--- 資料庫： `my_test_db`
---
-CREATE DATABASE IF NOT EXISTS `my_test_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `my_test_db`;
+ALTER TABLE `products_tags`
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 -- --------------------------------------------------------
-
---
--- 資料表結構 `category`
---
-
-CREATE TABLE `category` (
-  `id` int(3) UNSIGNED NOT NULL,
-  `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `category`
---
-
-INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'DC'),
-(2, 'Marvel');
-
 -- --------------------------------------------------------
-
---
--- 資料表結構 `images`
---
-
-CREATE TABLE `images` (
-  `id` int(3) UNSIGNED NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `pic_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 傾印資料表的資料 `images`
---
-
-INSERT INTO `images` (`id`, `name`, `pic_name`) VALUES
-(1, '小火龍', '4.png'),
-(2, '妙蛙種子', '1.png'),
-(3, '傑尼龜', '7.png'),
-(4, '皮卡丘', '25.png');
-
 -- --------------------------------------------------------
-
---
--- 資料表結構 `product`
---
-
-CREATE TABLE `product` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `category_id` int(50) NOT NULL,
-  `category` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `price` int(6) UNSIGNED NOT NULL,
-  `img` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `product`
---
-
-INSERT INTO `product` (`id`, `category_id`, `category`, `name`, `price`, `img`) VALUES
-(1, 2, '', 'Spider-Man', 500, 'spiderman.jpg'),
-(2, 1, '', 'Superman', 1000, 'superman.png'),
-(3, 1, '', 'Wonder Woman', 3000, 'wonderwoman.webp'),
-(4, 1, '', 'Iron Man', 10000, 'ironman.png'),
-(5, 1, '', 'Batman', 10000, 'batman.webp'),
-(6, 2, '', 'Black Widow', 1100, 'blackwidow.jpg'),
-(7, 1, '', 'Flash', 800, 'flash.jpg'),
-(8, 2, '', 'Captain America', 900, 'captain-america.png'),
-(9, 1, '', 'Shazam', 400, 'shazam.jpg'),
-(10, 2, '', 'Thor', 3000, 'thor.jpg');
-
 -- --------------------------------------------------------
-
---
--- 資料表結構 `users`
---
-
-CREATE TABLE `users` (
-  `id` int(6) UNSIGNED NOT NULL,
-  `name` varchar(30) DEFAULT NULL,
-  `account` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `phone` varchar(30) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `valid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `users`
---
-
-INSERT INTO `users` (`id`, `name`, `account`, `password`, `phone`, `email`, `created_at`, `valid`) VALUES
-(1, 'cat', 'shiba', '', '0955555555', 'cat@test.com', '2024-05-16 05:47:54', 1),
-(2, 'Shibainu', 'shibainu', '', '0958932289', 'shibainu@test.com', '2024-05-16 05:49:33', 1),
-(3, 'Shibainu', 'shibainu', '', '0911111111', 'shibainu@test.com', '2024-05-16 05:50:14', 1),
-(4, 'Poodle', 'poodle', '', '0958932289', 'poodle@test.com', '2024-05-16 05:51:29', 1),
-(5, 'dog', 'sam', '', '0958932289', 'dog@test.com', '2024-05-16 06:05:04', 1),
-(6, 'Mike', 'mike', '', '0909161717', 'Mike@test.com', '2024-05-16 06:05:04', 1),
-(7, 'Jay', 'jay', '', '0977522351', 'Jay@test.com', '2024-05-16 06:05:04', 1),
-(8, 'Shiba', 'shiba', '', '0958932289', 'shiba@test.com', '2024-05-17 03:13:50', 1),
-(9, 'popopo', 'popopo', 'qwer', NULL, NULL, '2024-05-17 09:21:28', 1),
-(10, 'Jackson', 'jackson', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, '2024-05-17 09:23:44', 1),
-(11, 'Amy', 'amy4654', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 04:46:32', 1),
-(12, 'Bob', 'bob888', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 04:46:46', 1),
-(13, 'Peter', 'peter9487', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 04:47:07', 1),
-(14, 'Ray', 'ray78444', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 04:47:22', 1),
-(15, 'Ben', 'ben998544', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 04:47:37', 1),
-(16, 'Tom', 'tom9986', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 08:10:54', 1),
-(21, 'ooo', 'oooo65', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-20 08:29:35', 1),
-(22, 'shiba', 'shiba10222', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-23 05:23:24', 1),
-(23, 'Shibainu', 'shiba34102', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-27 03:40:50', 1),
-(24, 'shiba', 'qwer', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-27 03:53:49', 1),
-(25, 'poodle', 'poodle10222', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-27 04:12:59', 0),
-(26, 'illit', 'illit10222', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, '2024-05-27 04:56:55', 0);
-
 -- --------------------------------------------------------
-
---
--- 資料表結構 `user_like`
---
-
-CREATE TABLE `user_like` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_id` int(4) UNSIGNED NOT NULL,
-  `user_id` int(6) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `user_like`
---
-
-INSERT INTO `user_like` (`id`, `product_id`, `user_id`) VALUES
-(1, 10, 2),
-(2, 6, 8),
-(3, 7, 1),
-(4, 7, 3),
-(5, 3, 6),
-(6, 2, 5),
-(7, 4, 4),
-(8, 6, 7),
-(9, 1, 9),
-(10, 4, 8),
-(11, 3, 8);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `user_order`
---
-
-CREATE TABLE `user_order` (
-  `id` int(6) UNSIGNED NOT NULL,
-  `product_id` int(4) UNSIGNED NOT NULL,
-  `amount` int(3) NOT NULL,
-  `user_id` int(6) NOT NULL,
-  `order_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `user_order`
---
-
-INSERT INTO `user_order` (`id`, `product_id`, `amount`, `user_id`, `order_date`) VALUES
-(1, 7, 1, 7, '2024-05-16'),
-(2, 8, 2, 1, '2024-05-17'),
-(3, 2, 2, 11, '2024-05-17'),
-(4, 9, 2, 3, '2024-05-18'),
-(5, 6, 4, 6, '2024-05-18'),
-(6, 8, 2, 1, '2024-05-17'),
-(7, 2, 4, 12, '2024-05-16'),
-(8, 2, 2, 11, '2024-05-17'),
-(9, 8, 1, 8, '2024-05-19'),
-(10, 2, 2, 11, '2024-05-18'),
-(11, 3, 3, 2, '2024-05-18'),
-(12, 8, 1, 8, '2024-05-17'),
-(13, 7, 1, 7, '2024-05-16'),
-(14, 6, 4, 6, '2024-05-16'),
-(15, 7, 1, 7, '2024-05-17'),
-(16, 8, 2, 1, '2024-05-18'),
-(17, 9, 4, 6, '2024-05-22'),
-(18, 9, 5, 11, '2024-05-22');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `user_order_product`
---
-
-CREATE TABLE `user_order_product` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `user_id` int(6) NOT NULL,
-  `order_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 傾印資料表的資料 `user_order_product`
---
-
-INSERT INTO `user_order_product` (`id`, `user_id`, `order_time`) VALUES
-(1, 1, '2024-05-27 09:28:26'),
-(2, 1, '2024-05-27 09:51:59'),
-(3, 1, '2024-05-27 09:51:59'),
-(4, 1, '2024-05-27 09:51:59'),
-(5, 1, '2024-05-27 09:51:59'),
-(6, 1, '2024-05-27 09:51:59'),
-(7, 1, '2024-05-27 09:51:59'),
-(8, 1, '2024-05-27 09:51:59'),
-(9, 1, '2024-05-27 09:51:59'),
-(10, 1, '2024-05-27 09:51:59'),
-(11, 1, '2024-05-27 09:51:59'),
-(12, 1, '2024-05-27 09:52:19'),
-(13, 1, '2024-05-27 09:54:53'),
-(14, 1, '2024-05-27 09:54:53'),
-(15, 1, '2024-05-27 09:54:53'),
-(16, 1, '2024-05-27 09:54:53'),
-(17, 1, '2024-05-27 09:54:53'),
-(18, 1, '2024-05-27 09:55:31'),
-(19, 1, '2024-05-27 09:55:31'),
-(20, 1, '2024-05-27 09:55:31'),
-(21, 1, '2024-05-27 09:55:31'),
-(22, 1, '2024-05-27 09:55:31');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `user_order_product_detail`
---
-
-CREATE TABLE `user_order_product_detail` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `order_id` int(5) NOT NULL,
-  `product_id` int(5) NOT NULL,
-  `amount` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 已傾印資料表的索引
---
-
---
--- 資料表索引 `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `user_like`
---
-ALTER TABLE `user_like`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `user_order`
---
-ALTER TABLE `user_order`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `user_order_product`
---
-ALTER TABLE `user_order_product`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `user_order_product_detail`
---
-ALTER TABLE `user_order_product_detail`
-  ADD PRIMARY KEY (`id`);
-
---
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
---
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `images`
---
-ALTER TABLE `images`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `user_like`
---
-ALTER TABLE `user_like`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `user_order`
---
-ALTER TABLE `user_order`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `user_order_product`
---
-ALTER TABLE `user_order_product`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `user_order_product_detail`
---
-ALTER TABLE `user_order_product_detail`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- 資料庫： `phpmyadmin`
---
-CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `phpmyadmin`;
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__bookmark`
---
-
-CREATE TABLE `pma__bookmark` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `dbase` varchar(255) NOT NULL DEFAULT '',
-  `user` varchar(255) NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `query` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__central_columns`
---
-
-CREATE TABLE `pma__central_columns` (
-  `db_name` varchar(64) NOT NULL,
-  `col_name` varchar(64) NOT NULL,
-  `col_type` varchar(64) NOT NULL,
-  `col_length` text DEFAULT NULL,
-  `col_collation` varchar(64) NOT NULL,
-  `col_isNull` tinyint(1) NOT NULL,
-  `col_extra` varchar(255) DEFAULT '',
-  `col_default` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__column_info`
---
-
-CREATE TABLE `pma__column_info` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `db_name` varchar(64) NOT NULL DEFAULT '',
-  `table_name` varchar(64) NOT NULL DEFAULT '',
-  `column_name` varchar(64) NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `transformation` varchar(255) NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) NOT NULL DEFAULT '',
-  `input_transformation` varchar(255) NOT NULL DEFAULT '',
-  `input_transformation_options` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__designer_settings`
---
-
-CREATE TABLE `pma__designer_settings` (
-  `username` varchar(64) NOT NULL,
-  `settings_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__export_templates`
---
-
-CREATE TABLE `pma__export_templates` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) NOT NULL,
-  `export_type` varchar(10) NOT NULL,
-  `template_name` varchar(64) NOT NULL,
-  `template_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__favorite`
---
-
-CREATE TABLE `pma__favorite` (
-  `username` varchar(64) NOT NULL,
-  `tables` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__history`
---
-
-CREATE TABLE `pma__history` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(64) NOT NULL DEFAULT '',
-  `db` varchar(64) NOT NULL DEFAULT '',
-  `table` varchar(64) NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
-  `sqlquery` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__navigationhiding`
---
-
-CREATE TABLE `pma__navigationhiding` (
-  `username` varchar(64) NOT NULL,
-  `item_name` varchar(64) NOT NULL,
-  `item_type` varchar(64) NOT NULL,
-  `db_name` varchar(64) NOT NULL,
-  `table_name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__pdf_pages`
---
-
-CREATE TABLE `pma__pdf_pages` (
-  `db_name` varchar(64) NOT NULL DEFAULT '',
-  `page_nr` int(10) UNSIGNED NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__recent`
---
-
-CREATE TABLE `pma__recent` (
-  `username` varchar(64) NOT NULL,
-  `tables` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
---
--- 傾印資料表的資料 `pma__recent`
---
-
-INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"db-products\",\"table\":\"products\"},{\"db\":\"db-products\",\"table\":\"brands\"},{\"db\":\"db-products\",\"table\":\"productimages\"},{\"db\":\"db-products\",\"table\":\"producttags\"},{\"db\":\"db-products\",\"table\":\"tags\"},{\"db\":\"db-products\",\"table\":\"category\"},{\"db\":\"db-products\",\"table\":\"products_copy\"},{\"db\":\"db-test\",\"table\":\"products\"},{\"db\":\"my_test_db\",\"table\":\"product\"},{\"db\":\"my_test_db\",\"table\":\"users\"}]');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__relation`
---
-
-CREATE TABLE `pma__relation` (
-  `master_db` varchar(64) NOT NULL DEFAULT '',
-  `master_table` varchar(64) NOT NULL DEFAULT '',
-  `master_field` varchar(64) NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__savedsearches`
---
-
-CREATE TABLE `pma__savedsearches` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) NOT NULL DEFAULT '',
-  `db_name` varchar(64) NOT NULL DEFAULT '',
-  `search_name` varchar(64) NOT NULL DEFAULT '',
-  `search_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__table_coords`
---
-
-CREATE TABLE `pma__table_coords` (
-  `db_name` varchar(64) NOT NULL DEFAULT '',
-  `table_name` varchar(64) NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
-  `x` float UNSIGNED NOT NULL DEFAULT 0,
-  `y` float UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__table_info`
---
-
-CREATE TABLE `pma__table_info` (
-  `db_name` varchar(64) NOT NULL DEFAULT '',
-  `table_name` varchar(64) NOT NULL DEFAULT '',
-  `display_field` varchar(64) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
---
--- 傾印資料表的資料 `pma__table_info`
---
-
-INSERT INTO `pma__table_info` (`db_name`, `table_name`, `display_field`) VALUES
-('db-products', 'products', 'ProductName'),
-('db-products', 'tags', 'TagName'),
-('db-test', 'imgs', 'filename'),
-('db-test', 'products', 'name'),
-('db-test', 'products_test', 'name');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__table_uiprefs`
---
-
-CREATE TABLE `pma__table_uiprefs` (
-  `username` varchar(64) NOT NULL,
-  `db_name` varchar(64) NOT NULL,
-  `table_name` varchar(64) NOT NULL,
-  `prefs` text NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
---
--- 傾印資料表的資料 `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'db-products', 'brands', '{\"sorted_col\":\"`brands`.`BrandID` ASC\"}', '2024-06-03 09:35:49'),
-('root', 'db-test', 'prod_attr_value', '{\"sorted_col\":\"`prod_attr_value`.`product_id` ASC\"}', '2024-05-31 10:46:44');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__tracking`
---
-
-CREATE TABLE `pma__tracking` (
-  `db_name` varchar(64) NOT NULL,
-  `table_name` varchar(64) NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text NOT NULL,
-  `schema_sql` text DEFAULT NULL,
-  `data_sql` longtext DEFAULT NULL,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') DEFAULT NULL,
-  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__userconfig`
---
-
-CREATE TABLE `pma__userconfig` (
-  `username` varchar(64) NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `config_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
---
--- 傾印資料表的資料 `pma__userconfig`
---
-
-INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2024-06-06 02:47:43', '{\"Console\\/Mode\":\"collapse\",\"lang\":\"zh_TW\",\"ThemeDefault\":\"pmahomme\",\"NavigationWidth\":209}');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__usergroups`
---
-
-CREATE TABLE `pma__usergroups` (
-  `usergroup` varchar(64) NOT NULL,
-  `tab` varchar(64) NOT NULL,
-  `allowed` enum('Y','N') NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `pma__users`
---
-
-CREATE TABLE `pma__users` (
-  `username` varchar(64) NOT NULL,
-  `usergroup` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
-
---
--- 已傾印資料表的索引
---
-
---
--- 資料表索引 `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `pma__central_columns`
---
-ALTER TABLE `pma__central_columns`
-  ADD PRIMARY KEY (`db_name`,`col_name`);
-
---
--- 資料表索引 `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- 資料表索引 `pma__designer_settings`
---
-ALTER TABLE `pma__designer_settings`
-  ADD PRIMARY KEY (`username`);
-
---
--- 資料表索引 `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
-
---
--- 資料表索引 `pma__favorite`
---
-ALTER TABLE `pma__favorite`
-  ADD PRIMARY KEY (`username`);
-
---
--- 資料表索引 `pma__history`
---
-ALTER TABLE `pma__history`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- 資料表索引 `pma__navigationhiding`
---
-ALTER TABLE `pma__navigationhiding`
-  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
-
---
--- 資料表索引 `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  ADD PRIMARY KEY (`page_nr`),
-  ADD KEY `db_name` (`db_name`);
-
---
--- 資料表索引 `pma__recent`
---
-ALTER TABLE `pma__recent`
-  ADD PRIMARY KEY (`username`);
-
---
--- 資料表索引 `pma__relation`
---
-ALTER TABLE `pma__relation`
-  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
-  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- 資料表索引 `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
-
---
--- 資料表索引 `pma__table_coords`
---
-ALTER TABLE `pma__table_coords`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- 資料表索引 `pma__table_info`
---
-ALTER TABLE `pma__table_info`
-  ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- 資料表索引 `pma__table_uiprefs`
---
-ALTER TABLE `pma__table_uiprefs`
-  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- 資料表索引 `pma__tracking`
---
-ALTER TABLE `pma__tracking`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- 資料表索引 `pma__userconfig`
---
-ALTER TABLE `pma__userconfig`
-  ADD PRIMARY KEY (`username`);
-
---
--- 資料表索引 `pma__usergroups`
---
-ALTER TABLE `pma__usergroups`
-  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- 資料表索引 `pma__users`
---
-ALTER TABLE `pma__users`
-  ADD PRIMARY KEY (`username`,`usergroup`);
-
---
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
---
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__history`
---
-ALTER TABLE `pma__history`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- 資料庫： `test`
---
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `test`;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

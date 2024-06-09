@@ -422,8 +422,7 @@ INSERT INTO `courses` (`id`, `title`, `abstract`, `description`, `price`, `creat
 (20, '玩出好狗兒！教會狗兒玩玩具、放嘴以及拾回', '可無限次重複觀看！！和狗狗玩玩具，增加狗狗的快樂清單! 這場講座除了會教拔麻怎麼玩玩具以外，也會教導 No 指令的運用和拾回訓練，讓拔麻多一個可以跟狗狗一起快樂的活動！', NULL, 1900, '2024-04-29 18:31:19', NULL),
 (21, '戶外遊戲、STAY及召回指令', '可無限次重複觀看！！和狗狗在戶外一起玩遊戲，提升好感情學會STAY和召回，關鍵時刻一召保命', NULL, 2500, '2024-05-06 04:48:21', NULL),
 (22, '帶狗出國二三事 - 狗兒出國分享會', '帶狗出國不是夢？帶狗出國的文件流程與訓練細節大公開', NULL, 650, '2024-05-09 09:56:23', NULL),
-(23, 'Plenty in Life is Free - 導讀會', '當我們釐清理想中與狗兒關係的樣子，訓練背後對於狗兒和關係的影響，我們的期待與目標，才能找到最合適於我們的練習方式', NULL, 650, '2024-05-13 20:26:23', NULL),
-(0, 'DDD', 'DDDD', NULL, 1100, '2024-06-07 13:24:34', '2024-06-07 01:24:40');
+(23, 'Plenty in Life is Free - 導讀會', '當我們釐清理想中與狗兒關係的樣子，訓練背後對於狗兒和關係的影響，我們的期待與目標，才能找到最合適於我們的練習方式', NULL, 650, '2024-05-13 20:26:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -546,25 +545,16 @@ CREATE TABLE `crs_categories` (
 -- 傾印資料表的資料 `crs_categories`
 --
 
-INSERT INTO `crs_categories` (`id`, `category`) VALUES
-(1, '外出禮儀'),
-(2, '感情增溫'),
-(3, '情緒穩定'),
-(4, '狗兒社交'),
-(5, '放鬆紓壓'),
-(101, '狗拔麻必修課'),
-(102, '線上行為知識講座'),
-(103, '主題分享會'),
-(104, '正向教養體驗式課程'),
-(1, '外出禮儀'),
-(2, '感情增溫'),
-(3, '情緒穩定'),
-(4, '狗兒社交'),
-(5, '放鬆紓壓'),
-(101, '狗拔麻必修課'),
-(102, '線上行為知識講座'),
-(103, '主題分享會'),
-(104, '正向教養體驗式課程');
+INSERT INTO `crs_categories` (`id`, `code`, `category`) VALUES
+(1, 1, '外出禮儀'),
+(2, 2, '感情增溫'),
+(3, 3, '情緒穩定'),
+(4, 4, '狗兒社交'),
+(5, 5, '放鬆紓壓'),
+(6, 101, '狗拔麻必修課'),
+(7, 102, '線上行為知識講座'),
+(8, 103, '主題分享會'),
+(9, 104, '正向教養體驗式課程');
 
 -- --------------------------------------------------------
 
@@ -831,10 +821,7 @@ INSERT INTO `images_stored` (`id`, `genre`, `item_id`, `item_sub_id`, `file_name
 (89, 'CR', 19, 1, 'CR0000191.png'),
 (90, 'CR', 20, 1, 'CR0000201.png'),
 (91, 'CR', 22, 1, 'CR0000221.png'),
-(92, 'CR', 23, 1, 'CR0000231.png'),
-(0, 'CR', 0, 1, 'CR0000001.png'),
-(0, 'CR', 0, 2, 'CR0000002.png'),
-(0, 'CR', 0, 3, 'CR0000003.png');
+(92, 'CR', 23, 1, 'CR0000231.png');
 
 -- --------------------------------------------------------
 
@@ -2156,6 +2143,24 @@ ALTER TABLE `coupons`
 ALTER TABLE `coupons_category`
   ADD PRIMARY KEY (`id`);
 
+  --
+-- 資料表索引 `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `course_category`
+--
+ALTER TABLE `course_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `crs_categories`
+--
+ALTER TABLE `crs_categories`
+  ADD PRIMARY KEY (`id`);
+
 --
 -- 資料表索引 `hotel_img`
 --
@@ -2257,6 +2262,24 @@ ALTER TABLE `coupons`
 --
 ALTER TABLE `coupons_category`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+  --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` mediumint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `course_category`
+--
+ALTER TABLE `course_category`
+  MODIFY `id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `crs_categories`
+--
+ALTER TABLE `crs_categories`
+  MODIFY `id` smallint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `hotel_img`

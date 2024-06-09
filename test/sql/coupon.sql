@@ -31,7 +31,7 @@ CREATE TABLE `coupons` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(20) NOT NULL,
   `code` varchar(20) NOT NULL,
-  `category` int(10) NOT NULL,
+  `category` smallint(4) NOT NULL,
   `coupontype` varchar(10) NOT NULL,
   `value` decimal(5,0) NOT NULL,
   `description` varchar(50) NOT NULL,
@@ -113,7 +113,7 @@ INSERT INTO `coupons` (`id`, `name`, `code`, `category`, `coupontype`, `value`, 
 --
 
 CREATE TABLE `coupons_category` (
-  `id` int(5) NOT NULL,
+  `id` smallint(4) NOT NULL,
   `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -150,19 +150,13 @@ ALTER TABLE `coupons_category`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `coupons`
 --
 ALTER TABLE `coupons`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `coupons_category`
 --
 ALTER TABLE `coupons_category`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=302;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
