@@ -10,7 +10,7 @@ $stock = $_POST["stock"];
 $now = date('Y-m-d H:i:s');
 $flavors = isset($_POST['flavors']) ? $_POST['flavors'] : [];
 
-$sqlProduct="INSERT INTO products (ProductName, description, category_id, brand_id, price, on_shelves_time, stock)
+$sqlProduct="INSERT INTO products (name, description, category_id, brand_id, price, on_shelves_time, stock)
 VALUES ('$name', '$description', '$category', '$brand', '$price', '$now', '$stock' )";
 
 
@@ -21,7 +21,7 @@ if ($conn->query($sqlProduct) === TRUE) {
     echo "error: " . $conn->error;
 }
 
-$sqlInsertTags = "INSERT INTO producttags (ProductID, TagID) VALUES (?, ?)";
+$sqlInsertTags = "INSERT INTO producttags (prod_id, tag_id) VALUES (?, ?)";
 
 $stmtInsertTags = $conn->prepare($sqlInsertTags);
 foreach ($flavors as $flavorID) {

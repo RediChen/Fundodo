@@ -11,10 +11,10 @@ $sqlAll = "SELECT * FROM products WHERE valid=0";
 $resultAll = $conn->query($sqlAll);
 $allProductCount = $resultAll->num_rows; // 總共有多少列商品
 
-$sqlCategory = "SELECT * FROM category ORDER BY id ASC"; // 處理每個nav tab
+$sqlCategory = "SELECT * FROM prod_categories ORDER BY id ASC"; // 處理每個nav tab
 $resultCate = $conn->query($sqlCategory);
 $cateRows = $resultCate->fetch_all(MYSQLI_ASSOC);
-$sqlOrder = "ORDER BY products.ProductID ASC";
+$sqlOrder = "ORDER BY products.id ASC";
 
 $categoryArr = [];
 foreach ($cateRows as $cate) {
@@ -34,10 +34,10 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
 
     switch ($order) {
         case 1:
-            $orderClause = "ORDER BY ProductID ASC";
+            $orderClause = "ORDER BY id ASC";
             break;
         case 2:
-            $orderClause = "ORDER BY ProductID DESC";
+            $orderClause = "ORDER BY id DESC";
             break;
         case 3:
             $orderClause = "ORDER BY price ASC";
@@ -59,13 +59,13 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
             break;
     }
 
-    $sql = "SELECT products.*, category.name AS category_name, MIN(productimages.ImageName) AS ImageName
+    $sql = "SELECT products.*, prod_categories.name AS category_name, MIN(prod_images.image_name) AS ImageName
     FROM products
-    JOIN category ON products.category_id = category.id
-    JOIN productimages ON products.ProductID=productimages.ProductID
+    JOIN prod_categories ON products.category_id = prod_categories.id
+    JOIN prod_images ON products.id=prod_images.id
     WHERE products.category_id=$cate_id 
     AND valid=0
-    GROUP BY products.ProductID, category.name
+    GROUP BY products.id, prod_categories.name
     $orderClause
     LIMIT $firstItem, $perPage";
     $pageTitle = "商品列表";
@@ -73,7 +73,7 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
     $search = $_GET["search"];
     $order = $_GET["order"];
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-    $sqlSearchCount = "SELECT * FROM products WHERE ProductName LIKE '%$search%' AND valid=0";
+    $sqlSearchCount = "SELECT * FROM products WHERE name LIKE '%$search%' AND valid=0";
     $resultSearch = $conn->query($sqlSearchCount);
     $allProductCount = $resultSearch->num_rows;
     $perPage = 15;
@@ -82,10 +82,10 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
 
     switch ($order) {
         case 1:
-            $orderClause = "ORDER BY ProductID ASC";
+            $orderClause = "ORDER BY id ASC";
             break;
         case 2:
-            $orderClause = "ORDER BY ProductID DESC";
+            $orderClause = "ORDER BY id DESC";
             break;
         case 3:
             $orderClause = "ORDER BY price ASC";
@@ -107,14 +107,14 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
             break;
     }
 
-    $sql = "SELECT products.*, category.name AS category_name, MIN(productimages.ImageName) AS ImageName
+    $sql = "SELECT products.*, prod_categories.name AS category_name, MIN(prod_images.image_name) AS ImageName
     FROM products
-    JOIN category ON products.category_id = category.id
-    JOIN productimages ON products.ProductID = productimages.ProductID
-    WHERE ProductName
+    JOIN prod_categories ON products.category_id = prod_categories.id
+    JOIN prod_images ON products.id = prod_images.prod_id
+    WHERE name
     LIKE '%$search%'
     AND valid=0
-    GROUP BY products.ProductID, category.name
+    GROUP BY products.id, prod_categories.name
     $orderClause
     LIMIT $firstItem, $perPage";
 
@@ -134,10 +134,10 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
 
     switch ($order) {
         case 1:
-            $orderClause = "ORDER BY ProductID ASC";
+            $orderClause = "ORDER BY id ASC";
             break;
         case 2:
-            $orderClause = "ORDER BY ProductID DESC";
+            $orderClause = "ORDER BY id DESC";
             break;
         case 3:
             $orderClause = "ORDER BY price ASC";
@@ -159,13 +159,13 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
             break;
     }
 
-    $sql = "SELECT products.*, category.name AS category_name, MIN(productimages.ImageName) AS ImageName
+    $sql = "SELECT products.*, prod_categories.name AS category_name, MIN(prod_images.image_name) AS ImageName
     FROM products
-    JOIN category ON products.category_id = category.id
-    JOIN productimages ON products.ProductID = productimages.ProductID
+    JOIN prod_categories ON products.category_id = prod_categories.id
+    JOIN prod_images ON products.id = prod_images.prod_id
     WHERE price >= $min AND price <= $max
     AND valid=0
-    GROUP BY products.ProductID, category.name
+    GROUP BY products.id, prod_categories.name
     $orderClause
     LIMIT $firstItem, $perPage";
     $pageTitle = "商品列表";
@@ -200,7 +200,7 @@ if (isset($_GET["page"])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="deleteProduct?id=<?= $row["ProductID"] ?>">確認</a>
+                    <a class="btn btn-danger" href="deleteProduct?id=<?= $row["id"] ?>">確認</a>
                 </div>
             </div>
         </div>
@@ -277,7 +277,7 @@ if (isset($_GET["page"])) {
                             </ul>
                             <div>共 <?= $productCount ?> 樣商品</div>
                         </div>
-                        <table class="table table-hover table-1d">
+                        <table class="table table-hover table-1row">
                             <thead>
                                 <tr class="text-nowrap text-center position-sticky top-0">
                                     <th>編號
@@ -350,8 +350,8 @@ if (isset($_GET["page"])) {
                             <tbody>
                                 <?php foreach ($rows as $prod) : ?>
                                     <tr>
-                                        <td class="align-middle text-center"><?= $prod["ProductID"] ?></td>
-                                        <td class="align-middle"><?= $prod["ProductName"] ?></td>
+                                        <td class="align-middle text-center"><?= $prod["id"] ?></td>
+                                        <td class="align-middle"><?= $prod["name"] ?></td>
                                         <td class="align-middle">
                                             <div class="product_box">
                                                 <img class="object-fit-cover img-fluid" src="./product_images/<?= $prod["ImageName"] ?>" alt="">
@@ -364,7 +364,7 @@ if (isset($_GET["page"])) {
                                         <td class="align-middle text-center">NT$<?= number_format($prod["price"]) ?></td>
                                         <td class="align-middle text-center"><?= $prod["on_shelves_time"] ?></td>
                                         <td class="align-middle text-center"><?= $prod["stock"] ?></td>
-                                        <td class="align-middle text-center"><a class="btn btn-primary" href="product-edit.php?id=<?= $prod["ProductID"] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                        <td class="align-middle text-center"><a class="btn btn-primary" href="product-edit.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
