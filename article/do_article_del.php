@@ -13,6 +13,4 @@ if($conn->query($sql)===true){
     echo "文章刪除失敗".$content->error;
 }
 header("location: article_title.php");
-
-
 ?>
