@@ -1,6 +1,7 @@
 <?php
 $to_fdd = "/xampp/htdocs/Fundodo/";
 require_once("/xampp/htdocs/connectDB_fdd.php");
+//to use FileName()
 include($to_fdd . "tools/tool-lib.php");
 //todo 本地測試用
 include($to_fdd . "tools/console-lib.php");
@@ -56,14 +57,11 @@ endif;
 
 $new_id = $conn->insert_id;
 
+//================================================
 $GENRE = 'CR';
-function filename($crs_id, $i_img, $format)
-{
-    global $GENRE;
-    return $GENRE . sprintf("%06d", $crs_id) . $i_img . '.' . $format;
-}
 
-$target_path = '../images/';
+
+$target_dir = '../images/';
 $counter = 1;
 $valArr = [];
 foreach ($_FILES["imageArr"]["error"] as $key => $code) :
@@ -76,10 +74,10 @@ foreach ($_FILES["imageArr"]["error"] as $key => $code) :
     $extension = pathinfo($_FILES["imageArr"]["name"][$key], PATHINFO_EXTENSION);
     // 取得該張圖片的副檔名
 
-    $fileName = fileName($new_id, $counter, $extension);
-    $filePath = $target_path . $fileName;
+    $file_name = formatFileName($GENRE, $new_id, $counter, $extension);
+    $target_path = $target_dir . $file_name;
     if (move_uploaded_file($tmp_name, $filePath)) :
-        $value = "('$GENRE', '$new_id', '$counter', '$fileName')";
+        $value = "('$GENRE', '$new_id', '$counter', '$file_name')";
         array_push($valArr, $value);
     endif;
 
