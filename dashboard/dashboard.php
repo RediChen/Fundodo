@@ -23,7 +23,7 @@ include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
         </div>
         <div class="table-responsive">
           <table class="table db_table table-hover">
-            <thead class="table-container">
+            <thead>
               <tr>
                 <th>ID</th>
                 <th>會員名字</th>
