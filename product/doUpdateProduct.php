@@ -34,7 +34,7 @@ if (isset($_POST['flavors'])) {
 // -----------------------------------------------------
 
 // 刪除舊的圖片
-$sqlOldImages = "SELECT ImageName FROM ProductImages WHERE ProductID = $id";
+$sqlOldImages = "SELECT ImageName FROM prod_images WHERE ProductID = $id";
 $resultOldImages = $conn->query($sqlOldImages);
 $oldImages = $resultOldImages->fetch_all(MYSQLI_ASSOC);
 
@@ -44,7 +44,7 @@ foreach ($oldImages as $oldImage) {
 }
 
 // 刪除舊的圖片記錄
-$sql_delete_images = "DELETE FROM ProductImages WHERE ProductID = $id";
+$sql_delete_images = "DELETE FROM prod_images WHERE ProductID = $id";
 $conn->query($sql_delete_images);
 
 $allowed_extensions = array('jpg', 'jpeg', 'png', 'gif'); // 定義可上傳圖片類型
@@ -60,7 +60,7 @@ foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
 
         if (move_uploaded_file($tmp_name, $targetFilePath)) {
             // 插入圖片數據，只存儲文件名
-            $stmt = $conn->prepare("INSERT INTO ProductImages (ProductID, ImageName) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO prod_images (ProductID, ImageName) VALUES (?, ?)");
             $stmt->bind_param("is", $id, $newFileName);
             $stmt->execute();
             $stmt->close();

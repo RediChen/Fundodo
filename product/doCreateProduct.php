@@ -47,7 +47,7 @@ foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
 
         if (move_uploaded_file($tmp_name, $targetFilePath)) {
             // 插入图片数据，仅存储文件名
-            $stmt = $conn->prepare("INSERT INTO ProductImages (ProductID, ImageName) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO prod_images (ProductID, ImageName) VALUES (?, ?)");
             $stmt->bind_param("is", $last_id, $newFileName);
             $stmt->execute();
             $stmt->close();

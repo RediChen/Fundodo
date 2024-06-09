@@ -2,7 +2,7 @@
 require_once("../db_connect.php");
 $to_dashboard = "/xampp/htdocs/Fundodo/dashboard/";
 
-$sql = "SELECT * FROM productimages";
+$sql = "SELECT * FROM prod_images";
 $result = $conn->query($sql);
 $row = $result->fetch_all(MYSQLI_ASSOC);
 ?>
@@ -16,9 +16,9 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
   <div class="d-flex">
-    <?php include($to_dashboard . "dashboard-aside.php"); ?>
+    <?php include $to_dashboard . "dashboard-aside.php"; ?>
     <div class="w-100">
-      <?php include($to_dashboard . "dashboard-header.php"); ?>
+      <?php include $to_dashboard . "dashboard-header.php"; ?>
       <div class="db_content">
         <div class="container c-600">
           <div class="mx-auto ">
@@ -58,7 +58,7 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
                 <label for="brand" class="form-label">品牌</label>
                 <select class="form-select" name="brand">
                   <option selected>請選擇品牌</option>
-                  <?php $sqlBrand = "SELECT * FROM brands";
+                  <?php $sqlBrand = "SELECT * FROM prod_brands";
                   $resultBrand = $conn->query($sqlBrand);
                   $row_brand = $resultBrand->fetch_all(MYSQLI_ASSOC); ?>
                   <?php foreach ($row_brand as $brand) : ?>
@@ -70,7 +70,7 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
               </div>
               <div class="mb-2">
                 <label class="form-label">商品口味</label>
-                <?php $sqlFlavor = "SELECT * FROM tags";
+                <?php $sqlFlavor = "SELECT * FROM prod_tags";
                 $resultFlavor = $conn->query($sqlFlavor);
                 $row_flavor = $resultFlavor->fetch_all(MYSQLI_ASSOC); ?>
                 <?php foreach ($row_flavor as $flavor) : ?>
