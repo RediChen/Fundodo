@@ -12005,45 +12005,48 @@ textarea.form-control-lg {
   display: none;
 }
 
-.table-1d th,
-.table-1d td {
+.table-1row th,
+.table-1row td {
   padding: 0.5rem;
 }
-.table-1d th {
+.table-1row th {
   background-color: #343a40;
   color: #fffefb;
   white-space: nowrap;
   text-align: center;
 }
-.table-1d tr:nth-child(odd) td {
+.table-1row tr:nth-child(odd) td {
   background-color: #e7e1db;
 }
-.table-1d tr:nth-child(even) td {
+.table-1row tr:nth-child(even) td {
   background-color: #ced4da;
 }
-.table-1d tr td {
+.table-1row tr td {
   color: #343a40;
   text-align: center;
 }
 
-.table-2d th,
-.table-2d td {
+.table-2row th,
+.table-2row td {
   padding: 0.5rem;
 }
-.table-2d thead {
+.table-2row thead {
   background-color: #343a40;
   color: #fffefb;
 }
-.table-2d tbody {
+.table-2row thead th:not(:last-child) {
+  border-right: 1px solid #fffefb;
+}
+.table-2row tbody {
   color: #343a40;
 }
-.table-2d tbody tr:nth-child(4n+1) {
+.table-2row tbody tr:nth-child(4n+1) {
   background-color: #e7e1db;
 }
-.table-2d tbody tr:nth-child(4n+3) {
+.table-2row tbody tr:nth-child(4n+3) {
   background-color: #ced4da;
 }
-.table-2d tbody tr:nth-child(even) {
+.table-2row tbody tr:nth-child(even) {
   background-color: #fffefb;
 }
 
@@ -12229,11 +12232,11 @@ body {
   max-height: 90px;
 }
 
-.table-2d tr:nth-child(4n+2) .crs-list_tags {
+.table-2row tr:nth-child(4n+2) .crs-list_tags {
   background-color: #e7e1db;
 }
 
-.table-2d tr:nth-child(4n+4) .crs-list_tags {
+.table-2row tr:nth-child(4n+4) .crs-list_tags {
   background-color: #ced4da;
 }
 
