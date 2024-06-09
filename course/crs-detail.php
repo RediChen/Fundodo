@@ -54,7 +54,7 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
             <div class="row justify-content-center">
               <?php if ($crs != null) : ?>
                 <div class="col-lg-6 col-9">
-                  <table class="table table-1d">
+                  <table class="table table-1row table-responsive">
                     <tr>
                       <th>ID</th>
                       <td><?= $crs["id"] ?></td>

@@ -50,8 +50,8 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
           <div class="fx-center">
             <div class="row justify-content-center">
               <div class="col-auto">
-                <form action="./doUpdateCrs.php?id=<?= $crs_id ?>&edit=true" method="post">
-                  <table class="table-1d">
+                <form action="./doUpdateCrs.php?id=<?= $crs_id ?>&edit=true" enctype="multipart/form-data" method="post">
+                  <table class="table-1row">
                     <?php if (isset($_SESSION['error_msg']['crs-update'])) : ?>
                       <tr>
                         <td colspan="3">
@@ -93,7 +93,7 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
                       </td>
                       <th>課程縮圖</th>
                       <td>
-                        <input type="file" name="imageArr" class="form-control text-center" id="toUpload">
+                        <input type="file" name="thumbnail" class="form-control text-center" id="toUpload">
                         <div id="thumbnail-box">
                           <img src="" alt="" class="thumbnails object-fit-cover" style="display: none; max-width: 500px" id="img-showcase">
                         </div>
@@ -161,6 +161,24 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
       </div>
     </div>
   </div>
+
+  <script>
+    const upload = document.querySelector("#toUpload");
+    const img = document.querySelector("#img-showcase");
+    let counter = 0;
+    upload.addEventListener("change", e => {
+      let input = e.target;
+      let reader = new FileReader(); //物件
+
+      console.log(input);
+      reader.readAsDataURL(input.files[0]);
+      reader.onload = () => {
+        let dataURL = reader.result;
+        img.setAttribute('src', dataURL);
+        img.style.display = "inline";
+      }
+    });
+  </script>
 </body>
 
 </html>

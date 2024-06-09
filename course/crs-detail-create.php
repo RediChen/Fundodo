@@ -30,7 +30,7 @@ function printErrorMsg($item)
         <h1 class="col-12 text-center my-3">新增課程</h1>
         <div class="col-auto">
           <form action="doCreateCrs.php" method="post" enctype="multipart/form-data">
-            <table class="table-1d">
+            <table class="table-1row">
               <tr>
                 <th>課程名稱</th>
                 <td>

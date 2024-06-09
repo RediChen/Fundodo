@@ -11,9 +11,9 @@ include "./crs-list_header.php";
 
 <body class="bg-light">
   <div class="d-flex">
-    <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
+    <?php include $to_fdd . "dashboard/dashboard-aside.php"; ?>
     <div class="w-100">
-      <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
+      <?php include $to_fdd . "dashboard/dashboard-header.php"; ?>
       <div class="db_content">
         <div class="container">
           <div class="d-flex justify-content-between my-3">
@@ -38,9 +38,13 @@ include "./crs-list_header.php";
             <div class="hstack gap-3">
               <?php
               $fa_class = $isASC ? "short-wide" : "wide-short";
-              $order_link = 10 * $order_mode_code + ($isASC ? 0 : 1);
+              $tagStr = isset($_GET["tag_id"])
+                ? "tag_id=" . $_GET["tag_id"] . "&"
+                : "";
+              $linkStr = 10 * $order_mode_code + ($isASC ? 0 : 1);
+              $toggle_link = "?$tagStr" . "page=1&order=$linkStr";
               ?>
-              <a href="?page=<?= $page ?>&order=<?= $order_link ?>" class="btn btn-primary text-light">
+              <a href="<?= $toggle_link ?>" class="btn btn-primary text-light">
                 <i class="fa-solid fa-arrow-down-<?= $fa_class ?>"></i>
               </a>
               <div class="dropdown">
@@ -70,32 +74,31 @@ include "./crs-list_header.php";
                     global $LINK_HERE;
                     global $page;
                     global $isASC;
-                    $tagStr = isset($_GET["tag"])
-                      ? "tag=" . $_GET["tag"] . "&"
+                    $tagStr = isset($_GET["tag_id"])
+                      ? "tag_id=" . $_GET["tag_id"] . "&"
                       : "";
                     $order_code = 10 * $code + $isASC;
-                    return "$LINK_HERE?$tagStr" .
-                      "page=$page&order=$order_code";
+                    return $LINK_HERE . '?' . $tagStr . "page=1&order=$order_code";
                   } ?>
                   <li>
-                    <a class="dropdown-item" href="<?= dropdownLink(
-                                                      0
-                                                    ) ?>">按 ID 排序</a>
+                    <a class="dropdown-item" href="<?= dropdownLink(0) ?>">
+                      按 ID 排序
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="<?= dropdownLink(
-                                                      1
-                                                    ) ?>">按價格排序</a>
+                    <a class="dropdown-item" href="<?= dropdownLink(1) ?>">
+                      按價格排序
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="<?= dropdownLink(
-                                                      2
-                                                    ) ?>">按上架時間排序</a>
+                    <a class="dropdown-item" href="<?= dropdownLink(2) ?>">
+                      按上架時間排序
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="<?= dropdownLink(
-                                                      3
-                                                    ) ?>">按下架時間排序</a>
+                    <a class="dropdown-item" href="<?= dropdownLink(3) ?>">
+                      按下架時間排序
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -106,7 +109,7 @@ include "./crs-list_header.php";
               <?php endif; ?>
             </div>
           </div>
-          <table class="table-2d crs-list_table">
+          <table class="crs-list_table table-2row">
             <thead>
               <tr class="text-nowrap text-center">
                 <th scope="col">課程 ID</th>
