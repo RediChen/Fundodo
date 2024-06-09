@@ -57,10 +57,10 @@
 }
 
 
-.table-2d tr:nth-child(4n+2) .crs-list_tags {
+.table-2row tr:nth-child(4n+2) .crs-list_tags {
   background-color: $color-p2;
 }
-.table-2d tr:nth-child(4n+4) .crs-list_tags {
+.table-2row tr:nth-child(4n+4) .crs-list_tags {
   background-color: $color-muted;
 }
 

@@ -47,7 +47,7 @@ $row = $result->fetch_assoc();
 
         <div class="row justify-content-center">
             <div class="col-md-6 row">
-                <table class="table-1d col-md-12">
+                <table class="table-1row col-md-12">
                         <tr>
                             <th class=" table-danger">優惠券編號</th>
                             <td><?= $row["id"] ?></td>

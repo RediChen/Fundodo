@@ -204,7 +204,7 @@ function getOrderLink($column, $current_order_by, $current_order)
 
                     <div class="couponList">
                         <?php if ($result->num_rows > 0) : ?>
-                            <table class="table table-1d table-hover">
+                            <table class="table table-1row table-hover">
                                 <thead>
                                     <tr class="table-warning">
                                         <th><a href="<?= getOrderLink("id", $order_by, $order) ?>">ID <i class="fa-solid fa-sort"></i></a></th>

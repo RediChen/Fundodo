@@ -41,7 +41,7 @@
 }
 
 //* 表格
-.table-1d {
+.table-1row {
 	th,
 	td {
 		padding: 0.5rem;
@@ -66,7 +66,7 @@
 	}
 }
 
-.table-2d {
+.table-2row {
 	th,
 	td {
 		padding: 0.5rem;
@@ -74,6 +74,10 @@
 	thead {
 		background-color: $color-heading;
 		color: $color-white;
+
+    th:not(:last-child) {
+      border-right: 1px solid $color-white;
+    }
 	}
 	tbody {
 		color: $color-heading;

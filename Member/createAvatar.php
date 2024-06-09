@@ -68,7 +68,7 @@ $conn->close();
         </div>
       </div> -->
 
-      <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data" class="table-1d col-8">
+      <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data" class="table-1row col-8">
         <table class="mx-auto">
           <tr>
             <th>原先頭像</th>
@@ -115,7 +115,6 @@ $conn->close();
       let input = e.target;
       let reader = new FileReader(); //物件
 
-      console.log(input);
       reader.readAsDataURL(input.files[0]);
       reader.onload = () => {
         let dataURL = reader.result;
