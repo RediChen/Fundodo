@@ -56,7 +56,7 @@ if ($row === null) {
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
       <div class="w-100">
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-        <div class="db_content">
+        <div class="layout_content">
              <!-- modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">

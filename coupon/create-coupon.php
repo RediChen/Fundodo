@@ -32,7 +32,7 @@ session_abort();
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
       <div class="w-100">
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-        <div class="db_content">
+        <div class="layout_content">
         <div class="container-fluid px-5 my-4">
         <h2 class="text-center">新增優惠券</h2>
         <div class="my-3">

@@ -74,7 +74,7 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
     <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
     <div class="w-100">
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-      <div class="db_content">
+      <div class="layout_content">
         <div class="container">
           <div class="py-2">
             <a href="users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>

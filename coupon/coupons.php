@@ -132,7 +132,7 @@ function getOrderLink($column, $current_order_by, $current_order)
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
         <div class="w-100">
             <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-            <div class="db_content">
+            <div class="layout_content">
                 <div class="container-fluid ">
                     <h2 class="text-start">優惠券列表</h2>
                     <form action="">

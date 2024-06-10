@@ -40,7 +40,7 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
     <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
     <div class="w-100">
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-      <div class="db_content">
+      <div class="layout_content">
         <div class="container">
           <div class="my-3 d-flex justify-content-between align-items-center">
             <div></div>

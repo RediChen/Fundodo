@@ -19,7 +19,7 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
     <?php include $to_dashboard . "dashboard-aside.php"; ?>
     <div class="w-100">
       <?php include $to_dashboard . "dashboard-header.php"; ?>
-      <div class="db_content">
+      <div class="layout_content">
         <div class="container c-600">
           <div class="mx-auto ">
             <h1 class="mb-3">新增商品</h1>

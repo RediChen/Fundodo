@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
     <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
     <div class="w-100">
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-      <div class="db_content">
+      <div class="layout_content">
         <div class="container c-600">
           <h1>修改商品資料</h1>
           <div class="text-end d-flex justify-content-between">

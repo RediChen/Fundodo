@@ -44,7 +44,7 @@ session_abort();
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
       <div class="w-100">
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-        <div class="db_content">
+        <div class="layout_content">
         <div class="container">
         <h1 class="h3 text-center my-3">編輯優惠券</h1>
         <?php if (isset($_SESSION["errors"])) : ?>

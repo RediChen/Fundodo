@@ -93,7 +93,7 @@ if (isset($_GET["page"])) {
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
         <div class="w-100">
             <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-            <div class="db_content">
+            <div class="layout_content">
                 <div class="container">
                     <h1><?= $pageTitle ?></h1>
                     <div class="py-2">

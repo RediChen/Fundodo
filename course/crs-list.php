@@ -14,7 +14,7 @@ include "./crs-list_header.php";
     <?php include $to_fdd . "dashboard/dashboard-aside.php"; ?>
     <div class="w-100">
       <?php include $to_fdd . "dashboard/dashboard-header.php"; ?>
-      <div class="db_content">
+      <div class="layout_content">
         <div class="container">
           <div class="d-flex justify-content-between my-3">
             <div></div>

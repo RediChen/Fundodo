@@ -16,7 +16,7 @@
       <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-aside.php"); ?>
       <div class="w-100">
         <?php include("/xampp/htdocs/Fundodo/dashboard/dashboard-header.php"); ?>
-        <div class="db_content">
+        <div class="layout_content">
           <!-- 請用 div.container 取代這行  -->
         </div>
       </div>

@@ -15,7 +15,7 @@ include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
     <div class="w-100">
       <?php include("./dashboard-header.php"); ?>
 
-      <div class="db_content">
+      <div class="layout_content">
         <h3>會員資料</h3>
         <div class="d-flex justify-content-between align-items-center mb-3">
           <span>共 (施工中) 人</span>
