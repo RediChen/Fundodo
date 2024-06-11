@@ -107,8 +107,8 @@ if (isset($_GET["category"]) && isset($_GET["page"]) && isset($_GET["order"])) {
       break;
   }
 
-  $sql = "SELECT products.*, prod_categories.name AS category_name, MIN(prod_images.image_name) AS ImageName
-    FROM products
+  $sql = "SELECT products.*, prod_categories.name AS category_name,
+  MIN(prod_images.image_name) AS ImageName FROM products
     JOIN prod_categories ON products.category_id = prod_categories.id
     JOIN prod_images ON products.id = prod_images.prod_id
     WHERE name
@@ -218,10 +218,12 @@ if (isset($_GET["page"])) {
                 <input type="text" class="form-control" placeholder="請搜尋商品名稱" name="search">
                 <input type="hidden" value="1" name="order">
                 <input type="hidden" value="1" name="page">
-                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn btn-primary-fill" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
             </form>
-            <a class="btn btn-primary ms-3 align-self-center" href="createProduct.php">新增商品<i class="fa-solid fa-plus"></i></a>
+            <a class="btn btn-primary-fill ms-3 align-self-center" href="createProduct.php">
+              <i class="fa-solid fa-plus me-3"></i>新增商品
+            </a>
           </div>
           <?php if (isset($_GET["search"])) : ?>
             <div class="align-self-center">
@@ -371,7 +373,12 @@ if (isset($_GET["page"])) {
                     <td class="align-middle text-center">NT$<?= number_format($prod["price"]) ?></td>
                     <td class="align-middle text-center"><?= $prod["on_shelves_time"] ?></td>
                     <td class="align-middle text-center"><?= $prod["stock"] ?></td>
-                    <td class="align-middle text-center"><a class="btn btn-primary" href="product-edit.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td class="align-middle text-center">
+                      <div class="hstack gap-2">
+                      <a class="btn btn-primary btn-sq fx-center" href="product-detail.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-circle-info fa-lg"></i></a>
+                      <a class="btn btn-primary btn-sq fx-center" href="product-edit.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                      </div>
+                    </td>
                   </tr>
                 <?php endforeach ?>
               </tbody>
