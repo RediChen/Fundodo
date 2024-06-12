@@ -63,9 +63,9 @@ $crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
                       </tr>
                     <?php endif; ?>
                     <tr>
-                      <td style="width: 364px;"><?= $crs["id"] ?></td>
-                      <th>ID</th>
-                      <td><?= $crs["id"] ?></td>
+                      <th style="width: 364px;">目前版本</th>
+                      <th>ID: <?= $crs["id"] ?></th>
+                      <th>編輯版本</th>
                       <input type="hidden" name="id" value="<?= $crs["id"] ?>">
                       <!-- 不允許更改 ID，但是因為接手的頁面還是需要 ID -->
                     </tr>
