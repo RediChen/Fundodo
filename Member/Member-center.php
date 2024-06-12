@@ -65,7 +65,7 @@ $conn->close();
     <!-- <h2 class="text-center">上傳頭像</h2> -->
     <!-- <div class="row"> -->
     <!-- <div class="col-lg-12">
-        <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data">
+        <form action="doAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data">
           <div class="mb-2">
             <label for="" class="form-label">選擇檔案</label>
             <input type="file" class="form-control" name="avatar_file">

@@ -23,7 +23,7 @@ endif;
     <div class="vh-100 row">
       <div class="col-12 col-md-6 col-lg-5 mt-3">
         <div class="vstack justify-content-center h-100">
-          <form action="DoLogin.php" method="post" class="login-form w-100 py-5 col-lg-4 px-5 bg-light bg-opacity-75 rounded-3 shadow">
+          <form action="doLogin.php" method="post" class="login-form w-100 py-5 col-lg-4 px-5 bg-light bg-opacity-75 rounded-3 shadow">
             <div class="text-center">
               <label for="">帳號</label>
               <input type="text" name="account" class="form-control mt-1">

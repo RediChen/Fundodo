@@ -23,7 +23,7 @@
         </div>
         <hr>
         <div class="py-2 row justify-content-center">
-            <form action="DoCreateUser.php" method="post" class="col-auto col-lg-6">
+            <form action="doCreateUser.php" method="post" class="col-auto col-lg-6">
                 <div class="mb-2 justify-content-center">
                     <div class="row mb-2">
                         <div class="col-6 justify-content-start">

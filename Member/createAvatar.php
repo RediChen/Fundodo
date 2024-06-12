@@ -47,7 +47,7 @@ $conn->close();
     <div class="row justify-content-center">
       <h2 class="col-12 text-center">上傳頭像</h2>
       <!-- <div class="col-lg-12">
-        <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data">
+        <form action="doAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data">
           <div class="mb-2">
             <label for="" class="form-label">選擇檔案</label>
             <input type="file" class="form-control" name="avatar_file">
@@ -68,7 +68,7 @@ $conn->close();
         </div>
       </div> -->
 
-      <form action="DoAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data" class="table-1row col-8">
+      <form action="doAvatarUpload.php?id=<?= $row["id"] ?>" method="post" enctype="multipart/form-data" class="table-1row col-8">
         <table class="mx-auto">
           <tr>
             <th>原先頭像</th>
