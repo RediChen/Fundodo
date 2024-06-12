@@ -12022,6 +12022,7 @@ textarea.form-control-lg {
 .table-1row th,
 .table-1row td {
   padding: 0.5rem;
+  vertical-align: middle;
 }
 .table-1row th {
   background-color: #343a40;
