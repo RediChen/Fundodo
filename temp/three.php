@@ -1,4 +1,5 @@
 <?php
+//將大頭貼隨機分配給所有會員
 $to_fdd = "/xampp/htdocs/Fundodo/";
 require_once($to_fdd . "db_connect.php");
 //todo 本地測試用
