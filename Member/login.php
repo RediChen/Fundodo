@@ -68,8 +68,8 @@ endif;
             </div>
             <?php if (isset($_SESSION["errorTimes"]) && $_SESSION["errorTimes"] >= 5) : ?>
               <div class="text-danger text-center h3 my-3">登入錯誤次數過多,請稍後再嘗試</div>
-            <?php elseif (isset($_SESSION["errorMsg"])) : ?>
-              <p class="text-primary-emphasis text-center h5 my-3">帳號或密碼錯誤</p>
+            <?php elseif (isset($_SESSION["errorMsg"]["message"])) : ?>
+              <p class="text-primary-emphasis text-center h5 my-3"><?=$_SESSION["errorMsg"]["message"]?></p>
               <?php unset($_SESSION["errorMsg"]); ?>
             <?php elseif (isset($_GET["logout"]) && $_GET["logout"] == 1) : ?>
               <p class="text-primary-emphasis text-center h5 my-3">已成功登出</p>
