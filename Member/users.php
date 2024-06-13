@@ -141,7 +141,7 @@ if (isset($_GET["page"])) {
                     </div>
                     <?php if (isset($_GET["page"])) : ?>
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination">
+                            <ul class="pagination fdd">
                                 <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                     <li class="page-item <?php if ($i == $page) echo "active" ?>">
 
@@ -206,7 +206,7 @@ if (isset($_GET["page"])) {
                         </div>
                         <?php if (isset($_GET["page"])) : ?>
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination">
+                                <ul class="pagination fdd">
                                     <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                         <li class="page-item <?php if ($i == $page) echo "active" ?>">
 

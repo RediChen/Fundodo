@@ -149,6 +149,34 @@
 }
 
 //* 分頁按鈕組
+.pagination.fdd {
+	--bs-pagination-bg: #{$color-p2};
+	--bs-pagination-color: #{$color-p1-text};
+	--bs-pagination-border-color: #{$color-white};
+
+	--bs-pagination-hover-bg: #{shade-color($color-p2, 10%)};
+	--bs-pagination-hover-color: #{$color-white};
+	--bs-pagination-hover-border-color: #{$color-white};
+
+	--bs-pagination-active-bg: #{$color-p1};
+	--bs-pagination-active-color: #{$color-white};
+	--bs-pagination-active-border-color: #{$color-white};
+
+	--bs-pagination-focus-bg: #{tint-color($color-p1, 20%)};
+	--bs-pagination-focus-color: #{$color-white};
+	--bs-pagination-focus-border-color: #{$color-white};
+	--bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+
+	--bs-pagination-disabled-bg: #{$color-muted};
+	--bs-pagination-disabled-color: #{$color-heading};
+	--bs-pagination-disabled-border-color: #{$gray-500};
+
+	.page-link {
+		height: 40px;
+	}
+}
+//以上為較易改的寫法
+//以下為較易懂的寫法
 .pagination-fdd {
 	@extend .fx-center, .list-unstyled;
 	list-style: none;

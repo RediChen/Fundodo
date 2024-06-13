@@ -306,7 +306,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                     <?php if ($pageCount > 1) : ?>
                         <div class="d-flex justify-content-center">
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination">
+                                <ul class="pagination fdd">
                                     <!-- 最前頁按鈕 -->
                                     <li class="page-item <?php if ($page == 1) echo 'disabled'; ?>">
                                         <a class="page-link" href="?page=1<?php if (isset($_GET["search"])) echo "&search=" . $_GET["search"]; ?><?= isset($_GET['category']) ? "&category=" . $_GET['category'] : '' ?>">最前頁</a>

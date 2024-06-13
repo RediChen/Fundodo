@@ -160,7 +160,7 @@ $page_title = "文章列表";
     </div>
     <?php if (isset($_GET["page"])) : ?>
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination fdd">
           <?php if (isset($_GET["page"]) && isset($_GET["sort"])) : ?>
             <?php for ($i = 1; $i <= $page_count; $i++) : ?>
               <li class="page-item"><a class="page-link

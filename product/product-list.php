@@ -385,7 +385,7 @@ if (isset($_GET["page"])) {
             </table>
             <?php if (isset($_GET["page"])) : ?>
               <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination fdd justify-content-center">
                   <?php if (isset($_GET["category"]) && isset($_GET["page"])) : ?>
                     <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                       <li class="page-item <?php if ($i == $page) echo "active"; ?>">
