@@ -1,5 +1,7 @@
 <?php
+// 設定台灣的時區
 date_default_timezone_set('Asia/Taipei');
+
 // 共用
 $server_name="localhost";
 $user_name="admin";
@@ -17,8 +19,8 @@ $password = "12345";
 $password = "dgyy";
 
 //*陳致
-// $password = ".glWcQbgMsmuL2rB";
-$password = "44444";
+$password = ".glWcQbgMsmuL2rB";
+// $password = "44444";
 
 //* 晨宇
 // $db_name="db-products";
