@@ -42,7 +42,7 @@ $row = $result->fetch_assoc();
         <div class="container px-5 my-4">
         <h2 class="text-center">優惠券詳情</h2>
         <div class="my-3">
-            <a class="btn btn-primary " href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 回優惠券列表</a>
+            <a class="btn btn-primary-fill " href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 回優惠券列表</a>
         </div>
 
         <div class="row justify-content-center">
@@ -105,7 +105,7 @@ $row = $result->fetch_assoc();
 
                     <div class="py-2 d-flex mx-2">
                         <?php if ($row["status"] == 1) : ?>
-                            <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#statusModal<?= $row["id"] ?>"><i class="fa-solid fa-ban"></i> 停用優惠券</a>
+                            <a class="btn btn-danger-fill btn-sm" data-bs-toggle="modal" data-bs-target="#statusModal<?= $row["id"] ?>"><i class="fa-solid fa-ban"></i> 停用優惠券</a>
                         <?php else : ?>
                             <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#statusModal<?= $row["id"] ?>"><i class="fa-solid fa-check"></i> 啟用優惠券</a>
                         <?php endif; ?>
@@ -122,7 +122,7 @@ $row = $result->fetch_assoc();
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                        <a class="btn btn-primary" href="doDeleteCoupon.php?id=<?= $row["id"] ?>&status=<?= $row["status"] == 1 ? 0 : 1 ?>"><?= $row["status"] == 1 ? "確認停用" : "確認啟用" ?></a>
+                                        <a class="btn btn-primary-fill" href="doDeleteCoupon.php?id=<?= $row["id"] ?>&status=<?= $row["status"] == 1 ? 0 : 1 ?>"><?= $row["status"] == 1 ? "確認停用" : "確認啟用" ?></a>
                                     </div>
                                 </div>
                             </div>

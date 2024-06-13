@@ -40,13 +40,13 @@ include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
                 <td>台北市中正區羅斯福路3號4樓</td>
                 <td>
                   <div class=" d-flex gap-3">
-                    <button class="btn btn-primary btn-sm mr-2">
+                    <button class="btn btn-primary-fill btn-sm mr-2">
                       <i class="fa-solid fa-eye"></i>
                     </button>
                     <button class="btn btn-dark btn-sm mr-2">
                       <i class="fa-regular fa-pen-to-square"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm">
+                    <button class="btn btn-danger-fill btn-sm">
                       <i class="fa-solid fa-trash"></i>
                     </button>
                   </div>

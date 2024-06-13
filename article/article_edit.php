@@ -77,8 +77,8 @@ if ($re->num_rows > 0) {
                         ?>
                     </div>
                     <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary" type="submit">編輯</button>
-                    <a href="article_content.php?Aid=<?= $arti_id ?>" class="btn btn-primary">取消編輯</a>
+                    <button class="btn btn-primary-fill" type="submit">編輯</button>
+                    <a href="article_content.php?Aid=<?= $arti_id ?>" class="btn btn-primary-fill">取消編輯</a>
                     </div>
                 </form>
             </div>

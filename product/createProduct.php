@@ -24,7 +24,7 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
           <div class="mx-auto ">
             <h1 class="mb-3">新增商品</h1>
             <div class="text-end">
-              <a href="product-list.php" class="btn btn-primary text-end"><i class="fa-solid fa-arrow-left"></i>回商品列表</a>
+              <a href="product-list.php" class="btn btn-primary-fill text-end"><i class="fa-solid fa-arrow-left"></i>回商品列表</a>
             </div>
             <form action="doCreateProduct.php" method="post" enctype="multipart/form-data">
               <div class="mb-2">
@@ -89,7 +89,7 @@ $row = $result->fetch_all(MYSQLI_ASSOC);
                 <input type="tel" class="form-control" name="stock" required>
               </div>
               <div class="text-center mt-3">
-                <button class="btn btn-primary" type="submit">送出</button>
+                <button class="btn btn-primary-fill" type="submit">送出</button>
               </div>
             </form>
           </div>

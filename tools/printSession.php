@@ -31,7 +31,7 @@ session_start();
   </div>
   <div class="text-center mt-3">
     <h3>點擊以清除 SESSION</h3>
-    <a href="?clear=true" class="btn btn-danger">清除 SESSION</a>
+    <a href="?clear=true" class="btn btn-danger-fill">清除 SESSION</a>
   </div>
 </body>
 <?php

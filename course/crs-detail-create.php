@@ -79,13 +79,13 @@ function printErrorMsg($item)
                 <th>結束編輯</th>
                 <td>
                   <div class="hstack justify-content-around">
-                    <button type="button" class="btn btn-danger text-light" id="pop-c-act">
+                    <button type="button" class="btn btn-danger-fill text-light" id="pop-c-act">
                       放棄新增
                     </button>
-                    <button type="reset" class="btn btn-danger text-light" id="pop-c-act">
+                    <button type="reset" class="btn btn-danger-fill text-light" id="pop-c-act">
                       清除全部
                     </button>
-                    <button type="submit" class="btn btn-primary text-light">
+                    <button type="submit" class="btn btn-primary-fill text-light">
                       上架課程
                     </button>
                     <!-- todo 上傳確認 -->
@@ -111,8 +111,8 @@ function printErrorMsg($item)
       <h2>確定中止新增流程嗎？</h2>
       <p>離開後，將會刪除此頁面中已輸入的資訊。</p>
       <div class="mt-3 hstack gap-3 justify-content-center">
-        <a href="<?= $BACK_LINK ?>" class="btn btn-danger text-light px-3">確定離開</a>
-        <button class="btn btn-primary text-light px-3" id="pop-c-btn">繼續編輯</button>
+        <a href="<?= $BACK_LINK ?>" class="btn btn-danger-fill text-light px-3">確定離開</a>
+        <button class="btn btn-primary-fill text-light px-3" id="pop-c-btn">繼續編輯</button>
       </div>
     </div>
   </div>

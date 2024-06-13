@@ -200,7 +200,7 @@ if (isset($_GET["page"])) {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a class="btn btn-danger" href="deleteProduct?id=<?= $row["id"] ?>">確認</a>
+          <a class="btn btn-danger-fill" href="deleteProduct?id=<?= $row["id"] ?>">確認</a>
         </div>
       </div>
     </div>
@@ -227,7 +227,7 @@ if (isset($_GET["page"])) {
           </div>
           <?php if (isset($_GET["search"])) : ?>
             <div class="align-self-center">
-              <a href="product-list.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> 回商品列表</a>
+              <a href="product-list.php" class="btn btn-primary-fill"><i class="fa-solid fa-arrow-left"></i> 回商品列表</a>
             </div>
           <?php endif ?>
           <div class="py-2">
@@ -235,7 +235,7 @@ if (isset($_GET["page"])) {
               <div class="row g-3 align-items-center">
                 <?php if (isset($_GET["min"])) : ?>
                   <div class="col-auto">
-                    <a class="btn btn-primary" href="product-list.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+                    <a class="btn btn-primary-fill" href="product-list.php"><i class="fa-solid fa-arrow-left-long"></i></a>
                   </div>
                 <?php endif ?>
                 <?php
@@ -263,7 +263,7 @@ if (isset($_GET["page"])) {
                   <input type="hidden" name="order" value="1">
                 </div>
                 <div class="col-auto">
-                  <button type="submit" class="btn btn-primary">篩選</button>
+                  <button type="submit" class="btn btn-primary-fill">篩選</button>
                 </div>
               </div>
             </form>
@@ -375,8 +375,8 @@ if (isset($_GET["page"])) {
                     <td class="align-middle text-center"><?= $prod["stock"] ?></td>
                     <td class="align-middle text-center">
                       <div class="hstack gap-2">
-                      <a class="btn btn-primary btn-sq fx-center" href="product-detail.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-circle-info fa-lg"></i></a>
-                      <a class="btn btn-primary btn-sq fx-center" href="product-edit.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-primary-fill btn-sq fx-center" href="product-detail.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-circle-info fa-lg"></i></a>
+                      <a class="btn btn-primary-fill btn-sq fx-center" href="product-edit.php?id=<?= $prod["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                       </div>
                     </td>
                   </tr>

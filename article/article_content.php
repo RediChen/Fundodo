@@ -58,7 +58,7 @@ $user_userid = !empty($_SESSION) ? $_SESSION["user"]["id"] : "";
             確定刪除此文章?
           </div>
           <div class="modal-footer">
-            <a href="do_article_del.php?Aid=<?= $row["id"] ?>" type="button" class="btn btn-primary">確認</a>
+            <a href="do_article_del.php?Aid=<?= $row["id"] ?>" type="button" class="btn btn-primary-fill">確認</a>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
           </div>
         </div>
@@ -72,16 +72,16 @@ $user_userid = !empty($_SESSION) ? $_SESSION["user"]["id"] : "";
     <div class="d-flex justify-content-between mb-2">
       <div>
         <?php if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) : ?>
-          <a href="../dashboard/dashboard.php" class="btn btn-primary">後台首頁</a>
+          <a href="../dashboard/dashboard.php" class="btn btn-primary-fill">後台首頁</a>
         <?php endif; ?>
       </div>
 
       <div>
         <?php if (empty($_SESSION)) : ?>
-          <a href="../member/user-CMS/login.php" class="btn btn-primary">登入</a>
+          <a href="../member/user-CMS/login.php" class="btn btn-primary-fill">登入</a>
         <?php else : ?>
           Hi, <?= $user_nickname ?>
-          <a href="arti_session-destory.php" class="btn btn-primary ms-3">登出</a>
+          <a href="arti_session-destory.php" class="btn btn-primary-fill ms-3">登出</a>
         <?php endif ?>
       </div>
     </div>
@@ -114,10 +114,10 @@ $user_userid = !empty($_SESSION) ? $_SESSION["user"]["id"] : "";
           </div>
           <?php if ($user_lv == 20 || $user_userid == $row["userid"]) : ?>
             <div class="btn-area">
-              <a href="article_edit.php?Aid=<?= $row["id"] ?>" class="btn btn-primary">
+              <a href="article_edit.php?Aid=<?= $row["id"] ?>" class="btn btn-primary-fill">
                 編輯
               </a>
-              <button class="btn btn-primary" title="刪除文章" data-bs-toggle="modal" data-bs-target="#del_arti_modal">刪除</button>
+              <button class="btn btn-primary-fill" title="刪除文章" data-bs-toggle="modal" data-bs-target="#del_arti_modal">刪除</button>
             </div>
         </div>
       <?php endif ?>

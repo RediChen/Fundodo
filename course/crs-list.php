@@ -16,19 +16,17 @@ include "./crs-list_header.php";
       <?php include $to_fdd . "dashboard/dashboard-header.php"; ?>
       <div class="layout_content">
         <div class="container">
-          <div class="d-flex justify-content-between my-3">
+          <div class="d-flex justify-content-between align-items-center my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn btn-primary fx-center text-light">
+            <a href="crs-detail-create.php" class="btn btn-primary-fill fx-center">
               新增課程
             </a>
           </div>
           <div class="crs-list_info p-3">
             <div>
-              <p>
-                <?= "總共 $crsCount 筆，共 $NUM_PAGES 頁。此為第 " .
-                  $_GET["page"] .
-                  " 頁" ?>
+              <p class="m-0">
+                <?= "總共 $crsCount 筆，共 $NUM_PAGES 頁" ?>
               </p>
             </div>
             <div>
@@ -44,11 +42,11 @@ include "./crs-list_header.php";
               $linkStr = 10 * $order_mode_code + ($isASC ? 0 : 1);
               $toggle_link = "?$tagStr" . "page=1&order=$linkStr";
               ?>
-              <a href="<?= $toggle_link ?>" class="btn btn-primary text-light">
+              <a href="<?= $toggle_link ?>" class="btn btn-sq btn-2-fill fx-center">
                 <i class="fa-solid fa-arrow-down-<?= $fa_class ?>"></i>
               </a>
               <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-2-fill dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <?php //$order_mode_code from _header
 
                   switch ($order_mode_code):
@@ -68,11 +66,10 @@ include "./crs-list_header.php";
                       echo "按 ID 排序";
                   endswitch; ?>
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu shadow">
                   <?php function dropdownLink($code)
                   {
                     global $LINK_HERE;
-                    global $page;
                     global $isASC;
                     $tagStr = isset($_GET["tag_id"])
                       ? "tag_id=" . $_GET["tag_id"] . "&"
@@ -103,7 +100,7 @@ include "./crs-list_header.php";
                 </ul>
               </div>
               <?php if (isset($_GET["tag_id"])) : ?>
-                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn btn-danger btn-sq fx-center text-light" title="取消篩選">
+                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn btn-danger-fill btn-sq fx-center text-light" title="取消篩選">
                   <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
                 </a>
               <?php endif; ?>
@@ -148,10 +145,10 @@ include "./crs-list_header.php";
                   ?>
                   <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
                   <td class="vstack align-items-center gap-2">
-                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq text-light fx-center" title="完整數據">
+                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-1-fill btn-sq text-light fx-center" title="完整數據">
                       <i class="fa-solid fa-info"></i>
                     </a>
-                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq text-light fx-center" title="編輯課程">
+                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill btn-sq text-light fx-center" title="編輯課程">
                       <i class="fa-solid fa-pen"></i>
                     </a>
                   </td>
@@ -181,7 +178,7 @@ include "./crs-list_header.php";
                   </td>
                   <td>
                     <!-- <div> -->
-                    <!-- <a href="#" class="btn btn-primary btn-sq text-light fx-center mx-auto" title="編輯標籤">
+                    <!-- <a href="#" class="btn btn-primary-fill btn-sq text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
                     </a> -->
                     <!-- </div> -->
@@ -207,7 +204,7 @@ include "./crs-list_header.php";
     <div class="popout-notice" id="popout-notice">
       <div class="window animate__animated animate__bounceIn">
         <h2>已下架課程</h2>
-        <a rolo="button" href="<?= $LINK_HERE ?>" class="btn btn-primary mt-3 px-3" id="pop-n-btn">好的</a>
+        <a rolo="button" href="<?= $LINK_HERE ?>" class="btn btn-primary-fill mt-3 px-3" id="pop-n-btn">好的</a>
       </div>
     </div>
     <script>
@@ -219,7 +216,6 @@ include "./crs-list_header.php";
     </script>
   <?php endif; ?>
 
-  <?php include $to_fdd . "tools/common-script.php"; ?>
 
 </body>
 
