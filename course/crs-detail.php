@@ -20,9 +20,12 @@ $crs_id = $_GET["id"];
 //===============資料表: courses
 $sql = "SELECT * FROM courses WHERE id = $crs_id";
 $crs = $conn->query($sql)->fetch_assoc();
-//===============資料表: images_stored
+//===============資料表: images_stored for 縮圖
 $sql = "SELECT file_name FROM images_stored WHERE genre = 'CR' AND item_id = $crs_id AND item_sub_id = 1";
-$crs_img_name = $conn->query($sql)->fetch_assoc()["file_name"];
+$crs_thumb_name = $conn->query($sql)->fetch_assoc()["file_name"];
+//===============資料表: images_stored for 所有圖
+$sql = "SELECT file_name FROM images_stored WHERE genre = 'CR' AND item_id = $crs_id AND item_sub_id != 1";
+$crs_img_nameArr = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 
 $pageTitle = empty($crs) ? "查無課程" : "課程完整資料";
 $LINK_HERE = "crs-detail.php?id=$crs_id";
@@ -53,54 +56,77 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
           <div class="fx-center">
             <div class="row justify-content-center">
               <?php if ($crs != null) : ?>
-                <div class="col-lg-6 col-9">
-                  <table class="table table-1row table-responsive">
+                <div class="col-auto row">
+                  <div class="col-12 col-lg-6 table-responsive">
+                    <table class="table table-bordered table-1row">
+                      <tr>
+                        <th>ID</th>
+                        <th><?= $crs["id"] ?></th>
+                      </tr>
+                      <tr>
+                        <th>課程名稱</th>
+                        <td><?= $crs["title"] ?></td>
+                      </tr>
+                      <tr>
+                        <th>課程摘要</th>
+                        <td><?= $crs["abstract"] ?></td>
+                      </tr>
+                      <tr>
+                        <th>課程縮圖</th>
+                        <td><img src="../images/<?= $crs_thumb_name ?>" alt="" class="object-fit-cover"></td>
+                      </tr>
+                      <tr>
+                        <th>課程價格</th>
+                        <td>
+                          NT$<?= number_format($crs["price"]) ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>觀看人次</th>
+                        <td>（施工中）</td>
+                      </tr>
+                      <tr>
+                        <th>上架狀態</th>
+                        <td>
+                          <?= $crs["deleted_at"]
+                            ? "已於" . $crs["deleted_at"] . "下架"
+                            : "在架上" ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>編輯課程</th>
+                        <td class="hstack gap-2 justify-content-center">
+                          <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq fx-center" title="編輯課程">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                          </a>
+                          <button class="btn btn-danger btn-sq fx-center" id="pop-c-act" title="下架課程">
+                            <i class="fa-regular fa-eye-slash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col-12 col-lg-6 table-responsive">
+                    <table class="table table-bordered table-1row">
                     <tr>
-                      <th>ID</th>
-                      <td><?= $crs["id"] ?></td>
-                    </tr>
-                    <tr>
-                      <th>課程名稱</th>
-                      <td><?= $crs["title"] ?></td>
-                    </tr>
-                    <tr>
-                      <th>課程摘要</th>
-                      <td><?= $crs["abstract"] ?></td>
-                    </tr>
-                    <tr>
-                      <th>課程縮圖</th>
-                      <td><img src="../images/<?= $crs_img_name ?>" alt="" class="object-fit-cover"></td>
-                    </tr>
-                    <tr>
-                      <th>課程價格</th>
-                      <td>
-                        NT$<?= number_format($crs["price"]) ?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>觀看人次</th>
-                      <td>（施工中）</td>
-                    </tr>
-                    <tr>
-                      <th>上架狀態</th>
-                      <td>
-                        <?= $crs["deleted_at"]
-                          ? "已於" . $crs["deleted_at"] . "下架"
-                          : "在架上" ?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>編輯課程</th>
-                      <td class="hstack gap-2 justify-content-center">
-                        <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq fx-center" title="編輯課程">
-                          <i class="fa-regular fa-pen-to-square"></i>
-                        </a>
-                        <button class="btn btn-danger btn-sq fx-center" id="pop-c-act" title="下架課程">
-                          <i class="fa-regular fa-eye-slash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </table>
+                        <th>課程名稱</th>
+                        <th><?= $crs["title"] ?></th>
+                      </tr>
+                      <tr>
+                        <th>課程<br/>頁面<br/>用圖</th>
+                        <td>
+                          <div class="grid py-3">
+                            <?php foreach ($crs_img_nameArr as $img) : ?>
+                              <figure class="g-col-12 g-col-md-6 vstack justify-content-between">
+                                <img src="../images/<?= $img["file_name"] ?>" alt="" class="object-fit-cover">
+                                <figcaption><?= $img["file_name"] ?></figcaption>
+                              </figure>
+                            <?php endforeach; ?>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               <?php else : ?>
                 <div class="col-9">

@@ -76,3 +76,12 @@
 		background-color: $color-white;
 	}
 }
+
+td > .grid > figure {
+  transition: background-color .4s;
+  border-radius: 1px;
+
+  &:hover{
+    box-shadow: 0 0 0 8px $color-white;
+  }
+}
