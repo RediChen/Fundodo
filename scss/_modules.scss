@@ -1,11 +1,60 @@
-//* 按鈕
+//*=================== 按鈕
 .btn-sq {
 	$leng: 40px;
 	width: $leng;
 	height: $leng;
 }
+@mixin btn-fill-prototype($color) {
+	$darker: shift-color($color, 10%);
+	$lighter: shift-color($color, -20%);
+	background-image: linear-gradient($lighter, $color 55%, $color 85%, $darker);
+	background-size: 100% 200%;
+	background-position-y: 100%;
+	background-repeat: no-repeat;
+	transition: background-position-y 0.4s;
+	color: shift-color($color, 60%);
+	font-weight: 600;
+	border: none;
 
-//* Modal
+	&:hover {
+		background-position-y: 0%;
+	}
+}
+
+// .btn-primary-fill {
+//   $darker: shift-color($primary, 10%);
+//   $lighter: shift-color($primary, -20%);
+//   background-image: linear-gradient($lighter, $primary 55%, $primary 85%, $darker);
+//   background-size:100% 200%;
+//   background-position-y: 100%;
+//   background-repeat: no-repeat;
+//   transition: background-position-y .4s;
+//   color: shift-color($primary, 60%);
+//   font-weight: 600;
+//   border: none;
+
+//   &:hover {
+//     background-position-y: 0%;
+//   }
+// }
+.btn-primary-fill {
+	@include btn-fill-prototype($primary);
+}
+.btn-danger-fill {
+	@include btn-fill-prototype($danger);
+}
+.btn-light-fill {
+	@include btn-fill-prototype($danger);
+}
+.btn-1-fill {
+	@include btn-fill-prototype($color-p1);
+}
+.btn-2-fill {
+	@include btn-fill-prototype($color-p2);
+}
+
+//*=================== Modal
+//請勿使用 prototype，因為已經套用進下面的 popout 模組
 .popout-prototype {
 	position: fixed;
 	top: 0;
@@ -23,7 +72,7 @@
 		min-height: 200px;
 		background-color: $white;
 		color: #111;
-		border-radius: 1rem;
+		border-radius: 3px;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -31,10 +80,15 @@
 		// z-index: 99;
 	}
 }
+//* 請使用以下的 popout 模組
+// 通知型：一進入網頁即出現
+//=== 按鈕：[關閉]
 .popout-notice {
 	@extend .popout-prototype;
 	display: flex;
 }
+// 確認型：點擊事件觸發才會出現
+//=== 按鈕：[取消][確認]
 .popout-confirm {
 	@extend .popout-prototype;
 	display: none;
@@ -45,7 +99,7 @@
 	th,
 	td {
 		padding: 0.5rem;
-    vertical-align: middle;
+		vertical-align: middle;
 	}
 	th {
 		background-color: $color-heading;
@@ -76,20 +130,107 @@
 		background-color: $color-heading;
 		color: $color-white;
 
-    th:not(:last-child) {
-      border-right: 1px solid $color-white;
-    }
+		th:not(:last-child) {
+			border-right: 1px solid $color-white;
+		}
 	}
 	tbody {
 		color: $color-heading;
-		tr:nth-child(4n+1) {
+		tr:nth-child(4n + 1) {
 			background-color: $color-p2;
 		}
-		tr:nth-child(4n+3) {
+		tr:nth-child(4n + 3) {
 			background-color: $color-muted;
 		}
 		tr:nth-child(even) {
 			background-color: $color-white;
 		}
+	}
+}
+
+//* 分頁按鈕組
+.pagination.fdd {
+	--bs-pagination-bg: #{$color-p2};
+	--bs-pagination-color: #{$color-p1-text};
+	--bs-pagination-border-color: #{$color-white};
+
+	--bs-pagination-hover-bg: #{shade-color($color-p2, 10%)};
+	--bs-pagination-hover-color: #{$color-white};
+	--bs-pagination-hover-border-color: #{$color-white};
+
+	--bs-pagination-active-bg: #{$color-p1};
+	--bs-pagination-active-color: #{$color-white};
+	--bs-pagination-active-border-color: #{$color-white};
+
+	--bs-pagination-focus-bg: #{tint-color($color-p1, 20%)};
+	--bs-pagination-focus-color: #{$color-white};
+	--bs-pagination-focus-border-color: #{$color-white};
+	--bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+
+	--bs-pagination-disabled-bg: #{$color-muted};
+	--bs-pagination-disabled-color: #{$color-heading};
+	--bs-pagination-disabled-border-color: #{$gray-500};
+
+	.page-link {
+		height: 40px;
+	}
+}
+//以上為較易改的寫法
+//以下為較易懂的寫法
+.pagination-fdd {
+	@extend .fx-center, .list-unstyled;
+	list-style: none;
+}
+
+.pagination-fdd .item {
+	$bd-w: 1px;
+	border: $bd-w solid $color-white;
+
+	&:first-child > .link {
+		@include border-start-radius($border-radius);
+		// border-radius: $border-radius 0 0 $border-radius;
+	}
+	&:last-child > .link {
+		@include border-end-radius($border-radius);
+		// border-radius: 0 $border-radius $border-radius 0;
+	}
+	&:not(:first-child) {
+		margin-left: calc(-1 *#{$bd-w});
+	}
+}
+
+.pagination-fdd .link {
+	@extend .fx-center;
+	padding: 0.375rem 0.75rem;
+	height: 40px;
+	transition: $pagination-transition;
+
+	background-color: $color-p2;
+	color: $color-p1-text;
+	border-color: $color-white;
+
+	&:hover {
+		background-color: shade-color($color-p2, 10%);
+		color: $color-white;
+		// border-color: $color-white;
+	}
+
+	&:focus {
+		background-color: tint-color($color-p1, 20%);
+		// color: $color-white;
+		// border-color: $color-white;
+		box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+	}
+
+	&.active {
+		background-color: $color-p1;
+		color: $color-white;
+		// border-color: $color-white;
+	}
+
+	&.disabled {
+		background-color: $color-muted;
+		color: $color-heading;
+		border-color: $gray-500;
 	}
 }

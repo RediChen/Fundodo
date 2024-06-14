@@ -60,7 +60,7 @@ endif;
                 </div>
               <?php else : ?>
                 <div class="text-center">
-                  <button class="btn btn-primary" type="submit">
+                  <button class="btn btn-primary-fill" type="submit">
                     送出
                   </button>
                 </div>

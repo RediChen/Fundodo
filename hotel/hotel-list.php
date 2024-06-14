@@ -130,7 +130,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-          <a href="#" id="confirmDeleteBtn" class="btn btn-danger">確認</a>
+          <a href="#" id="confirmDeleteBtn" class="btn btn-danger-fill">確認</a>
         </div>
       </div>
     </div>
@@ -153,7 +153,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
           <form action="" class="d-flex">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="search..." name="search">
-              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button class="btn btn-primary-fill" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
           </form>
         </div>
@@ -241,8 +241,8 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
                   <td><?= $hotel_list["created_at"] ?></td>
 
                   <td>
-                    <a class="btn btn-primary" href="hotel-edit.php?id=<?= $hotel_list["id"] ?>" title="編輯狗狗旅館"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn btn-danger delete-btn" title="刪除狗狗旅館" data-id="<?= $hotel_list["id"] ?>" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
+                    <a class="btn btn-primary-fill" href="hotel-edit.php?id=<?= $hotel_list["id"] ?>" title="編輯狗狗旅館"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <button class="btn btn-danger-fill delete-btn" title="刪除狗狗旅館" data-id="<?= $hotel_list["id"] ?>" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
                   </td>
                 </tr>
 
@@ -252,7 +252,7 @@ $category_id = isset($_GET["category"]) ? $_GET["category"] : '';
           <?php if (!$isSearch) : ?>
             <!-- 分頁鍵 -->
             <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
+              <ul class="pagination fdd justify-content-center">
                 <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
                   <li class="page-item <?= ($i == $currentPage) ? 'active' : '' ?>">
                     <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>

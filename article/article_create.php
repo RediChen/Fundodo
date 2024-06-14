@@ -61,8 +61,8 @@ $row = $re->fetch_assoc();
                         <input name="files[]" type="file" class="form-control" multiple>
                     </div>
                     <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary" type="submit">發表</button>
-                    <a href="article_title.php?page=1" class="btn btn-primary">取消發表</a>
+                    <button class="btn btn-primary-fill" type="submit">發表</button>
+                    <a href="article_title.php?page=1" class="btn btn-primary-fill">取消發表</a>
                     </div>
 
                 </form>

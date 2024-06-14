@@ -85,15 +85,15 @@ $page_title = "文章列表";
     <div class="d-flex justify-content-between mb-2">
       <div>
         <?php if (isset($_SESSION["user"]) && ($_SESSION["user"]["user_level"] == 20)) : ?>
-          <a href="../dashboard/dashboard.php" class="btn btn-primary">後台首頁</a>
+          <a href="../dashboard/dashboard.php" class="btn btn-primary-fill">後台首頁</a>
         <?php endif; ?>
       </div>
       <div>
         <?php if (empty($_SESSION)) : ?>
-          <a href="../member/login.php" class="btn btn-primary">登入</a>
+          <a href="../member/login.php" class="btn btn-primary-fill">登入</a>
         <?php else : ?>
           Hi, <?= $_SESSION["user"]["nickname"] ?>
-          <a href="arti_session-destory.php" class="btn btn-primary ms-3">登出</a>
+          <a href="arti_session-destory.php" class="btn btn-primary-fill ms-3">登出</a>
         <?php endif ?>
       </div>
     </div>
@@ -118,7 +118,7 @@ $page_title = "文章列表";
                               echo "justify-content-end";
                             } ?>">
       <?php if (!empty($_SESSION)) : ?>
-        <a class="btn btn-primary" href="article_create.php">發表文章</a>
+        <a class="btn btn-primary-fill" href="article_create.php">發表文章</a>
       <?php endif ?>
       <form action="">
         <div class="input-group">
@@ -160,7 +160,7 @@ $page_title = "文章列表";
     </div>
     <?php if (isset($_GET["page"])) : ?>
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination fdd">
           <?php if (isset($_GET["page"]) && isset($_GET["sort"])) : ?>
             <?php for ($i = 1; $i <= $page_count; $i++) : ?>
               <li class="page-item"><a class="page-link

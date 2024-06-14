@@ -36,7 +36,7 @@ session_abort();
         <div class="container-fluid px-5 my-4">
         <h2 class="text-center">新增優惠券</h2>
         <div class="my-3">
-            <a class="btn btn-primary btn-sm" href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 優惠券列表</a>
+            <a class="btn btn-primary-fill btn-sm" href="coupons.php"> <i class="fa-regular fa-circle-left"></i> 優惠券列表</a>
         </div>
         <form id="couponForm" action="doCreateCoupon.php" method="post">
             <div class="row justify-content-center">

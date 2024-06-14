@@ -3,20 +3,16 @@ $link-color: shift-color($primary, 20%) !default;
 $link-shade-percentage: 20%;
 $link-hover-color: $primary;
 
-//TRY
-.btn-primary-fill {
-  $darker: shift-color($primary, 10%);
-  $lighter: shift-color($primary, -20%);
-  background-image: linear-gradient($lighter, $primary 55%, $primary 85%, $darker);
-  background-size:100% 200%;
-  background-position-y: 100%;
-  background-repeat: no-repeat;
-  transition: background-position-y .4s;
-  color: shift-color($primary, 60%) !important;
-  font-weight: 600;
-  border: none;
-
-  &:hover {
-    background-position-y: 0%;
-  }
-}
+//todo 按鈕的大小四款式可以用 BS 的 button-size 套用
+// BS 只有 btn-lg & bnt-sm
+// 覆蓋並設定四種款式
+// button-size(py, px, fz, bdrs)
+// btn-lg: button-size(.5rem, 1rem, 0.875rem, .5rem)
+// btn   : button-size(.375rem, .75rem, 0.875rem, .375rem)
+// btn-sm: button-size(.25rem, .5rem, 1.25rem, .25rem)
+/* Reference: [
+$btn-padding-y,
+$btn-padding-x,
+$font-size,
+$border-radius
+]*/

@@ -100,16 +100,16 @@ if (isset($_GET["page"])) {
                         <div class="d-flex justify-content-start gap-3">
                             <div>
                                 <?php if (isset($_GET["search"])) : ?>
-                                    <a class="btn btn-primary" href="users.php"><i class="fa-solid fa-arrow-left"></i></a>
+                                    <a class="btn btn-primary-fill" href="users.php"><i class="fa-solid fa-arrow-left"></i></a>
                                 <?php endif; ?>
                             </div>
                             <div class="d-flex gap-3">
                                 <form action="">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="搜尋相關會員" name="search">
-                                        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
+                                        <button class="btn btn-primary-fill" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
-                                        <a href="create-user.php" class="btn btn-primary">
+                                        <a href="create-user.php" class="btn btn-primary-fill">
                                             <i class="fa-solid fa-plus"></i>
                                         </a>
                                     </div>
@@ -123,17 +123,17 @@ if (isset($_GET["page"])) {
                         <?php if (isset($_GET["page"])) : ?>
                             <div>
                                 排序: <div class="btn-group">
-                                    <a href="?page=<?= $page ?>&order=1" class="btn btn-primary
+                                    <a href="?page=<?= $page ?>&order=1" class="btn btn-primary-fill
                     <?php
                             if ($order == 1) echo "active";
                     ?>
                     ">id <i class="fa-solid fa-arrow-down-short-wide"></i></a>
-                                    <a href="?page=<?= $page ?>&order=2" class="btn btn-primary   <?php
+                                    <a href="?page=<?= $page ?>&order=2" class="btn btn-primary-fill   <?php
                                                                                                     if ($order == 2) echo "active";
                                                                                                     ?>">id <i class="fa-solid fa-arrow-down-wide-short"></i></a>
-                                    <a href="?page=<?= $page ?>&order=3" class="btn btn-primary <?php
+                                    <a href="?page=<?= $page ?>&order=3" class="btn btn-primary-fill <?php
                                                                                                 if ($order == 3) echo "active"; ?>">暱稱<i class="fa-solid fa-arrow-down-wide-short"></i></a>
-                                    <a href="?page=<?= $page ?>&order=4" class="btn btn-primary <?php
+                                    <a href="?page=<?= $page ?>&order=4" class="btn btn-primary-fill <?php
                                                                                                 if ($order == 4) echo "active"; ?>">暱稱<i class="fa-solid fa-arrow-down-wide-short"></i></a>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ if (isset($_GET["page"])) {
                     </div>
                     <?php if (isset($_GET["page"])) : ?>
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination">
+                            <ul class="pagination fdd">
                                 <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                     <li class="page-item <?php if ($i == $page) echo "active" ?>">
 
@@ -189,9 +189,9 @@ if (isset($_GET["page"])) {
                                         <!-- <td><?= $user["avatar_file"] ?></td> -->
                                         <!-- <td><?= $user["email"] ?></td> -->
                                         <!-- <td><?= $user["created_at"] ?></td> -->
-                                        <td class="text-center"><a class="btn btn-primary" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
+                                        <td class="text-center"><a class="btn btn-primary-fill" href="user.php?id=<?= $user["id"] ?>">詳細資料</a></td>
                                         <td class="text-center"><a class="btn btn-success" href="user-edit.php?id=<?= $user["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        <td class="text-center"><button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
+                                        <td class="text-center"><button class="btn btn-danger-fill" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -206,7 +206,7 @@ if (isset($_GET["page"])) {
                         </div>
                         <?php if (isset($_GET["page"])) : ?>
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination">
+                                <ul class="pagination fdd">
                                     <?php for ($i = 1; $i <= $pageCount; $i++) : ?>
                                         <li class="page-item <?php if ($i == $page) echo "active" ?>">
 
@@ -236,7 +236,7 @@ if (isset($_GET["page"])) {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                <a href="user-delete.php?id=<?= $user["id"] ?>" type="button" class="btn btn-danger">確認</a>
+                                <a href="user-delete.php?id=<?= $user["id"] ?>" type="button" class="btn btn-danger-fill">確認</a>
                             </div>
                         </div>
                     </div>

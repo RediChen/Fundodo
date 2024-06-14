@@ -39,10 +39,10 @@ $conn->close();
 <body>
   <div class="db_header hstack">
     <span class="title">Fundodo</span>
-    <a href="../article/article_title.php" class="btn btn-primary ms-3">文章首頁</a>
-    <a href="../member/createAvatar.php" class="btn btn-primary ms-3">上傳頭像</a>
+    <a href="../article/article_title.php" class="btn btn-primary-fill ms-3">文章首頁</a>
+    <a href="../member/createAvatar.php" class="btn btn-primary-fill ms-3">上傳頭像</a>
 
-    <span class="user ms-auto">Hi, <?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-primary ms-3">登出</a></span>
+    <span class="user ms-auto">Hi, <?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-primary-fill ms-3">登出</a></span>
   </div>
   <div class="container mt-3">
     <h1 class="text-center col-12 mb-5">會員中心</h1>
