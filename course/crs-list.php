@@ -19,7 +19,7 @@ include "./crs-list_header.php";
           <div class="d-flex justify-content-between align-items-center my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn btn-primary-fill fx-center">
+            <a href="crs-detail-create.php" class="btn-primary-frame fx-center">
               新增課程
             </a>
           </div>
@@ -29,10 +29,8 @@ include "./crs-list_header.php";
                 <?= "總共 $crsCount 筆，共 $NUM_PAGES 頁" ?>
               </p>
             </div>
-            <div>
-              <!-- 分頁切換列 -->
-              <?php include "./crs_pagination.php"; ?>
-            </div>
+            <!-- 分頁切換列 -->
+            <?php include "./crs_pagination.php"; ?>
             <div class="hstack gap-3">
               <?php
               $fa_class = $isASC ? "short-wide" : "wide-short";

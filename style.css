@@ -12411,73 +12411,851 @@ $border-radius
 }
 
 .btn-primary-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
   background-image: linear-gradient(#8dd0f2, #71c4ef 55%, #71c4ef 85%, #66b0d7);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
-  transition: background-position-y 0.4s;
+  /* 文字色 */
   color: #2d4e60;
   font-weight: 600;
   border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-primary-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-primary-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-primary-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-primary-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
 }
 .btn-primary-fill:hover {
   background-position-y: 0%;
 }
 
+.btn-primary-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #5a9dbf;
+  font-weight: 600;
+  border: 3px solid #71c4ef;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-primary-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-primary-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-primary-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-primary-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-primary-frame:hover {
+  background-color: #8dd0f2;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-secondary-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#899197, #6c757d 55%, #6c757d 85%, #616971);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  /* 文字色 */
+  color: #2b2f32;
+  font-weight: 600;
+  border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-secondary-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-secondary-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-secondary-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-secondary-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-secondary-fill:hover {
+  background-position-y: 0%;
+}
+
+.btn-secondary-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #565e64;
+  font-weight: 600;
+  border: 3px solid #6c757d;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-secondary-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-secondary-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-secondary-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-secondary-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-secondary-frame:hover {
+  background-color: #899197;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-success-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#479f76, #198754 55%, #198754 85%, #177a4c);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  /* 文字色 */
+  color: #0a3622;
+  font-weight: 600;
+  border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-success-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-success-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-success-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-success-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-success-fill:hover {
+  background-position-y: 0%;
+}
+
+.btn-success-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #146c43;
+  font-weight: 600;
+  border: 3px solid #198754;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-success-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-success-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-success-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-success-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-success-frame:hover {
+  background-color: #479f76;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-info-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#3dd5f3, #0dcaf0 55%, #0dcaf0 85%, #0cb6d8);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  /* 文字色 */
+  color: #055160;
+  font-weight: 600;
+  border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-info-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-info-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-info-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-info-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-info-fill:hover {
+  background-position-y: 0%;
+}
+
+.btn-info-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #0aa2c0;
+  font-weight: 600;
+  border: 3px solid #0dcaf0;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-info-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-info-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-info-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-info-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-info-frame:hover {
+  background-color: #3dd5f3;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-warning-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#ffcd39, #ffc107 55%, #ffc107 85%, #e6ae06);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  /* 文字色 */
+  color: #664d03;
+  font-weight: 600;
+  border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-warning-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-warning-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-warning-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-warning-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-warning-fill:hover {
+  background-position-y: 0%;
+}
+
+.btn-warning-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #cc9a06;
+  font-weight: 600;
+  border: 3px solid #ffc107;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-warning-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-warning-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-warning-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-warning-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-warning-frame:hover {
+  background-color: #ffcd39;
+  color: hsl(19, 11%, 15%);
+}
+
 .btn-danger-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
   background-image: linear-gradient(#f2948d, #ef7971 55%, #ef7971 85%, #d76d66);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
-  transition: background-position-y 0.4s;
+  /* 文字色 */
   color: #60302d;
   font-weight: 600;
   border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-danger-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-danger-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-danger-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-danger-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
 }
 .btn-danger-fill:hover {
   background-position-y: 0%;
 }
 
+.btn-danger-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #bf615a;
+  font-weight: 600;
+  border: 3px solid #ef7971;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-danger-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-danger-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-danger-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-danger-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-danger-frame:hover {
+  background-color: #f2948d;
+  color: hsl(19, 11%, 15%);
+}
+
 .btn-light-fill {
-  background-image: linear-gradient(#f2948d, #ef7971 55%, #ef7971 85%, #d76d66);
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#fbfaf8, #faf9f6 55%, #faf9f6 85%, #e1e0dd);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
-  transition: background-position-y 0.4s;
-  color: #60302d;
+  /* 文字色 */
+  color: #646462;
   font-weight: 600;
   border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-light-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-light-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-light-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-light-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
 }
 .btn-light-fill:hover {
   background-position-y: 0%;
 }
 
+.btn-light-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #c8c7c5;
+  font-weight: 600;
+  border: 3px solid #faf9f6;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-light-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-light-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-light-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-light-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-light-frame:hover {
+  background-color: #fbfaf8;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-dark-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-image: linear-gradient(#4d5154, #212529 55%, #212529 85%, #1e2125);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  /* 文字色 */
+  color: #0d0f10;
+  font-weight: 600;
+  border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-dark-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-dark-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-dark-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-dark-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-dark-fill:hover {
+  background-position-y: 0%;
+}
+
+.btn-dark-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #1a1e21;
+  font-weight: 600;
+  border: 3px solid #212529;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-dark-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-dark-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-dark-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-dark-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-dark-frame:hover {
+  background-color: #4d5154;
+  color: hsl(19, 11%, 15%);
+}
+
 .btn-1-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
   background-image: linear-gradient(#c7b5ad, #b9a399 55%, #b9a399 85%, #a7938a);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
-  transition: background-position-y 0.4s;
+  /* 文字色 */
   color: #4a413d;
   font-weight: 600;
   border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-1-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-1-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-1-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-1-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
 }
 .btn-1-fill:hover {
   background-position-y: 0%;
 }
 
 .btn-2-fill {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
   background-image: linear-gradient(#ece7e2, #e7e1db 55%, #e7e1db 85%, #d0cbc5);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
-  transition: background-position-y 0.4s;
+  /* 文字色 */
   color: #5c5a58;
   font-weight: 600;
   border: none;
+  transition: background-position-y 0.4s;
+}
+.btn-2-fill.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-2-fill.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-2-fill.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-2-fill.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
 }
 .btn-2-fill:hover {
   background-position-y: 0%;
+}
+
+.btn-1-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #94827a;
+  font-weight: 600;
+  border: 3px solid #b9a399;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-1-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-1-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-1-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-1-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-1-frame:hover {
+  background-color: #c7b5ad;
+  color: hsl(19, 11%, 15%);
+}
+
+.btn-2-frame {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  /* 背景色 */
+  background-color: #fffefb;
+  /* 文字色 */
+  color: #b9b4af;
+  font-weight: 600;
+  border: 3px solid #e7e1db;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn-2-frame.btn-1 {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+.btn-2-frame.btn-2 {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.btn-2-frame.btn-3 {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+.btn-2-frame.btn-4 {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+}
+.btn-2-frame:hover {
+  background-color: #ece7e2;
+  color: hsl(19, 11%, 15%);
+}
+
+.pagination.fdd {
+  --bs-pagination-bg: #e7e1db;
+  --bs-pagination-color: hsl(19, 25%, 23%);
+  --bs-pagination-border-color: #fffefb;
+  --bs-pagination-hover-bg: #d0cbc5;
+  --bs-pagination-hover-color: #fffefb;
+  --bs-pagination-hover-border-color: #fffefb;
+  --bs-pagination-active-bg: #b9a399;
+  --bs-pagination-active-color: #fffefb;
+  --bs-pagination-active-border-color: #fffefb;
+  --bs-pagination-focus-bg: #c7b5ad;
+  --bs-pagination-focus-color: #fffefb;
+  --bs-pagination-focus-border-color: #fffefb;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+  --bs-pagination-disabled-bg: #ced4da;
+  --bs-pagination-disabled-color: #343a40;
+  --bs-pagination-disabled-border-color: #adb5bd;
+}
+.pagination.fdd .page-link {
+  height: 40px;
+}
+
+.pagination-fdd {
+  margin: 0;
+  list-style: none;
+}
+
+.pagination-fdd .item {
+  border: 1px solid #fffefb;
+}
+.pagination-fdd .item:first-child > .link {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+.pagination-fdd .item:last-child > .link {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+.pagination-fdd .item:not(:first-child) {
+  margin-left: calc(-1 * 1px);
+}
+
+.pagination-fdd .link {
+  padding: 0.375rem 0.75rem;
+  height: 40px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #e7e1db;
+  color: hsl(19, 25%, 23%);
+  border-color: #fffefb;
+}
+.pagination-fdd .link:hover {
+  background-color: #d0cbc5;
+  color: #fffefb;
+}
+.pagination-fdd .link:focus {
+  background-color: #c7b5ad;
+  box-shadow: 0 0 0 0.25rem rgba(231, 225, 219, 0.25);
+}
+.pagination-fdd .link.active {
+  background-color: #b9a399;
+  color: #fffefb;
+}
+.pagination-fdd .link.disabled {
+  background-color: #ced4da;
+  color: #343a40;
+  border-color: #adb5bd;
 }
 
 .popout-prototype, .popout-confirm, .popout-notice {
@@ -12558,73 +13336,6 @@ $border-radius
   background-color: #fffefb;
 }
 
-.pagination.fdd {
-  --bs-pagination-bg: #e7e1db;
-  --bs-pagination-color: hsl(19, 25%, 23%);
-  --bs-pagination-border-color: #fffefb;
-  --bs-pagination-hover-bg: #d0cbc5;
-  --bs-pagination-hover-color: #fffefb;
-  --bs-pagination-hover-border-color: #fffefb;
-  --bs-pagination-active-bg: #b9a399;
-  --bs-pagination-active-color: #fffefb;
-  --bs-pagination-active-border-color: #fffefb;
-  --bs-pagination-focus-bg: #c7b5ad;
-  --bs-pagination-focus-color: #fffefb;
-  --bs-pagination-focus-border-color: #fffefb;
-  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
-  --bs-pagination-disabled-bg: #ced4da;
-  --bs-pagination-disabled-color: #343a40;
-  --bs-pagination-disabled-border-color: #adb5bd;
-}
-.pagination.fdd .page-link {
-  height: 40px;
-}
-
-.pagination-fdd {
-  list-style: none;
-}
-
-.pagination-fdd .item {
-  border: 1px solid #fffefb;
-}
-.pagination-fdd .item:first-child > .link {
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
-}
-.pagination-fdd .item:last-child > .link {
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
-}
-.pagination-fdd .item:not(:first-child) {
-  margin-left: calc(-1 * 1px);
-}
-
-.pagination-fdd .link {
-  padding: 0.375rem 0.75rem;
-  height: 40px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #e7e1db;
-  color: hsl(19, 25%, 23%);
-  border-color: #fffefb;
-}
-.pagination-fdd .link:hover {
-  background-color: #d0cbc5;
-  color: #fffefb;
-}
-.pagination-fdd .link:focus {
-  background-color: #c7b5ad;
-  box-shadow: 0 0 0 0.25rem rgba(231, 225, 219, 0.25);
-}
-.pagination-fdd .link.active {
-  background-color: #b9a399;
-  color: #fffefb;
-}
-.pagination-fdd .link.disabled {
-  background-color: #ced4da;
-  color: #343a40;
-  border-color: #adb5bd;
-}
-
 /* 大小設定語法如下：
 至少要輸入 1 個參數 -> 第一個參數為字重： 100, 200, 300, ..., 900
 輸入 2 個參數 -> font-size 為 $fz
@@ -12691,10 +13402,6 @@ body {
 .db_header {
   background-color: #cccbc8;
   padding: 10px 20px;
-}
-
-.db_header .user {
-  float: right;
 }
 
 .db-card {
