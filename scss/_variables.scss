@@ -1,21 +1,30 @@
 /* primary colors */
-$color-p1: #b9a399; // hsl(19, 19%, 66%)
-$color-p1-text: hsl(19, 25%, 23%);
-$color-p2: #e7e1db; // hsl(30, 20%, 88%)
 $color-white: #fffefb;
-$color-light: #faf9f6;//仿製 light->BS light
 $color-ivory: #E3E3E3;
-/* text color */
 
-$color-black: hsl(19, 11%, 15%);
+/* text color */
 $color-heading: $gray-800; // hsl(210, 10%, 23%);
 $color-body: $gray-600;// BS 中的 secondary
 $color-muted: $gray-400;
+
 /* functional color */
-$primary: #71c4ef; // hsl(200, 80%, 69%);->BS primary
-$primary-text: hsl(200, 25%, 23%);
-$danger: #ef7971; // hsl(4, 80%, 69%)->BS danger
-$danger-text: hsl(4, 25%, 23%);
+$primary-text: hsl(19, 25%, 23%);
+$info-text: hsl(200, 25%, 23%);
+$danger-text: hsl(1, 25%, 23%);
 $skyblue: #eef6fa;
+
+/* color shade */
+$color-shade-1: #857A79;
+$color-shade-2: #6F625C;
+$color-shade-3: #5D524D;
+$color-shade-4: #37312E;
+$color-shade-5: #000;
+
+/* color shade */
+$color-tint-1: #C0ACA3;
+$color-tint-2: #CEBFB8;
+$color-tint-3: #DCD1CC;
+$color-tint-4: #EAE3E0;
+$color-tint-5: #F1EDEB;
 
 //已更新進 BS 的顏色: primary, danger, light, secondary
