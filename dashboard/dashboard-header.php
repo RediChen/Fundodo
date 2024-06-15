@@ -1,7 +1,9 @@
 <?php
 session_start();
 ?>
-<div class="db_header d-flex justify-content-between align-items-center">
-  <span class="title">fundodo</span>
-  <span class="user">Hi, <?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-2-fill ms-3">登出</a></span>
+<div class="db_header hstack justify-content-end">
+  <div class="hstack">
+    <span>Hi, <?= $_SESSION["user"]["nickname"] ?> </span>
+    <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-2-fill ms-3">登出</a>
+  </div>
 </div>
