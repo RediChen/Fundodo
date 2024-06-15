@@ -1,59 +1,84 @@
+.db_body {
+	background-color: $color-ivory;
+}
 
-    .db_body {
-      background-color: $color-ivory;
-    }
+.fundodo-logo {
+	width: 180px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+.db_sidebar {
+	width: 200px;
+	background-color: #757575;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: #fff;
+	padding-top: 20px;
+}
 
-    .fundodo-logo {
-      width: 180px;
-      padding-left: 30px;
-      padding-bottom: 10px;
-    }
-    .db_sidebar {
-      width: 200px;
-      background-color: #757575;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      color: #fff;
-      padding-top: 20px;
-  }
+.db_sidebar a {
+	color: #e3e3e3;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-align: center;
+}
 
-    .db_sidebar a {
-      color: #E3E3E3;
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      text-align: center;
-    }
+.db_sidebar a:hover {
+	background-color: #71c4ef;
+	color: #757575;
+}
 
-    .db_sidebar a:hover {
-      background-color: #71C4EF;
-      color: #757575;
-    }
+.layout_content {
+	margin-left: 200px;
+	padding: 20px;
+}
 
-    .layout_content {
-      margin-left: 200px;
-      padding: 20px;
-    }
+.db_header {
+	background-color: #cccbc8;
+	padding: 10px 20px;
+}
 
-    .db_header {
-      background-color: #CCCBC8;
-      padding: 10px 20px;
-    }
+.db_header .user {
+	float: right;
+}
 
-    .db_header .user {
-      float: right;
-    }
+.db-card {
+	width: 240px;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.db-card > .stat {
+	min-width: 80%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: $color-p2;
+	@extend .fx-center;
 
-    .db_table {
-      background-color: #757575;
-      color:$color-ivory ;
-      
-    th{
-      font-weight: 300;
-    }
-    td {
-      color: $gray-800;
-    }
-  }
+	strong {
+		@extend .display-3;
+		font-weight: 700;
+	}
+}
+
+// 目前無此元素
+.db_table {
+	background-color: #757575;
+	color: $color-ivory;
+
+	th {
+		font-weight: 300;
+	}
+	td {
+		color: $gray-800;
+	}
+}

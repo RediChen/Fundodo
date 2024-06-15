@@ -1,5 +1,20 @@
 <?php
 include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
+$to_fdd = "/xampp/htdocs/Fundodo/";
+require_once($to_fdd . "db_connect.php");
+//todo 本地測試用
+include $to_fdd . "tools/console-lib.php";
+$sql_1 = "SELECT id FROM users WHERE valid = 1";
+$user_count = $conn->query($sql_1)->num_rows;
+
+$sql_2 = "SELECT id FROM products WHERE valid = 0";
+$product_count = $conn->query($sql_2)->num_rows;
+
+$sql_3 = "SELECT id FROM courses WHERE deleted_at is NULL";
+$course_count = $conn->query($sql_3)->num_rows;
+
+$sql_4 = "SELECT id FROM coupons WHERE status = 1";
+$coupon_count = $conn->query($sql_4)->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -16,45 +31,41 @@ include("/xampp/htdocs/Fundodo/tools/adminOnly.php");
       <?php include("./dashboard-header.php"); ?>
 
       <div class="layout_content">
-        <h3>會員資料</h3>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <span>共 (施工中) 人</span>
+        <h3 class="mb-3">會員資料</h3>
+        <div class="row cols-md-3 g-3 justify-content-evenly">
+          <div class="col">
+            <div class="db-card">
+              <div class="stat">
+                <strong><?= $user_count ?></strong>
+              </div>
+              <h5>會員總數</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div class="db-card">
+              <div class="stat">
+                <strong><?= $product_count ?></strong>
+              </div>
+              <h5>商品總數</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div class="db-card">
+              <div class="stat">
+                <strong><?= $course_count ?></strong>
+              </div>
+              <h5>課程總數</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div class="db-card">
+              <div class="stat">
+                <strong><?= $coupon_count ?></strong>
+              </div>
+              <h5>優惠券總數</h5>
+            </div>
+          </div>
 
-        </div>
-        <div class="table-responsive">
-          <table class="table db_table table-hover">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>會員名字</th>
-                <th>電話</th>
-                <th>地址</th>
-                <th>操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>汪狗狗</td>
-                <td>09234568892</td>
-                <td>台北市中正區羅斯福路3號4樓</td>
-                <td>
-                  <div class=" d-flex gap-3">
-                    <button class="btn btn-primary-fill btn-sm mr-2">
-                      <i class="fa-solid fa-eye"></i>
-                    </button>
-                    <button class="btn btn-dark btn-sm mr-2">
-                      <i class="fa-regular fa-pen-to-square"></i>
-                    </button>
-                    <button class="btn btn-danger-fill btn-sm">
-                      <i class="fa-solid fa-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <!-- Repeat this <tr> block for each row of data -->
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
