@@ -50,25 +50,25 @@
 
 .login-form {
   input {
-    border: 1px solid $color-p1;
+    border: 1px solid $primary;
   }
 }
 
 .member-center-panel {
   min-height: 60vh;
-  background-color: $color-p2;
+  background-color: $secondary;
   border-radius: 1rem 0 0 1rem;
 
   h2 {
     margin: 0 auto;
     padding: 1rem 2rem;
     width: fit-content;
-    background-color: $color-p1;
+    background-color: $primary;
     border-radius: 99rem;
   }
 }
 .member-center-avatar {
   min-height: 100%;
-  border: 10px solid $color-p2;
+  border: 10px solid $secondary;
   border-radius: 0 1rem 1rem 0;
 }

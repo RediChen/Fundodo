@@ -8,12 +8,12 @@
 	height: 40px;
 }
 .crs-list_info .dropdown-menu {
-	background-color: $color-p2;
+	background-color: $secondary;
 
 	.dropdown-item {
 		&:hover {
-			background-color: $color-p1;
-			color: $color-white;
+			background-color: $primary;
+			color: $color-tint-5;
 		}
 	}
 }
@@ -36,12 +36,12 @@
 //         content: '';
 //         display: block;
 //         border: 1rem solid transparent;
-//         border-top-color: $color-p2;
+//         border-top-color: $secondary;
 //         top: -1rem;
 //     }
 // 	&::after {
 // 		content: "「尚未上架」、「在架上」、「已下架」";
-// 		background-color: $color-p2;
+// 		background-color: $secondary;
 // 		color: $color-heading;
 // 		line-height: 1.5;
 // 		top: -2rem;
@@ -52,7 +52,7 @@
 .crs-list_table td:not([colspan]) {
 	transition: background-color 0.4s;
 	&:not(:last-child):hover {
-		background-color: $skyblue;
+		background-color: $color-tint-4;
 	}
 }
 
@@ -61,7 +61,7 @@
 }
 
 .table-2row tr:nth-child(4n + 2) .crs-list_tags {
-	background-color: $color-p2;
+	background-color: $secondary;
 }
 .table-2row tr:nth-child(4n + 4) .crs-list_tags {
 	background-color: $color-muted;
@@ -76,7 +76,7 @@
 	transition: background-color 0.4s;
 
 	&:hover {
-		background-color: $color-white;
+		background-color: $color-tint-5;
 	}
 }
 
@@ -85,6 +85,6 @@ td > .grid > figure {
 	border-radius: 1px;
 
 	&:hover {
-		box-shadow: 0 0 0 8px $color-white;
+		box-shadow: 0 0 0 8px $color-tint-5;
 	}
 }

@@ -1,5 +1,5 @@
 .db_body {
-	background-color: $color-ivory;
+	background-color: $color-tint-4;
 }
 
 .fundodo-logo {
@@ -57,7 +57,7 @@
 	min-width: 80%;
 	aspect-ratio: 1;
 	border-radius: 50%;
-	background-color: $color-p2;
+	background-color: $secondary;
 	@extend .fx-center;
 
 	strong {
@@ -69,7 +69,7 @@
 // 目前無此元素
 .db_table {
 	background-color: #757575;
-	color: $color-ivory;
+	color: $color-tint-4;
 
 	th {
 		font-weight: 300;

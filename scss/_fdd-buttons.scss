@@ -4,26 +4,24 @@
 	width: $leng;
 	height: $leng;
 }
-@mixin btn-size($py, $px, $fz, $bd-r) {
+@mixin btn-size($py, $px, $fz, $gap) {
 	padding: $py $px;
 	font-size: $fz;
-	border-radius: $bd-r;
+  gap: $gap;
 }
 @mixin btn-prototype() {
-  display: block;
-	@include btn-size(0.375rem, 0.75rem, 1rem, 0.375rem);
-	// 預設值等同 .btn-2
-	&.btn-1 {
-		@include btn-size(0.5rem, 1rem, 1.25rem, 0.5rem);
+  @extend .fx-center;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 99rem;
+	user-select: none;
+	@include btn-size(1.5rem, 2.25rem, 1.125rem, .5rem);
+	// 預設值
+	&.btn-sm {
+		@include btn-size(0.8rem, 3.375rem, 1rem, 0.625rem);
 	}
-	&.btn-2 {
-		@include btn-size(0.375rem, 0.75rem, 1rem, 0.375rem);
-	}
-	&.btn-3 {
-		@include btn-size(0.25rem, 0.5rem, 0.875rem, 0.25rem);
-	}
-	&.btn-4 {
-		@include btn-size(0.125rem, 0.25rem, 0.75rem, 0.125rem);
+	&.btn-lg {
+		@include btn-size(1.75rem, 3.5rem, 1.25rem, .5rem);
 	}
 }
 
@@ -37,8 +35,7 @@
 	background-position-y: 100%;
 	background-repeat: no-repeat;
 	/* 文字色 */
-	color: shift-color($color, 60%);
-	font-weight: 600;
+	color: color-contrast($color, shift-color($color, 60%), shift-color($color, -50%));
 	border: none;
 	transition: background-position-y 0.4s;
 
@@ -51,16 +48,15 @@
 	$darker: shift-color($color, 10%);
 	$lighter: shift-color($color, -20%);
 	/* 背景色 */
-	background-color: $color-white;
+	background-color: $color-tint-5;
 	/* 文字色 */
 	color: shift-color($color, 20%);
-	font-weight: 600;
 	border: 3px solid $color;
 	transition: background-color 0.4s, color 0.4s;
 
 	&:hover {
 		background-color: $lighter;
-    color: $dark;
+		color: $dark;
 	}
 }
 
@@ -73,37 +69,31 @@
 	}
 }
 
-.btn-1-fill {
-	@include btn-fill-prototype($color-p1);
-}
-.btn-2-fill {
-	@include btn-fill-prototype($color-p2);
-}
-.btn-1-frame {
-	@include btn-frame-prototype($color-p1);
-}
-.btn-2-frame {
-	@include btn-frame-prototype($color-p2);
-}
+//*====== 圓形按鈕
+
+
+
+
+
 
 //*====== 分頁按鈕組
 .pagination.fdd {
-	--bs-pagination-bg: #{$color-p2};
-	--bs-pagination-color: #{$color-p1-text};
-	--bs-pagination-border-color: #{$color-white};
+	--bs-pagination-bg: #{$secondary};
+	--bs-pagination-color: #{$primary-text};
+	--bs-pagination-border-color: #{$color-tint-5};
 
-	--bs-pagination-hover-bg: #{shade-color($color-p2, 10%)};
-	--bs-pagination-hover-color: #{$color-white};
-	--bs-pagination-hover-border-color: #{$color-white};
+	--bs-pagination-hover-bg: #{shade-color($secondary, 10%)};
+	--bs-pagination-hover-color: #{$color-tint-5};
+	--bs-pagination-hover-border-color: #{$color-tint-5};
 
-	--bs-pagination-active-bg: #{$color-p1};
-	--bs-pagination-active-color: #{$color-white};
-	--bs-pagination-active-border-color: #{$color-white};
+	--bs-pagination-active-bg: #{$primary};
+	--bs-pagination-active-color: #{$color-tint-5};
+	--bs-pagination-active-border-color: #{$color-tint-5};
 
-	--bs-pagination-focus-bg: #{tint-color($color-p1, 20%)};
-	--bs-pagination-focus-color: #{$color-white};
-	--bs-pagination-focus-border-color: #{$color-white};
-	--bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+	--bs-pagination-focus-bg: #{tint-color($primary, 20%)};
+	--bs-pagination-focus-color: #{$color-tint-5};
+	--bs-pagination-focus-border-color: #{$color-tint-5};
+	--bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba($secondary, 0.25);
 
 	--bs-pagination-disabled-bg: #{$color-muted};
 	--bs-pagination-disabled-color: #{$color-heading};
@@ -113,8 +103,8 @@
 		height: 40px;
 	}
 }
-//以上為較易改的寫法
-//以下為較易懂的寫法
+//以上為較易改的寫法（根據 BS 覆蓋）
+//以下為較易懂的寫法（重寫）
 .pagination-fdd {
 	@extend .fx-center, .list-unstyled;
 	margin: 0;
@@ -123,7 +113,7 @@
 
 .pagination-fdd .item {
 	$bd-w: 1px;
-	border: $bd-w solid $color-white;
+	border: $bd-w solid $color-tint-5;
 
 	&:first-child > .link {
 		@include border-start-radius($border-radius);
@@ -144,27 +134,27 @@
 	height: 40px;
 	transition: $pagination-transition;
 
-	background-color: $color-p2;
-	color: $color-p1-text;
-	border-color: $color-white;
+	background-color: $secondary;
+	color: $primary-text;
+	border-color: $color-tint-5;
 
 	&:hover {
-		background-color: shade-color($color-p2, 10%);
-		color: $color-white;
-		// border-color: $color-white;
+		background-color: shade-color($secondary, 10%);
+		color: $color-tint-5;
+		// border-color: $color-tint-5;
 	}
 
 	&:focus {
-		background-color: tint-color($color-p1, 20%);
-		// color: $color-white;
-		// border-color: $color-white;
-		box-shadow: 0 0 0 0.25rem rgba($color-p2, 0.25);
+		background-color: tint-color($primary, 20%);
+		// color: $color-tint-5;
+		// border-color: $color-tint-5;
+		box-shadow: 0 0 0 0.25rem rgba($secondary, 0.25);
 	}
 
 	&.active {
-		background-color: $color-p1;
-		color: $color-white;
-		// border-color: $color-white;
+		background-color: $primary;
+		color: $color-tint-5;
+		// border-color: $color-tint-5;
 	}
 
 	&.disabled {

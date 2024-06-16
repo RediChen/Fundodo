@@ -50,13 +50,13 @@
 	}
 	th {
 		background-color: $color-heading;
-		color: $color-white;
+		color: $color-tint-5;
 		white-space: nowrap;
 		text-align: center;
 	}
 	tr {
 		&:nth-child(odd) td {
-			background-color: $color-p2;
+			background-color: $secondary;
 		}
 		&:nth-child(even) td {
 			background-color: $color-muted;
@@ -75,22 +75,22 @@
 	}
 	thead {
 		background-color: $color-heading;
-		color: $color-white;
+		color: $color-tint-5;
 
 		th:not(:last-child) {
-			border-right: 1px solid $color-white;
+			border-right: 1px solid $color-tint-5;
 		}
 	}
 	tbody {
 		color: $color-heading;
 		tr:nth-child(4n + 1) {
-			background-color: $color-p2;
+			background-color: $secondary;
 		}
 		tr:nth-child(4n + 3) {
 			background-color: $color-muted;
 		}
 		tr:nth-child(even) {
-			background-color: $color-white;
+			background-color: $color-tint-5;
 		}
 	}
 }

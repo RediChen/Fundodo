@@ -19,7 +19,7 @@ include "./crs-list_header.php";
           <div class="d-flex justify-content-between align-items-center my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn-primary-frame fx-center">
+            <a href="crs-detail-create.php" class="btn-primary-frame">
               新增課程
             </a>
           </div>
@@ -34,17 +34,18 @@ include "./crs-list_header.php";
             <div class="hstack gap-3">
               <?php
               $fa_class = $isASC ? "short-wide" : "wide-short";
+              $btn_class = ($isASC ? "btn-secondary-fill" : "btn-primary-fill") . " ";
               $tagStr = isset($_GET["tag_id"])
                 ? "tag_id=" . $_GET["tag_id"] . "&"
                 : "";
               $linkStr = 10 * $order_mode_code + ($isASC ? 0 : 1);
               $toggle_link = "?$tagStr" . "page=1&order=$linkStr";
               ?>
-              <a href="<?= $toggle_link ?>" class="btn btn-sq btn-2-fill fx-center">
+              <a href="<?= $toggle_link ?>" class="<?= $btn_class ?>">
                 <i class="fa-solid fa-arrow-down-<?= $fa_class ?>"></i>
               </a>
               <div class="dropdown">
-                <button class="btn btn-2-fill dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn-secondary-fill dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <?php //$order_mode_code from _header
 
                   switch ($order_mode_code):
@@ -98,7 +99,7 @@ include "./crs-list_header.php";
                 </ul>
               </div>
               <?php if (isset($_GET["tag_id"])) : ?>
-                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn btn-danger-fill btn-sq fx-center text-light" title="取消篩選">
+                <a href="<?= $LINK_HERE ?>?page=1&order=<?= $_GET["order"] ?>" class="btn-danger-fill text-light" title="取消篩選">
                   <i class="fa-solid fa-filter-circle-xmark fa-lg"></i>
                 </a>
               <?php endif; ?>
@@ -143,10 +144,10 @@ include "./crs-list_header.php";
                   ?>
                   <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
                   <td class="vstack align-items-center gap-2">
-                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-1-fill btn-sq text-light fx-center" title="完整數據">
+                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn-primary-fill  text-light" title="完整數據">
                       <i class="fa-solid fa-info"></i>
                     </a>
-                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill btn-sq text-light fx-center" title="編輯課程">
+                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill text-light" title="編輯課程">
                       <i class="fa-solid fa-pen"></i>
                     </a>
                   </td>
@@ -176,7 +177,7 @@ include "./crs-list_header.php";
                   </td>
                   <td>
                     <!-- <div> -->
-                    <!-- <a href="#" class="btn btn-primary-fill btn-sq text-light fx-center mx-auto" title="編輯標籤">
+                    <!-- <a href="#" class="btn btn-primary-fill  text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
                     </a> -->
                     <!-- </div> -->
@@ -202,9 +203,10 @@ include "./crs-list_header.php";
     <div class="popout-notice" id="popout-notice">
       <div class="window animate__animated animate__bounceIn">
         <h2>已下架課程</h2>
-        <a rolo="button" href="<?= $LINK_HERE ?>" class="btn btn-primary-fill mt-3 px-3" id="pop-n-btn">好的</a>
+        <a rolo="button" href="<?= $LINK_HERE ?>" class="btn-primary-fill mt-3 px-3" id="pop-n-btn">好的</a>
       </div>
     </div>
+
     <script>
       const popout_n = document.querySelector("#popout-notice");
       const btn_close_n = document.querySelector("#pop-n-btn");
@@ -213,7 +215,9 @@ include "./crs-list_header.php";
       });
     </script>
   <?php endif; ?>
-
+  <?php
+  include("/xampp/htdocs/Fundodo/tools/common-script.php");
+  ?>
 
 </body>
 
