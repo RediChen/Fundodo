@@ -94,13 +94,16 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                         </td>
                       </tr>
                       <tr>
+                        <?php
+                        $fa_class = "fa-regular fa-eye" . ($crs["deleted_at"] ? "" : "-slash");
+                        ?>
                         <th>編輯課程</th>
                         <td class="hstack gap-2 justify-content-center">
                           <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill btn-sq fx-center" title="編輯課程">
                             <i class="fa-regular fa-pen-to-square"></i>
                           </a>
                           <button class="btn btn-danger-fill btn-sq fx-center" id="pop-c-act" title="下架課程">
-                            <i class="fa-regular fa-eye-slash"></i>
+                            <i class="<?= $fa_class ?>"></i>
                           </button>
                         </td>
                       </tr>
@@ -108,12 +111,12 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                   </div>
                   <div class="col-12 col-lg-6 table-responsive">
                     <table class="table table-bordered table-1row">
-                    <tr>
+                      <tr>
                         <th>課程名稱</th>
                         <th><?= $crs["title"] ?></th>
                       </tr>
                       <tr>
-                        <th>課程<br/>頁面<br/>用圖</th>
+                        <th>課程<br />頁面<br />用圖</th>
                         <td>
                           <div class="grid py-3">
                             <?php foreach ($crs_img_nameArr as $img) : ?>
