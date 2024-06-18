@@ -12406,19 +12406,21 @@ $border-radius
 /* text color 帶色 */
 /* color shade */
 /* color shade */
-.btn-sq {
+.btn-icon {
+  color: #F1EDEB;
   width: 40px;
   height: 40px;
 }
+.btn-icon.btn-secondary {
+  color: #000;
+}
 
 .btn-primary-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12437,7 +12439,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-primary-fill.btn-lg, .btn-group-lg > .btn-primary-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12445,14 +12447,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-primary-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-primary-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12462,29 +12462,27 @@ $border-radius
   border: 3px solid #B9A399;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-primary-frame.btn-sm, .btn-group-sm > .btn-primary-frame.btn {
+.btn-primary-outline.btn-sm, .btn-group-sm > .btn-primary-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-primary-frame.btn-lg, .btn-group-lg > .btn-primary-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-primary-outline.btn-lg, .btn-group-lg > .btn-primary-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-primary-frame:hover {
+.btn-primary-outline:hover {
   background-color: #c7b5ad;
   color: #2a2522;
 }
 
 .btn-secondary-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12503,7 +12501,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-secondary-fill.btn-lg, .btn-group-lg > .btn-secondary-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12511,14 +12509,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-secondary-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-secondary-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12528,29 +12524,27 @@ $border-radius
   border: 3px solid #E7E1DB;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-secondary-frame.btn-sm, .btn-group-sm > .btn-secondary-frame.btn {
+.btn-secondary-outline.btn-sm, .btn-group-sm > .btn-secondary-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-secondary-frame.btn-lg, .btn-group-lg > .btn-secondary-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-secondary-outline.btn-lg, .btn-group-lg > .btn-secondary-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-secondary-frame:hover {
+.btn-secondary-outline:hover {
   background-color: #ece7e2;
   color: #2a2522;
 }
 
 .btn-success-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12569,7 +12563,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-success-fill.btn-lg, .btn-group-lg > .btn-success-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12577,14 +12571,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-success-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-success-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12594,29 +12586,27 @@ $border-radius
   border: 3px solid #198754;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-success-frame.btn-sm, .btn-group-sm > .btn-success-frame.btn {
+.btn-success-outline.btn-sm, .btn-group-sm > .btn-success-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-success-frame.btn-lg, .btn-group-lg > .btn-success-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-success-outline.btn-lg, .btn-group-lg > .btn-success-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-success-frame:hover {
+.btn-success-outline:hover {
   background-color: #479f76;
   color: #2a2522;
 }
 
 .btn-info-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12635,7 +12625,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-info-fill.btn-lg, .btn-group-lg > .btn-info-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12643,14 +12633,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-info-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-info-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12660,29 +12648,27 @@ $border-radius
   border: 3px solid #71c4ef;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-info-frame.btn-sm, .btn-group-sm > .btn-info-frame.btn {
+.btn-info-outline.btn-sm, .btn-group-sm > .btn-info-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-info-frame.btn-lg, .btn-group-lg > .btn-info-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-info-outline.btn-lg, .btn-group-lg > .btn-info-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-info-frame:hover {
+.btn-info-outline:hover {
   background-color: #8dd0f2;
   color: #2a2522;
 }
 
 .btn-warning-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12701,7 +12687,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-warning-fill.btn-lg, .btn-group-lg > .btn-warning-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12709,14 +12695,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-warning-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-warning-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12726,29 +12710,27 @@ $border-radius
   border: 3px solid #FBC02D;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-warning-frame.btn-sm, .btn-group-sm > .btn-warning-frame.btn {
+.btn-warning-outline.btn-sm, .btn-group-sm > .btn-warning-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-warning-frame.btn-lg, .btn-group-lg > .btn-warning-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-warning-outline.btn-lg, .btn-group-lg > .btn-warning-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-warning-frame:hover {
+.btn-warning-outline:hover {
   background-color: #fccd57;
   color: #2a2522;
 }
 
 .btn-danger-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12767,7 +12749,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-danger-fill.btn-lg, .btn-group-lg > .btn-danger-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12775,14 +12757,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-danger-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-danger-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12792,29 +12772,27 @@ $border-radius
   border: 3px solid #E53835;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-danger-frame.btn-sm, .btn-group-sm > .btn-danger-frame.btn {
+.btn-danger-outline.btn-sm, .btn-group-sm > .btn-danger-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-danger-frame.btn-lg, .btn-group-lg > .btn-danger-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-danger-outline.btn-lg, .btn-group-lg > .btn-danger-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-danger-frame:hover {
+.btn-danger-outline:hover {
   background-color: #ea605d;
   color: #2a2522;
 }
 
 .btn-light-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12833,7 +12811,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-light-fill.btn-lg, .btn-group-lg > .btn-light-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12841,14 +12819,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-light-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-light-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12858,29 +12834,27 @@ $border-radius
   border: 3px solid #faf9f6;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-light-frame.btn-sm, .btn-group-sm > .btn-light-frame.btn {
+.btn-light-outline.btn-sm, .btn-group-sm > .btn-light-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-light-frame.btn-lg, .btn-group-lg > .btn-light-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-light-outline.btn-lg, .btn-group-lg > .btn-light-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-light-frame:hover {
+.btn-light-outline:hover {
   background-color: #fbfaf8;
   color: #2a2522;
 }
 
 .btn-dark-fill {
-  text-align: center;
-  vertical-align: middle;
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12899,7 +12873,7 @@ $border-radius
   gap: 0.625rem;
 }
 .btn-dark-fill.btn-lg, .btn-group-lg > .btn-dark-fill.btn {
-  padding: 1.75rem 3.5rem;
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
@@ -12907,14 +12881,12 @@ $border-radius
   background-position-y: 0%;
 }
 
-.btn-dark-frame {
-  text-align: center;
-  vertical-align: middle;
+.btn-dark-outline {
   border-radius: 99rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  padding: 1.5rem 2.25rem;
+  padding: 1.25rem 1.875rem;
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
@@ -12924,17 +12896,17 @@ $border-radius
   border: 3px solid #2a2522;
   transition: background-color 0.4s, color 0.4s;
 }
-.btn-dark-frame.btn-sm, .btn-group-sm > .btn-dark-frame.btn {
+.btn-dark-outline.btn-sm, .btn-group-sm > .btn-dark-outline.btn {
   padding: 0.8rem 3.375rem;
   font-size: 1rem;
   gap: 0.625rem;
 }
-.btn-dark-frame.btn-lg, .btn-group-lg > .btn-dark-frame.btn {
-  padding: 1.75rem 3.5rem;
+.btn-dark-outline.btn-lg, .btn-group-lg > .btn-dark-outline.btn {
+  padding: 1.5rem 2rem;
   font-size: 1.25rem;
   gap: 0.5rem;
 }
-.btn-dark-frame:hover {
+.btn-dark-outline:hover {
   background-color: #55514e;
   color: #2a2522;
 }
@@ -13103,7 +13075,7 @@ body {
   width: 100%;
 }
 
-.fx-center, .db-card > .stat, .btn-primary-fill, .btn-primary-frame, .btn-secondary-fill, .btn-secondary-frame, .btn-success-fill, .btn-success-frame, .btn-info-fill, .btn-info-frame, .btn-warning-fill, .btn-warning-frame, .btn-danger-fill, .btn-danger-frame, .btn-light-fill, .btn-light-frame, .btn-dark-fill, .btn-dark-frame, .pagination-fdd, .pagination-fdd .link {
+.fx-center, .db-card > .stat, .btn-icon, .btn-primary-fill, .btn-primary-outline, .btn-secondary-fill, .btn-secondary-outline, .btn-success-fill, .btn-success-outline, .btn-info-fill, .btn-info-outline, .btn-warning-fill, .btn-warning-outline, .btn-danger-fill, .btn-danger-outline, .btn-light-fill, .btn-light-outline, .btn-dark-fill, .btn-dark-outline, .pagination-fdd, .pagination-fdd .link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13284,7 +13256,8 @@ body {
   transition: background-color 0.4s;
 }
 .crs-list_table td:not([colspan]):not(:last-child):hover {
-  background-color: #EAE3E0;
+  background-color: #37312E;
+  color: #EAE3E0;
 }
 
 .crs-list_thumbnail {

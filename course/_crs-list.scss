@@ -52,7 +52,8 @@
 .crs-list_table td:not([colspan]) {
 	transition: background-color 0.4s;
 	&:not(:last-child):hover {
-		background-color: $color-tint-4;
+		background-color: $color-shade-4;
+    color: $color-tint-4;
 	}
 }
 
