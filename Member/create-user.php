@@ -75,7 +75,7 @@
                     <input type="text" class="form-control" name="address">
                 </div>
                 <div class="fx-center mt-3">
-                <button class="btn btn-primary-fill justify-content-end" type="submit">送出</button>
+                <button class="btn btn-primary justify-content-end" type="submit">送出</button>
                 </div>
             </form>
         </div>

@@ -48,7 +48,7 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
           <div class="my-3 d-flex justify-content-between align-items-center">
             <div></div>
             <h1><?= empty($crs) ? "" : "課程詳細資料" ?></h1>
-            <a href="crs-list.php" class="btn btn-primary-fill text-light">
+            <a href="crs-list.php" class="btn btn-primary text-light">
               <i class="fa-solid fa-right-to-bracket"></i>
               <span class="MS-3">返回課程列表</span>
             </a>
@@ -99,10 +99,10 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
                         ?>
                         <th>編輯課程</th>
                         <td class="hstack gap-2 justify-content-center">
-                          <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill btn-sq fx-center" title="編輯課程">
+                          <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-sq fx-center" title="編輯課程">
                             <i class="fa-regular fa-pen-to-square"></i>
                           </a>
-                          <button class="btn btn-danger-fill btn-sq fx-center" id="pop-c-act" title="下架課程">
+                          <button class="btn btn-danger btn-sq fx-center" id="pop-c-act" title="下架課程">
                             <i class="<?= $fa_class ?>"></i>
                           </button>
                         </td>
@@ -160,7 +160,7 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
     <div class="popout-notice" id="popout-notice">
       <div class="window animate__animated animate__bounceIn">
         <h2>已更新課程資料</h2>
-        <a href="<?= $LINK_HERE ?>" class="btn btn-primary-fill mt-3 px-3" id="pop-n-btn">好的</a>
+        <a href="<?= $LINK_HERE ?>" class="btn btn-primary mt-3 px-3" id="pop-n-btn">好的</a>
       </div>
     </div>
     <script>
@@ -177,8 +177,8 @@ $LINK_HERE = "crs-detail.php?id=$crs_id";
     <div class="window animate__animated animate__bounceIn">
       <h2>確定下架課程嗎？</h2>
       <div class="mt-3 hstack gap-3 justify-content-center">
-        <a href="doDeleteCrs.php?delete=true&id=<?= $crs_id ?>" class="btn btn-danger-fill px-3">下架</a>
-        <button class="btn btn-primary-fill px-3" id="pop-c-btn">算了</button>
+        <a href="doDeleteCrs.php?delete=true&id=<?= $crs_id ?>" class="btn btn-danger px-3">下架</a>
+        <button class="btn btn-primary px-3" id="pop-c-btn">算了</button>
       </div>
     </div>
   </div>

@@ -70,7 +70,7 @@ if ($row === null) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <a href="user-delete.php?id=<?= $row["id"] ?>" type="button" class="btn btn-danger-fill">確認</a>
+                    <a href="user-delete.php?id=<?= $row["id"] ?>" type="button" class="btn btn-danger">確認</a>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@ if ($row === null) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <a href="Avatar-delete.php?id=<?= $row["id"] ?>" type="button" class="btn btn-danger-fill">確認</a>
+                    <a href="Avatar-delete.php?id=<?= $row["id"] ?>" type="button" class="btn btn-danger">確認</a>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@ if ($row === null) {
     
     <div class="container">
         <div class="py-2">
-            <a href="users.php" class="btn btn-primary-fill"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>
+            <a href="users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>
         </div>
         <div class="row justify-content-start">
             <div class="col-lg-6">
@@ -152,10 +152,10 @@ if ($row === null) {
                         </tr>
                     </table>
                     <div class="py-2 d-flex justify-content-between">
-                        <a class="btn btn-primary-fill" href="user-edit.php?id=<?= $row["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-primary" href="user-edit.php?id=<?= $row["id"] ?>" title="編輯使用者"><i class="fa-solid fa-pen-to-square"></i></a>
 
 
-                        <button class="btn btn-danger-fill" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
                     </div>
 
 
@@ -179,7 +179,7 @@ if ($row === null) {
                         <div class="row justify-content-center">
                             <div class="col text-center">
                                 <a class="text-decoration-none btn btn-secondary" href="member-center.php?id=<?= $row["id"] ?>" title="前往會員中心更換頭像">會員中心</a>
-                                <button class="btn btn-danger-fill" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
+                                <button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </div>
                     </div>

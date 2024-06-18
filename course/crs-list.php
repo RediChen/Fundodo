@@ -19,7 +19,7 @@ include "./crs-list_header.php";
           <div class="d-flex justify-content-between align-items-center my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn-primary-frame">
+            <a href="crs-detail-create.php" class="btn-primary-outline">
               新增課程
             </a>
           </div>
@@ -34,7 +34,7 @@ include "./crs-list_header.php";
             <div class="hstack gap-3">
               <?php
               $fa_class = $isASC ? "short-wide" : "wide-short";
-              $btn_class = ($isASC ? "btn-secondary-fill" : "btn-primary-fill") . " ";
+              $btn_class = "btn " . ($isASC ? "btn-secondary" : "btn-primary") . " btn-icon";
               $tagStr = isset($_GET["tag_id"])
                 ? "tag_id=" . $_GET["tag_id"] . "&"
                 : "";
@@ -144,10 +144,10 @@ include "./crs-list_header.php";
                   ?>
                   <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
                   <td class="vstack align-items-center gap-2">
-                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn-primary-fill  text-light" title="完整數據">
+                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-info btn-icon" title="完整數據">
                       <i class="fa-solid fa-info"></i>
                     </a>
-                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary-fill text-light" title="編輯課程">
+                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-icon" title="編輯課程">
                       <i class="fa-solid fa-pen"></i>
                     </a>
                   </td>
@@ -177,7 +177,7 @@ include "./crs-list_header.php";
                   </td>
                   <td>
                     <!-- <div> -->
-                    <!-- <a href="#" class="btn btn-primary-fill  text-light fx-center mx-auto" title="編輯標籤">
+                    <!-- <a href="#" class="btn btn-primary  text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
                     </a> -->
                     <!-- </div> -->

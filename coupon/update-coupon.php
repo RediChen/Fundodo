@@ -60,7 +60,7 @@ session_abort();
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="my-3">
-                        <a class="btn btn-primary-fill " href="coupon.php?id=<?= $row["id"] ?>"> <i class="fa-regular fa-circle-left"></i> 返回詳情</a>
+                        <a class="btn btn-primary " href="coupon.php?id=<?= $row["id"] ?>"> <i class="fa-regular fa-circle-left"></i> 返回詳情</a>
                     </div>
                     <table class="table table-bordered">
                         <tbody>

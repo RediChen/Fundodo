@@ -38,9 +38,9 @@ $conn->close();
 <body>
   <div class="db_header hstack">
     <span class="title">Fundodo</span>
-    <a href="../article/article_title.php" class="btn btn-primary-fill ms-3">文章首頁</a>
+    <a href="../article/article_title.php" class="btn btn-primary ms-3">文章首頁</a>
 
-    <span class="user ms-auto">Hi, <?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-primary-fill ms-3">登出</a></span>
+    <span class="user ms-auto">Hi, <?= $_SESSION["user"]["nickname"] ?> <a href="/fundodo/dashboard/session-destory.php?logout=1" class="btn btn-primary ms-3">登出</a></span>
   </div>
 
   <div class="container">
@@ -94,7 +94,7 @@ $conn->close();
             </td>
             <th class="text-light display-5"><i class="fa-solid fa-circle-right fa-lg"></i>
             <br>
-              <button class="btn btn-primary-fill" type="submit">送出</button>
+              <button class="btn btn-primary" type="submit">送出</button>
             </th>
             <td style="min-width: 320px;">
               <div id="thumbnail-box">

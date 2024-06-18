@@ -77,8 +77,8 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
       <div class="layout_content">
         <div class="container">
           <div class="py-2">
-            <a href="users.php" class="btn btn-primary-fill"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>
-            <a href="user.php?id=<?= $row["id"] ?>" class="btn btn-primary-fill"><i class="fa-solid fa-arrow-left"></i>回上一頁</a>
+            <a href="users.php" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回使用者列表</a>
+            <a href="user.php?id=<?= $row["id"] ?>" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>回上一頁</a>
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-4">
@@ -176,7 +176,7 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
                   </table>
 
 
-                  <button type="submit" class="btn btn-primary-fill">送出</button>
+                  <button type="submit" class="btn btn-primary">送出</button>
 
 
                 </form>
@@ -199,7 +199,7 @@ $rows_images = $result_images->fetch_all(MYSQLI_ASSOC);
                   <div class="row justify-content-center">
                     <div class="col text-center">
                       <a class="text-decoration-none btn btn-secondary" href="member-center.php?id=<?= $row["id"] ?>" title="前往會員中心更換頭像">會員中心</a>
-                      <button class="btn btn-danger-fill" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
+                      <button class="btn btn-danger" title="刪除使用者" data-bs-toggle="modal" data-bs-target="#deleteAvatar"><i class="fa-solid fa-trash"></i></button>
                     </div>
                   </div>
                 </div>

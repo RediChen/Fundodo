@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
         <div class="modal-body">確認刪除此商品？</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-          <a class="btn btn-danger-fill" href="deleteProduct.php?id=<?= $id ?>">確認</a>
+          <a class="btn btn-danger" href="deleteProduct.php?id=<?= $id ?>">確認</a>
         </div>
       </div>
     </div>
@@ -58,13 +58,13 @@ if ($result->num_rows > 0) {
         <div class="container c-600">
           <h1 class="text-center mb-5">修改商品資料</h1>
           <div class="d-flex gap-3">
-            <a href="product-list.php" class="btn btn-primary-fill text-end">
+            <a href="product-list.php" class="btn btn-primary text-end">
               <i class="fa-solid fa-arrow-left me-2"></i>回商品列表
             </a>
-            <a class="btn btn-primary-fill" href="product-detail.php?id=<?= $id ?>">
+            <a class="btn btn-primary" href="product-detail.php?id=<?= $id ?>">
               <i class="fa-solid fa-circle-info me-2 fa-lg"></i>回詳細資料
             </a>
-            <button class="btn btn-danger-fill ms-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash me-2"></i> 刪除此商品</button>
+            <button class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash me-2"></i> 刪除此商品</button>
           </div>
           <hr>
           <form action="doUpdateProduct.php" method="post" enctype="multipart/form-data">
@@ -136,7 +136,7 @@ if ($result->num_rows > 0) {
                 <input type="tel" class="form-control" name="stock" value="<?= $product["stock"] ?>">
               </div>
               <div class="text-center mt-3">
-                <button class="btn btn-primary-fill " type="submit">送出</button>
+                <button class="btn btn-primary " type="submit">送出</button>
               </div>
             <?php else : ?>
               <h1>此商品不存在</h1>

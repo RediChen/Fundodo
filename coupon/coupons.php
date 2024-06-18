@@ -140,7 +140,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="請輸入優惠券名稱或代碼" name="search" value="<?= $search ?>">
-                                    <button class="btn btn-primary-fill btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <button class="btn btn-primary btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +154,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                                 <input type="date" class="form-control" name="end_date" value="<?= $end_date ?>">
                             </div>
                             <div class="col-md-auto">
-                                <button type="submit" class="btn btn-primary-fill"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
 
@@ -164,13 +164,13 @@ function getOrderLink($column, $current_order_by, $current_order)
                             </div>
                             <!-- 優惠券篩選分類 -->
                             <div class="d-flex justify-content-center my-3">
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=all">全部</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=1">商品</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=2">寵物旅館</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=3">線上課程</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=active">進行中</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=expired">已截止</a>
-                                <a class="btn btn-primary-fill mx-1" href="coupons.php?category=inactive">已停用</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=all">全部</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=1">商品</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=2">寵物旅館</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=3">線上課程</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=active">進行中</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=expired">已截止</a>
+                                <a class="btn btn-primary mx-1" href="coupons.php?category=inactive">已停用</a>
                                 <?php if (isset($_GET["search"])) : ?>
                                     <div class="mx-1">
                                         <a class="btn btn-secondary" href="coupons.php"><i class="fa-solid fa-arrow-left"></i></a>
@@ -252,9 +252,9 @@ function getOrderLink($column, $current_order_by, $current_order)
                                                 ?>
                                             </td>
                                             <td>
-                                                <a class=" btn1 btn btn-primary-fill btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看詳情 <i class="fa-solid fa-circle-info"></i></a>
+                                                <a class=" btn1 btn btn-primary btn-sm" href="coupon.php?id=<?= $coupon["id"] ?>">查看詳情 <i class="fa-solid fa-circle-info"></i></a>
                                                 <?php if ($coupon["status"] == 1 && $coupon["end_date"] >= $currentDate) : ?>
-                                                    <button type="button" class="btn btn-danger-fill btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">點擊停用 <i class="fa-solid fa-circle-xmark"></i></button>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $coupon["id"] ?>">點擊停用 <i class="fa-solid fa-circle-xmark"></i></button>
                                                 <?php elseif ($coupon["status"] == 0 || $coupon["end_date"] < $currentDate) : ?>
                                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#activateModal<?= $coupon["id"] ?>">點擊啟用 <i class="fa-solid fa-circle-check"></i></button>
                                                 <?php endif; ?>
@@ -272,7 +272,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                                                <a class="btn btn-primary-fill" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=deactivate">確認</a>
+                                                                <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=deactivate">確認</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -291,7 +291,7 @@ function getOrderLink($column, $current_order_by, $current_order)
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                                                <a class="btn btn-primary-fill" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=activate">確認</a>
+                                                                <a class="btn btn-primary" href="doUpdateCoupon.php?id=<?= $coupon["id"] ?>&action=activate">確認</a>
                                                             </div>
                                                         </div>
                                                     </div>

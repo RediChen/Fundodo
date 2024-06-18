@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
         <div class="modal-body">確認刪除此商品？</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-          <a class="btn btn-danger-fill" href="deleteProduct.php?id=<?= $id ?>">確認</a>
+          <a class="btn btn-danger" href="deleteProduct.php?id=<?= $id ?>">確認</a>
         </div>
       </div>
     </div>
@@ -58,10 +58,10 @@ if ($result->num_rows > 0) {
         <div class="container c-600">
           <h1>商品詳細資料</h1>
           <div class="text-end d-flex justify-content-between">
-            <a href="product-list.php" class="btn btn-primary-fill text-end">
+            <a href="product-list.php" class="btn btn-primary text-end">
               <i class="fa-solid fa-arrow-left"></i>回商品列表
             </a>
-            <button class="btn btn-danger-fill" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash me-2"></i> 刪除此商品</button>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash me-2"></i> 刪除此商品</button>
           </div>
           <hr>
           <table class="table-1row">
@@ -118,7 +118,7 @@ if ($result->num_rows > 0) {
               <tr>
                 <th>修改資料</th>
                 <td>
-                  <a href="product-edit.php?id=<?= $id ?>" class="btn btn-primary-fill"><i class="fa-solid fa-edit"></i></a>
+                  <a href="product-edit.php?id=<?= $id ?>" class="btn btn-primary"><i class="fa-solid fa-edit"></i></a>
                 </td>
               </tr>
             <?php else : ?>
