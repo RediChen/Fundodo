@@ -1,5 +1,10 @@
 //*====== 通用按鈕
-.btn-sq {
+.btn-icon {
+  @extend .fx-center;
+  color: $color-tint-5;
+  &.btn-secondary {
+    color: $color-shade-5;
+  }
 	$leng: 40px;
 	width: $leng;
 	height: $leng;
@@ -11,17 +16,15 @@
 }
 @mixin btn-prototype() {
   @extend .fx-center;
-	text-align: center;
-	vertical-align: middle;
 	border-radius: 99rem;
 	user-select: none;
-	@include btn-size(1.5rem, 2.25rem, 1.125rem, .5rem);
+	@include btn-size(1.25rem, 1.875rem, 1.125rem, .5rem);
 	// 預設值
 	&.btn-sm {
 		@include btn-size(0.8rem, 3.375rem, 1rem, 0.625rem);
 	}
 	&.btn-lg {
-		@include btn-size(1.75rem, 3.5rem, 1.25rem, .5rem);
+		@include btn-size(1.5rem, 2rem, 1.25rem, .5rem);
 	}
 }
 
@@ -43,7 +46,7 @@
 		background-position-y: 0%;
 	}
 }
-@mixin btn-frame-prototype($color) {
+@mixin btn-outline-prototype($color) {
 	@include btn-prototype();
 	$darker: shift-color($color, 10%);
 	$lighter: shift-color($color, -20%);
@@ -64,10 +67,41 @@
 	.btn-#{$color}-fill {
 		@include btn-fill-prototype($value);
 	}
-	.btn-#{$color}-frame {
-		@include btn-frame-prototype($value);
+	.btn-#{$color}-outline {
+		@include btn-outline-prototype($value);
 	}
 }
+
+//*====== 新樣式按鈕
+.btn-primary-fill {
+  @include btn-prototype();
+  background-color: $primary;
+  color: $color-tint-5;
+
+  &:hover {
+    background-color: $color-tint-1;
+  }
+  &:active {
+    background-color: $color-shade-1;
+  }
+}
+.btn-primary-outline {
+  @include btn-prototype();
+  background-color: $light;
+  color: $primary;
+  border: 1px solid $primary;
+
+  &:hover {
+    background-color: $color-tint-4;
+  }
+  &:active {
+    background-color: $color-shade-3;
+  }
+}
+
+
+
+
 
 //*====== 圓形按鈕
 
