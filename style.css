@@ -35,7 +35,7 @@
   --bs-info: #71c4ef;
   --bs-warning: #FBC02D;
   --bs-danger: #E53835;
-  --bs-light: #faf9f6;
+  --bs-light: #F1EDEB;
   --bs-dark: #2a2522;
   --bs-primary-rgb: 185, 163, 153;
   --bs-secondary-rgb: 231, 225, 219;
@@ -43,7 +43,7 @@
   --bs-info-rgb: 113, 196, 239;
   --bs-warning-rgb: 251, 192, 45;
   --bs-danger-rgb: 229, 56, 53;
-  --bs-light-rgb: 250, 249, 246;
+  --bs-light-rgb: 241, 237, 235;
   --bs-dark-rgb: 42, 37, 34;
   --bs-primary-text-emphasis: #4a413d;
   --bs-secondary-text-emphasis: #5c5a58;
@@ -2447,13 +2447,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #faf9f6;
-  --bs-table-border-color: #c8c7c5;
-  --bs-table-striped-bg: #eeedea;
+  --bs-table-bg: #F1EDEB;
+  --bs-table-border-color: #c1bebc;
+  --bs-table-striped-bg: #e5e1df;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #e1e0dd;
+  --bs-table-active-bg: #d9d5d4;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e7e6e4;
+  --bs-table-hover-bg: #dfdbd9;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3544,19 +3544,19 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #faf9f6;
-  --bs-btn-border-color: #faf9f6;
+  --bs-btn-bg: #F1EDEB;
+  --bs-btn-border-color: #F1EDEB;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #d5d4d1;
-  --bs-btn-hover-border-color: #c8c7c5;
-  --bs-btn-focus-shadow-rgb: 213, 212, 209;
+  --bs-btn-hover-bg: #cdc9c8;
+  --bs-btn-hover-border-color: #c1bebc;
+  --bs-btn-focus-shadow-rgb: 205, 201, 200;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #c8c7c5;
-  --bs-btn-active-border-color: #bcbbb9;
+  --bs-btn-active-bg: #c1bebc;
+  --bs-btn-active-border-color: #b5b2b0;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #faf9f6;
-  --bs-btn-disabled-border-color: #faf9f6;
+  --bs-btn-disabled-bg: #F1EDEB;
+  --bs-btn-disabled-border-color: #F1EDEB;
 }
 
 .btn-dark {
@@ -3679,19 +3679,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #faf9f6;
-  --bs-btn-border-color: #faf9f6;
+  --bs-btn-color: #F1EDEB;
+  --bs-btn-border-color: #F1EDEB;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #faf9f6;
-  --bs-btn-hover-border-color: #faf9f6;
-  --bs-btn-focus-shadow-rgb: 250, 249, 246;
+  --bs-btn-hover-bg: #F1EDEB;
+  --bs-btn-hover-border-color: #F1EDEB;
+  --bs-btn-focus-shadow-rgb: 241, 237, 235;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #faf9f6;
-  --bs-btn-active-border-color: #faf9f6;
+  --bs-btn-active-bg: #F1EDEB;
+  --bs-btn-active-border-color: #F1EDEB;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #faf9f6;
+  --bs-btn-disabled-color: #F1EDEB;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #faf9f6;
+  --bs-btn-disabled-border-color: #F1EDEB;
   --bs-gradient: none;
 }
 
@@ -7325,8 +7325,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(251, 250, 248, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(251, 250, 248, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(244, 241, 239, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(244, 241, 239, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -12796,12 +12796,12 @@ $border-radius
   font-size: 1.125rem;
   gap: 0.5rem;
   /* 背景色 */
-  background-image: linear-gradient(#fbfaf8, #faf9f6 55%, #faf9f6 85%, #e1e0dd);
+  background-image: linear-gradient(#f4f1ef, #F1EDEB 55%, #F1EDEB 85%, #d9d5d4);
   background-size: 100% 200%;
   background-position-y: 100%;
   background-repeat: no-repeat;
   /* 文字色 */
-  color: #646462;
+  color: #605f5e;
   border: none;
   transition: background-position-y 0.4s;
 }
@@ -12830,8 +12830,8 @@ $border-radius
   /* 背景色 */
   background-color: #F1EDEB;
   /* 文字色 */
-  color: #c8c7c5;
-  border: 3px solid #faf9f6;
+  color: #c1bebc;
+  border: 3px solid #F1EDEB;
   transition: background-color 0.4s, color 0.4s;
 }
 .btn-light-outline.btn-sm, .btn-group-sm > .btn-light-outline.btn {
@@ -12845,7 +12845,7 @@ $border-radius
   gap: 0.5rem;
 }
 .btn-light-outline:hover {
-  background-color: #fbfaf8;
+  background-color: #f4f1ef;
   color: #2a2522;
 }
 
@@ -12909,6 +12909,63 @@ $border-radius
 .btn-dark-outline:hover {
   background-color: #55514e;
   color: #2a2522;
+}
+
+.btn-primary-fill {
+  border-radius: 99rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 1.25rem 1.875rem;
+  font-size: 1.125rem;
+  gap: 0.5rem;
+  background-color: #B9A399;
+  color: #F1EDEB;
+}
+.btn-primary-fill.btn-sm, .btn-group-sm > .btn-primary-fill.btn {
+  padding: 0.8rem 3.375rem;
+  font-size: 1rem;
+  gap: 0.625rem;
+}
+.btn-primary-fill.btn-lg, .btn-group-lg > .btn-primary-fill.btn {
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+}
+.btn-primary-fill:hover {
+  background-color: #C0ACA3;
+}
+.btn-primary-fill:active {
+  background-color: #857A79;
+}
+
+.btn-primary-outline {
+  border-radius: 99rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 1.25rem 1.875rem;
+  font-size: 1.125rem;
+  gap: 0.5rem;
+  background-color: #F1EDEB;
+  color: #B9A399;
+  border: 1px solid #B9A399;
+}
+.btn-primary-outline.btn-sm, .btn-group-sm > .btn-primary-outline.btn {
+  padding: 0.8rem 3.375rem;
+  font-size: 1rem;
+  gap: 0.625rem;
+}
+.btn-primary-outline.btn-lg, .btn-group-lg > .btn-primary-outline.btn {
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+}
+.btn-primary-outline:hover {
+  background-color: #EAE3E0;
+}
+.btn-primary-outline:active {
+  background-color: #5D524D;
 }
 
 .pagination.fdd {
@@ -13252,10 +13309,10 @@ body {
   color: #F1EDEB;
 }
 
-.crs-list_table td:not([colspan]) {
+.crs-list_table tr:nth-child(odd) td:not([colspan]) {
   transition: background-color 0.4s;
 }
-.crs-list_table td:not([colspan]):not(:last-child):hover {
+.crs-list_table tr:nth-child(odd) td:not([colspan]):not(:last-child):hover {
   background-color: #37312E;
   color: #EAE3E0;
 }
@@ -13281,7 +13338,7 @@ body {
   transition: background-color 0.4s;
 }
 .crs-list_tags:hover {
-  background-color: #F1EDEB;
+  background-color: #F1EDEB !important;
 }
 
 td > .grid > figure {
