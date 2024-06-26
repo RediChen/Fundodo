@@ -89,3 +89,10 @@ td > .grid > figure {
 		box-shadow: 0 0 0 8px $color-tint-5;
 	}
 }
+
+.crs_table-1col {
+  margin-inline: auto;
+  td {
+    min-width: 385px;
+  }
+}

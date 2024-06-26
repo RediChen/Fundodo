@@ -13349,6 +13349,13 @@ td > .grid > figure:hover {
   box-shadow: 0 0 0 8px #F1EDEB;
 }
 
+.crs_table-1col {
+  margin-inline: auto;
+}
+.crs_table-1col td {
+  min-width: 385px;
+}
+
 .fixed-height-table {
   min-height: 765px;
   overflow: hidden;

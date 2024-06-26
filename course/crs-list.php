@@ -19,7 +19,7 @@ include "./crs-list_header.php";
           <div class="d-flex justify-content-between align-items-center my-3">
             <div></div>
             <h1 class="text-center"><?= $pageTitle ?></h1>
-            <a href="crs-detail-create.php" class="btn-primary-outline">
+            <a href="crs-create.php" class="btn-primary-outline">
               新增課程
             </a>
           </div>
@@ -105,87 +105,89 @@ include "./crs-list_header.php";
               <?php endif; ?>
             </div>
           </div>
-          <table class="crs-list_table table-2row">
-            <thead>
-              <tr class="text-nowrap text-center">
-                <th scope="col">課程 ID</th>
-                <th scope="col">課程標題</th>
-                <th scope="col">課程摘要</th>
-                <th scope="col">課程縮圖</th>
-                <th scope="col">課程價格</th>
-                <th scope="col">上架時間</th>
-                <th scope="col" class="col-status">狀態</th>
-                <th scope="col">功能鈕</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($crsArr as $course) : ?>
-                <?php $crs_id = isset($_GET["tag_id"])
-                  ? $course["course_id"]
-                  : $course["id"]; ?>
-                <tr class="align-middle">
-                  <!-- rowspan='2'  -->
-                  <th class="text-center"><?= $crs_id ?></th>
-                  <td><?= $course["title"] ?></td>
-                  <td><?= $course["abstract"] ?></td>
-                  <td class="text-center">
-                    <img src="../images/<?= $course["file_name"] ?>" alt="" class="crs-list_thumbnail">
-                  </td>
-                  <td class="text-end">
-                    NT$<?= number_format($course["price"]) ?>
-                  </td>
-                  <td><?= $course["created_at"] ?></td>
-                  <?php
-                  $isOn = empty($course["deleted_at"]);
-                  $statusClass = $isOn ? "text-nowrap" : "";
-                  $statusInfo = $isOn
-                    ? "在架上"
-                    : "已於 " . $course["deleted_at"] . "下架";
-                  ?>
-                  <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
-                  <td class="vstack align-items-center gap-2">
-                    <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-info btn-icon" title="完整數據">
-                      <i class="fa-solid fa-info"></i>
-                    </a>
-                    <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-icon" title="編輯課程">
-                      <i class="fa-solid fa-pen"></i>
-                    </a>
-                  </td>
+          <div class="table-responsive">
+            <table class="crs-list_table table-2row">
+              <thead>
+                <tr class="text-nowrap text-center">
+                  <th scope="col">課程 ID</th>
+                  <th scope="col">課程標題</th>
+                  <th scope="col">課程摘要</th>
+                  <th scope="col">課程縮圖</th>
+                  <th scope="col">課程價格</th>
+                  <th scope="col">上架時間</th>
+                  <th scope="col" class="col-status">狀態</th>
+                  <th scope="col">功能鈕</th>
                 </tr>
-                <tr class="align-middle">
-                  <td></td>
-                  <?php
-                  //* 查詢所有的 tags 名
-                  $sql = "SELECT crs_categories.* FROM course_category JOIN crs_categories ON course_category.category_id = crs_categories.id WHERE course_category.course_id = $crs_id";
-                  $rows = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+              </thead>
+              <tbody>
+                <?php foreach ($crsArr as $course) : ?>
+                  <?php $crs_id = isset($_GET["tag_id"])
+                    ? $course["course_id"]
+                    : $course["id"]; ?>
+                  <tr class="align-middle">
+                    <!-- rowspan='2'  -->
+                    <th class="text-center"><?= $crs_id ?></th>
+                    <td><?= $course["title"] ?></td>
+                    <td><?= $course["abstract"] ?></td>
+                    <td class="text-center">
+                      <img src="../images/<?= $course["file_name"] ?>" alt="" class="crs-list_thumbnail">
+                    </td>
+                    <td class="text-end">
+                      NT$<?= number_format($course["price"]) ?>
+                    </td>
+                    <td><?= $course["created_at"] ?></td>
+                    <?php
+                    $isOn = empty($course["deleted_at"]);
+                    $statusClass = $isOn ? "text-nowrap" : "";
+                    $statusInfo = $isOn
+                      ? "在架上"
+                      : "已於 " . $course["deleted_at"] . "下架";
+                    ?>
+                    <td class="text-center <?= $statusClass ?>"><?= $statusInfo ?></td>
+                    <td class="vstack align-items-center gap-2">
+                      <a href="crs-detail.php?id=<?= $crs_id ?>" class="btn btn-info btn-icon" title="完整數據">
+                        <i class="fa-solid fa-info"></i>
+                      </a>
+                      <a href="crs-detail-edit.php?id=<?= $crs_id ?>" class="btn btn-primary btn-icon" title="編輯課程">
+                        <i class="fa-solid fa-pen"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="align-middle">
+                    <td></td>
+                    <?php
+                    //* 查詢所有的 tags 名
+                    $sql = "SELECT crs_categories.* FROM course_category JOIN crs_categories ON course_category.category_id = crs_categories.id WHERE course_category.course_id = $crs_id";
+                    $rows = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
 
-                  //* 重新打包
-                  $tagArr = [];
-                  foreach ($rows as $row) :
-                    $tagArr[$row["id"]] = $row["category"];
-                  endforeach;
-                  ?>
+                    //* 重新打包
+                    $tagArr = [];
+                    foreach ($rows as $row) :
+                      $tagArr[$row["id"]] = $row["category"];
+                    endforeach;
+                    ?>
 
-                  <td colspan="6">
-                    <div class="hstack gap-3">
-                      <?php foreach ($tagArr as $id => $category) : ?>
-                        <a href="?tag_id=<?= $id ?>&page=1&order=<?= $_GET["order"] ?>" class="crs-list_tags">
-                          #<?= $category ?>
-                        </a>
-                      <?php endforeach; ?>
-                    </div>
-                  </td>
-                  <td>
-                    <!-- <div> -->
-                    <!-- <a href="#" class="btn btn-primary  text-light fx-center mx-auto" title="編輯標籤">
+                    <td colspan="6">
+                      <div class="hstack gap-3">
+                        <?php foreach ($tagArr as $id => $category) : ?>
+                          <a href="?tag_id=<?= $id ?>&page=1&order=<?= $_GET["order"] ?>" class="crs-list_tags">
+                            #<?= $category ?>
+                          </a>
+                        <?php endforeach; ?>
+                      </div>
+                    </td>
+                    <td>
+                      <!-- <div> -->
+                      <!-- <a href="#" class="btn btn-primary  text-light fx-center mx-auto" title="編輯標籤">
                       <i class="fa-solid fa-hashtag"></i>
                     </a> -->
-                    <!-- </div> -->
-                  </td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+                      <!-- </div> -->
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
           <!-- 分頁切換列 -->
           <?php include "./crs_pagination.php"; ?>
         </div>
