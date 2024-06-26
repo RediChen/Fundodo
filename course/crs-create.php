@@ -28,9 +28,9 @@ function printErrorMsg($item)
     <div class="fx-center">
       <div class="row justify-content-center">
         <h1 class="col-12 text-center my-3">新增課程</h1>
-        <div class="col-auto">
+        <div class="col-12 col-lg-6">
           <form action="doCreateCrs.php" method="post" enctype="multipart/form-data">
-            <table class="table-1row">
+            <table class="table-1row crs_table-1col">
               <tr>
                 <th>課程名稱</th>
                 <td>
@@ -96,10 +96,17 @@ function printErrorMsg($item)
             </table>
           </form>
         </div>
-        <div class="col-6">
-          <div id="thumbnail-box">
-            <img src="" alt="" class="thumbnails object-fit-cover" style="display: none; max-width: 500px">
-          </div>
+        <div class="col-12 col-lg-6">
+          <table class="table-1row crs_table-1col">
+            <tr>
+              <th>上傳預覽</th>
+              <td id="thumbnail-box">
+                
+              </td>
+            </tr>
+          </table>
+
+
         </div>
       </div>
     </div>
@@ -117,17 +124,7 @@ function printErrorMsg($item)
     </div>
   </div>
 
-  <script>
-    const popout_c = document.getElementById("popout-confirm");
-    const btn_act_c = document.getElementById("pop-c-act");
-    const btn_close_c = document.getElementById("pop-c-btn");
-    btn_act_c.addEventListener("click", () => {
-      popout_c.style.display = "flex";
-    });
-    btn_close_c.addEventListener("click", () => {
-      popout_c.style.display = "none";
-    });
-  </script>
+  <script src="./crs-create.js"></script>
   <script>
     // const upload = document.querySelector("#upload-img");
     // const box = document.querySelector("#thumbnail-box");
