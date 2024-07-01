@@ -1,0 +1,4001 @@
+{
+	"cols": ["animal_id", "animal_Variety", "animal_sex", "animal_bodytype"],
+	"data": [
+		{
+			"animal_id": 360267,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360265,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360240,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360244,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360241,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360230,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360228,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360227,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347780,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 347783,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 324704,
+			"animal_Variety": "沙皮犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 330881,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 227688,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360220,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359380,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360218,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360219,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360217,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360194,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360193,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360192,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 354388,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358865,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356535,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357945,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360101,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356067,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353925,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348310,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 348301,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360154,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 360142,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360141,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360140,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360139,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 360138,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 355646,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354724,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344331,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360127,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360131,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 320481,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360118,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 320485,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 322216,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347379,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 323114,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 323115,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 326156,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347138,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 252787,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 229238,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359405,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359403,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359293,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359291,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358919,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357455,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 346963,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 346964,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 344842,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356066,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350193,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 252796,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350191,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352003,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 335281,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357933,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360038,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 360033,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360028,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359999,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 360023,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359890,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 36144,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359718,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 345337,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359968,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359969,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359966,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359253,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359158,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358923,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355640,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358921,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358851,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358850,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359960,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358849,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358847,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358854,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359953,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359949,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359948,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359945,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356785,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 28904,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 318906,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 35372,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356534,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359918,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359903,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359894,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359892,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359888,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359887,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359886,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359885,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359884,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359883,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359880,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359876,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359875,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359874,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359871,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359868,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359867,
+			"animal_Variety": "沙皮犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359858,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359845,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359853,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 308426,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 251547,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 252813,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 252818,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 183387,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 186736,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353132,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352045,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352042,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350075,
+			"animal_Variety": "法國鬥牛犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 318835,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359785,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356691,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 337088,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356031,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 343133,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357497,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359563,
+			"animal_Variety": "西高地白梗",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 346261,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 351282,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 275323,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 290605,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 339865,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 330488,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 330491,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358867,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 345501,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347483,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 342371,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 340499,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 284642,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 227451,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 252204,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 252984,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359644,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359688,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353384,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359685,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358904,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358749,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359643,
+			"animal_Variety": "法國鬥牛犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359642,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359133,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359629,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359626,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359625,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359623,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358637,
+			"animal_Variety": "巴哥犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358825,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359599,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359592,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359551,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359545,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 339489,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359541,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344315,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359525,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 326933,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 245138,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356730,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359512,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359474,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 166760,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359500,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359498,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359497,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350063,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 227138,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 351855,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351847,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358857,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359472,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359453,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 353827,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 341216,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359384,
+			"animal_Variety": "大丹犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354854,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354747,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359401,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359394,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355832,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359393,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356079,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 352504,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359382,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359347,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357494,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359345,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356695,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 338258,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346666,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 349859,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351371,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356694,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357506,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357766,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358734,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357500,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359245,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356554,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358101,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348427,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354943,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357756,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358030,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359247,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 343150,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 343147,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 343137,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 343136,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359335,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 343131,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355488,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 328083,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 328084,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359318,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359317,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 311178,
+			"animal_Variety": "西高地白梗",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359268,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359266,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359295,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359292,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 338425,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 270480,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359276,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358574,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358905,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359021,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359260,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359256,
+			"animal_Variety": "沙皮犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359254,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 352004,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359240,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359246,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 355979,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354992,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356417,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354990,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354988,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356748,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352693,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357322,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358354,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358352,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358356,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358355,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357430,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357702,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354965,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359147,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359234,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359111,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359105,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356696,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358685,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358735,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359138,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 272040,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359131,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359093,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359100,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359099,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359096,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359095,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359094,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359082,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359027,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 359061,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359060,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359058,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359056,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 359055,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359051,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 347160,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 293427,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 359038,
+			"animal_Variety": "沙皮犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359030,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359026,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 359017,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358990,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358986,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356042,
+			"animal_Variety": "巴哥犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358024,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 326667,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 354871,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354870,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 166489,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 184009,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354868,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354867,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354866,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 335626,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 355319,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358964,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 328683,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358959,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358939,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358937,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358933,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358917,
+			"animal_Variety": "大丹犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358915,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358910,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354732,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354733,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357977,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358327,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358045,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357936,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356557,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357934,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358328,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358044,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358039,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358902,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358901,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358900,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358839,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358874,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347037,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347040,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 347041,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347038,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347042,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 347033,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348879,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348892,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348877,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352798,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358562,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 296627,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 295613,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355887,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357256,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357861,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358852,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 355855,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357947,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357750,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357748,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358683,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358733,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358396,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358394,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358395,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358684,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358682,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358633,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358665,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358639,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358638,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358481,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358480,
+			"animal_Variety": "大丹犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 353026,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344732,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 201784,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348745,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 347951,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 91115,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358565,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 268424,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358552,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 263432,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 343240,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358482,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357612,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357614,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358411,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358380,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358378,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356705,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358331,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 320113,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344539,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358325,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358317,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353520,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357672,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 164233,
+			"animal_Variety": "法國鬥牛犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 354003,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358278,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358272,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358269,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358268,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358266,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358265,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358264,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358263,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358262,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358261,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358260,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358259,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358258,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358257,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356373,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358016,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358211,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357972,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358221,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357859,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357858,
+			"animal_Variety": "大丹犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 348469,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358189,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358021,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358100,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358093,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358091,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358089,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358086,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358076,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358085,
+			"animal_Variety": "大丹犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358083,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358060,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 358059,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 358058,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 343376,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 352925,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 358048,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357786,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 358018,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 277269,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357375,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357374,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355565,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354538,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357980,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357961,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 344738,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 350336,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 349570,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351858,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351852,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351860,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351854,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357943,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 351862,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351285,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 351485,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357942,
+			"animal_Variety": "杜賓犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354535,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 354570,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357918,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357888,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357890,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357878,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357214,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356788,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357867,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356030,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357860,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 281016,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357261,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357769,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357760,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357711,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357708,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357707,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354329,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 301245,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 253057,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 336736,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 335995,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346685,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344846,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 344838,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 247524,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 346280,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 284753,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 244571,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 351883,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353589,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 345631,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354325,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 326299,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357586,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357481,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357473,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 351637,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356693,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 353653,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 341676,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357530,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350218,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 151413,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 282933,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 299667,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 345819,
+			"animal_Variety": "西施犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 287850,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 287857,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 290872,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 290876,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 344950,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 273100,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 311806,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 299380,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 307929,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357495,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 335394,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 233313,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 326060,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353440,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 346146,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 346147,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354268,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357431,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 340946,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 307422,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356553,
+			"animal_Variety": "比熊犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 215554,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357414,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 330483,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357408,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 258069,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 334024,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 305784,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 334171,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 307104,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353590,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357350,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357277,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356173,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356330,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356329,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357338,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357282,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357327,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346688,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346691,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346689,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346686,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346693,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 346690,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357235,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357324,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 334699,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 343382,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357309,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357312,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 293142,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 275320,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353942,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357039,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356755,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 207845,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 318364,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354739,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 354278,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 348143,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 323663,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 320952,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 347622,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 347758,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 347926,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 347761,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 349037,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 348794,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 357028,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 357054,
+			"animal_Variety": "法國鬥牛犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 357037,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354671,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 343100,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 357032,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 346135,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356998,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356977,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356976,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356973,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356375,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356374,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356197,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356920,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356915,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356911,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 353504,
+			"animal_Variety": "臘腸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353506,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353507,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356899,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356862,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356457,
+			"animal_Variety": "約克夏",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356460,
+			"animal_Variety": "馬爾濟斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356459,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356458,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356461,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356543,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 347890,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 350420,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 348621,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356716,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356646,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356679,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356623,
+			"animal_Variety": "巴哥犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356602,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356587,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 266947,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354725,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 264208,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 348203,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356478,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 355843,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 355484,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 353204,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 353208,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 354702,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 315708,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356386,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 79987,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 319996,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 167851,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356327,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 356322,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356321,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 356310,
+			"animal_Variety": "博美犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 343952,
+			"animal_Variety": "約克夏",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356287,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346142,
+			"animal_Variety": "博美犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 356161,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356151,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356070,
+			"animal_Variety": "黃金獵犬",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 287855,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 287853,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 356019,
+			"animal_Variety": "貴賓犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 338989,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346236,
+			"animal_Variety": "米克斯",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 346867,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353831,
+			"animal_Variety": "吉娃娃",
+			"animal_sex": "F",
+			"animal_bodytype": "MINI"
+		},
+		{
+			"animal_id": 276934,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 355886,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355875,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 355874,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 355872,
+			"animal_Variety": "拉不拉多",
+			"animal_sex": "M",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 355864,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 353731,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 316767,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 355180,
+			"animal_Variety": "哈士奇",
+			"animal_sex": "F",
+			"animal_bodytype": "BIG"
+		},
+		{
+			"animal_id": 350219,
+			"animal_Variety": "柯基",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 318013,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 355676,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 305690,
+			"animal_Variety": "米克斯",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 43928,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 53332,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 43934,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "F",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 146158,
+			"animal_Variety": "狐狸犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 295147,
+			"animal_Variety": "柴犬",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 67021,
+			"animal_Variety": "柯基",
+			"animal_sex": "F",
+			"animal_bodytype": "MEDIUM"
+		},
+		{
+			"animal_id": 205490,
+			"animal_Variety": "雪納瑞",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 35431,
+			"animal_Variety": "西施犬",
+			"animal_sex": "M",
+			"animal_bodytype": "SMALL"
+		},
+		{
+			"animal_id": 47929,
+			"animal_Variety": "柴犬",
+			"animal_sex": "M",
+			"animal_bodytype": "MEDIUM"
+		}
+	]
+}
