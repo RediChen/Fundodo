@@ -1,5 +1,5 @@
 ﻿{
-	"col": [
+	"col_zh": [
 		"圖片",
 		"品牌",
 		"子分類",
@@ -9,6 +9,16 @@
 		"價格",
 		"產品描述"
 	],
+  "col": [
+      "picNameArr",
+      "brand",
+      "category_2",
+      "name",
+      "sort",
+      "spec",
+      "priceArr",
+      "desc"
+  ],
 	"data": [
 		[
 			[
