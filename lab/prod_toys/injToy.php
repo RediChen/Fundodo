@@ -19,6 +19,6 @@ foreach ($rawArr as $toy) :
 
   array_push($toyArr, $newItem);
 endforeach;
-
-$geneJson = json_encode($toyArr, JSON_UNESCAPED_UNICODE);
+printArray($toyArr);
+// $geneJson = json_encode($toyArr, JSON_UNESCAPED_UNICODE);
 // file_put_contents('./toy-data.json', $geneJson);

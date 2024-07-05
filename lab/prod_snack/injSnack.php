@@ -16,8 +16,8 @@ foreach ($rawArr as $snack) :
   array_push($snackArr, $newItem);
 endforeach;
 
-// printArray($snackArr);
-$geneJson = json_encode($snackArr, JSON_UNESCAPED_UNICODE);
+printArray($snackArr);
+// $geneJson = json_encode($snackArr, JSON_UNESCAPED_UNICODE);
 
 // file_put_contents('./snack-data.json', $geneJson);
 

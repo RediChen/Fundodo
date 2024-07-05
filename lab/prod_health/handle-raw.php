@@ -1,7 +1,7 @@
 <?php
 // require_once('/tools/connectDB_fdd.php');
 include("../../tools/console-lib.php");
-$jsonStr = file_get_contents('./outdoors_raw.json');
+$jsonStr = file_get_contents('./health_raw.json');
 $pkg = json_decode($jsonStr, true);
 $colArr = $pkg['col'];
 $rawArr = $pkg['data'];
@@ -17,6 +17,11 @@ foreach ($rawArr as $data) :
   array_push($dataArr, $newItem);
 endforeach;
 
-printArray($dataArr);
-// $geneJson = json_encode($dataArr, JSON_UNESCAPED_UNICODE);
-// file_put_contents('./outdoors-data.json', $geneJson);
+$info['description'] = "保健用品的資料";
+$info['count'] = 60;
+$obj["info"] = $info;
+$obj["data"] = $dataArr;
+
+printArray($obj);
+$geneJson = json_encode($obj, JSON_UNESCAPED_UNICODE);
+file_put_contents('./health-data.json', $geneJson);
