@@ -18,16 +18,10 @@ foreach ($rawArr as $data) :
     endif;
   endfor;
 
-  if (empty($newItem["bodytypeArr"])) :
-    $newItem["bodytypeArr"] = ["迷你犬", "小型犬", "中型犬", "大型犬"];
-  endif;
-  if (empty($newItem["ageArr"])) :
-    $newItem["ageArr"] = ["幼犬", "成犬", "高齡犬"];
-  endif;
   array_push($dataArr, $newItem);
 endforeach;
 
-$info['description'] = "飼料品項的資料";
+$info['description'] = "玩具用品的資料";
 $info['count'] = count($rawArr);
 $obj["info"] = $info;
 $obj["data"] = $dataArr;

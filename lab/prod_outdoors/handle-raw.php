@@ -1,7 +1,7 @@
 <?php
 // require_once('/tools/connectDB_fdd.php');
 include("../../tools/console-lib.php");
-$jsonStr = file_get_contents('./outdoors_raw.json');
+$jsonStr = file_get_contents('./raw.json');
 $pkg = json_decode($jsonStr, true);
 $colArr = $pkg['col'];
 $rawArr = $pkg['data'];
@@ -11,12 +11,21 @@ $dataArr = [];
 foreach ($rawArr as $data) :
   $newItem = [];
   for ($i = 0; $i < $BOUND; $i++) :
-    $newItem[$colArr[$i]] = $data[$i];
+    if (empty($data[$i][0])) :
+      $newItem[$colArr[$i]] = [];
+    else :
+      $newItem[$colArr[$i]] = $data[$i];
+    endif;
   endfor;
 
   array_push($dataArr, $newItem);
 endforeach;
 
-printArray($dataArr);
-// $geneJson = json_encode($dataArr, JSON_UNESCAPED_UNICODE);
-// file_put_contents('./outdoors-data.json', $geneJson);
+$info['description'] = "外出用品的資料";
+$info['count'] = count($rawArr);
+$obj["info"] = $info;
+$obj["data"] = $dataArr;
+
+printArray($obj);
+$geneJson = json_encode($obj, JSON_UNESCAPED_UNICODE);
+file_put_contents('./data.json', $geneJson);
